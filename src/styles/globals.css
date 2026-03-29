@@ -1,3 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;:root {
+  --navy:   #0F2255;
+  --navylt: #1A3A6A;
+  --orange: #E85400;
+  --white:  #FFFFFF;
+  --grey:   #F5F6FA;
+  --orlt:   #FFF4EE;
+  --mint:   #F0F7F0;
+  --border: #E0E4F0;
+  --mid:    #4A5568;
+  --muted:  #8896AA;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
 /* ============================================
    KNOWX INNOVATIONS — GLOBAL STYLES
    Safari/iPhone fixes applied throughout

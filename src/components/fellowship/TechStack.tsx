@@ -1,3 +1,4 @@
+'use client'
 // components/fellowship/TechStack.tsx
 import { TECH_STACK } from '@/lib/fellowship-data'
 

@@ -1,3 +1,4 @@
+'use client'
 // components/fellowship/WhatIsSection.tsx
 import { COMPARISON_TABLE } from '@/lib/fellowship-data'
 

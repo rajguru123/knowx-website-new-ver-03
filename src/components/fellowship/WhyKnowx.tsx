@@ -1,3 +1,4 @@
+'use client'
 // components/fellowship/WhyKnowx.tsx
 import { WHY_KNOWX } from '@/lib/fellowship-data'
 

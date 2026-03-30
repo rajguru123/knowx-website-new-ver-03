@@ -1,3 +1,4 @@
+'use client'
 // components/fellowship/WhoSection.tsx
 import { WHO_CARDS } from '@/lib/fellowship-data'
 

@@ -1,3 +1,4 @@
+'use client'
 // components/fellowship/TracksSection.tsx
 import Link from 'next/link'
 import { TRACKS } from '@/lib/fellowship-data'

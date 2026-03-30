@@ -1,3 +1,4 @@
+'use client'
 // components/fellowship/Outcomes.tsx
 import { OUTCOMES } from '@/lib/fellowship-data'
 

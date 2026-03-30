@@ -179,7 +179,7 @@ export default function HeroSection() {
           lineHeight:   0,
         }}>
           <Image
-            src="/hero-banner.png"
+            src="/images/hero-banner.png"
             alt="Knowx Product Engineering — AI IoT Embedded Systems lab"
             width={768}
             height={512}

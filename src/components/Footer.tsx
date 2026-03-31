@@ -88,7 +88,16 @@ export default function Footer() {
               {' — Industry training in AI, IoT, Embedded Systems & Web Dev'}
             </span>
           </div>
-          <Link href="/training-internship-engineering-students-bangalore" className="ac-l">Learn more →</Link>
+          <Link href="/training-internship-engineering-students-bangalore" className="ac-l" style={{
+  background: 'var(--tl)',
+  color: '#fff',
+  padding: '8px 20px',
+  borderRadius: 8,
+  fontSize: 13,
+  fontWeight: 700,
+  textDecoration: 'none',
+  whiteSpace: 'nowrap',
+}}>Learn more →</Link>
         </div>
       </div>
       <div className="ft-bt">

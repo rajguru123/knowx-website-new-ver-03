@@ -16,7 +16,7 @@ export const TRACKS = [
     mode: 'Online + Offline',
     fee: 'Rs.20,000 + GST',
     emi: 'Rs.10,000 × 2 EMI',
-    href: '/embedded-ai-iot-product-engineer-course-bangalore',
+   href: '/embedded-ai-iot-product-engineer-course-internship-bangalore',
     projects: [
       {
         title: 'Smart IoT Vehicle Tracking & Telematics',
@@ -45,7 +45,7 @@ export const TRACKS = [
     mode: 'Online + Offline',
     fee: 'Rs.20,000 + GST',
     emi: 'Rs.10,000 × 2 EMI',
-    href: '/generative-ai-product-engineer-course-bangalore',
+   href: '/generative-ai-product-engineer-course-internship-bangalore',
     projects: [
       {
         title: 'AI-Powered Business Automation Assistant',
@@ -74,7 +74,7 @@ export const TRACKS = [
     mode: 'Online + Offline',
     fee: 'Rs.20,000 + GST',
     emi: 'Rs.10,000 × 2 EMI',
-    href: '/full-stack-product-engineer-course-bangalore',
+    href: '/full-stack-product-development-internship-course-in-bangalore',
     projects: [
       {
         title: 'IoT Data Monitoring Dashboard (SaaS)',

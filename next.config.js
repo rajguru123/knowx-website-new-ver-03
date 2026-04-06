@@ -13,10 +13,15 @@ const nextConfig = {
         source: '/generative-ai-product-engineer-course-internship-bangalore',
         destination: '/generative-ai-product-engineer-course-internship-bangalore/index.html',
       },
+      {
+        source: '/full-stack-product-development-internship-course-in-bangalore',
+        destination: '/full-stack-product-development-internship-course-in-bangalore/index.html',
+      },
     ];
   },
   async redirects() {
     return [
+      // Old course page URLs → New course page URLs
       {
         source: '/embedded-ai-iot-product-engineer',
         destination: '/embedded-ai-iot-product-engineer-course-internship-bangalore',
@@ -37,6 +42,12 @@ const nextConfig = {
         destination: '/generative-ai-product-engineer-course-internship-bangalore',
         permanent: true,
       },
+      {
+        source: '/full-stack-product-engineer-course-bangalore',
+        destination: '/full-stack-product-development-internship-course-in-bangalore',
+        permanent: true,
+      },
+      // Old PHP URLs → New Next.js URLs
       {
         source: '/index.php',
         destination: '/',
@@ -83,6 +94,108 @@ const nextConfig = {
         permanent: true,
       },
       {
+        source: '/hardware-and-pcb-designing.php',
+        destination: '/embedded-system-design-software-development-bangalore',
+        permanent: true,
+      },
+      {
+        source: '/career.php',
+        destination: '/',
+        permanent: true,
+      },
+      // Specific internship redirects to matching course pages
+      {
+        source: '/internships-in-bangalore/python-full-stack-development',
+        destination: '/full-stack-product-development-internship-course-in-bangalore',
+        permanent: true,
+      },
+      {
+        source: '/internships-in-bangalore/python-full-stack-development/:path*',
+        destination: '/full-stack-product-development-internship-course-in-bangalore',
+        permanent: true,
+      },
+      {
+        source: '/internships-in-bangalore/java-full-stack-development',
+        destination: '/full-stack-product-development-internship-course-in-bangalore',
+        permanent: true,
+      },
+      {
+        source: '/internships-in-bangalore/java-full-stack-development/:path*',
+        destination: '/full-stack-product-development-internship-course-in-bangalore',
+        permanent: true,
+      },
+      {
+        source: '/internships-in-bangalore/embedded-systems-training-in-bangalore-with-placement',
+        destination: '/embedded-ai-iot-product-engineer-course-internship-bangalore',
+        permanent: true,
+      },
+      {
+        source: '/internships-in-bangalore/embedded-systems-training-in-bangalore-with-placement/:path*',
+        destination: '/embedded-ai-iot-product-engineer-course-internship-bangalore',
+        permanent: true,
+      },
+      {
+        source: '/internships-in-bangalore/embedded-systems-iot',
+        destination: '/embedded-ai-iot-product-engineer-course-internship-bangalore',
+        permanent: true,
+      },
+      {
+        source: '/internships-in-bangalore/embedded-systems-iot/:path*',
+        destination: '/embedded-ai-iot-product-engineer-course-internship-bangalore',
+        permanent: true,
+      },
+      {
+        source: '/internships-in-bangalore/iot-Internet-of-things',
+        destination: '/embedded-ai-iot-product-engineer-course-internship-bangalore',
+        permanent: true,
+      },
+      {
+        source: '/internships-in-bangalore/iot-Internet-of-things/:path*',
+        destination: '/embedded-ai-iot-product-engineer-course-internship-bangalore',
+        permanent: true,
+      },
+      {
+        source: '/internships-in-bangalore/artificial-intelligence-and-machine-learning',
+        destination: '/generative-ai-product-engineer-course-internship-bangalore',
+        permanent: true,
+      },
+      {
+        source: '/internships-in-bangalore/artificial-intelligence-and-machine-learning/:path*',
+        destination: '/generative-ai-product-engineer-course-internship-bangalore',
+        permanent: true,
+      },
+      {
+        source: '/internships-in-bangalore/data-science',
+        destination: '/generative-ai-product-engineer-course-internship-bangalore',
+        permanent: true,
+      },
+      {
+        source: '/internships-in-bangalore/data-science/:path*',
+        destination: '/generative-ai-product-engineer-course-internship-bangalore',
+        permanent: true,
+      },
+      {
+        source: '/internships-in-bangalore/cyber-security',
+        destination: '/training-internship-engineering-students-bangalore',
+        permanent: true,
+      },
+      {
+        source: '/internships-in-bangalore/cyber-security/:path*',
+        destination: '/training-internship-engineering-students-bangalore',
+        permanent: true,
+      },
+      {
+        source: '/internships-in-bangalore/vlsi',
+        destination: '/training-internship-engineering-students-bangalore',
+        permanent: true,
+      },
+      {
+        source: '/internships-in-bangalore/vlsi/:path*',
+        destination: '/training-internship-engineering-students-bangalore',
+        permanent: true,
+      },
+      // Generic internship catch-all (must be LAST)
+      {
         source: '/internships-in-bangalore',
         destination: '/training-internship-engineering-students-bangalore',
         permanent: true,
@@ -92,6 +205,7 @@ const nextConfig = {
         destination: '/training-internship-engineering-students-bangalore',
         permanent: true,
       },
+      // Other old page redirects
       {
         source: '/staff-solutions/:path*',
         destination: '/',
@@ -100,16 +214,6 @@ const nextConfig = {
       {
         source: '/products/:path*',
         destination: '/#products',
-        permanent: true,
-      },
-      {
-        source: '/career.php',
-        destination: '/',
-        permanent: true,
-      },
-      {
-        source: '/hardware-and-pcb-designing.php',
-        destination: '/embedded-system-design-software-development-bangalore',
         permanent: true,
       },
       {

@@ -114,376 +114,202 @@ export default function HardwareClient() {
         </div>
       </section>
 
-      {/* ═══ 4. SERVICES ═══ */}
-      <section className="sec" style={{ background: '#fff' }}>
+      {/* ═══ 4. SERVICES — IOT STYLE WITH GRADIENT CARDS ═══ */}
+      <section className="sec bg-s" id="hardware-services">
         <div className="sec-in">
-          <div style={{ textAlign: 'center', maxWidth: 720, margin: '0 auto 56px' }}>
-            <h2 className="fd" style={{ fontWeight: 700, fontSize: 'clamp(1.8rem, 3.5vw, 2.6rem)', color: 'var(--n900)', marginBottom: 16 }}>Our Electronics Hardware Design Services</h2>
-            <p style={{ fontSize: 17, color: 'var(--n600)', lineHeight: 1.7 }}>End-to-end hardware design capabilities to transform your concept into a production-ready product.</p>
+          <div className="sh c rv">
+            <div className="sl fm" style={{ marginBottom: 16, justifyContent: 'center' }}>Our hardware design services</div>
+            <h2 className="fd">End-to-end electronics hardware design — from circuit to production</h2>
+            <p>Every layer of hardware development, engineered by a single integrated team.</p>
           </div>
-          <div className="serv-grid">
-            <div className="serv-card">
-              <div className="serv-ic" style={{ background: 'rgba(16,185,129,.1)' }}>
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="rgba(16,185,129,.8)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 7h.01M7 12h.01M7 17h.01M12 7h5M12 12h5M12 17h5"/></svg>
+          <div className="g3">
+            {[
+              { cls: 'pcb', title: 'PCB Design & Layout', desc: 'Multi-layer PCB design with high-speed signal routing, impedance control, and thermal management for reliable performance.', tags: ['Altium', 'Multi-layer', 'DFM'], icon: <><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 7h.01M7 12h.01M7 17h.01M12 7h5M12 12h5M12 17h5"/></> },
+              { cls: 'sch', title: 'Schematic Design & Circuit Simulation', desc: 'Complete circuit design with SPICE simulation, component selection, and design optimization for power efficiency and cost.', tags: ['SPICE', 'MATLAB', 'Component Selection'], icon: <><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></> },
+              { cls: 'emb', title: 'Embedded Hardware Design', desc: 'ARM, FPGA, and microcontroller-based designs with firmware integration, peripheral interfaces, and power optimization.', tags: ['ARM', 'STM32', 'FPGA'], icon: <><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 12h.01M10 12h.01M14 12h.01M18 12h.01"/></> },
+              { cls: 'prt', title: 'Hardware Prototyping & Testing', desc: 'Rapid prototyping, functional testing, environmental validation, and performance optimization before mass production.', tags: ['Rapid Proto', 'Testing', 'Validation'], icon: <><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></> },
+              { cls: 'bom', title: 'Component Selection & BOM Optimization', desc: 'Strategic component sourcing, vendor management, cost optimization, and supply chain risk mitigation.', tags: ['BOM', 'Cost Optimization', 'Sourcing'], icon: <><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></> },
+              { cls: 'cert', title: 'Product Certification Support', desc: 'Design for compliance, pre-certification testing, and documentation support for FCC, CE, RoHS, and industry standards.', tags: ['FCC', 'CE', 'RoHS'], icon: <><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></> },
+            ].map((s, i) => (
+              <div className={`sv ${s.cls} rv ${i > 0 ? 'rv-d' + i : ''}`} key={s.title}>
+                <div className="svi"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">{s.icon}</svg></div>
+                <h3 className="fd">{s.title}</h3>
+                <p>{s.desc}</p>
+                <div className="tg fm">{s.tags.map((t) => <span key={t}>{t}</span>)}</div>
               </div>
-              <h3 className="serv-ttl fd">PCB Design & Layout</h3>
-              <p className="serv-txt">Multi-layer PCB design with high-speed signal routing, impedance control, and thermal management for reliable performance.</p>
-            </div>
-            <div className="serv-card">
-              <div className="serv-ic" style={{ background: 'rgba(0,102,255,.1)' }}>
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="rgba(0,102,255,.8)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-              </div>
-              <h3 className="serv-ttl fd">Schematic Design & Circuit Simulation</h3>
-              <p className="serv-txt">Complete circuit design with SPICE simulation, component selection, and design optimization for power efficiency and cost.</p>
-            </div>
-            <div className="serv-card">
-              <div className="serv-ic" style={{ background: 'rgba(99,102,241,.1)' }}>
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="rgba(99,102,241,.8)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 12h.01M10 12h.01M14 12h.01M18 12h.01"/></svg>
-              </div>
-              <h3 className="serv-ttl fd">Embedded Hardware Design</h3>
-              <p className="serv-txt">ARM, FPGA, and microcontroller-based designs with firmware integration, peripheral interfaces, and power optimization.</p>
-            </div>
-            <div className="serv-card">
-              <div className="serv-ic" style={{ background: 'rgba(245,158,11,.1)' }}>
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="rgba(245,158,11,.8)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-              </div>
-              <h3 className="serv-ttl fd">Hardware Prototyping & Testing</h3>
-              <p className="serv-txt">Rapid prototyping, functional testing, environmental validation, and performance optimization before mass production.</p>
-            </div>
-            <div className="serv-card">
-              <div className="serv-ic" style={{ background: 'rgba(239,68,68,.1)' }}>
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="rgba(239,68,68,.8)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
-              </div>
-              <h3 className="serv-ttl fd">Component Selection & BOM Optimization</h3>
-              <p className="serv-txt">Strategic component sourcing, vendor management, cost optimization, and supply chain risk mitigation.</p>
-            </div>
-            <div className="serv-card">
-              <div className="serv-ic" style={{ background: 'rgba(0,180,216,.1)' }}>
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="rgba(0,180,216,.8)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-              </div>
-              <h3 className="serv-ttl fd">Product Certification Support</h3>
-              <p className="serv-txt">Design for compliance, pre-certification testing, and documentation support for FCC, CE, RoHS, and industry standards.</p>
-            </div>
+            ))}
+          </div>
+          {/* MID-PAGE CTA */}
+          <div className="rv" style={{ textAlign: 'center', marginTop: 48 }}>
+            <p style={{ fontSize: 17, color: 'var(--n700)', fontWeight: 500, marginBottom: 16 }} className="fd">Need hardware design services for your product?</p>
+            <button className="btn bp" onClick={openPopup}>
+              Talk to Our Engineers
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
+            </button>
           </div>
         </div>
       </section>
 
-      {/* ═══ 5. INDUSTRIES ═══ */}
-      <section className="sec rv">
+      {/* ═══ 5. INDUSTRIES — IOT STYLE WITH GRADIENTS ═══ */}
+      <section className="sec">
         <div className="sec-in">
-          <div style={{ textAlign: 'center', maxWidth: 720, margin: '0 auto 48px' }}>
-            <h2 className="fd" style={{ fontWeight: 700, fontSize: 'clamp(1.8rem, 3.5vw, 2.6rem)', color: 'var(--n900)', marginBottom: 16 }}>Industries We Serve</h2>
-            <p style={{ fontSize: 17, color: 'var(--n600)', lineHeight: 1.7 }}>Delivering specialized hardware design solutions across diverse sectors.</p>
+          <div className="sh rv">
+            <div className="sl fm" style={{ marginBottom: 16 }}>Industries we design hardware for</div>
+            <h2 className="fd">Electronics hardware solutions engineered for demanding sectors</h2>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 24 }}>
-            <div style={{ background: '#fff', border: '1px solid rgba(217,226,236,.6)', borderRadius: 16, padding: 28, transition: 'all .3s ease' }} className="ind-card">
-              <div style={{ width: 48, height: 48, borderRadius: 12, background: 'rgba(239,68,68,.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 16 }}>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(239,68,68,.7)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-              </div>
-              <h3 className="fd" style={{ fontWeight: 600, fontSize: 18, color: 'var(--n900)', marginBottom: 8 }}>Medical Devices</h3>
-              <p style={{ fontSize: 14, color: 'var(--n600)', lineHeight: 1.6 }}>Wearables, diagnostic equipment, patient monitoring systems, and medical IoT devices.</p>
-            </div>
-            <div style={{ background: '#fff', border: '1px solid rgba(217,226,236,.6)', borderRadius: 16, padding: 28, transition: 'all .3s ease' }} className="ind-card">
-              <div style={{ width: 48, height: 48, borderRadius: 12, background: 'rgba(99,102,241,.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 16 }}>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(99,102,241,.7)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-              </div>
-              <h3 className="fd" style={{ fontWeight: 600, fontSize: 18, color: 'var(--n900)', marginBottom: 8 }}>Industrial Automation</h3>
-              <p style={{ fontSize: 14, color: 'var(--n600)', lineHeight: 1.6 }}>PLCs, HMI systems, sensor networks, and industrial control hardware.</p>
-            </div>
-            <div style={{ background: '#fff', border: '1px solid rgba(217,226,236,.6)', borderRadius: 16, padding: 28, transition: 'all .3s ease' }} className="ind-card">
-              <div style={{ width: 48, height: 48, borderRadius: 12, background: 'rgba(16,185,129,.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 16 }}>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(16,185,129,.7)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
-              </div>
-              <h3 className="fd" style={{ fontWeight: 600, fontSize: 18, color: 'var(--n900)', marginBottom: 8 }}>Consumer Electronics</h3>
-              <p style={{ fontSize: 14, color: 'var(--n600)', lineHeight: 1.6 }}>Smart home devices, audio products, gadgets, and connected consumer products.</p>
-            </div>
-            <div style={{ background: '#fff', border: '1px solid rgba(217,226,236,.6)', borderRadius: 16, padding: 28, transition: 'all .3s ease' }} className="ind-card">
-              <div style={{ width: 48, height: 48, borderRadius: 12, background: 'rgba(0,102,255,.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 16 }}>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(0,102,255,.7)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 17H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-1"/><polygon points="12 15 17 21 7 21 12 15"/></svg>
-              </div>
-              <h3 className="fd" style={{ fontWeight: 600, fontSize: 18, color: 'var(--n900)', marginBottom: 8 }}>Automotive</h3>
-              <p style={{ fontSize: 14, color: 'var(--n600)', lineHeight: 1.6 }}>Vehicle control units, infotainment systems, ADAS modules, and automotive electronics.</p>
-            </div>
-            <div style={{ background: '#fff', border: '1px solid rgba(217,226,236,.6)', borderRadius: 16, padding: 28, transition: 'all .3s ease' }} className="ind-card">
-              <div style={{ width: 48, height: 48, borderRadius: 12, background: 'rgba(245,158,11,.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 16 }}>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(245,158,11,.7)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-              </div>
-              <h3 className="fd" style={{ fontWeight: 600, fontSize: 18, color: 'var(--n900)', marginBottom: 8 }}>Renewable Energy</h3>
-              <p style={{ fontSize: 14, color: 'var(--n600)', lineHeight: 1.6 }}>Solar inverters, energy management systems, power electronics, and monitoring hardware.</p>
-            </div>
-            <div style={{ background: '#fff', border: '1px solid rgba(217,226,236,.6)', borderRadius: 16, padding: 28, transition: 'all .3s ease' }} className="ind-card">
-              <div style={{ width: 48, height: 48, borderRadius: 12, background: 'rgba(0,180,216,.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 16 }}>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(0,180,216,.7)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M7 17v-4.5M7 8.5V7M12 17v-7M12 7V5M17 17v-3M17 11V9M3 3v16a2 2 0 0 0 2 2h16"/></svg>
-              </div>
-              <h3 className="fd" style={{ fontWeight: 600, fontSize: 18, color: 'var(--n900)', marginBottom: 8 }}>EV (Electric Vehicles)</h3>
-              <p style={{ fontSize: 14, color: 'var(--n600)', lineHeight: 1.6 }}>Charging infrastructure, battery management systems, power electronics, and EV components.</p>
-            </div>
+          <div className="g5">
+            {[
+              { title: 'Medical Devices', desc: 'Wearables, diagnostic equipment, patient monitoring', bg: 'linear-gradient(135deg,#991B1B,#DC2626)' },
+              { title: 'Industrial Automation', desc: 'PLCs, HMI systems, sensor networks', bg: 'linear-gradient(135deg,#1E3A8A,#3B82F6)' },
+              { title: 'Consumer Electronics', desc: 'Smart home devices, audio products', bg: 'linear-gradient(135deg,#065F46,#10B981)' },
+              { title: 'Automotive', desc: 'Vehicle control units, infotainment systems', bg: 'linear-gradient(135deg,var(--ac),var(--acd))' },
+              { title: 'Renewable Energy', desc: 'Solar inverters, energy management systems', bg: 'linear-gradient(135deg,#B45309,#F59E0B)' },
+              { title: 'EV (Electric Vehicles)', desc: 'Charging infrastructure, battery management', bg: 'linear-gradient(135deg,#0E7490,#06B6D4)' },
+            ].map((ind, i) => (
+              <a href="#" className={`ind rv ${i > 0 ? 'rv-d' + i : ''}`} style={{ background: ind.bg }} key={ind.title}>
+                <h3 className="fd">{ind.title}</h3>
+                <p>{ind.desc}</p>
+              </a>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* ═══ 6. CASE STUDIES — 4 PROJECTS ═══ */}
-      <section className="sec" style={{ background: '#fff' }}>
+      {/* ═══ 6. CASE STUDIES — IOT STYLE 4-CARD GRID ═══ */}
+      <section className="sec bg-s" id="hardware-case-studies">
         <div className="sec-in">
-          <div style={{ textAlign: 'center', maxWidth: 720, margin: '0 auto 56px' }}>
-            <h2 className="fd" style={{ fontWeight: 700, fontSize: 'clamp(1.8rem, 3.5vw, 2.6rem)', color: 'var(--n900)', marginBottom: 16 }}>Real-World Hardware Projects</h2>
-            <p style={{ fontSize: 17, color: 'var(--n600)', lineHeight: 1.7 }}>See how we've helped companies across industries bring their hardware products to life.</p>
+          <div className="sh rv">
+            <div className="sl fm" style={{ marginBottom: 16 }}>Hardware projects we have delivered</div>
+            <h2 className="fd">Real hardware products. Measurable results.</h2>
+            <p>These are not concepts — every project was designed, developed, and deployed by our team.</p>
           </div>
-          
-          {/* Case Study 1: Fall Detection */}
-          <div className="case-study-row" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 48, alignItems: 'center', marginBottom: 80 }}>
-            <div>
-              <div className="fm" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, fontSize: 11, fontWeight: 600, color: '#DC2626', background: 'rgba(239,68,68,.08)', padding: '5px 12px', borderRadius: 5, marginBottom: 16, letterSpacing: '.04em' }}>MEDICAL DEVICES</div>
-              <h3 className="fd" style={{ fontWeight: 700, fontSize: 'clamp(1.4rem, 2.5vw, 1.8rem)', color: 'var(--n900)', marginBottom: 16 }}>Smart Wearable for Elder Fall Detection</h3>
-              <div style={{ marginBottom: 20 }}>
-                <div style={{ fontSize: 14, fontWeight: 600, color: 'var(--n700)', marginBottom: 8 }}>🧩 Problem</div>
-                <p style={{ fontSize: 15, color: 'var(--n600)', lineHeight: 1.7, marginBottom: 16 }}>Elderly falls often go undetected, causing delayed emergency response and serious health risks.</p>
-                <div style={{ fontSize: 14, fontWeight: 600, color: 'var(--n700)', marginBottom: 8 }}>⚙️ Solution</div>
-                <p style={{ fontSize: 15, color: 'var(--n600)', lineHeight: 1.7, marginBottom: 16 }}>Designed a BLE-enabled wearable with accelerometer, SOS button, and real-time fall detection algorithm.</p>
-                <div style={{ fontSize: 14, fontWeight: 600, color: 'var(--n700)', marginBottom: 8 }}>📊 Impact</div>
-                <ul style={{ fontSize: 15, color: 'var(--n600)', lineHeight: 1.8, paddingLeft: 20 }}>
-                  <li>95%+ detection accuracy</li>
-                  <li>60% faster emergency response</li>
-                  <li>7–10 days battery life</li>
-                </ul>
+          <div className="g4">
+            {[
+              { badge: 'Medical Devices', badgeCls: 'rd', title: 'Smart Wearable for Elder Fall Detection', problem: 'Elderly falls often go undetected, causing delayed emergency response and serious health risks.', solution: 'Designed a BLE-enabled wearable with accelerometer, SOS button, and real-time fall detection algorithm.', result: '95%+ detection accuracy', timeline: 'Delivered in 4–6 months', tags: ['BLE', 'Accelerometer', 'IoT'], img: '/images/medical-wearable-fall-detection-hardware.png', alt: 'Medical wearable fall detection hardware device by Knowx Innovations' },
+              { badge: 'EV & Renewable', badgeCls: 'tl', title: 'Smart Meter for EV Charging Stations', problem: 'Lack of accurate, connected energy metering for EV charging infrastructure.', solution: 'Built a smart energy meter with ARM MCU, IoT connectivity, and real-time billing integration.', result: '±1% accuracy, 30% cost reduction', timeline: 'Delivered in 5–7 months', tags: ['ARM MCU', 'IoT', 'Power Electronics'], img: '/images/ev-charging-smart-meter-pcb-design.png', alt: 'EV charging smart meter PCB design and hardware by Knowx Innovations' },
+              { badge: 'Industrial Automation', badgeCls: 'gn', title: 'Smart Windows for Large Godowns', problem: 'Poor ventilation and high energy costs in large storage facilities.', solution: 'Developed sensor-based automated window control with wireless connectivity and environmental monitoring.', result: '25–35% energy savings', timeline: 'Delivered in 4–6 months', tags: ['Sensors', 'Wireless', 'Automation'], img: '/images/industrial-automation-smart-window-hardware.png', alt: 'Industrial automation smart window control hardware by Knowx Innovations' },
+              { badge: 'Industrial Automation', badgeCls: 'bl', title: 'BLE-Based Asset Tracking for Warehouses', problem: 'Inefficient tracking leading to misplaced assets and operational delays.', solution: 'Created low-power BLE tracking devices with gateway and cloud integration for real-time asset visibility.', result: '90%+ asset visibility', timeline: 'Delivered in 3–5 months', tags: ['BLE', 'Low Power', 'Cloud'], img: '/images/ble-asset-tracking-warehouse-hardware.png', alt: 'BLE asset tracking warehouse hardware device by Knowx Innovations' },
+            ].map((cs, i) => (
+              <div className={`cs rv ${i > 0 ? 'rv-d' + i : ''}`} key={cs.title}>
+                <div className="cs-img" style={{ position: 'relative', overflow: 'hidden' }}>
+                  <img src={cs.img} alt={cs.alt} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} loading="lazy" />
+                </div>
+                <div className="cs-body">
+                  <span className={'cs-bg ' + cs.badgeCls + ' fm'}>{cs.badge}</span>
+                  <h3 className="fd" style={{ marginBottom: 16 }}>{cs.title}</h3>
+                  <div style={{ marginBottom: 10 }}><div className="fm" style={{ fontSize: 10, fontWeight: 600, color: 'var(--n400)', textTransform: 'uppercase', letterSpacing: '.06em', marginBottom: 4 }}>Problem</div><p style={{ fontSize: 14, color: 'var(--n600)', lineHeight: 1.6 }}>{cs.problem}</p></div>
+                  <div style={{ marginBottom: 10 }}><div className="fm" style={{ fontSize: 10, fontWeight: 600, color: 'var(--n400)', textTransform: 'uppercase', letterSpacing: '.06em', marginBottom: 4 }}>Solution</div><p style={{ fontSize: 14, color: 'var(--n600)', lineHeight: 1.6 }}>{cs.solution}</p></div>
+                  <div className="cs-rs"><div className="cs-rl fm">Result</div><div className="cs-rv fd">{cs.result}</div></div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 14 }}>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--ac)" strokeWidth="2"><circle cx="12" cy="12" r="10" /><path d="M12 6v6l4 2" /></svg>
+                    <span className="fm" style={{ fontSize: 12, fontWeight: 600, color: 'var(--ac)' }}>{cs.timeline}</span>
+                  </div>
+                  <div className="mt fm">{cs.tags.map((t) => <span key={t}>{t}</span>)}</div>
+                </div>
               </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 12, padding: 16, background: 'rgba(217,226,236,.3)', borderRadius: 10 }}>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--n700)" strokeWidth="2" strokeLinecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                <span style={{ fontSize: 14, fontWeight: 600, color: 'var(--n700)' }}>Timeline: 4–6 months</span>
-              </div>
-            </div>
-            <div style={{ borderRadius: 16, overflow: 'hidden', boxShadow: '0 20px 40px rgba(15,23,42,.12)' }}>
-              <img src="/images/case-studies/elder-fall-detection-wearable.png" alt="Smart Wearable Fall Detection Device" style={{ width: '100%', height: 'auto', display: 'block' }} />
-            </div>
+            ))}
           </div>
-
-          {/* Case Study 2: EV Charging (Reversed layout) */}
-          <div className="case-study-row" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 48, alignItems: 'center', marginBottom: 80 }}>
-            <div style={{ borderRadius: 16, overflow: 'hidden', boxShadow: '0 20px 40px rgba(15,23,42,.12)', order: -1 }} className="cs-img-mobile">
-              <img src="/images/case-studies/ev-charging-smart-meter.png" alt="Smart Meter for EV Charging Stations" style={{ width: '100%', height: 'auto', display: 'block' }} />
-            </div>
-            <div>
-              <div className="fm" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, fontSize: 11, fontWeight: 600, color: '#0891B2', background: 'rgba(0,180,216,.08)', padding: '5px 12px', borderRadius: 5, marginBottom: 16, letterSpacing: '.04em' }}>EV & RENEWABLE ENERGY</div>
-              <h3 className="fd" style={{ fontWeight: 700, fontSize: 'clamp(1.4rem, 2.5vw, 1.8rem)', color: 'var(--n900)', marginBottom: 16 }}>Smart Meter for EV Charging Stations</h3>
-              <div style={{ marginBottom: 20 }}>
-                <div style={{ fontSize: 14, fontWeight: 600, color: 'var(--n700)', marginBottom: 8 }}>🧩 Problem</div>
-                <p style={{ fontSize: 15, color: 'var(--n600)', lineHeight: 1.7, marginBottom: 16 }}>Lack of accurate, connected energy metering for EV charging infrastructure.</p>
-                <div style={{ fontSize: 14, fontWeight: 600, color: 'var(--n700)', marginBottom: 8 }}>⚙️ Solution</div>
-                <p style={{ fontSize: 15, color: 'var(--n600)', lineHeight: 1.7, marginBottom: 16 }}>Built a smart energy meter with ARM MCU, IoT connectivity, and real-time billing integration.</p>
-                <div style={{ fontSize: 14, fontWeight: 600, color: 'var(--n700)', marginBottom: 8 }}>📊 Impact</div>
-                <ul style={{ fontSize: 15, color: 'var(--n600)', lineHeight: 1.8, paddingLeft: 20 }}>
-                  <li>±1% accuracy in energy measurement</li>
-                  <li>30% operational cost reduction</li>
-                  <li>Scalable across multiple stations</li>
-                </ul>
-              </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 12, padding: 16, background: 'rgba(217,226,236,.3)', borderRadius: 10 }}>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--n700)" strokeWidth="2" strokeLinecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                <span style={{ fontSize: 14, fontWeight: 600, color: 'var(--n700)' }}>Timeline: 5–7 months</span>
-              </div>
-            </div>
-          </div>
-
-          {/* Case Study 3: Smart Windows */}
-          <div className="case-study-row" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 48, alignItems: 'center', marginBottom: 80 }}>
-            <div>
-              <div className="fm" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, fontSize: 11, fontWeight: 600, color: '#7C3AED', background: 'rgba(99,102,241,.08)', padding: '5px 12px', borderRadius: 5, marginBottom: 16, letterSpacing: '.04em' }}>INDUSTRIAL AUTOMATION</div>
-              <h3 className="fd" style={{ fontWeight: 700, fontSize: 'clamp(1.4rem, 2.5vw, 1.8rem)', color: 'var(--n900)', marginBottom: 16 }}>Smart Windows for Large Godowns</h3>
-              <div style={{ marginBottom: 20 }}>
-                <div style={{ fontSize: 14, fontWeight: 600, color: 'var(--n700)', marginBottom: 8 }}>🧩 Problem</div>
-                <p style={{ fontSize: 15, color: 'var(--n600)', lineHeight: 1.7, marginBottom: 16 }}>Poor ventilation and high energy costs in large storage facilities.</p>
-                <div style={{ fontSize: 14, fontWeight: 600, color: 'var(--n700)', marginBottom: 8 }}>⚙️ Solution</div>
-                <p style={{ fontSize: 15, color: 'var(--n600)', lineHeight: 1.7, marginBottom: 16 }}>Developed sensor-based automated window control with wireless connectivity and environmental monitoring.</p>
-                <div style={{ fontSize: 14, fontWeight: 600, color: 'var(--n700)', marginBottom: 8 }}>📊 Impact</div>
-                <ul style={{ fontSize: 15, color: 'var(--n600)', lineHeight: 1.8, paddingLeft: 20 }}>
-                  <li>25–35% energy savings</li>
-                  <li>20% reduction in product damage</li>
-                  <li>Fully automated ventilation control</li>
-                </ul>
-              </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 12, padding: 16, background: 'rgba(217,226,236,.3)', borderRadius: 10 }}>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--n700)" strokeWidth="2" strokeLinecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                <span style={{ fontSize: 14, fontWeight: 600, color: 'var(--n700)' }}>Timeline: 4–6 months</span>
-              </div>
-            </div>
-            <div style={{ borderRadius: 16, overflow: 'hidden', boxShadow: '0 20px 40px rgba(15,23,42,.12)' }}>
-              <img src="/images/case-studies/smart-window-automation-system.png" alt="Smart Window Automation System" style={{ width: '100%', height: 'auto', display: 'block' }} />
-            </div>
-          </div>
-
-          {/* Case Study 4: Asset Tracking (Reversed layout) */}
-          <div className="case-study-row" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 48, alignItems: 'center' }}>
-            <div style={{ borderRadius: 16, overflow: 'hidden', boxShadow: '0 20px 40px rgba(15,23,42,.12)', order: -1 }} className="cs-img-mobile">
-              <img src="/images/case-studies/ble-asset-tracking-device.png" alt="BLE Asset Tracking Device" style={{ width: '100%', height: 'auto', display: 'block' }} />
-            </div>
-            <div>
-              <div className="fm" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, fontSize: 11, fontWeight: 600, color: '#059669', background: 'rgba(16,185,129,.08)', padding: '5px 12px', borderRadius: 5, marginBottom: 16, letterSpacing: '.04em' }}>INDUSTRIAL AUTOMATION</div>
-              <h3 className="fd" style={{ fontWeight: 700, fontSize: 'clamp(1.4rem, 2.5vw, 1.8rem)', color: 'var(--n900)', marginBottom: 16 }}>BLE-Based Asset Tracking for Warehouses</h3>
-              <div style={{ marginBottom: 20 }}>
-                <div style={{ fontSize: 14, fontWeight: 600, color: 'var(--n700)', marginBottom: 8 }}>🧩 Problem</div>
-                <p style={{ fontSize: 15, color: 'var(--n600)', lineHeight: 1.7, marginBottom: 16 }}>Inefficient tracking leading to misplaced assets and operational delays.</p>
-                <div style={{ fontSize: 14, fontWeight: 600, color: 'var(--n700)', marginBottom: 8 }}>⚙️ Solution</div>
-                <p style={{ fontSize: 15, color: 'var(--n600)', lineHeight: 1.7, marginBottom: 16 }}>Created low-power BLE tracking devices with gateway and cloud integration for real-time asset visibility.</p>
-                <div style={{ fontSize: 14, fontWeight: 600, color: 'var(--n700)', marginBottom: 8 }}>📊 Impact</div>
-                <ul style={{ fontSize: 15, color: 'var(--n600)', lineHeight: 1.8, paddingLeft: 20 }}>
-                  <li>90%+ asset visibility</li>
-                  <li>50% faster asset retrieval</li>
-                  <li>1–2 year battery life</li>
-                </ul>
-              </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 12, padding: 16, background: 'rgba(217,226,236,.3)', borderRadius: 10 }}>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--n700)" strokeWidth="2" strokeLinecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                <span style={{ fontSize: 14, fontWeight: 600, color: 'var(--n700)' }}>Timeline: 3–5 months</span>
-              </div>
-            </div>
+          {/* MID-PAGE CTA */}
+          <div className="rv" style={{ textAlign: 'center', marginTop: 48 }}>
+            <p style={{ fontSize: 17, color: 'var(--n700)', fontWeight: 500, marginBottom: 16 }} className="fd">Have a similar hardware requirement? Let&apos;s build it.</p>
+            <button className="btn bp" onClick={openPopup}>
+              Start Your Hardware Project
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
+            </button>
           </div>
         </div>
       </section>
 
-      {/* ═══ 7. PROCESS TIMELINE ═══ */}
-      <section className="sec rv">
+      {/* ═══ 7. PROCESS TIMELINE — HORIZONTAL 6-STEP ═══ */}
+      <section className="sec">
         <div className="sec-in">
-          <div style={{ textAlign: 'center', maxWidth: 720, margin: '0 auto 48px' }}>
-            <h2 className="fd" style={{ fontWeight: 700, fontSize: 'clamp(1.8rem, 3.5vw, 2.6rem)', color: 'var(--n900)', marginBottom: 16 }}>Our Hardware Development Process</h2>
-            <p style={{ fontSize: 17, color: 'var(--n600)', lineHeight: 1.7 }}>A proven 6-step approach from concept to production-ready hardware.</p>
+          <div className="sh c rv">
+            <div className="sl fm" style={{ marginBottom: 16, justifyContent: 'center' }}>Our hardware development process</div>
+            <h2 className="fd">From requirement to production — a transparent 6-step process</h2>
           </div>
-          <div className="proc-timeline">
-            <div className="proc-step">
-              <div className="proc-num fd">01</div>
-              <h3 className="proc-ttl fd">Requirement Analysis</h3>
-              <p className="proc-txt">Understanding project goals, constraints, specifications, and defining success criteria.</p>
-            </div>
-            <div className="proc-step">
-              <div className="proc-num fd">02</div>
-              <h3 className="proc-ttl fd">Schematic Design</h3>
-              <p className="proc-txt">Circuit design, component selection, simulation, and design optimization for performance.</p>
-            </div>
-            <div className="proc-step">
-              <div className="proc-num fd">03</div>
-              <h3 className="proc-ttl fd">PCB Layout</h3>
-              <p className="proc-txt">Multi-layer PCB design with signal integrity, thermal management, and DFM analysis.</p>
-            </div>
-            <div className="proc-step">
-              <div className="proc-num fd">04</div>
-              <h3 className="proc-ttl fd">Prototype Development</h3>
-              <p className="proc-txt">Rapid prototyping, board assembly, and initial functional testing.</p>
-            </div>
-            <div className="proc-step">
-              <div className="proc-num fd">05</div>
-              <h3 className="proc-ttl fd">Testing & Validation</h3>
-              <p className="proc-txt">Functional testing, environmental validation, compliance testing, and performance optimization.</p>
-            </div>
-            <div className="proc-step">
-              <div className="proc-num fd">06</div>
-              <h3 className="proc-ttl fd">Manufacturing Support</h3>
-              <p className="proc-txt">DFM analysis, production documentation, vendor coordination, and quality assurance.</p>
-            </div>
+          <div className="pg" style={{ gridTemplateColumns: 'repeat(6, 1fr)' }}>
+            {[
+              { n: '1', title: 'Requirement Analysis', desc: 'We study your use case, define technical specs, and identify the right architecture.', color: '#F59E0B' },
+              { n: '2', title: 'Schematic Design', desc: 'Circuit design, component selection, simulation, and optimization for performance.', color: '#0066FF' },
+              { n: '3', title: 'PCB Layout', desc: 'Multi-layer PCB design with signal integrity, thermal management, and DFM analysis.', color: '#10B981' },
+              { n: '4', title: 'Prototype Development', desc: 'Rapid prototyping, board assembly, and initial functional testing.', color: '#0891B2' },
+              { n: '5', title: 'Testing & Validation', desc: 'Functional, environmental, compliance testing, and performance optimization.', color: '#7C3AED' },
+              { n: '6', title: 'Manufacturing Support', desc: 'DFM analysis, production documentation, vendor coordination, and quality assurance.', color: '#EF4444' },
+            ].map((step) => (
+              <div className="pc rv" key={step.n} style={{ textAlign: 'center', padding: 24 }}>
+                <div className="fd fm" style={{ width: 48, height: 48, borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 700, fontSize: 16, color: '#fff', background: step.color, margin: '0 auto 16px' }}>{step.n}</div>
+                <h3 className="fd" style={{ fontWeight: 700, fontSize: 15, color: 'var(--n900)', marginBottom: 6 }}>{step.title}</h3>
+                <p style={{ fontSize: 13, color: 'var(--n600)', lineHeight: 1.5 }}>{step.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* ═══ 8. WHY CHOOSE KNOWX ═══ */}
-      <section className="sec" style={{ background: '#fff' }}>
+      <section className="sec bg-s">
         <div className="sec-in">
-          <div style={{ textAlign: 'center', maxWidth: 720, margin: '0 auto 48px' }}>
-            <h2 className="fd" style={{ fontWeight: 700, fontSize: 'clamp(1.8rem, 3.5vw, 2.6rem)', color: 'var(--n900)', marginBottom: 16 }}>Why Choose Knowx for Hardware Design?</h2>
-            <p style={{ fontSize: 17, color: 'var(--n600)', lineHeight: 1.7 }}>Over two decades of expertise delivering production-ready hardware solutions.</p>
+          <div className="sh rv">
+            <div className="sl fm" style={{ marginBottom: 16 }}>Why choose Knowx</div>
+            <h2 className="fd">20+ years of electronics hardware design expertise</h2>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: 28 }}>
-            <div style={{ background: 'linear-gradient(145deg, #F8FAFC, #F1F5F9)', borderRadius: 16, padding: 32, border: '1px solid rgba(217,226,236,.5)' }}>
-              <div style={{ width: 52, height: 52, borderRadius: 12, background: 'rgba(0,102,255,.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 20 }}>
-                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="rgba(0,102,255,.8)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          <div className="g3">
+            {[
+              { title: 'End-to-End Development', desc: 'From concept validation to production files — one team managing your entire hardware journey.', icon: <><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></> },
+              { title: 'IoT & Connectivity Expertise', desc: 'Deep experience in BLE, Wi-Fi, LoRa, cellular, and cloud-connected hardware designs.', icon: <><circle cx="12" cy="12" r="3"/><path d="M12 1v6M12 17v6M4.22 4.22l4.24 4.24M15.54 15.54l4.24 4.24M1 12h6M17 12h6M4.22 19.78l4.24-4.24M15.54 8.46l4.24-4.24"/></> },
+              { title: 'Fast Time to Market', desc: 'Average 3–7 month delivery with rapid prototyping and streamlined development process.', icon: <><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></> },
+              { title: 'High Accuracy & Reliability', desc: 'Proven track record of high-performance designs with rigorous testing and validation.', icon: <><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></> },
+              { title: 'Cost-Optimized Designs', desc: 'Strategic component selection and BOM optimization reducing costs by up to 30%.', icon: <><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></> },
+              { title: 'Industry Standards Compliance', desc: 'Design for compliance with FCC, CE, RoHS, and industry-specific certification support.', icon: <><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></> },
+            ].map((item, i) => (
+              <div className={`wc rv ${i > 0 ? 'rv-d' + i : ''}`} key={item.title}>
+                <div style={{ width: 48, height: 48, borderRadius: 12, background: 'var(--em-l)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 16 }}>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--em)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">{item.icon}</svg>
+                </div>
+                <h3 className="fd" style={{ fontWeight: 700, fontSize: 17, color: 'var(--n900)', marginBottom: 8 }}>{item.title}</h3>
+                <p style={{ fontSize: 15, color: 'var(--n600)', lineHeight: 1.7 }}>{item.desc}</p>
               </div>
-              <h3 className="fd" style={{ fontWeight: 600, fontSize: 18, color: 'var(--n900)', marginBottom: 10 }}>End-to-End Development</h3>
-              <p style={{ fontSize: 15, color: 'var(--n600)', lineHeight: 1.7 }}>From concept validation to production files — one team managing your entire hardware journey.</p>
-            </div>
-            <div style={{ background: 'linear-gradient(145deg, #F8FAFC, #F1F5F9)', borderRadius: 16, padding: 32, border: '1px solid rgba(217,226,236,.5)' }}>
-              <div style={{ width: 52, height: 52, borderRadius: 12, background: 'rgba(16,185,129,.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 20 }}>
-                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="rgba(16,185,129,.8)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v6M12 17v6M4.22 4.22l4.24 4.24M15.54 15.54l4.24 4.24M1 12h6M17 12h6M4.22 19.78l4.24-4.24M15.54 8.46l4.24-4.24"/></svg>
-              </div>
-              <h3 className="fd" style={{ fontWeight: 600, fontSize: 18, color: 'var(--n900)', marginBottom: 10 }}>IoT & Connectivity Expertise</h3>
-              <p style={{ fontSize: 15, color: 'var(--n600)', lineHeight: 1.7 }}>Deep experience in BLE, Wi-Fi, LoRa, cellular, and cloud-connected hardware designs.</p>
-            </div>
-            <div style={{ background: 'linear-gradient(145deg, #F8FAFC, #F1F5F9)', borderRadius: 16, padding: 32, border: '1px solid rgba(217,226,236,.5)' }}>
-              <div style={{ width: 52, height: 52, borderRadius: 12, background: 'rgba(245,158,11,.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 20 }}>
-                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="rgba(245,158,11,.8)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              </div>
-              <h3 className="fd" style={{ fontWeight: 600, fontSize: 18, color: 'var(--n900)', marginBottom: 10 }}>Fast Time to Market</h3>
-              <p style={{ fontSize: 15, color: 'var(--n600)', lineHeight: 1.7 }}>Average 3–7 month delivery with rapid prototyping and streamlined development process.</p>
-            </div>
-            <div style={{ background: 'linear-gradient(145deg, #F8FAFC, #F1F5F9)', borderRadius: 16, padding: 32, border: '1px solid rgba(217,226,236,.5)' }}>
-              <div style={{ width: 52, height: 52, borderRadius: 12, background: 'rgba(99,102,241,.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 20 }}>
-                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="rgba(99,102,241,.8)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-              </div>
-              <h3 className="fd" style={{ fontWeight: 600, fontSize: 18, color: 'var(--n900)', marginBottom: 10 }}>High Accuracy & Reliability</h3>
-              <p style={{ fontSize: 15, color: 'var(--n600)', lineHeight: 1.7 }}>Proven track record of high-performance designs with rigorous testing and validation.</p>
-            </div>
-            <div style={{ background: 'linear-gradient(145deg, #F8FAFC, #F1F5F9)', borderRadius: 16, padding: 32, border: '1px solid rgba(217,226,236,.5)' }}>
-              <div style={{ width: 52, height: 52, borderRadius: 12, background: 'rgba(239,68,68,.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 20 }}>
-                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="rgba(239,68,68,.8)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-              </div>
-              <h3 className="fd" style={{ fontWeight: 600, fontSize: 18, color: 'var(--n900)', marginBottom: 10 }}>Cost-Optimized Designs</h3>
-              <p style={{ fontSize: 15, color: 'var(--n600)', lineHeight: 1.7 }}>Strategic component selection and BOM optimization reducing costs by up to 30%.</p>
-            </div>
-            <div style={{ background: 'linear-gradient(145deg, #F8FAFC, #F1F5F9)', borderRadius: 16, padding: 32, border: '1px solid rgba(217,226,236,.5)' }}>
-              <div style={{ width: 52, height: 52, borderRadius: 12, background: 'rgba(0,180,216,.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 20 }}>
-                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="rgba(0,180,216,.8)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-              </div>
-              <h3 className="fd" style={{ fontWeight: 600, fontSize: 18, color: 'var(--n900)', marginBottom: 10 }}>Industry Standards Compliance</h3>
-              <p style={{ fontSize: 15, color: 'var(--n600)', lineHeight: 1.7 }}>Design for compliance with FCC, CE, RoHS, and industry-specific certification support.</p>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* ═══ 9. TECH STACK ═══ */}
-      <section className="sec rv">
-        <div className="sec-in">
-          <div style={{ textAlign: 'center', maxWidth: 720, margin: '0 auto 40px' }}>
-            <h2 className="fd" style={{ fontWeight: 700, fontSize: 'clamp(1.8rem, 3.5vw, 2.6rem)', color: 'var(--n900)', marginBottom: 16 }}>Tools & Technologies</h2>
-            <p style={{ fontSize: 17, color: 'var(--n600)', lineHeight: 1.7 }}>Industry-standard design tools and advanced testing equipment for professional hardware development.</p>
+      {/* ═══ 9. TECH STACK — DARK SECTION WITH COLORED PILLS ═══ */}
+      <section style={{ padding: '64px 0', background: 'var(--n950)', position: 'relative', overflow: 'hidden' }}>
+        <div style={{ position: 'absolute', inset: 0, backgroundImage: 'linear-gradient(rgba(255,255,255,.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.02) 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
+        <div className="sec-in" style={{ position: 'relative' }}>
+          <div className="sh rv" style={{ marginBottom: 16 }}>
+            <div className="sl lt fm" style={{ marginBottom: 16 }}>Technology stack</div>
+            <h2 className="fd" style={{ color: '#fff' }}>Built with industry-standard hardware design tools</h2>
           </div>
-          <div style={{ marginBottom: 40 }}>
-            <h3 className="fd" style={{ fontWeight: 600, fontSize: 16, color: 'var(--n700)', marginBottom: 20, textAlign: 'center' }}>EDA Tools & PCB Design</h3>
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: 16, justifyContent: 'center' }}>
-              {['Altium Designer', 'KiCAD', 'Eagle', 'OrCAD'].map(tech => (
-                <div key={tech} className="tech-badge" style={{ background: '#fff', border: '1px solid rgba(217,226,236,.6)', borderRadius: 10, padding: '12px 24px', fontSize: 14, fontWeight: 600, color: 'var(--n700)', transition: 'all .3s ease' }}>
-                  {tech}
-                </div>
-              ))}
+          <p className="rv" style={{ fontSize: 15, color: 'var(--n300)', lineHeight: 1.7, maxWidth: 640, marginBottom: 32 }}>
+            We use proven EDA platforms, simulation tools, and testing equipment to build production-ready hardware.
+          </p>
+          {[
+            { label: 'EDA Tools & PCB Design', pills: ['Altium Designer', 'KiCAD', 'Eagle', 'OrCAD', 'Gerber Files'], color: 'orange' },
+            { label: 'Simulation & Analysis', pills: ['SPICE', 'MATLAB', 'LTspice', 'Signal Integrity', 'Thermal Analysis'], color: 'blue' },
+            { label: 'Testing & Validation', pills: ['Oscilloscopes', 'Logic Analyzers', 'Spectrum Analyzers', 'Environmental Testing'], color: 'green' },
+          ].map((group, i) => (
+            <div className={'rv' + (i > 0 ? ' rv-d' + i : '')} key={group.label} style={{ marginBottom: 24 }}>
+              <div className="fm" style={{ fontSize: 11, fontWeight: 600, color: 'var(--n400)', textTransform: 'uppercase', letterSpacing: '.12em', marginBottom: 12 }}>{group.label}</div>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
+                {group.pills.map((pill) => (
+                  <span key={pill} className="fm tech-pill" style={{ padding: '8px 18px', fontSize: 13, fontWeight: 600, borderRadius: 8, color: 'rgba(255,255,255,.85)', border: '1px solid rgba(255,255,255,.12)', transition: 'all .2s', background: group.color === 'orange' ? 'rgba(245,158,11,.12)' : group.color === 'blue' ? 'rgba(0,102,255,.12)' : 'rgba(16,185,129,.12)', borderColor: group.color === 'orange' ? 'rgba(245,158,11,.25)' : group.color === 'blue' ? 'rgba(0,102,255,.25)' : 'rgba(16,185,129,.25)' }}>{pill}</span>
+                ))}
+              </div>
             </div>
-          </div>
-          <div style={{ marginBottom: 40 }}>
-            <h3 className="fd" style={{ fontWeight: 600, fontSize: 16, color: 'var(--n700)', marginBottom: 20, textAlign: 'center' }}>Simulation & Analysis</h3>
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: 16, justifyContent: 'center' }}>
-              {['SPICE', 'MATLAB', 'LTspice', 'Signal Integrity Analysis'].map(tech => (
-                <div key={tech} className="tech-badge" style={{ background: '#fff', border: '1px solid rgba(217,226,236,.6)', borderRadius: 10, padding: '12px 24px', fontSize: 14, fontWeight: 600, color: 'var(--n700)', transition: 'all .3s ease' }}>
-                  {tech}
-                </div>
-              ))}
-            </div>
-          </div>
-          <div>
-            <h3 className="fd" style={{ fontWeight: 600, fontSize: 16, color: 'var(--n700)', marginBottom: 20, textAlign: 'center' }}>Testing & Validation</h3>
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: 16, justifyContent: 'center' }}>
-              {['Oscilloscopes', 'Logic Analyzers', 'Spectrum Analyzers', 'Environmental Testing'].map(tech => (
-                <div key={tech} className="tech-badge" style={{ background: '#fff', border: '1px solid rgba(217,226,236,.6)', borderRadius: 10, padding: '12px 24px', fontSize: 14, fontWeight: 600, color: 'var(--n700)', transition: 'all .3s ease' }}>
-                  {tech}
-                </div>
-              ))}
-            </div>
-          </div>
+          ))}
         </div>
       </section>
 
       {/* ═══ 10. FAQ ═══ */}
-      <section className="sec" style={{ background: '#fff' }}>
+      <section className="sec">
         <div className="sec-in">
-          <div style={{ textAlign: 'center', maxWidth: 720, margin: '0 auto 48px' }}>
-            <h2 className="fd" style={{ fontWeight: 700, fontSize: 'clamp(1.8rem, 3.5vw, 2.6rem)', color: 'var(--n900)', marginBottom: 16 }}>Frequently Asked Questions</h2>
-            <p style={{ fontSize: 17, color: 'var(--n600)', lineHeight: 1.7 }}>Everything you need to know about our electronics hardware design services.</p>
+          <div className="sh c rv">
+            <div className="sl fm" style={{ marginBottom: 16, justifyContent: 'center' }}>Frequently asked questions</div>
+            <h2 className="fd">Common questions about electronics hardware design</h2>
           </div>
-          <div style={{ maxWidth: 840, margin: '0 auto' }}>
+          <div style={{ maxWidth: 800, margin: '0 auto' }}>
             {[
               {
                 q: 'What are electronics hardware design services?',
@@ -543,48 +369,102 @@ export default function HardwareClient() {
         </div>
       </section>
 
-      {/* ═══ RESPONSIVE CSS ═══ */}
+      {/* ═══ RESPONSIVE CSS + CUSTOM HARDWARE COLORS ═══ */}
       <style jsx>{`
         .hw-hero-flex { flex-direction: row; }
         .hw-hero-visual { display: block; }
         .prob-grid-wrap { grid-template-columns: 1fr 1fr !important; }
-        .serv-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-        .serv-card { background: #fff; border: 1px solid rgba(217,226,236,.5); border-radius: 16px; padding: 28px; transition: all .3s ease; }
-        .serv-card:hover { border-color: var(--em); box-shadow: 0 12px 28px rgba(15,23,42,.1); transform: translateY(-2px); }
-        .serv-ic { width: 56px; height: 56px; border-radius: 14px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
-        .serv-ttl { font-weight: 600; font-size: 18px; color: var(--n900); margin-bottom: 12px; }
-        .serv-txt { font-size: 15px; color: var(--n600); line-height: 1.7; }
-        .ind-card:hover { box-shadow: 0 12px 28px rgba(15,23,42,.08); transform: translateY(-2px); }
-        .case-study-row { grid-template-columns: 1fr 1fr !important; }
-        .cs-img-mobile { order: 0; }
-        .proc-timeline { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
-        .proc-step { background: #fff; border: 1px solid rgba(217,226,236,.5); border-radius: 16px; padding: 32px; transition: all .3s ease; }
-        .proc-step:hover { border-color: var(--em); box-shadow: 0 8px 20px rgba(15,23,42,.08); }
-        .proc-num { font-size: 32px; font-weight: 700; color: var(--em); margin-bottom: 16px; }
-        .proc-ttl { font-weight: 600; font-size: 18px; color: var(--n900); margin-bottom: 10px; }
-        .proc-txt { font-size: 14px; color: var(--n600); line-height: 1.7; }
-        .tech-badge:hover { border-color: var(--em); box-shadow: 0 4px 12px rgba(15,23,42,.08); transform: translateY(-1px); }
-        .faq-q:hover span { color: var(--em); }
+
+        /* SERVICE CARDS - CUSTOM HARDWARE COLORS */
+        .sv { background: #fff; border-radius: 16px; padding: 28px; transition: all .3s ease; position: relative; overflow: hidden; }
+        .sv::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; }
+        .sv.pcb::before { background: linear-gradient(90deg, #F59E0B, #D97706); }
+        .sv.sch::before { background: linear-gradient(90deg, #0066FF, #0052CC); }
+        .sv.emb::before { background: linear-gradient(90deg, #3B82F6, #2563EB); }
+        .sv.prt::before { background: linear-gradient(90deg, #10B981, #059669); }
+        .sv.bom::before { background: linear-gradient(90deg, #7C3AED, #6D28D9); }
+        .sv.cert::before { background: linear-gradient(90deg, #EF4444, #DC2626); }
+        .sv:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(15,23,42,.12); }
+        .svi { width: 56px; height: 56px; border-radius: 14px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
+        .sv.pcb .svi { background: rgba(245,158,11,.1); }
+        .sv.pcb .svi svg { stroke: #D97706; }
+        .sv.sch .svi { background: rgba(0,102,255,.1); }
+        .sv.sch .svi svg { stroke: #0066FF; }
+        .sv.emb .svi { background: rgba(59,130,246,.1); }
+        .sv.emb .svi svg { stroke: #2563EB; }
+        .sv.prt .svi { background: rgba(16,185,129,.1); }
+        .sv.prt .svi svg { stroke: #059669; }
+        .sv.bom .svi { background: rgba(124,58,237,.1); }
+        .sv.bom .svi svg { stroke: #6D28D9; }
+        .sv.cert .svi { background: rgba(239,68,68,.1); }
+        .sv.cert .svi svg { stroke: #DC2626; }
+        .sv h3 { font-weight: 700; font-size: 18px; color: var(--n900); margin-bottom: 12px; }
+        .sv p { font-size: 15px; color: var(--n600); line-height: 1.7; margin-bottom: 16px; }
+        .tg { display: flex; flex-wrap: wrap; gap: 6px; }
+        .tg span { padding: 4px 12px; font-size: 11px; font-weight: 600; color: var(--n600); background: rgba(217,226,236,.4); border-radius: 6px; }
+
+        /* INDUSTRY CARDS */
+        .ind { display: block; padding: 32px; border-radius: 16px; color: #fff; text-decoration: none; transition: all .3s ease; }
+        .ind:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,.2); }
+        .ind h3 { font-weight: 700; font-size: 18px; margin-bottom: 8px; }
+        .ind p { font-size: 14px; opacity: 0.9; line-height: 1.6; }
+
+        /* CASE STUDY CARDS */
+        .cs { background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 16px rgba(15,23,42,.08); transition: all .3s ease; }
+        .cs:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(15,23,42,.14); }
+        .cs-img { height: 220px; background: var(--n100); }
+        .cs-img img { width: 100%; height: 100%; object-fit: cover; }
+        .cs-body { padding: 24px; }
+        .cs-bg { display: inline-block; padding: 4px 12px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; border-radius: 6px; margin-bottom: 12px; }
+        .cs-bg.rd { background: rgba(239,68,68,.1); color: #DC2626; }
+        .cs-bg.tl { background: rgba(6,182,212,.1); color: #0891B2; }
+        .cs-bg.gn { background: rgba(16,185,129,.1); color: #059669; }
+        .cs-bg.bl { background: rgba(59,130,246,.1); color: #2563EB; }
+        .cs h3 { font-size: 18px; font-weight: 700; color: var(--n900); }
+        .cs-rs { background: rgba(217,226,236,.3); border-radius: 10px; padding: 12px 16px; margin-bottom: 14px; display: flex; align-items: center; justify-content: space-between; }
+        .cs-rl { font-size: 11px; font-weight: 600; color: var(--n500); text-transform: uppercase; letter-spacing: .06em; }
+        .cs-rv { font-size: 15px; font-weight: 700; color: var(--em); }
+        .mt { display: flex; flex-wrap: wrap; gap: 6px; }
+        .mt span { padding: 4px 10px; font-size: 11px; font-weight: 600; color: var(--n600); background: rgba(217,226,236,.4); border-radius: 5px; }
+
+        /* WHY CHOOSE CARDS */
+        .wc { background: #fff; border: 1px solid rgba(217,226,236,.5); border-radius: 16px; padding: 28px; transition: all .3s ease; }
+        .wc:hover { border-color: var(--em); box-shadow: 0 8px 24px rgba(15,23,42,.08); transform: translateY(-2px); }
+
+        /* PROCESS CARDS */
+        .pc { background: #fff; border: 1px solid rgba(217,226,236,.5); border-radius: 16px; transition: all .3s ease; }
+        .pc:hover { border-color: var(--em); box-shadow: 0 8px 20px rgba(15,23,42,.08); }
+
+        /* TECH PILLS HOVER */
+        .tech-pill:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(0,0,0,.15); }
+
+        /* GRID LAYOUTS */
+        .g3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+        .g4 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
+        .g5 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .pg { display: grid; gap: 24px; }
 
         @media (max-width: 1024px) {
-          .serv-grid { grid-template-columns: repeat(2, 1fr); }
-          .proc-timeline { grid-template-columns: repeat(2, 1fr); }
+          .g3 { grid-template-columns: repeat(2, 1fr); }
+          .g5 { grid-template-columns: repeat(2, 1fr); }
+          .pg { grid-template-columns: repeat(3, 1fr) !important; }
         }
 
         @media (max-width: 768px) {
           .hw-hero-flex { flex-direction: column !important; gap: 40px !important; }
           .hw-hero-visual { flex: 1 1 auto !important; max-width: 100% !important; }
           .prob-grid-wrap { grid-template-columns: 1fr !important; gap: 40px !important; }
-          .serv-grid { grid-template-columns: 1fr; }
-          .case-study-row { grid-template-columns: 1fr !important; gap: 32px !important; }
-          .cs-img-mobile { order: -1 !important; }
-          .proc-timeline { grid-template-columns: 1fr; gap: 24px; }
+          .g3 { grid-template-columns: 1fr; }
+          .g4 { grid-template-columns: 1fr; }
+          .g5 { grid-template-columns: 1fr; }
+          .pg { grid-template-columns: repeat(2, 1fr) !important; }
         }
 
         @media (max-width: 640px) {
           .sst-in { flex-direction: column; gap: 24px; }
           .hero-ctas { flex-direction: column; }
           .hero-ctas .btn { width: 100%; justify-content: center; }
+          .pg { grid-template-columns: 1fr !important; }
         }
       `}</style>
     </>

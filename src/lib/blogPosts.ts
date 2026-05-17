@@ -31,6 +31,18 @@ export interface BlogPost {
 // ─────────────────────────────────────────────────────────────────────────────
 export const BLOG_POSTS: BlogPost[] = [
   {
+    slug: "top-embedded-ai-projects-ece-engineering-students-2026",
+    title: "Top Embedded AI Projects for ECE Engineering Students 2026",
+    excerpt: "Practical Embedded AI project ideas for ECE students — with hardware requirements, difficulty levels, and real implementation guidance from Knowx Innovations.",
+    category: "Embedded AI/IoT",
+    datePublished: "2026-05-17",
+    readingTime: 10,
+    author: "Bhimsen G.V.",
+    tags: ["embedded ai projects", "ece students", "engineering projects", "2026", "bangalore"],
+  },
+  {
+    slug: "embedded-ai-iot-training-bangalore-guide",
+  {
     slug: "embedded-ai-iot-training-bangalore-guide",
     title: "Embedded AI vs Traditional Embedded Systems — Key Differences",
     excerpt:

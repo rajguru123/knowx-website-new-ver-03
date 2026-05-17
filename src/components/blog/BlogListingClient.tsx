@@ -30,11 +30,7 @@ export default function BlogListingClient({ posts, categoryColors, title }: Prop
           const colors = categoryColors[post.category];
           return (
             <Link key={post.slug} href={`/blog/${post.slug}`} style={{ textDecoration: "none" }}>
-              <article
-                style={{ background: "#ffffff", borderRadius: "12px", border: "1px solid #e4e4ef", padding: "28px", height: "100%", display: "flex", flexDirection: "column", boxShadow: "0 2px 12px rgba(15,34,85,0.05)", transition: "box-shadow 0.2s, transform 0.2s", cursor: "pointer" }}
-                onMouseEnter={(e) => { const el = e.currentTarget as HTMLElement; el.style.boxShadow = "0 6px 28px rgba(15,34,85,0.12)"; el.style.transform = "translateY(-3px)"; }}
-                onMouseLeave={(e) => { const el = e.currentTarget as HTMLElement; el.style.boxShadow = "0 2px 12px rgba(15,34,85,0.05)"; el.style.transform = "translateY(0)"; }}
-              >
+              <article style={{ background: "#ffffff", borderRadius: "12px", border: "1px solid #e4e4ef", padding: "28px", height: "100%", display: "flex", flexDirection: "column", boxShadow: "0 2px 12px rgba(15,34,85,0.05)" }}>
                 <div style={{ marginBottom: "14px" }}>
                   <span style={{ background: colors.bg, color: colors.text, border: `1px solid ${colors.border}`, borderRadius: "10px", padding: "3px 10px", fontSize: "11px", fontWeight: 600 }}>
                     {post.category}

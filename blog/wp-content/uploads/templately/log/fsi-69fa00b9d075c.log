@@ -1,0 +1,393 @@
+{"type":"eventLog","action":"eventLog","info":"create_log_dir","results":"Templately\\Core\\Importer\\FullSiteImport::import::530","timestamp":"2026-05-05 14:37:45"}
+{"type":"start","action":"eventLog","results":"Templately\\Core\\Importer\\FullSiteImport::import::543","timestamp":"2026-05-05 14:37:45"}
+{"action":"updateLog","type":"writing_permission_check","progress":100,"message":"Permission Passed","status":"complete","timestamp":"2026-05-05 14:37:45"}
+{"action":"updateLog","type":"download","progress":1,"message":"Downloading Template Pack","timestamp":"2026-05-05 14:37:45"}
+{"action":"updateLog","type":"download","progress":57,"message":"Downloading Template Pack","timestamp":"2026-05-05 14:37:48"}
+{"action":"updateLog","type":"download","progress":100,"message":"Downloading Template Pack","status":"complete","timestamp":"2026-05-05 14:37:48"}
+{"type":"continue","action":"continue","info":"download_zip","results":"Templately\\Core\\Importer\\FullSiteImport::import::567","timestamp":"2026-05-05 14:37:48"}
+{"type":"start","action":"eventLog","results":"Templately\\Core\\Importer\\FullSiteImport::import::543","timestamp":"2026-05-05 14:37:48"}
+{"action":"removeLog","type":"temp","progress":100,"timestamp":"2026-05-05 14:37:48"}
+{"action":"eventLog","type":"dependencies","progress":0,"message":"Downloading Dependencies","timestamp":"2026-05-05 14:37:48"}
+{"action":"updateLog","type":"theme","progress":0,"message":"Installing and Activating Theme: Hello Elementor","timestamp":"2026-05-05 14:37:48"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Before downloading attachment: https:\/\/api.wordpress.org\/themes\/info\/1.2\/?action=theme_information&#038;request%5Bslug%5D=hello-elementor&#038;request%5Bfields%5D%5Bsections%5D=0&#038;request%5Blocale%5D=en_US&#038;request%5Bwp_version%5D=6.9","timestamp":"2026-05-05 14:37:48"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"After downloading attachment: https:\/\/api.wordpress.org\/themes\/info\/1.2\/?action=theme_information&request%5Bslug%5D=hello-elementor&request%5Bfields%5D%5Bsections%5D=0&request%5Blocale%5D=en_US&request%5Bwp_version%5D=6.9","timestamp":"2026-05-05 14:37:49"}
+{"action":"updateLog","status":"complete","message":"Activated theme: Hello Elementor","type":"theme","progress":100,"timestamp":"2026-05-05 14:37:49"}
+{"action":"updateLog","type":"plugin","progress":0,"message":"Installing Required Plugins: Elementor Pro","timestamp":"2026-05-05 14:37:49"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Before downloading attachment: https:\/\/api.wordpress.org\/plugins\/info\/1.2\/?action=plugin_information&#038;request%5Bslug%5D=elementor-pro&#038;request%5Bfields%5D%5Bsections%5D=0&#038;request%5Blocale%5D=en_US&#038;request%5Bwp_version%5D=6.9","timestamp":"2026-05-05 14:37:49"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"After downloading attachment: https:\/\/api.wordpress.org\/plugins\/info\/1.2\/?action=plugin_information&request%5Bslug%5D=elementor-pro&request%5Bfields%5D%5Bsections%5D=0&request%5Blocale%5D=en_US&request%5Bwp_version%5D=6.9","timestamp":"2026-05-05 14:37:50"}
+{"position":"plugin","action":"updateLog","status":"error","message":"Installation Failed: Elementor Pro (Plugin not found.)","type":"plugin_elementor-pro","progress":0,"timestamp":"2026-05-05 14:37:50"}
+{"action":"updateLog","type":"plugin","progress":0,"message":"Installed Required Plugins: Elementor Pro","timestamp":"2026-05-05 14:37:50"}
+{"type":"continue","action":"continue","name":"dependencies","index":0,"results":"Templately\\Core\\Importer\\Runners\\Dependencies::import","timestamp":"2026-05-05 14:37:50"}
+{"type":"start","action":"eventLog","results":"Templately\\Core\\Importer\\FullSiteImport::import::543","timestamp":"2026-05-05 14:37:50"}
+{"action":"removeLog","type":"temp","progress":100,"timestamp":"2026-05-05 14:37:50"}
+{"action":"updateLog","type":"plugin","progress":0,"message":"Installing Required Plugins: Essential Addons Pro","timestamp":"2026-05-05 14:37:50"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Before downloading attachment: https:\/\/api.wordpress.org\/plugins\/info\/1.2\/?action=plugin_information&#038;request%5Bslug%5D=essential-addons-elementor&#038;request%5Bfields%5D%5Bsections%5D=0&#038;request%5Blocale%5D=en_US&#038;request%5Bwp_version%5D=6.9","timestamp":"2026-05-05 14:37:50"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"After downloading attachment: https:\/\/api.wordpress.org\/plugins\/info\/1.2\/?action=plugin_information&request%5Bslug%5D=essential-addons-elementor&request%5Bfields%5D%5Bsections%5D=0&request%5Blocale%5D=en_US&request%5Bwp_version%5D=6.9","timestamp":"2026-05-05 14:37:51"}
+{"position":"plugin","action":"updateLog","status":"error","message":"Installation Failed: Essential Addons Pro (Plugin not found.)","type":"plugin_essential-addons-elementor","progress":0,"timestamp":"2026-05-05 14:37:51"}
+{"action":"updateLog","type":"plugin","progress":0,"message":"Installed Required Plugins: Essential Addons Pro","timestamp":"2026-05-05 14:37:51"}
+{"type":"continue","action":"continue","name":"dependencies","index":1,"results":"Templately\\Core\\Importer\\Runners\\Dependencies::import","timestamp":"2026-05-05 14:37:51"}
+{"type":"start","action":"eventLog","results":"Templately\\Core\\Importer\\FullSiteImport::import::543","timestamp":"2026-05-05 14:37:51"}
+{"action":"removeLog","type":"temp","progress":100,"timestamp":"2026-05-05 14:37:51"}
+{"action":"updateLog","type":"plugin","progress":0,"message":"Installing Required Plugins: Fluent Forms","timestamp":"2026-05-05 14:37:51"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Before downloading attachment: https:\/\/api.wordpress.org\/plugins\/info\/1.2\/?action=plugin_information&#038;request%5Bslug%5D=fluentform&#038;request%5Bfields%5D%5Bsections%5D=0&#038;request%5Blocale%5D=en_US&#038;request%5Bwp_version%5D=6.9","timestamp":"2026-05-05 14:37:51"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"After downloading attachment: https:\/\/api.wordpress.org\/plugins\/info\/1.2\/?action=plugin_information&request%5Bslug%5D=fluentform&request%5Bfields%5D%5Bsections%5D=0&request%5Blocale%5D=en_US&request%5Bwp_version%5D=6.9","timestamp":"2026-05-05 14:37:52"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Before downloading attachment: https:\/\/downloads.wordpress.org\/plugin\/fluentform.6.2.2.zip","timestamp":"2026-05-05 14:37:52"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"After downloading attachment: https:\/\/downloads.wordpress.org\/plugin\/fluentform.6.2.2.zip","timestamp":"2026-05-05 14:37:55"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Before downloading attachment: https:\/\/api.wordpress.org\/core\/version-check\/1.7\/?version=6.9.4&#038;php=8.3.6&#038;locale=en_US&#038;mysql=8.0.45-0ubuntu0.24.04.1&#038;local_package=&#038;blogs=1&#038;users=1&#038;multisite_enabled=0&#038;initial_db_version=60717&#038;extensions%5Bbz2%5D=8.3.6&#038;extensions%5Bcalendar%5D=8.3.6&#038;extensions%5Bcgi-fcgi%5D=8.3.6&#038;extensions%5BCore%5D=8.3.6&#038;extensions%5Bctype%5D=8.3.6&#038;extensions%5Bcurl%5D=8.3.6&#038;extensions%5Bdate%5D=8.3.6&#038;extensions%5Bdom%5D=20031129&#038;extensions%5Bexif%5D=8.3.6&#038;extensions%5BFFI%5D=8.3.6&#038;extensions%5Bfileinfo%5D=8.3.6&#038;extensions%5Bfilter%5D=8.3.6&#038;extensions%5Bftp%5D=8.3.6&#038;extensions%5Bgd%5D=8.3.6&#038;extensions%5Bgettext%5D=8.3.6&#038;extensions%5Bhash%5D=8.3.6&#038;extensions%5Biconv%5D=8.3.6&#038;extensions%5Bjson%5D=8.3.6&#038;extensions%5Blibxml%5D=8.3.6&#038;extensions%5Bmbstring%5D=8.3.6&#038;extensions%5Bmcrypt%5D=1.0.5&#038;extensions%5Bmysqli%5D=8.3.6&#038;extensions%5Bmysqlnd%5D=mysqlnd+8.3.6&#038;extensions%5Bopenssl%5D=8.3.6&#038;extensions%5Bpcre%5D=8.3.6&#038;extensions%5BPDO%5D=8.3.6&#038;extensions%5Bpdo_mysql%5D=8.3.6&#038;extensions%5BPhar%5D=8.3.6&#038;extensions%5Bposix%5D=8.3.6&#038;extensions%5Brandom%5D=8.3.6&#038;extensions%5Breadline%5D=8.3.6&#038;extensions%5BReflection%5D=8.3.6&#038;extensions%5Bsession%5D=8.3.6&#038;extensions%5Bshmop%5D=8.3.6&#038;extensions%5BSimpleXML%5D=8.3.6&#038;extensions%5Bsockets%5D=8.3.6&#038;extensions%5Bsodium%5D=8.3.6&#038;extensions%5BSPL%5D=8.3.6&#038;extensions%5Bstandard%5D=8.3.6&#038;extensions%5Bsysvmsg%5D=8.3.6&#038;extensions%5Bsysvsem%5D=8.3.6&#038;extensions%5Bsysvshm%5D=8.3.6&#038;extensions%5Btokenizer%5D=8.3.6&#038;extensions%5Bxml%5D=8.3.6&#038;extensions%5Bxmlreader%5D=8.3.6&#038;extensions%5Bxmlwriter%5D=8.3.6&#038;extensions%5Bxsl%5D=8.3.6&#038;extensions%5BZend+OPcache%5D=8.3.6&#038;extensions%5Bzip%5D=1.22.3&#038;extensions%5Bzlib%5D=8.3.6&#038;platform_flags%5Bos%5D=Linux&#038;platform_flags%5Bbits%5D=64&#038;image_support%5Bgd%5D%5B0%5D=webp","timestamp":"2026-05-05 14:37:55"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"After downloading attachment: https:\/\/api.wordpress.org\/core\/version-check\/1.7\/?version=6.9.4&php=8.3.6&locale=en_US&mysql=8.0.45-0ubuntu0.24.04.1&local_package=&blogs=1&users=1&multisite_enabled=0&initial_db_version=60717&extensions%5Bbz2%5D=8.3.6&extensions%5Bcalendar%5D=8.3.6&extensions%5Bcgi-fcgi%5D=8.3.6&extensions%5BCore%5D=8.3.6&extensions%5Bctype%5D=8.3.6&extensions%5Bcurl%5D=8.3.6&extensions%5Bdate%5D=8.3.6&extensions%5Bdom%5D=20031129&extensions%5Bexif%5D=8.3.6&extensions%5BFFI%5D=8.3.6&extensions%5Bfileinfo%5D=8.3.6&extensions%5Bfilter%5D=8.3.6&extensions%5Bftp%5D=8.3.6&extensions%5Bgd%5D=8.3.6&extensions%5Bgettext%5D=8.3.6&extensions%5Bhash%5D=8.3.6&extensions%5Biconv%5D=8.3.6&extensions%5Bjson%5D=8.3.6&extensions%5Blibxml%5D=8.3.6&extensions%5Bmbstring%5D=8.3.6&extensions%5Bmcrypt%5D=1.0.5&extensions%5Bmysqli%5D=8.3.6&extensions%5Bmysqlnd%5D=mysqlnd+8.3.6&extensions%5Bopenssl%5D=8.3.6&extensions%5Bpcre%5D=8.3.6&extensions%5BPDO%5D=8.3.6&extensions%5Bpdo_mysql%5D=8.3.6&extensions%5BPhar%5D=8.3.6&extensions%5Bposix%5D=8.3.6&extensions%5Brandom%5D=8.3.6&extensions%5Breadline%5D=8.3.6&extensions%5BReflection%5D=8.3.6&extensions%5Bsession%5D=8.3.6&extensions%5Bshmop%5D=8.3.6&extensions%5BSimpleXML%5D=8.3.6&extensions%5Bsockets%5D=8.3.6&extensions%5Bsodium%5D=8.3.6&extensions%5BSPL%5D=8.3.6&extensions%5Bstandard%5D=8.3.6&extensions%5Bsysvmsg%5D=8.3.6&extensions%5Bsysvsem%5D=8.3.6&extensions%5Bsysvshm%5D=8.3.6&extensions%5Btokenizer%5D=8.3.6&extensions%5Bxml%5D=8.3.6&extensions%5Bxmlreader%5D=8.3.6&extensions%5Bxmlwriter%5D=8.3.6&extensions%5Bxsl%5D=8.3.6&extensions%5BZend+OPcache%5D=8.3.6&extensions%5Bzip%5D=1.22.3&extensions%5Bzlib%5D=8.3.6&platform_flags%5Bos%5D=Linux&platform_flags%5Bbits%5D=64&image_support%5Bgd%5D%5B0%5D=webp","timestamp":"2026-05-05 14:37:56"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Before downloading attachment: https:\/\/api.wordpress.org\/plugins\/update-check\/1.1\/","timestamp":"2026-05-05 14:37:56"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"After downloading attachment: https:\/\/api.wordpress.org\/plugins\/update-check\/1.1\/","timestamp":"2026-05-05 14:37:57"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Before downloading attachment: https:\/\/api.wordpress.org\/themes\/update-check\/1.1\/","timestamp":"2026-05-05 14:37:57"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"After downloading attachment: https:\/\/api.wordpress.org\/themes\/update-check\/1.1\/","timestamp":"2026-05-05 14:37:57"}
+{"action":"updateLog","type":"plugin","progress":20,"message":"Installed Required Plugins: Fluent Forms","timestamp":"2026-05-05 14:37:58"}
+{"type":"continue","action":"continue","name":"dependencies","index":2,"results":"Templately\\Core\\Importer\\Runners\\Dependencies::import","timestamp":"2026-05-05 14:37:58"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Before downloading attachment: https:\/\/knowxindia.com\/blog\/wp-cron.php?doing_wp_cron=1777991878.0366380214691162109375","timestamp":"2026-05-05 14:37:58"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Before downloading attachment: https:\/\/knowxindia.com\/blog\/wp-admin\/admin-ajax.php?action=as_async_request_queue_runner&#038;nonce=8471ca999e","timestamp":"2026-05-05 14:37:58"}
+{"type":"start","action":"eventLog","results":"Templately\\Core\\Importer\\FullSiteImport::import::543","timestamp":"2026-05-05 14:37:58"}
+{"action":"removeLog","type":"temp","progress":100,"timestamp":"2026-05-05 14:37:58"}
+{"action":"updateLog","type":"plugin","progress":20,"message":"Installing Required Plugins: NotificationX","timestamp":"2026-05-05 14:37:58"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Before downloading attachment: https:\/\/api.wordpress.org\/plugins\/info\/1.2\/?action=plugin_information&#038;request%5Bslug%5D=notificationx&#038;request%5Bfields%5D%5Bsections%5D=0&#038;request%5Blocale%5D=en_US&#038;request%5Bwp_version%5D=6.9","timestamp":"2026-05-05 14:37:58"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"After downloading attachment: https:\/\/api.wordpress.org\/plugins\/info\/1.2\/?action=plugin_information&request%5Bslug%5D=notificationx&request%5Bfields%5D%5Bsections%5D=0&request%5Blocale%5D=en_US&request%5Bwp_version%5D=6.9","timestamp":"2026-05-05 14:37:59"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Before downloading attachment: https:\/\/downloads.wordpress.org\/plugin\/notificationx.3.2.6.zip","timestamp":"2026-05-05 14:37:59"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"After downloading attachment: https:\/\/downloads.wordpress.org\/plugin\/notificationx.3.2.6.zip","timestamp":"2026-05-05 14:38:03"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Before downloading attachment: https:\/\/api.wordpress.org\/plugins\/update-check\/1.1\/","timestamp":"2026-05-05 14:38:04"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"After downloading attachment: https:\/\/api.wordpress.org\/plugins\/update-check\/1.1\/","timestamp":"2026-05-05 14:38:04"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Before downloading attachment: https:\/\/api.wordpress.org\/themes\/update-check\/1.1\/","timestamp":"2026-05-05 14:38:04"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"After downloading attachment: https:\/\/api.wordpress.org\/themes\/update-check\/1.1\/","timestamp":"2026-05-05 14:38:05"}
+{"action":"updateLog","type":"plugin","progress":40,"message":"Installed Required Plugins: NotificationX","timestamp":"2026-05-05 14:38:05"}
+{"type":"continue","action":"continue","name":"dependencies","index":3,"results":"Templately\\Core\\Importer\\Runners\\Dependencies::import","timestamp":"2026-05-05 14:38:05"}
+{"type":"start","action":"eventLog","results":"Templately\\Core\\Importer\\FullSiteImport::import::543","timestamp":"2026-05-05 14:38:05"}
+{"action":"removeLog","type":"temp","progress":100,"timestamp":"2026-05-05 14:38:05"}
+{"action":"updateLog","type":"plugin","progress":40,"message":"Installing Required Plugins: EmbedPress","timestamp":"2026-05-05 14:38:05"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Before downloading attachment: https:\/\/api.wordpress.org\/plugins\/info\/1.2\/?action=plugin_information&#038;request%5Bslug%5D=embedpress&#038;request%5Bfields%5D%5Bsections%5D=0&#038;request%5Blocale%5D=en_US&#038;request%5Bwp_version%5D=6.9","timestamp":"2026-05-05 14:38:05"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"After downloading attachment: https:\/\/api.wordpress.org\/plugins\/info\/1.2\/?action=plugin_information&request%5Bslug%5D=embedpress&request%5Bfields%5D%5Bsections%5D=0&request%5Blocale%5D=en_US&request%5Bwp_version%5D=6.9","timestamp":"2026-05-05 14:38:06"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Before downloading attachment: https:\/\/downloads.wordpress.org\/plugin\/embedpress.4.5.1.zip","timestamp":"2026-05-05 14:38:06"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"After downloading attachment: https:\/\/downloads.wordpress.org\/plugin\/embedpress.4.5.1.zip","timestamp":"2026-05-05 14:38:10"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Before downloading attachment: https:\/\/api.wordpress.org\/plugins\/update-check\/1.1\/","timestamp":"2026-05-05 14:38:10"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"After downloading attachment: https:\/\/api.wordpress.org\/plugins\/update-check\/1.1\/","timestamp":"2026-05-05 14:38:10"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Before downloading attachment: https:\/\/api.wordpress.org\/themes\/update-check\/1.1\/","timestamp":"2026-05-05 14:38:10"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"After downloading attachment: https:\/\/api.wordpress.org\/themes\/update-check\/1.1\/","timestamp":"2026-05-05 14:38:11"}
+{"action":"updateLog","type":"plugin","progress":60,"message":"Installed Required Plugins: EmbedPress","timestamp":"2026-05-05 14:38:11"}
+{"action":"updateLog","status":"complete","message":"Installed Required Plugins (3\/5)","type":"plugin","progress":100,"timestamp":"2026-05-05 14:38:11"}
+{"type":"continue","action":"continue","info":"plugins_installed","results":"Templately\\Core\\Importer\\Runners\\Dependencies::import::63","timestamp":"2026-05-05 14:38:11"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Before downloading attachment: https:\/\/knowxindia.com\/blog\/wp-cron.php?doing_wp_cron=1777991891.7603518962860107421875","timestamp":"2026-05-05 14:38:11"}
+{"type":"start","action":"eventLog","results":"Templately\\Core\\Importer\\FullSiteImport::import::543","timestamp":"2026-05-05 14:38:11"}
+{"action":"removeLog","type":"temp","progress":100,"timestamp":"2026-05-05 14:38:11"}
+{"action":"updateLog","status":"complete","message":"Installed Required Plugins (3\/5)","type":"plugin","progress":100,"timestamp":"2026-05-05 14:38:11"}
+{"action":"eventLog","type":"dependencies","progress":100,"message":"Downloading Dependencies","status":"complete","timestamp":"2026-05-05 14:38:11"}
+{"type":"continue","action":"continue","name":"","index":0,"results":"Templately\\Core\\Importer\\FullSiteImport::start_content_import","timestamp":"2026-05-05 14:38:11"}
+{"type":"start","action":"eventLog","results":"Templately\\Core\\Importer\\FullSiteImport::import::543","timestamp":"2026-05-05 14:38:12"}
+{"action":"removeLog","type":"temp","progress":100,"timestamp":"2026-05-05 14:38:12"}
+{"action":"updateLog","type":"attachments","progress":0,"message":"Importing Attachments: (0\/1)","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Before inserting attachment: 2f9d99da-logo.png","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"After inserting attachment: 2f9d99da-logo.png","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 76","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 76","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 76","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 76","timestamp":"2026-05-05 14:38:12"}
+{"action":"updateLog","type":"attachments","progress":6,"message":"Importing Attachments: (1\/17)","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Before inserting attachment: a17c5485-blog-metro-sign-up-image.jpg","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"After inserting attachment: a17c5485-blog-metro-sign-up-image.jpg","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 77","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 77","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 77","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 77","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 77","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 77","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 77","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 77","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 77","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 77","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 77","timestamp":"2026-05-05 14:38:12"}
+{"action":"updateLog","type":"attachments","progress":12,"message":"Importing Attachments: (2\/17)","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Before inserting attachment: 615ded34-sign-in-image.jpg","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"After inserting attachment: 615ded34-sign-in-image.jpg","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 78","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 78","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 78","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 78","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 78","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 78","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 78","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 78","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 78","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 78","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 78","timestamp":"2026-05-05 14:38:12"}
+{"action":"updateLog","type":"attachments","progress":18,"message":"Importing Attachments: (3\/17)","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Before inserting attachment: blogmetro blog image 1","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"After inserting attachment: blogmetro blog image 1","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 79","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 79","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 79","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 79","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 79","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 79","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 79","timestamp":"2026-05-05 14:38:12"}
+{"action":"updateLog","type":"attachments","progress":24,"message":"Importing Attachments: (4\/17)","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Before inserting attachment: blogmetro blog image 2","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"After inserting attachment: blogmetro blog image 2","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 80","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 80","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 80","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 80","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 80","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 80","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 80","timestamp":"2026-05-05 14:38:12"}
+{"action":"updateLog","type":"attachments","progress":30,"message":"Importing Attachments: (5\/17)","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Before inserting attachment: blogmetro blog image 3","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"After inserting attachment: blogmetro blog image 3","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 81","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 81","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 81","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 81","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 81","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 81","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 81","timestamp":"2026-05-05 14:38:12"}
+{"action":"updateLog","type":"attachments","progress":36,"message":"Importing Attachments: (6\/17)","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Before inserting attachment: blogmetro blog image 4","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"After inserting attachment: blogmetro blog image 4","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 82","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 82","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 82","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 82","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 82","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 82","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 82","timestamp":"2026-05-05 14:38:12"}
+{"action":"updateLog","type":"attachments","progress":42,"message":"Importing Attachments: (7\/17)","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Before inserting attachment: blogmetro blog image 5","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"After inserting attachment: blogmetro blog image 5","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 83","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 83","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 83","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 83","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 83","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 83","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 83","timestamp":"2026-05-05 14:38:12"}
+{"action":"updateLog","type":"attachments","progress":48,"message":"Importing Attachments: (8\/17)","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Before inserting attachment: blogmetro blog image 6","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"After inserting attachment: blogmetro blog image 6","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 84","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 84","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 84","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 84","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 84","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 84","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 84","timestamp":"2026-05-05 14:38:12"}
+{"action":"updateLog","type":"attachments","progress":53,"message":"Importing Attachments: (9\/17)","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Before inserting attachment: 17e4a7e4-ellipse-blue.png","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"After inserting attachment: 17e4a7e4-ellipse-blue.png","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 85","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 85","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 85","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 85","timestamp":"2026-05-05 14:38:12"}
+{"action":"updateLog","type":"attachments","progress":59,"message":"Importing Attachments: (10\/17)","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Before inserting attachment: 4d4ed4e2-ellipse-yellow.png","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"After inserting attachment: 4d4ed4e2-ellipse-yellow.png","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 86","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 86","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 86","timestamp":"2026-05-05 14:38:12"}
+{"action":"updateLog","type":"attachments","progress":65,"message":"Importing Attachments: (11\/17)","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Before inserting attachment: 3773119a-about-me-image.jpg","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"After inserting attachment: 3773119a-about-me-image.jpg","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 87","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 87","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 87","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 87","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 87","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 87","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 87","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 87","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 87","timestamp":"2026-05-05 14:38:12"}
+{"action":"updateLog","type":"attachments","progress":71,"message":"Importing Attachments: (12\/17)","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Before inserting attachment: 24c41a83-ellipse-9.png","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"After inserting attachment: 24c41a83-ellipse-9.png","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 88","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 88","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 88","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 88","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 88","timestamp":"2026-05-05 14:38:12"}
+{"action":"updateLog","type":"attachments","progress":77,"message":"Importing Attachments: (13\/17)","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Before inserting attachment: 5a460f27-blog-detail-features-image.jpg","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"After inserting attachment: 5a460f27-blog-detail-features-image.jpg","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 89","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 89","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 89","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 89","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 89","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 89","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 89","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 89","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 89","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 89","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 89","timestamp":"2026-05-05 14:38:12"}
+{"action":"updateLog","type":"attachments","progress":83,"message":"Importing Attachments: (14\/17)","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Before inserting attachment: 933c72de-blog-detail-image.jpg","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"After inserting attachment: 933c72de-blog-detail-image.jpg","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 90","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 90","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 90","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 90","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 90","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 90","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 90","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 90","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 90","timestamp":"2026-05-05 14:38:12"}
+{"action":"updateLog","type":"attachments","progress":89,"message":"Importing Attachments: (15\/17)","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Before inserting attachment: 71857cd7-image.jpg","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"After inserting attachment: 71857cd7-image.jpg","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 91","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 91","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 91","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 91","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 91","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 91","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 91","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 91","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 91","timestamp":"2026-05-05 14:38:12"}
+{"action":"updateLog","type":"attachments","progress":95,"message":"Importing Attachments: (16\/17)","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Before inserting attachment: a7872802-log-detail-image3.jpg","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"After inserting attachment: a7872802-log-detail-image3.jpg","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 92","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 92","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 92","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 92","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 92","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 92","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 92","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 92","timestamp":"2026-05-05 14:38:12"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 92","timestamp":"2026-05-05 14:38:12"}
+{"action":"updateLog","type":"attachments","progress":100,"message":"Importing Attachments: (17\/17)","status":"complete","timestamp":"2026-05-05 14:38:12"}
+{"action":"updateLog","type":"attachments","progress":100,"message":"Importing Attachments: (17\/17)","status":"complete","timestamp":"2026-05-05 14:38:12"}
+{"type":"continue","action":"continue","name":"","index":1,"results":"Templately\\Core\\Importer\\FullSiteImport::start_content_import","timestamp":"2026-05-05 14:38:12"}
+{"type":"start","action":"eventLog","results":"Templately\\Core\\Importer\\FullSiteImport::import::543","timestamp":"2026-05-05 14:38:13"}
+{"action":"removeLog","type":"temp","progress":100,"timestamp":"2026-05-05 14:38:13"}
+{"action":"eventLog","type":"customizer","progress":0,"message":"Updating customizer settings.","timestamp":"2026-05-05 14:38:13"}
+{"action":"eventLog","type":"customizer","progress":0,"message":"Updating customizer settings.","timestamp":"2026-05-05 14:38:13"}
+{"action":"eventLog","type":"customizer","progress":100,"message":"Updating customizer settings.","status":"complete","timestamp":"2026-05-05 14:38:13"}
+{"type":"continue","action":"continue","name":"","index":2,"results":"Templately\\Core\\Importer\\FullSiteImport::start_content_import","timestamp":"2026-05-05 14:38:13"}
+{"type":"start","action":"eventLog","results":"Templately\\Core\\Importer\\FullSiteImport::import::543","timestamp":"2026-05-05 14:38:13"}
+{"action":"removeLog","type":"temp","progress":100,"timestamp":"2026-05-05 14:38:13"}
+{"action":"eventLog","type":"extra-content","progress":0,"message":"Importing Forms and Others Extra Contents","timestamp":"2026-05-05 14:38:13"}
+{"action":"eventLog","type":"extra-content","progress":100,"message":"Importing Forms and Others Extra Contents","status":"complete","timestamp":"2026-05-05 14:38:13"}
+{"type":"continue","action":"continue","name":"","index":3,"results":"Templately\\Core\\Importer\\FullSiteImport::start_content_import","timestamp":"2026-05-05 14:38:13"}
+{"type":"start","action":"eventLog","results":"Templately\\Core\\Importer\\FullSiteImport::import::543","timestamp":"2026-05-05 14:38:13"}
+{"action":"removeLog","type":"temp","progress":100,"timestamp":"2026-05-05 14:38:13"}
+{"action":"updateLog","type":"templates","progress":0,"message":"Importing Templates (i.e: Header, Footer, etc)","timestamp":"2026-05-05 14:38:13"}
+{"action":"updateLog","type":"templates","progress":50,"message":"Importing Templates (i.e: Header, Footer, etc)","timestamp":"2026-05-05 14:38:13"}
+{"action":"updateLog","type":"templates","progress":100,"message":"Importing Templates (i.e: Header, Footer, etc)","status":"complete","timestamp":"2026-05-05 14:38:13"}
+{"action":"updateLog","type":"templates","progress":100,"message":"Importing Templates (i.e: Header, Footer, etc)","status":"complete","timestamp":"2026-05-05 14:38:13"}
+{"type":"continue","action":"continue","name":"","index":4,"results":"Templately\\Core\\Importer\\FullSiteImport::start_content_import","timestamp":"2026-05-05 14:38:13"}
+{"type":"start","action":"eventLog","results":"Templately\\Core\\Importer\\FullSiteImport::import::543","timestamp":"2026-05-05 14:38:13"}
+{"action":"removeLog","type":"temp","progress":100,"timestamp":"2026-05-05 14:38:13"}
+{"type":"continue","action":"continue","name":"","index":5,"results":"Templately\\Core\\Importer\\FullSiteImport::start_content_import","timestamp":"2026-05-05 14:38:13"}
+{"type":"start","action":"eventLog","results":"Templately\\Core\\Importer\\FullSiteImport::import::543","timestamp":"2026-05-05 14:38:13"}
+{"action":"removeLog","type":"temp","progress":100,"timestamp":"2026-05-05 14:38:13"}
+{"action":"updateLog","type":"content","progress":0,"message":"Importing Elementor Page and Post Templates","timestamp":"2026-05-05 14:38:13"}
+{"action":"updateLog","type":"content","progress":25,"message":"Importing Elementor Page and Post Templates","timestamp":"2026-05-05 14:38:13"}
+{"action":"updateLog","type":"content","progress":50,"message":"Importing Elementor Page and Post Templates","timestamp":"2026-05-05 14:38:13"}
+{"action":"updateLog","type":"content","progress":75,"message":"Importing Elementor Page and Post Templates","timestamp":"2026-05-05 14:38:13"}
+{"action":"updateLog","type":"content","progress":100,"message":"Importing Elementor Page and Post Templates","status":"complete","timestamp":"2026-05-05 14:38:14"}
+{"action":"updateLog","type":"content","progress":100,"message":"Importing Elementor Page and Post Templates","status":"complete","timestamp":"2026-05-05 14:38:14"}
+{"type":"continue","action":"continue","name":"","index":6,"results":"Templately\\Core\\Importer\\FullSiteImport::start_content_import","timestamp":"2026-05-05 14:38:14"}
+{"type":"start","action":"eventLog","results":"Templately\\Core\\Importer\\FullSiteImport::import::543","timestamp":"2026-05-05 14:38:14"}
+{"action":"removeLog","type":"temp","progress":100,"timestamp":"2026-05-05 14:38:14"}
+{"action":"updateLog","type":"wp-content","progress":0,"message":"Importing Content (Pages, Posts, Products, Navigation)","timestamp":"2026-05-05 14:38:14"}
+{"action":"updateLog","type":"wp-content","progress":5,"message":"Importing Content (Pages, Posts, Products, Navigation)","timestamp":"2026-05-05 14:38:14"}
+{"action":"updateLog","type":"wp-content","progress":11,"message":"Importing Content (Pages, Posts, Products, Navigation)","timestamp":"2026-05-05 14:38:14"}
+{"action":"updateLog","type":"wp-content","progress":16,"message":"Importing Content (Pages, Posts, Products, Navigation)","timestamp":"2026-05-05 14:38:14"}
+{"action":"updateLog","type":"wp-content","progress":22,"message":"Importing Content (Pages, Posts, Products, Navigation)","timestamp":"2026-05-05 14:38:14"}
+{"action":"updateLog","type":"wp-content","progress":27,"message":"Importing Content (Pages, Posts, Products, Navigation)","timestamp":"2026-05-05 14:38:14"}
+{"action":"updateLog","type":"wp-content","progress":33,"message":"Importing Content (Pages, Posts, Products, Navigation)","timestamp":"2026-05-05 14:38:14"}
+{"action":"updateLog","type":"wp-content","progress":38,"message":"Importing Content (Pages, Posts, Products, Navigation)","timestamp":"2026-05-05 14:38:14"}
+{"action":"updateLog","type":"wp-content","progress":44,"message":"Importing Content (Pages, Posts, Products, Navigation)","timestamp":"2026-05-05 14:38:14"}
+{"action":"updateLog","type":"wp-content","progress":50,"message":"Importing Content (Pages, Posts, Products, Navigation)","timestamp":"2026-05-05 14:38:14"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Before downloading attachment: https:\/\/demo.assets.templately.com\/magazine\/elementor\/15\/2023\/06\/9be56b40-case-study-3.jpg","timestamp":"2026-05-05 14:38:14"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"After downloading attachment: https:\/\/demo.assets.templately.com\/magazine\/elementor\/15\/2023\/06\/9be56b40-case-study-3.jpg","timestamp":"2026-05-05 14:38:14"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Before inserting attachment: 9be56b40-case-study-3","timestamp":"2026-05-05 14:38:14"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"After inserting attachment: 9be56b40-case-study-3","timestamp":"2026-05-05 14:38:14"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 124","timestamp":"2026-05-05 14:38:14"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 124","timestamp":"2026-05-05 14:38:14"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 124","timestamp":"2026-05-05 14:38:14"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 124","timestamp":"2026-05-05 14:38:14"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 124","timestamp":"2026-05-05 14:38:14"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 124","timestamp":"2026-05-05 14:38:14"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 124","timestamp":"2026-05-05 14:38:14"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 124","timestamp":"2026-05-05 14:38:14"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Before downloading attachment: https:\/\/demo.assets.templately.com\/magazine\/elementor\/15\/2023\/06\/d09c9fde-case-study-2.jpg","timestamp":"2026-05-05 14:38:14"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"After downloading attachment: https:\/\/demo.assets.templately.com\/magazine\/elementor\/15\/2023\/06\/d09c9fde-case-study-2.jpg","timestamp":"2026-05-05 14:38:14"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Before inserting attachment: d09c9fde-case-study-2","timestamp":"2026-05-05 14:38:14"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"After inserting attachment: d09c9fde-case-study-2","timestamp":"2026-05-05 14:38:14"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 125","timestamp":"2026-05-05 14:38:14"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 125","timestamp":"2026-05-05 14:38:14"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 125","timestamp":"2026-05-05 14:38:14"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 125","timestamp":"2026-05-05 14:38:14"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 125","timestamp":"2026-05-05 14:38:14"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 125","timestamp":"2026-05-05 14:38:14"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 125","timestamp":"2026-05-05 14:38:14"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 125","timestamp":"2026-05-05 14:38:14"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Before downloading attachment: https:\/\/demo.assets.templately.com\/magazine\/elementor\/15\/2023\/06\/80888834-case-study-1.jpg","timestamp":"2026-05-05 14:38:14"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"After downloading attachment: https:\/\/demo.assets.templately.com\/magazine\/elementor\/15\/2023\/06\/80888834-case-study-1.jpg","timestamp":"2026-05-05 14:38:14"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Before inserting attachment: 80888834-case-study-1","timestamp":"2026-05-05 14:38:14"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"After inserting attachment: 80888834-case-study-1","timestamp":"2026-05-05 14:38:14"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 126","timestamp":"2026-05-05 14:38:14"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 126","timestamp":"2026-05-05 14:38:14"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 126","timestamp":"2026-05-05 14:38:14"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 126","timestamp":"2026-05-05 14:38:14"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 126","timestamp":"2026-05-05 14:38:14"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 126","timestamp":"2026-05-05 14:38:14"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 126","timestamp":"2026-05-05 14:38:14"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 126","timestamp":"2026-05-05 14:38:14"}
+{"action":"updateLog","type":"wp-content","progress":100,"message":"Importing Content (Pages, Posts, Products, Navigation)","status":"complete","timestamp":"2026-05-05 14:38:14"}
+{"type":"continue","action":"continue","name":"","index":7,"results":"Templately\\Core\\Importer\\FullSiteImport::start_content_import","timestamp":"2026-05-05 14:38:14"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Before downloading attachment: https:\/\/knowxindia.com\/blog\/wp-cron.php?doing_wp_cron=1777991894.8693809509277343750000","timestamp":"2026-05-05 14:38:14"}
+{"type":"start","action":"eventLog","results":"Templately\\Core\\Importer\\FullSiteImport::import::543","timestamp":"2026-05-05 14:38:14"}
+{"action":"removeLog","type":"temp","progress":100,"timestamp":"2026-05-05 14:38:14"}
+{"action":"updateLog","type":"finalize","progress":0,"message":"Finalizing Your Imports","timestamp":"2026-05-05 14:38:14"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Site Logo","timestamp":"2026-05-05 14:38:14"}
+{"action":"updateLog","type":"finalize","progress":25,"message":"Finalizing Your Imports","timestamp":"2026-05-05 14:38:15"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Site Logo","timestamp":"2026-05-05 14:38:15"}
+{"action":"updateLog","type":"finalize","progress":25,"message":"Finalizing Your Imports","timestamp":"2026-05-05 14:38:15"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Before downloading attachment: https:\/\/demo.assets.templately.com\/magazine\/elementor\/15\/2024\/03\/266341a8-home-banner-image.jpg","timestamp":"2026-05-05 14:38:15"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"After downloading attachment: https:\/\/demo.assets.templately.com\/magazine\/elementor\/15\/2024\/03\/266341a8-home-banner-image.jpg","timestamp":"2026-05-05 14:38:15"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Before inserting attachment: 266341a8-home-banner-image.jpg","timestamp":"2026-05-05 14:38:15"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"After inserting attachment: 266341a8-home-banner-image.jpg","timestamp":"2026-05-05 14:38:15"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 137","timestamp":"2026-05-05 14:38:15"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 137","timestamp":"2026-05-05 14:38:15"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 137","timestamp":"2026-05-05 14:38:15"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 137","timestamp":"2026-05-05 14:38:15"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 137","timestamp":"2026-05-05 14:38:15"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 137","timestamp":"2026-05-05 14:38:15"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 137","timestamp":"2026-05-05 14:38:15"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 137","timestamp":"2026-05-05 14:38:15"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 137","timestamp":"2026-05-05 14:38:15"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 137","timestamp":"2026-05-05 14:38:15"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 137","timestamp":"2026-05-05 14:38:15"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Before downloading attachment: https:\/\/demo.assets.templately.com\/magazine\/elementor\/15\/2024\/03\/2f31a63d-leadership-bg-image.jpg","timestamp":"2026-05-05 14:38:15"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"After downloading attachment: https:\/\/demo.assets.templately.com\/magazine\/elementor\/15\/2024\/03\/2f31a63d-leadership-bg-image.jpg","timestamp":"2026-05-05 14:38:15"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Before inserting attachment: 2f31a63d-leadership-bg-image.jpg","timestamp":"2026-05-05 14:38:15"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"After inserting attachment: 2f31a63d-leadership-bg-image.jpg","timestamp":"2026-05-05 14:38:15"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 138","timestamp":"2026-05-05 14:38:15"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 138","timestamp":"2026-05-05 14:38:15"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 138","timestamp":"2026-05-05 14:38:15"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 138","timestamp":"2026-05-05 14:38:15"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 138","timestamp":"2026-05-05 14:38:15"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 138","timestamp":"2026-05-05 14:38:15"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 138","timestamp":"2026-05-05 14:38:15"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 138","timestamp":"2026-05-05 14:38:15"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 138","timestamp":"2026-05-05 14:38:15"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 138","timestamp":"2026-05-05 14:38:15"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Updated attachment metadata: 138","timestamp":"2026-05-05 14:38:15"}
+{"action":"updateLog","type":"finalize","progress":25,"message":"Finalizing Your Imports","timestamp":"2026-05-05 14:38:15"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Before downloading attachment: http:\/\/magazine.elementor.templately.com\/blog-metro-home-page\/wp-content\/uploads\/sites\/15\/2024\/03\/5a460f27-blog-detail-features-image.jpg","timestamp":"2026-05-05 14:38:15"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"After downloading attachment: http:\/\/magazine.elementor.templately.com\/blog-metro-home-page\/wp-content\/uploads\/sites\/15\/2024\/03\/5a460f27-blog-detail-features-image.jpg","timestamp":"2026-05-05 14:38:16"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Before downloading attachment: http:\/\/magazine.elementor.templately.com\/blog-metro-home-page\/wp-content\/uploads\/sites\/15\/2024\/03\/933c72de-blog-detail-image.jpg","timestamp":"2026-05-05 14:38:16"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"After downloading attachment: http:\/\/magazine.elementor.templately.com\/blog-metro-home-page\/wp-content\/uploads\/sites\/15\/2024\/03\/933c72de-blog-detail-image.jpg","timestamp":"2026-05-05 14:38:16"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Before downloading attachment: http:\/\/magazine.elementor.templately.com\/blog-metro-home-page\/wp-content\/uploads\/sites\/15\/2024\/03\/71857cd7-image.jpg","timestamp":"2026-05-05 14:38:16"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"After downloading attachment: http:\/\/magazine.elementor.templately.com\/blog-metro-home-page\/wp-content\/uploads\/sites\/15\/2024\/03\/71857cd7-image.jpg","timestamp":"2026-05-05 14:38:17"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Before downloading attachment: http:\/\/magazine.elementor.templately.com\/blog-metro-home-page\/wp-content\/uploads\/sites\/15\/2024\/03\/a7872802-log-detail-image3.jpg","timestamp":"2026-05-05 14:38:17"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"After downloading attachment: http:\/\/magazine.elementor.templately.com\/blog-metro-home-page\/wp-content\/uploads\/sites\/15\/2024\/03\/a7872802-log-detail-image3.jpg","timestamp":"2026-05-05 14:38:18"}
+{"action":"updateLog","type":"finalize","progress":25,"message":"Finalizing Your Imports","timestamp":"2026-05-05 14:38:18"}
+{"action":"updateLog","type":"finalize","progress":100,"message":"Finalizing Your Imports","status":"complete","timestamp":"2026-05-05 14:38:18"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"Before downloading attachment: https:\/\/app.templately.com\/api\/v1\/import\/success","timestamp":"2026-05-05 14:38:18"}
+{"action":"eventLog","type":"attachments","progress":1,"message":"After downloading attachment: https:\/\/app.templately.com\/api\/v1\/import\/success","timestamp":"2026-05-05 14:38:19"}
+{"type":"complete","action":"complete","results":{"attachments":17,"attachments_fail":0,"attachments_errors":[],"templates":2,"contents":{"page":4},"wp-content":{"post":12,"nav_menu_item":6},"post_types":["Pages","Posts"],"template_types":["header","footer"],"ai_content":{"requested":[],"processed":[]},"dependency_data":{"theme":{"success":true,"name":"Hello Elementor","slug":"hello-elementor","message":""},"plugins":{"failed":[{"name":"Elementor Pro","slug":"elementor-pro","link":"https:\/\/wpdeveloper.net\/go\/elementor-pro","message":"Plugin not found."},{"name":"Essential Addons Pro","slug":"essential-addons-elementor","link":"https:\/\/essential-addons.com\/elementor\/","message":"Plugin not found."}],"_installed_plugins":3,"total":5,"succeed":3}},"home_url":"https:\/\/knowxindia.com\/blog\/"},"timestamp":"2026-05-05 14:38:19"}

@@ -31,7 +31,7 @@ export interface BlogPost {
 // ─────────────────────────────────────────────────────────────────────────────
 export const BLOG_POSTS: BlogPost[] = [
   {
-    slug: "embedded-ai-vs-traditional-embedded-systems",
+    slug: "embedded-ai-iot-training-bangalore-guide",
     title: "Embedded AI vs Traditional Embedded Systems — Key Differences",
     excerpt:
       "What is the real difference between Embedded AI and traditional embedded systems? An honest comparison with real client upgrade stories, industry examples, and career guidance for ECE and EEE engineers in India.",

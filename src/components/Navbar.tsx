@@ -121,6 +121,7 @@ export default function Navbar({ onOpenPopup }: { onOpenPopup: () => void }) {
             <Link href={isHome ? '#products' : '/#products'}>Products</Link>
             <Link href={isHome ? '#case-studies' : '/#case-studies'}>Case Studies</Link>
             <Link href="/contact" className={isContact ? 'act' : ''}>Contact</Link>
+            <Link href="/blog">Blog</Link>
           </div>
           <div className="nav-r">
             <a href="tel:+919886094611" className="nav-ph fm">+91 98860 94611</a>
@@ -172,6 +173,7 @@ export default function Navbar({ onOpenPopup }: { onOpenPopup: () => void }) {
         <Link href={isHome ? '#products' : '/#products'} onClick={closeMob}>Products</Link>
         <Link href={isHome ? '#case-studies' : '/#case-studies'} onClick={closeMob}>Case Studies</Link>
         <Link href="/contact" onClick={closeMob}>Contact</Link>
+        <Link href="/blog" onClick={closeMob}>Blog</Link>
         {isContact ? null : (
           <button
             className="btn bp"

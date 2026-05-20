@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import Image from "next/image";
+import Image from "next/image"; // used for gallery + tools
 import Link from "next/link";
 
 // ─── DATA ────────────────────────────────────────────────────────────────────
@@ -243,7 +243,8 @@ export default function MakersLabClient() {
       <section style={{ position: "relative", height: "clamp(480px, 60vw, 640px)", overflow: "hidden", background: "#111" }}>
         {BANNER_SLIDES.map((slide, i) => (
           <div key={i} className="ml-slide" style={{ opacity: activeSlide === i ? 1 : 0, zIndex: activeSlide === i ? 1 : 0 }}>
-            <Image src={slide.img} alt={slide.heading} fill sizes="100vw" style={{ objectFit: "cover" }} priority={i === 0} />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={slide.img} alt={slide.heading} style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }} loading={i === 0 ? "eager" : "lazy"} />
             <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to right, rgba(0,0,0,0.75) 40%, rgba(0,0,0,0.3) 100%)" }} />
           </div>
         ))}
@@ -528,32 +529,36 @@ export default function MakersLabClient() {
                 </div>
               ))}
               <div style={{ borderRadius: 14, overflow: "hidden", border: "1.5px solid #FFE0CC" }}>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.9973588001353!2d77.53487287472076!3d12.972020487343409!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae3ddbad7bbaf5%3A0x7ec1d2f962e75fe9!2sKnowx%20Innovations%20Private%20Limited!5e0!3m2!1sen!2sin!4v1759822188730!5m2!1sen!2sin"
-                  width="100%" height="200" style={{ border: 0, display: "block" }} allowFullScreen loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade" title="MAKERSLAB by Knowx Innovations — Vijayanagar, Bangalore" />
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.9193628822!2d77.5335!3d12.9753!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae3ddbad7bbaf5%3A0x7ec1d2f962e75fe9!2sKnowx%20Innovations%20Private%20Limited!5e0!3m2!1sen!2sin!4v1748000000000!5m2!1sen!2sin"
+                  width="100%" height="220" style={{ border: 0, display: "block" }} allowFullScreen loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade" title="MAKERSLAB by Knowx Innovations — #56/56, 17th Cross, 8th Main, Vijayanagar, Bangalore 560040" />
               </div>
+              <a href="https://maps.app.goo.gl/yU5o4sRry2Jn2PxbA" target="_blank" rel="noopener noreferrer"
+                style={{ display: "block", marginTop: 10, textAlign: "center", fontSize: 13, color: "#FF6B1A", textDecoration: "none", fontWeight: 600 }}>
+                📍 Open in Google Maps →
+              </a>
             </div>
           </div>
         </div>
       </section>
 
       {/* ── FOOTER ── */}
-      <footer style={{ background: "#0a0a0a", borderTop: "1px solid #1a1a1a" }}>
+      <footer style={{ background: "#2d2d2d", borderTop: "3px solid #FF6B1A" }}>
         <div className="ml-3col" style={{ maxWidth: 1200, margin: "0 auto", padding: "48px 24px", display: "grid", gridTemplateColumns: "2fr 1fr 1fr", gap: 48 }}>
           <div>
             <div style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: 26, fontWeight: 800, color: "#FF6B1A", letterSpacing: 3 }}>MAKERSLAB</div>
-            <div style={{ fontSize: 11, color: "#444", letterSpacing: 2, marginBottom: 14 }}>BY KNOWX INNOVATIONS PVT LTD</div>
-            <div style={{ fontSize: 14, color: "#444", lineHeight: 1.9 }}>Vijayanagar, Bangalore – 560040<br />Engineering student project support since 2005.</div>
-            <div style={{ fontSize: 13, color: "#333", marginTop: 18 }}>© {new Date().getFullYear()} Knowx Innovations Pvt Ltd. All rights reserved.</div>
+            <div style={{ fontSize: 11, color: "#aaa", letterSpacing: 2, marginBottom: 14 }}>BY KNOWX INNOVATIONS PVT LTD</div>
+            <div style={{ fontSize: 14, color: "#bbb", lineHeight: 1.9 }}>Vijayanagar, Bangalore – 560040<br />Engineering student project support since 2005.</div>
+            <div style={{ fontSize: 13, color: "#999", marginTop: 18 }}>© {new Date().getFullYear()} Knowx Innovations Pvt Ltd. All rights reserved.</div>
           </div>
           <div>
-            <div style={{ fontSize: 12, color: "#555", letterSpacing: 1, marginBottom: 16, textTransform: "uppercase", fontWeight: 600 }}>Project Domains</div>
+            <div style={{ fontSize: 12, color: "#FF6B1A", letterSpacing: 1, marginBottom: 16, textTransform: "uppercase", fontWeight: 600 }}>Project Domains</div>
             {["Arduino Projects", "AI / ML Projects", "IoT Systems", "Raspberry Pi Projects", "Fullstack Web", "Mechatronics"].map((l) => (
-              <div key={l} style={{ fontSize: 14, color: "#444", marginBottom: 10 }}>{l}</div>
+              <div key={l} style={{ fontSize: 14, color: "#bbb", marginBottom: 10 }}>{l}</div>
             ))}
           </div>
           <div>
-            <div style={{ fontSize: 12, color: "#555", letterSpacing: 1, marginBottom: 16, textTransform: "uppercase", fontWeight: 600 }}>Knowx Innovations</div>
+            <div style={{ fontSize: 12, color: "#FF6B1A", letterSpacing: 1, marginBottom: 16, textTransform: "uppercase", fontWeight: 600 }}>Knowx Innovations</div>
             {[
               { label: "About Us", href: "https://www.knowxindia.com/about-us.php" },
               { label: "Training Programs", href: "https://www.knowxindia.com/training-internship-engineering-students-bangalore" },
@@ -561,11 +566,11 @@ export default function MakersLabClient() {
               { label: "IoT Services", href: "https://www.knowxindia.com/iot-product-development/" },
               { label: "Contact", href: "https://www.knowxindia.com/contact.php" },
             ].map((l) => (
-              <a key={l.label} href={l.href} style={{ display: "block", fontSize: 14, color: "#444", marginBottom: 10, textDecoration: "none" }}>{l.label}</a>
+              <a key={l.label} href={l.href} style={{ display: "block", fontSize: 14, color: "#bbb", marginBottom: 10, textDecoration: "none" }}>{l.label}</a>
             ))}
           </div>
         </div>
-        <div style={{ borderTop: "1px solid #111", padding: "16px 24px", textAlign: "center", fontSize: 12, color: "#333" }}>
+        <div style={{ borderTop: "1px solid #444", padding: "16px 24px", textAlign: "center", fontSize: 12, color: "#888" }}>
           Engineering Student Projects in Bangalore · MAKERSLAB by Knowx · Vijayanagar · 560040
         </div>
       </footer>

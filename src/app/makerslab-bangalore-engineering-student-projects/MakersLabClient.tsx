@@ -33,13 +33,13 @@ const BANNER_SLIDES = [
 ];
 
 const SERVICE_COLORS = [
-  { bg: "#FFF3EC", icon: "#FF6B1A" },
-  { bg: "#EEF4FF", icon: "#3B82F6" },
-  { bg: "#EDFBF4", icon: "#10B981" },
-  { bg: "#FDF4FF", icon: "#A855F7" },
-  { bg: "#FFFBEC", icon: "#F59E0B" },
-  { bg: "#FFF0F3", icon: "#F43F5E" },
-  { bg: "#F0FDFA", icon: "#14B8A6" },
+  { grad: "linear-gradient(135deg, #FFF3EC 0%, #FFE4D0 100%)", iconBg: "#FF6B1A", iconColor: "#fff", titleColor: "#C2440A", descColor: "#7A3010", border: "#FFCBA8" },
+  { grad: "linear-gradient(135deg, #EEF4FF 0%, #DBEAFE 100%)", iconBg: "#3B82F6", iconColor: "#fff", titleColor: "#1D4ED8", descColor: "#1E3A6E", border: "#BFDBFE" },
+  { grad: "linear-gradient(135deg, #EDFBF4 0%, #D1FAE5 100%)", iconBg: "#10B981", iconColor: "#fff", titleColor: "#065F46", descColor: "#064E3B", border: "#A7F3D0" },
+  { grad: "linear-gradient(135deg, #FDF4FF 0%, #F3E8FF 100%)", iconBg: "#A855F7", iconColor: "#fff", titleColor: "#7E22CE", descColor: "#581C87", border: "#E9D5FF" },
+  { grad: "linear-gradient(135deg, #FFFBEC 0%, #FEF3C7 100%)", iconBg: "#F59E0B", iconColor: "#fff", titleColor: "#92400E", descColor: "#78350F", border: "#FDE68A" },
+  { grad: "linear-gradient(135deg, #FFF0F3 0%, #FFE4E6 100%)", iconBg: "#F43F5E", iconColor: "#fff", titleColor: "#BE123C", descColor: "#9F1239", border: "#FECDD3" },
+  { grad: "linear-gradient(135deg, #F0FDFA 0%, #CCFBF1 100%)", iconBg: "#14B8A6", iconColor: "#fff", titleColor: "#0F766E", descColor: "#134E4A", border: "#99F6E4" },
 ];
 
 const SERVICES = [
@@ -211,9 +211,11 @@ export default function MakersLabClient() {
       {/* ── NAVBAR ── */}
       <nav style={{ background: "#0f0f0f", position: "sticky", top: 0, zIndex: 100, borderBottom: "1px solid #1f1f1f" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 24px", height: 68, display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-          <Link href="/makerslab-bangalore-projects/" style={{ textDecoration: "none" }}>
-            <div style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: 24, fontWeight: 800, color: "#FF6B1A", letterSpacing: 3, lineHeight: 1 }}>MAKERSLAB</div>
-            <div style={{ fontSize: 10, color: "#555", letterSpacing: 3, textTransform: "uppercase" }}>by Knowx Innovations</div>
+          <Link href="/makerslab-bangalore-engineering-student-projects/" style={{ textDecoration: "none", display: "flex", alignItems: "center", gap: 10 }}>
+            <div style={{ position: "relative", width: 140, height: 44, flexShrink: 0 }}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/makerslab/makers-logo.jpg" alt="MAKERSLAB by Knowx Innovations" style={{ width: "100%", height: "100%", objectFit: "contain" }} />
+            </div>
           </Link>
           <div className="ml-hide-mob" style={{ display: "flex", gap: 32 }}>
             {NAV_LINKS.map((l) => (
@@ -360,15 +362,18 @@ export default function MakersLabClient() {
             Every domain handled with real hardware, working code, and proper documentation for your viva and submission.
           </p>
           <div className="ml-4col" style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 20 }}>
-            {SERVICES.map((s, i) => (
-              <div key={s.title} className="ml-svc-card">
-                <div style={{ width: 56, height: 56, background: SERVICE_COLORS[i % SERVICE_COLORS.length].bg, borderRadius: 14, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 28, marginBottom: 18 }}>
-                  {s.emoji}
+            {SERVICES.map((s, i) => {
+              const c = SERVICE_COLORS[i % SERVICE_COLORS.length];
+              return (
+                <div key={s.title} className="ml-svc-card" style={{ background: c.grad, border: `1.5px solid ${c.border}`, borderRadius: 16, padding: "28px 24px", transition: "box-shadow 0.25s, transform 0.25s" }}>
+                  <div style={{ width: 56, height: 56, background: c.iconBg, borderRadius: 14, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 28, marginBottom: 18, boxShadow: `0 4px 14px ${c.border}` }}>
+                    {s.emoji}
+                  </div>
+                  <h3 style={{ fontSize: 16, fontWeight: 700, color: c.titleColor, marginBottom: 10, lineHeight: 1.4 }}>{s.title}</h3>
+                  <p style={{ fontSize: 14, color: c.descColor, lineHeight: 1.7, opacity: 0.9 }}>{s.desc}</p>
                 </div>
-                <h3 style={{ fontSize: 16, fontWeight: 700, color: "#111", marginBottom: 10, lineHeight: 1.4 }}>{s.title}</h3>
-                <p style={{ fontSize: 14, color: "#777", lineHeight: 1.7 }}>{s.desc}</p>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
@@ -443,20 +448,43 @@ export default function MakersLabClient() {
       <section id="tools" style={{ padding: "72px 24px", borderTop: "1px solid #f0f0f0" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <div style={{ fontSize: 12, color: "#FF6B1A", letterSpacing: 2, marginBottom: 12, textTransform: "uppercase", fontWeight: 600, textAlign: "center" }}>Tools & Technologies We Work With</div>
-          <h2 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "clamp(26px, 3vw, 38px)", fontWeight: 800, color: "#111", marginBottom: 40, textAlign: "center" }}>
+          <h2 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "clamp(26px, 3vw, 38px)", fontWeight: 800, color: "#111", marginBottom: 12, textAlign: "center" }}>
             We work with the tools of the future
           </h2>
-          <div className="ml-tools-grid" style={{ display: "grid", gridTemplateColumns: "repeat(6, 1fr)", gap: 16 }}>
-            {TOOLS.map((t) => (
-              <div key={t.name} className="ml-tool-chip">
-                <div style={{ width: 48, height: 48, position: "relative", flexShrink: 0 }}>
-                  <Image src={t.img} alt={t.name} fill sizes="48px" style={{ objectFit: "contain" }} />
+          <p style={{ fontSize: 16, color: "#888", marginBottom: 40, textAlign: "center" }}>
+            15+ industry-standard tools across AI, IoT, Embedded, and Web development.
+          </p>
+        </div>
+
+        {/* Slow scrolling ticker */}
+        <div style={{ overflow: "hidden", position: "relative" }}>
+          {/* Fade edges */}
+          <div style={{ position: "absolute", left: 0, top: 0, bottom: 0, width: 80, background: "linear-gradient(to right, #fff, transparent)", zIndex: 2, pointerEvents: "none" }} />
+          <div style={{ position: "absolute", right: 0, top: 0, bottom: 0, width: 80, background: "linear-gradient(to left, #fff, transparent)", zIndex: 2, pointerEvents: "none" }} />
+
+          <div style={{ display: "flex", gap: 20, animation: "ml-ticker-slow 40s linear infinite", width: "max-content", padding: "8px 0" }}>
+            {[...TOOLS, ...TOOLS, ...TOOLS].map((t, i) => (
+              <div key={t.name + i} style={{
+                display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
+                gap: 12, background: "#fff", border: "1.5px solid #f0f0f0", borderRadius: 16,
+                padding: "24px 20px", minWidth: 130, transition: "border-color 0.2s, box-shadow 0.2s",
+                boxShadow: "0 2px 8px rgba(0,0,0,0.04)",
+              }}>
+                <div style={{ width: 64, height: 64, position: "relative", flexShrink: 0 }}>
+                  <Image src={t.img} alt={t.name} fill sizes="64px" style={{ objectFit: "contain" }} />
                 </div>
-                <span style={{ fontSize: 13, color: "#333", fontWeight: 600, textAlign: "center" }}>{t.name}</span>
+                <span style={{ fontSize: 14, color: "#333", fontWeight: 600, textAlign: "center", whiteSpace: "nowrap" }}>{t.name}</span>
               </div>
             ))}
           </div>
         </div>
+
+        <style>{`
+          @keyframes ml-ticker-slow {
+            0%   { transform: translateX(0); }
+            100% { transform: translateX(-33.33%); }
+          }
+        `}</style>
       </section>
 
       {/* ── FAQ ── */}
@@ -546,7 +574,10 @@ export default function MakersLabClient() {
       <footer style={{ background: "#2d2d2d", borderTop: "3px solid #FF6B1A" }}>
         <div className="ml-3col" style={{ maxWidth: 1200, margin: "0 auto", padding: "48px 24px", display: "grid", gridTemplateColumns: "2fr 1fr 1fr", gap: 48 }}>
           <div>
-            <div style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: 26, fontWeight: 800, color: "#FF6B1A", letterSpacing: 3 }}>MAKERSLAB</div>
+            <div style={{ position: "relative", width: 160, height: 52, marginBottom: 12 }}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/makerslab/makers-logo.jpg" alt="MAKERSLAB by Knowx Innovations" style={{ width: "100%", height: "100%", objectFit: "contain", filter: "brightness(1.1)" }} />
+            </div>
             <div style={{ fontSize: 11, color: "#aaa", letterSpacing: 2, marginBottom: 14 }}>BY KNOWX INNOVATIONS PVT LTD</div>
             <div style={{ fontSize: 14, color: "#bbb", lineHeight: 1.9 }}>Vijayanagar, Bangalore – 560040<br />Engineering student project support since 2005.</div>
             <div style={{ fontSize: 13, color: "#999", marginTop: 18 }}>© {new Date().getFullYear()} Knowx Innovations Pvt Ltd. All rights reserved.</div>

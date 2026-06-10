@@ -31,6 +31,16 @@ export interface BlogPost {
 // ─────────────────────────────────────────────────────────────────────────────
 export const BLOG_POSTS: BlogPost[] = [
   {
+  slug: "internships-for-cse-students",
+  title: "Internships for CSE Students: Best Domains, Skills & Career Opportunities 2026",
+  excerpt: "Complete guide on internships for CSE students in Bangalore — best domains (AI, Full Stack, Data Science), skills required, top companies hiring, and how to choose the right internship.",
+  category: "Career & Training",
+  datePublished: "2026-06-09",
+  readingTime: 10,
+  author: "Bhimsen G.V.",
+  tags: ["internships for cse students", "cse internships bangalore", "ai internship cse", "full stack internship", "software development internship", "data science internship", "cse career 2026"],
+},
+  {
     slug: "smart-agriculture-iot-projects-ai-precision-farming-projects",
     title: "Smart Agriculture IoT Projects — AI & Precision Farming Guide",
     excerpt: "Practical smart agriculture IoT project ideas using AI and precision farming techniques — with real implementation examples from Knowx Innovations.",

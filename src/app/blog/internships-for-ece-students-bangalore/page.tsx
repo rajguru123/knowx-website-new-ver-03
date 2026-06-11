@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Internships for ECE Students: Embedded Systems, IoT, VLSI & Career Guide 2026",
     description: "Embedded AI, IoT, VLSI — which ECE internship track is right for you? Complete guide with domain breakdowns, skills checklist, Bangalore company list, and career paths.",
-    url: "https://knowxindia.com/blog/internships-for-ece-students",
+    url: "https://knowxindia.com/blog/internships-for-ece-students-bangalore",
     type: "article",
     locale: "en_IN",
     siteName: "Knowx Innovations",

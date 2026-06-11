@@ -125,12 +125,14 @@ export default function EceInternshipBlogPage() {
             {/* RIGHT — placeholder, replace with Image once you have the file */}
             <div className="w-full lg:w-[400px] flex-shrink-0">
               <div className="relative rounded-2xl overflow-hidden flex items-center justify-center" style={{ background: "linear-gradient(135deg, #1a3a6a 0%, #0a1a3a 100%)", height: "280px", boxShadow: "0 8px 40px rgba(0,0,0,0.4)" }}>
-                {/* Replace this div with: <Image src="/images/ece-internship-hero.webp" alt="ECE student working on embedded systems internship" width={400} height={280} className="w-full h-auto object-cover" priority /> */}
-                <div className="text-center px-6">
-                  <div className="text-5xl mb-3">🔌</div>
-                  <p className="text-sm font-semibold" style={{ color: "#93c5fd" }}>PCB · Sensors · Embedded · IoT</p>
-                  <p className="text-xs mt-1" style={{ color: "rgba(255,255,255,0.4)" }}>Replace with hero image</p>
-                </div>
+               <Image
+  src="/images/ece-internship-hero.webp"
+  alt="ECE student working on embedded systems and IoT internship in Bangalore"
+  width={400}
+  height={280}
+  className="w-full h-auto object-cover"
+  priority
+/>
                 <div className="absolute bottom-3 left-3 rounded-lg px-3 py-2" style={{ background: "rgba(15,34,85,0.85)", backdropFilter: "blur(8px)" }}>
                   <p className="text-xs font-bold" style={{ color: "#60a5fa" }}>Embedded AI · IoT · VLSI</p>
                   <p className="text-[10px]" style={{ color: "rgba(255,255,255,0.6)" }}>ECE internship programs · Bangalore</p>

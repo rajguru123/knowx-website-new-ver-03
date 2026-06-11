@@ -31,7 +31,7 @@ export interface BlogPost {
 // ─────────────────────────────────────────────────────────────────────────────
 export const BLOG_POSTS: BlogPost[] = [
   {
-  slug: "internships-for-ece-students",
+  slug: "internships-for-ece-students-bangalore",
   title: "Internships for ECE Students: Embedded Systems, IoT, VLSI & Career Guide 2026",
   excerpt: "Complete guide on internships for ECE students in Bangalore — best domains (Embedded AI, IoT, VLSI, PCB Design, Edge AI), skills required, top companies hiring, and how to choose the right internship.",
   category: "Career & Training",

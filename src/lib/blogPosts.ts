@@ -31,6 +31,16 @@ export interface BlogPost {
 // ─────────────────────────────────────────────────────────────────────────────
 export const BLOG_POSTS: BlogPost[] = [
   {
+  slug: "internships-for-ece-students",
+  title: "Internships for ECE Students: Embedded Systems, IoT, VLSI & Career Guide 2026",
+  excerpt: "Complete guide on internships for ECE students in Bangalore — best domains (Embedded AI, IoT, VLSI, PCB Design, Edge AI), skills required, top companies hiring, and how to choose the right internship.",
+  category: "Career & Training",
+  datePublished: "2026-06-11",
+  readingTime: 10,
+  author: "Bhimsen G.V.",
+  tags: ["internships for ece students", "ece internships bangalore", "embedded systems internship", "iot internship", "vlsi internship", "embedded ai internship"],
+},
+  {
   slug: "internships-for-cse-students",
   title: "Internships for CSE Students: Best Domains, Skills & Career Opportunities 2026",
   excerpt: "Complete guide on internships for CSE students in Bangalore — best domains (AI, Full Stack, Data Science), skills required, top companies hiring, and how to choose the right internship.",

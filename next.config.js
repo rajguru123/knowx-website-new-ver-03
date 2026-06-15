@@ -21,6 +21,18 @@ const nextConfig = {
   },
   async redirects() {
     return [
+      // www → non-www canonicalization
+      {
+        source: '/:path*',
+        has: [
+          {
+            type: 'host',
+            value: 'www.knowxindia.com',
+          },
+        ],
+        destination: 'https://knowxindia.com/:path*',
+        permanent: true,
+      },
       // Old course page URLs → New course page URLs
       {
         source: '/embedded-ai-iot-product-engineer',

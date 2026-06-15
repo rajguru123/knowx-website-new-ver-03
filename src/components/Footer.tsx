@@ -43,7 +43,7 @@ export default function Footer() {
             <li><Link href="/embedded-system-design-software-development-bangalore">Embedded Systems</Link></li>
             <li><Link href="/embedded-system-design-software-development-bangalore">Firmware Dev</Link></li>
             <li><Link href="/iot-product-development-company-bangalore">IoT Product Dev</Link></li>
-            <li><a href="#">PCB Design</a></li>
+           <li><Link href="/electronics-hardware-design-services">PCB Design</Link></li>
             <li><a href="#">AI &amp; ML</a></li>
             <li><a href="#">Design to Mfg</a></li>
             <li><a href="#">Web &amp; Mobile</a></li>

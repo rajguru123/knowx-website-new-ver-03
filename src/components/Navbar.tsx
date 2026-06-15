@@ -7,7 +7,7 @@ const servicePages = [
   { href: '/iot-product-development-company-bangalore', label: 'IoT Product Development' },
   { href: '/embedded-system-design-software-development-bangalore', label: 'Embedded System Design' },
   { href: '/#services', label: 'AI & ML Services' },
-  { href: '/#services', label: 'Hardware Design' },
+ { href: '/electronics-hardware-design-services', label: 'Hardware Design' },
   { href: '/#services', label: 'Design to Manufacturing' },
   { href: '/#services', label: 'Web & Mobile App Development' },
 ];
@@ -72,7 +72,8 @@ export default function Navbar({ onOpenPopup }: { onOpenPopup: () => void }) {
   const isContact = pathname === '/contact' || pathname === '/contact/';
   const isIoT = pathname.includes('iot-product-development');
   const isEmbedded = pathname.includes('embedded-system-design');
-  const isService = isIoT || isEmbedded;
+ const isHardware = pathname.includes('electronics-hardware-design');
+const isService = isIoT || isEmbedded || isHardware;
 
   return (
     <>

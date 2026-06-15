@@ -25,19 +25,19 @@ export const metadata: Metadata = {
   authors: [{ name: "Knowx Innovations Pvt Ltd" }],
   robots: { index: true, follow: true },
   alternates: {
-    canonical: "https://www.knowxindia.com/makerslab-bangalore-engineering-student-projects/",
+    canonical: "https://knowxindia.com/makerslab-bangalore-engineering-student-projects/",
   },
   openGraph: {
     title: "MAKERSLAB by Knowx — Engineering Project Makers in Bangalore",
     description:
       "Arduino, ESP32, Raspberry Pi, IoT, AI/ML, Web projects with full mentorship & documentation. Serving ECE, CSE, ISE, EEE, Mechatronics students across Bangalore.",
-    url: "https://www.knowxindia.com/makerslab-bangalore-engineering-student-projects/",
+    url: "https://knowxindia.com/makerslab-bangalore-engineering-student-projects/",
     siteName: "Knowx Innovations",
     locale: "en_IN",
     type: "website",
     images: [
       {
-        url: "https://www.knowxindia.com/makerslab/makers-logo.jpg",
+        url: "https://knowxindia.com/makerslab/makers-logo.jpg",
         width: 1200,
         height: 630,
         alt: "MAKERSLAB by Knowx — Engineering Project Makers in Bangalore",
@@ -59,7 +59,7 @@ const jsonLdLocalBusiness = {
   alternateName: "MakersLab Bangalore",
   description:
     "Dedicated engineering student project lab in Bangalore offering hands-on support for final year projects in IoT, AI/ML, Arduino, ESP32, Raspberry Pi, Web Development, and Embedded Systems.",
-  url: "https://www.knowxindia.com/makerslab-bangalore-engineering-student-projects/",
+  url: "https://knowxindia.com/makerslab-bangalore-engineering-student-projects/",
   telephone: "+919886094611",
   email: "info@knowxindia.com",
   address: {
@@ -98,7 +98,7 @@ const jsonLdLocalBusiness = {
   parentOrganization: {
     "@type": "Organization",
     name: "Knowx Innovations Pvt Ltd",
-    url: "https://www.knowxindia.com",
+    url: "https://knowxindia.com",
     foundingDate: "2005",
   },
   openingHoursSpecification: [

@@ -4,11 +4,11 @@ import EmbeddedClient from './EmbeddedClient';
 export const metadata: Metadata = {
   title: 'Top Embedded System Design and Software Development Services in Bangalore | Expert Solutions',
   description: 'Looking for embedded system design and software development services in Bangalore? We deliver expert firmware, hardware, and embedded solutions for industrial, IoT, and smart devices. Contact us today!',
-  alternates: { canonical: 'https://www.knowxindia.com/embedded-system-design-software-development-bangalore' },
+  alternates: { canonical: 'https://knowxindia.com/embedded-system-design-software-development-bangalore' },
   openGraph: {
     title: 'Embedded System Design & Firmware Development Services | Knowx Innovations',
     description: 'We design and develop reliable embedded systems, firmware, and software that power next-generation products — from industrial machines to smart devices.',
-    url: 'https://www.knowxindia.com/embedded-system-design-software-development-bangalore',
+    url: 'https://knowxindia.com/embedded-system-design-software-development-bangalore',
     images: [
       {
         url: '/images/banner-embedded-og.jpg',
@@ -95,7 +95,7 @@ export default function EmbeddedSystemPage() {
             provider: {
               '@type': 'Organization',
               name: 'Knowx Innovations',
-              url: 'https://www.knowxindia.com',
+              url: 'https://knowxindia.com',
               address: {
                 '@type': 'PostalAddress',
                 addressLocality: 'Bangalore',

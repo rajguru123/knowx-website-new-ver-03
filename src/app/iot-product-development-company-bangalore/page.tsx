@@ -4,11 +4,11 @@ import IoTClient from './IoTClient';
 export const metadata: Metadata = {
   title: 'IoT Product Development Company in Bangalore — Build Scalable Products Faster',
   description: 'IoT Product Development Company in Bangalore offering end-to-end IoT design, embedded systems, and cloud integration. Build your product from concept to deployment.',
-  alternates: { canonical: 'https://www.knowxindia.com/iot-product-development-company-bangalore' },
+  alternates: { canonical: 'https://knowxindia.com/iot-product-development-company-bangalore' },
   openGraph: {
     title: 'IoT Product Development Company in Bangalore | Knowx Innovations',
     description: 'We design and develop scalable IoT products — from hardware and embedded firmware to cloud platforms and analytics.',
-    url: 'https://www.knowxindia.com/iot-product-development-company-bangalore',
+    url: 'https://knowxindia.com/iot-product-development-company-bangalore',
   },
 };
 

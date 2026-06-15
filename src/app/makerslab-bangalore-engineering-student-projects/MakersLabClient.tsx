@@ -591,11 +591,11 @@ export default function MakersLabClient() {
           <div>
             <div style={{ fontSize: 12, color: "#FF6B1A", letterSpacing: 1, marginBottom: 16, textTransform: "uppercase", fontWeight: 600 }}>Knowx Innovations</div>
             {[
-              { label: "About Us", href: "https://www.knowxindia.com/about-us.php" },
-              { label: "Training Programs", href: "https://www.knowxindia.com/training-internship-engineering-students-bangalore" },
-              { label: "Internships", href: "https://www.knowxindia.com/internships-in-bangalore/" },
-              { label: "IoT Services", href: "https://www.knowxindia.com/iot-product-development/" },
-              { label: "Contact", href: "https://www.knowxindia.com/contact.php" },
+              { label: "About Us", href: "https://knowxindia.com/about-us.php" },
+              { label: "Training Programs", href: "https://knowxindia.com/training-internship-engineering-students-bangalore" },
+              { label: "Internships", href: "https://knowxindia.com/internships-in-bangalore/" },
+              { label: "IoT Services", href: "https://knowxindia.com/iot-product-development/" },
+              { label: "Contact", href: "https://knowxindia.com/contact.php" },
             ].map((l) => (
               <a key={l.label} href={l.href} style={{ display: "block", fontSize: 14, color: "#bbb", marginBottom: 10, textDecoration: "none" }}>{l.label}</a>
             ))}

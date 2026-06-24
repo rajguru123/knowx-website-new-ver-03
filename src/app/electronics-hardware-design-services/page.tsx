@@ -2,14 +2,14 @@ import type { Metadata } from 'next';
 import HardwareClient from './HardwareClient';
 
 export const metadata: Metadata = {
-  title: 'Electronics Hardware Design Services Bangalore | PCB Design & Embedded Systems',
-  description: 'Expert electronics hardware design services in Bangalore. End-to-end PCB design, embedded systems, IoT hardware development. From schematic to production. Get free consultation.',
+  title: 'Electronics Hardware Design Services Bangalore | PCB Design',
+  description: 'Expert electronics hardware design services in Bangalore. End-to-end PCB design,From schematic to production. Get free consultation.',
   keywords: [
     'electronics hardware design services',
     'PCB design services Bangalore',
-    'embedded hardware design',
+    
     'circuit design and prototyping',
-    'IoT hardware development',
+    
     'hardware product development services',
     'schematic design services',
     'PCB layout services India',

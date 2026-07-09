@@ -13,6 +13,7 @@ export default function MbearLandingPage() {
   const [submitted, setSubmitted] = useState(false)
   const [submitError, setSubmitError] = useState(false)
   const rootRef = useRef<HTMLDivElement>(null)
+  const reviewsRef = useRef<HTMLDivElement>(null)
 
   // Reveal-on-scroll
   useEffect(() => {
@@ -428,7 +429,16 @@ export default function MbearLandingPage() {
               Based on 6 Google reviews
             </div>
           </div>
-          <div className="reviews reveal">
+          <div className="reviews-slider">
+            <button
+              type="button"
+              className="slider-arrow slider-arrow--prev"
+              aria-label="Previous reviews"
+              onClick={() => reviewsRef.current?.scrollBy({ left: -320, behavior: 'smooth' })}
+            >
+              ‹
+            </button>
+            <div className="reviews reveal" ref={reviewsRef}>
             <div className="review">
               <div className="review__stars">★★★★★</div>
               <p>
@@ -466,6 +476,15 @@ export default function MbearLandingPage() {
               </p>
               <div className="review__who">— Google review</div>
             </div>
+            </div>
+            <button
+              type="button"
+              className="slider-arrow slider-arrow--next"
+              aria-label="Next reviews"
+              onClick={() => reviewsRef.current?.scrollBy({ left: 320, behavior: 'smooth' })}
+            >
+              ›
+            </button>
           </div>
         </div>
       </section>

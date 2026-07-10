@@ -153,6 +153,22 @@ const faqSchema = {
         text: 'Yes, the introductory Saturday session is entirely free, with no obligation to enrol in anything further.',
       },
     },
+    {
+      '@type': 'Question',
+      name: 'Can I join the stock market course from Vijayanagar or Nagarabhavi?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: "Yes — MBEAR's Basaveshwara Nagar centre is an easy, familiar drive from both Vijayanagar (~2 km) and Nagarabhavi (~5 km), with plenty of students attending from each area every Saturday.",
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Do you offer stock market classes near Mysore Road?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes — our Basaveshwara Nagar venue is roughly 4 km from Mysore Road, making it a quick and convenient trip for residents there too.',
+      },
+    },
   ],
 }
 

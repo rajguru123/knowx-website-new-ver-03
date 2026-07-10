@@ -41,6 +41,17 @@ export default function MbearLandingPage() {
     try {
       await fetch('https://api.web3forms.com/submit', { method: 'POST', body: data })
       setSubmitted(true)
+
+      // Fire conversion events for ad platforms — this is what lets Meta/Google
+      // Ads learn which campaigns actually produce registrations, not just clicks.
+      if (typeof window !== 'undefined') {
+        const w = window as any
+        if (typeof w.fbq === 'function') {
+          w.fbq('track', 'Lead')
+        }
+        w.dataLayer = w.dataLayer || []
+        w.dataLayer.push({ event: 'mbear_registration_submitted' })
+      }
     } catch {
       setSubmitError(true)
     } finally {

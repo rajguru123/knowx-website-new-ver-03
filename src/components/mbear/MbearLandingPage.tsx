@@ -509,7 +509,7 @@ export default function MbearLandingPage() {
             <details>
               <summary>
                 Is there a share market trading course near me in West Bangalore?
-                <span className="ind">+</span>
+                <span className="ind">▾</span>
               </summary>
               <p>
                 Yes — MBEAR's free share market trading course runs every Saturday at our Basaveshwara
@@ -520,7 +520,7 @@ export default function MbearLandingPage() {
             <details>
               <summary>
                 Do I need any prior knowledge of the stock market?
-                <span className="ind">+</span>
+                <span className="ind">▾</span>
               </summary>
               <p>
                 None at all. The session is built for complete beginners as well as those wanting to
@@ -530,7 +530,7 @@ export default function MbearLandingPage() {
             <details>
               <summary>
                 Is MBEAR SEBI-registered — will you manage my investments or give stock tips?
-                <span className="ind">+</span>
+                <span className="ind">▾</span>
               </summary>
               <p>
                 No. MBEAR is an educational session only. We do not manage money, execute trades, or
@@ -541,7 +541,7 @@ export default function MbearLandingPage() {
             <details>
               <summary>
                 Can retired individuals and homemakers attend?
-                <span className="ind">+</span>
+                <span className="ind">▾</span>
               </summary>
               <p>
                 Yes — the session is designed for students, homemakers, working professionals and
@@ -551,21 +551,21 @@ export default function MbearLandingPage() {
             <details>
               <summary>
                 Is the masterclass really free?
-                <span className="ind">+</span>
+                <span className="ind">▾</span>
               </summary>
               <p>Yes. The introductory Saturday session is entirely free, with no obligation to enrol in anything further.</p>
             </details>
             <details>
               <summary>
                 Can I bring a family member or friend?
-                <span className="ind">+</span>
+                <span className="ind">▾</span>
               </summary>
               <p>Absolutely — we'd just ask that they reserve their own seat, since space is limited to 30 per batch.</p>
             </details>
             <details>
               <summary>
                 Can I join the stock market course from Vijayanagar or Nagarabhavi?
-                <span className="ind">+</span>
+                <span className="ind">▾</span>
               </summary>
               <p>
                 Yes — MBEAR's Basaveshwara Nagar centre is an easy, familiar drive from both Vijayanagar
@@ -576,7 +576,7 @@ export default function MbearLandingPage() {
             <details>
               <summary>
                 Do you offer stock market classes near Mysore Road?
-                <span className="ind">+</span>
+                <span className="ind">▾</span>
               </summary>
               <p>
                 Yes — our Basaveshwara Nagar venue is roughly 4 km from Mysore Road, making it a quick

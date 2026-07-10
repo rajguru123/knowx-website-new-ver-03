@@ -403,16 +403,25 @@ export default function MbearLandingPage() {
           <div className="rule" style={{ marginBottom: 56 }} />
           <div className="details reveal">
             <div className="details__item">
-              <span className="eyebrow">When</span>
-              <div className="val">Every Saturday, 10:30 AM – 12:30 PM</div>
+              <span className="icon">🗓️</span>
+              <div className="val">
+                <strong>Every Saturday</strong>
+                10:30 AM – 12:30 PM
+              </div>
             </div>
             <div className="details__item">
-              <span className="eyebrow">Where</span>
-              <div className="val">MBEAR, 2nd Floor, 331 Siddhaiah Puranik Rd, Basaveshwara Nagar</div>
+              <span className="icon">📍</span>
+              <div className="val">
+                <strong>MBEAR</strong>
+                2nd Floor, 331, Siddhaiah Puranik Road, Basaveshwar Nagar
+              </div>
             </div>
             <div className="details__item">
-              <span className="eyebrow">Contact</span>
-              <div className="val">7676601681 / 9886094611</div>
+              <span className="icon">📞</span>
+              <div className="val">
+                <strong>7676601681</strong>
+                9886094611
+              </div>
             </div>
           </div>
         </div>
@@ -494,7 +503,7 @@ export default function MbearLandingPage() {
         <div className="container">
           <div className="head reveal">
             <span className="eyebrow">Questions</span>
-            <h2>Before you reserve a seat.</h2>
+            <h2>Frequently Asked Questions</h2>
           </div>
           <div className="faq reveal">
             <details>
@@ -552,6 +561,27 @@ export default function MbearLandingPage() {
                 <span className="ind">+</span>
               </summary>
               <p>Absolutely — we'd just ask that they reserve their own seat, since space is limited to 30 per batch.</p>
+            </details>
+            <details>
+              <summary>
+                Can I join the stock market course from Vijayanagar or Nagarabhavi?
+                <span className="ind">+</span>
+              </summary>
+              <p>
+                Yes — MBEAR's Basaveshwara Nagar centre is an easy, familiar drive from both Vijayanagar
+                (~2 km) and Nagarabhavi (~5 km), with plenty of students attending from each area every
+                Saturday.
+              </p>
+            </details>
+            <details>
+              <summary>
+                Do you offer stock market classes near Mysore Road?
+                <span className="ind">+</span>
+              </summary>
+              <p>
+                Yes — our Basaveshwara Nagar venue is roughly 4 km from Mysore Road, making it a quick
+                and convenient trip for residents there too.
+              </p>
             </details>
           </div>
         </div>

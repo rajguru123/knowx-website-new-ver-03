@@ -199,7 +199,7 @@ export default function InvestorMasterclassPage() {
           t.src=v;s=b.getElementsByTagName(e)[0];
           s.parentNode.insertBefore(t,s)}(window, document,'script',
           'https://connect.facebook.net/en_US/fbevents.js');
-          fbq('init', '934640442979770');
+          fbq('init', '3664271593711897');
           fbq('track', 'PageView');`}
       </Script>
 
@@ -221,7 +221,7 @@ export default function InvestorMasterclassPage() {
           height={1}
           width={1}
           style={{ display: 'none' }}
-          src="https://www.facebook.com/tr?id=934640442979770&ev=PageView&noscript=1"
+          src="https://www.facebook.com/tr?id=3664271593711897&ev=PageView&noscript=1"
           alt=""
         />
       </noscript>

@@ -39,20 +39,32 @@ export default function MbearLandingPage() {
     const form = e.currentTarget
     const data = new FormData(form)
     try {
-      await fetch('https://api.web3forms.com/submit', { method: 'POST', body: data })
-      setSubmitted(true)
+      const res = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: data })
+      const result = await res.json()
 
-      // Fire conversion events for ad platforms — this is what lets Meta/Google
-      // Ads learn which campaigns actually produce registrations, not just clicks.
-      if (typeof window !== 'undefined') {
-        const w = window as any
-        if (typeof w.fbq === 'function') {
-          w.fbq('track', 'Lead')
+      if (result.success) {
+        setSubmitted(true)
+
+        // Fire conversion events for ad platforms — this is what lets Meta/Google
+        // Ads learn which campaigns actually produce registrations, not just clicks.
+        if (typeof window !== 'undefined') {
+          const w = window as any
+          if (typeof w.fbq === 'function') {
+            w.fbq('track', 'Lead')
+          }
+          w.dataLayer = w.dataLayer || []
+          w.dataLayer.push({ event: 'mbear_registration_submitted' })
         }
-        w.dataLayer = w.dataLayer || []
-        w.dataLayer.push({ event: 'mbear_registration_submitted' })
+      } else {
+        // Web3Forms reached the server fine but reported failure (e.g. invalid
+        // access key, validation error) — log it so it's visible in DevTools
+        // Console instead of failing silently.
+        console.error('Web3Forms submission failed:', result)
+        setSubmitError(true)
       }
-    } catch {
+    } catch (err) {
+      // Request never reached the server at all (network/CORS failure).
+      console.error('Web3Forms request error:', err)
       setSubmitError(true)
     } finally {
       setSubmitting(false)

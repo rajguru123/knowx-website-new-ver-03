@@ -89,7 +89,8 @@ export const BLOG_POSTS: BlogPost[] = [
     readingTime: 10,
     author: "Bhimsen G.V.",
     tags: ["iot projects for engineering students", "embedded ai projects 2026", "iot project ideas", "final year iot projects", "bangalore"],
-  {
+},
+    {
     slug: "ev-battery-management-system-ai-embedded-engineers-projects",
     title: "EV Battery Management System — AI & Embedded Engineers Project Guide",
     excerpt: "Deep dive into EV battery management systems for embedded engineers — architecture, AI integration, real project examples from Knowx Innovations.",

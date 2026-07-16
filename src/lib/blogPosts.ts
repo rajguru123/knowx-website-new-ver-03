@@ -82,14 +82,13 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: "top-iot-ai-embedded-projects-for-engineering-students-bangalore",
-    title: "Top IoT, AI & Embedded Projects for Engineering Students — Bangalore",
-    excerpt: "Best IoT, AI and Embedded project ideas for engineering students in Bangalore — with hardware lists, difficulty ratings and mentorship guidance.",
+    title: "45+ IoT & Embedded AI Project Ideas for Engineering Students (2026)",
+    excerpt: "45+ real IoT & Embedded AI project ideas across 9 domains — IIoT, Healthcare, EV, Agriculture & more. Built on real hardware, not textbook simulations.",
     category: "Embedded AI/IoT",
     datePublished: "2026-05-18",
     readingTime: 10,
     author: "Bhimsen G.V.",
-    tags: ["iot projects", "ai projects", "embedded projects", "engineering students", "bangalore"],
-  },
+    tags: ["iot projects for engineering students", "embedded ai projects 2026", "iot project ideas", "final year iot projects", "bangalore"],
   {
     slug: "ev-battery-management-system-ai-embedded-engineers-projects",
     title: "EV Battery Management System — AI & Embedded Engineers Project Guide",

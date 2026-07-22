@@ -1,12 +1,12 @@
 /* =========================================================
    Engineering Innovation Labs — Flagship Page (scoped)
    Wrapper: .eil-scope
-   Step 2 — Hero styles added.
+   Step 3 — Hero polish + Sections 2, 3, 4 styles.
    Palette:
      Green   #0f766e (primary)
      Blue    #1e3a8a (deep)
      Red     #dc2626 (CTA only)
-     Green tint  #f0fdf9  Gray tint #f9fafb
+     Tints   green #f0fdf9 · blue #eff3ff · gray #f9fafb
    ========================================================= */
 
 .scope {
@@ -19,7 +19,6 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
 .scope *,
 .scope *::before,
 .scope *::after {
@@ -38,7 +37,6 @@
     linear-gradient(180deg, #ffffff 0%, #f9fbfa 100%);
   overflow: hidden;
 }
-
 .heroInner {
   max-width: 1200px;
   margin: 0 auto;
@@ -47,15 +45,11 @@
   gap: 40px;
   align-items: center;
 }
-
-/* -------- LEFT COLUMN -------- */
-
 .heroLeft {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
-
 .heroHeadline {
   font-size: 34px;
   line-height: 1.15;
@@ -64,12 +58,10 @@
   color: #0b1220;
   margin: 0;
 }
-
 .heroHeadlineAccent {
   display: inline-block;
   color: #0f766e;
 }
-
 .heroSubhead {
   font-size: 16px;
   line-height: 1.65;
@@ -77,7 +69,6 @@
   margin: 0;
   max-width: 640px;
 }
-
 .heroCtaRow {
   display: flex;
   flex-wrap: wrap;
@@ -85,7 +76,6 @@
   align-items: center;
   margin-top: 4px;
 }
-
 .heroCtaPrimary {
   display: inline-flex;
   align-items: center;
@@ -98,8 +88,7 @@
   padding: 14px 22px;
   border-radius: 10px;
   box-shadow: 0 6px 16px rgba(220, 38, 38, 0.25);
-  transition: transform 0.15s ease, box-shadow 0.15s ease,
-    background-color 0.15s ease;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
   min-height: 48px;
 }
 .heroCtaPrimary:hover {
@@ -107,7 +96,6 @@
   transform: translateY(-1px);
   box-shadow: 0 10px 22px rgba(220, 38, 38, 0.3);
 }
-
 .heroCtaSecondary {
   display: inline-flex;
   align-items: center;
@@ -124,7 +112,6 @@
   color: #0b5b54;
   border-bottom-color: #0f766e;
 }
-
 .heroAccentBar {
   width: 80px;
   height: 4px;
@@ -133,6 +120,7 @@
   margin-top: 20px;
 }
 
+/* Trust strip — colored pills (green + blue alternating) */
 .heroTrustStrip {
   list-style: none;
   padding: 0;
@@ -141,22 +129,24 @@
   flex-wrap: wrap;
   gap: 10px;
 }
-
 .heroTrustPill {
   display: inline-flex;
   align-items: center;
-  background: #ffffff;
-  color: #0b1220;
-  font-size: 13px;
+  color: #ffffff;
+  font-size: 14px;
   font-weight: 600;
-  padding: 8px 14px;
+  padding: 10px 16px;
   border-radius: 999px;
-  border: 1px solid #e5e7eb;
-  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.12);
   white-space: nowrap;
+  letter-spacing: 0.01em;
 }
-
-/* -------- RIGHT COLUMN (SVG) -------- */
+.pillGreen {
+  background: #0f766e;
+}
+.pillBlue {
+  background: #1e3a8a;
+}
 
 .heroRight {
   width: 100%;
@@ -164,7 +154,6 @@
   justify-content: center;
   align-items: center;
 }
-
 .heroSvg {
   width: 100%;
   max-width: 500px;
@@ -173,7 +162,257 @@
 }
 
 /* ==========================================================
-   PLACEHOLDER SECTIONS (Sections 2–16, until built)
+   SECTION 2 — UNIVERSITIES NEED MORE THAN LABORATORIES
+   ========================================================== */
+
+.s2 {
+  padding: 56px 20px;
+  background: #f9fafb;
+}
+.s2Inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.s2Heading {
+  font-size: 28px;
+  font-weight: 800;
+  color: #0b1220;
+  text-align: center;
+  margin: 0 0 12px;
+  letter-spacing: -0.01em;
+}
+.s2Intro {
+  font-size: 15px;
+  line-height: 1.65;
+  color: #4b5563;
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 32px;
+}
+.s2Panels {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+.s2Panel {
+  padding: 28px 24px;
+  border-radius: 14px;
+  color: #ffffff;
+  min-height: 220px;
+}
+.s2PanelBlue {
+  background: #1e3a8a;
+}
+.s2PanelGreen {
+  background: #0f766e;
+}
+.s2Icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.14);
+  color: #ffffff;
+  margin-bottom: 16px;
+}
+.s2PanelTitle {
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 14px;
+}
+.s2PanelList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.s2PanelList li {
+  font-size: 15px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.94);
+  padding-left: 18px;
+  position: relative;
+}
+.s2PanelList li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: rgba(255, 255, 255, 0.7);
+}
+.s2Quote {
+  font-size: 16px;
+  font-style: italic;
+  color: #374151;
+  text-align: center;
+  margin: 0;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 12px;
+}
+
+/* ==========================================================
+   SECTION 3 — WHY KNOWX (Beyond Lab Setup)
+   ========================================================== */
+
+.s3 {
+  padding: 64px 20px;
+  background: #ffffff;
+}
+.s3Inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.s3Heading {
+  font-size: 28px;
+  font-weight: 800;
+  color: #0b1220;
+  text-align: center;
+  margin: 0 0 12px;
+  letter-spacing: -0.01em;
+}
+.s3Subtitle {
+  font-size: 15px;
+  line-height: 1.65;
+  color: #4b5563;
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 36px;
+}
+.s3Grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+.s3Card {
+  padding: 26px 22px;
+  border-radius: 14px;
+  border: 1px solid transparent;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.s3Card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+}
+.cardGreen {
+  background: #f0fdf9;
+  border-color: #cceee5;
+}
+.cardBlue {
+  background: #eff3ff;
+  border-color: #d3ddf7;
+}
+.s3CardIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  margin-bottom: 14px;
+  color: #ffffff;
+}
+.cardGreen .s3CardIcon {
+  background: #0f766e;
+}
+.cardBlue .s3CardIcon {
+  background: #1e3a8a;
+}
+.s3CardTitle {
+  font-size: 17px;
+  font-weight: 700;
+  color: #0b1220;
+  margin: 0 0 8px;
+}
+.s3CardBody {
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: #4b5563;
+  margin: 0;
+}
+
+/* ==========================================================
+   SECTION 4 — OUR ECOSYSTEM MODEL
+   ========================================================== */
+
+.s4 {
+  padding: 64px 20px;
+  background: linear-gradient(135deg, #0f766e 0%, #0b5b54 100%);
+  color: #ffffff;
+}
+.s4Inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+.s4Heading {
+  font-size: 28px;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 8px;
+  letter-spacing: -0.01em;
+}
+.s4Subtitle {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0 0 36px;
+}
+.s4Flow {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 28px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+.s4Stage {
+  display: inline-flex;
+  align-items: center;
+}
+.s4StageInner {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 18px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  min-height: 48px;
+}
+.s4StageNum {
+  font-size: 12px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.6);
+  letter-spacing: 0.05em;
+}
+.s4StageLabel {
+  font-size: 14.5px;
+  font-weight: 600;
+  color: #ffffff;
+  white-space: nowrap;
+}
+.s4Arrow {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.55);
+  margin: 0 4px;
+}
+.s4Footer {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0 auto;
+  max-width: 720px;
+  line-height: 1.65;
+}
+
+/* ==========================================================
+   PLACEHOLDER SECTIONS (Sections 5–16, until built)
    ========================================================== */
 .section {
   min-height: 240px;
@@ -195,6 +434,16 @@
 /* ==========================================================
    RESPONSIVE BREAKPOINTS
    ========================================================== */
+
+/* Tablet ≥ 640px */
+@media (min-width: 640px) {
+  .s2Panels {
+    grid-template-columns: 1fr 1fr;
+  }
+  .s3Grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
 
 /* Tablet ≥ 768px */
 @media (min-width: 768px) {
@@ -218,8 +467,56 @@
     font-size: 16px;
   }
   .heroTrustPill {
-    font-size: 13px;
-    padding: 9px 16px;
+    font-size: 14px;
+    padding: 10px 18px;
+  }
+
+  .s2 {
+    padding: 72px 32px;
+  }
+  .s2Heading {
+    font-size: 34px;
+  }
+  .s2Intro {
+    font-size: 16px;
+  }
+  .s2PanelTitle {
+    font-size: 22px;
+  }
+  .s2PanelList li {
+    font-size: 16px;
+  }
+  .s2Quote {
+    font-size: 17px;
+  }
+
+  .s3 {
+    padding: 80px 32px;
+  }
+  .s3Heading {
+    font-size: 34px;
+  }
+  .s3Subtitle {
+    font-size: 16px;
+  }
+  .s3CardTitle {
+    font-size: 18px;
+  }
+  .s3CardBody {
+    font-size: 15px;
+  }
+
+  .s4 {
+    padding: 80px 32px;
+  }
+  .s4Heading {
+    font-size: 34px;
+  }
+  .s4StageLabel {
+    font-size: 15px;
+  }
+  .s4Footer {
+    font-size: 16px;
   }
 
   .section {
@@ -245,6 +542,31 @@
   }
   .heroSubhead {
     font-size: 18px;
+  }
+
+  .s2 {
+    padding: 88px 40px;
+  }
+  .s2Heading {
+    font-size: 40px;
+  }
+
+  .s3 {
+    padding: 96px 40px;
+  }
+  .s3Heading {
+    font-size: 40px;
+  }
+  .s3Grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .s4 {
+    padding: 96px 40px;
+  }
+  .s4Heading {
+    font-size: 40px;
   }
 
   .section {

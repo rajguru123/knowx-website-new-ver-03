@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 const servicePages = [
+  { href: '/engineering-innovation-labs', label: 'Engineering Innovation Labs' },
   { href: '/iot-product-development-company-bangalore', label: 'IoT Product Development' },
   { href: '/embedded-system-design-software-development-bangalore', label: 'Embedded System Design' },
   { href: '/#services', label: 'AI & ML Services' },
@@ -73,7 +74,8 @@ export default function Navbar({ onOpenPopup }: { onOpenPopup: () => void }) {
   const isIoT = pathname.includes('iot-product-development');
   const isEmbedded = pathname.includes('embedded-system-design');
  const isHardware = pathname.includes('electronics-hardware-design');
-const isService = isIoT || isEmbedded || isHardware;
+ const isInnovationLabs = pathname.includes('engineering-innovation-labs');
+const isService = isIoT || isEmbedded || isHardware || isInnovationLabs;
 
   return (
     <>

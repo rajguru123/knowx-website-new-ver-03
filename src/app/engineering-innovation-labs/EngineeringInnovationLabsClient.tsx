@@ -7,9 +7,21 @@ import styles from "./styles.module.css";
  * Engineering Innovation Labs — Flagship pillar page
  * URL: /engineering-innovation-labs/
  *
- * Step 3 — Sections 1 (hero polish), 2, 3, 4 built.
- * Sections 5–16 remain as TODO placeholders.
+ * Step 4 — Hero compacted, "Since 2005" tag moved above headline,
+ * Sections 2/3/4 compacted, Section 5 (Comparison Table) built.
+ * Sections 6–16 remain as TODO placeholders.
  */
+
+const comparisonRows = [
+  { criterion: "Scope of Work", vendor: "Equipment supply only", knowx: "End-to-end innovation ecosystem" },
+  { criterion: "Faculty Training", vendor: "Not included", knowx: "Structured faculty development programs" },
+  { criterion: "Curriculum Alignment", vendor: "None", knowx: "CDIO + OBE mapping" },
+  { criterion: "Student Projects", vendor: "Generic kits", knowx: "Real industry projects" },
+  { criterion: "Industry Connect", vendor: "None", knowx: "Built-in industry partnerships" },
+  { criterion: "Post-Setup Support", vendor: "Warranty only", knowx: "Continuous mentorship" },
+  { criterion: "Outcome Focus", vendor: "Installation complete", knowx: "Placements + startups + research" },
+];
+
 export default function EngineeringInnovationLabsClient() {
   return (
     <div className={`eil-scope ${styles.scope}`}>
@@ -18,13 +30,12 @@ export default function EngineeringInnovationLabsClient() {
       {/* ============================================================ */}
       <section className={styles.hero} id="hero">
         <div className={styles.heroInner}>
-          {/* LEFT COLUMN */}
           <div className={styles.heroLeft}>
+            <span className={styles.heroTag}>Since 2005 · Trusted Product Engineering Partner</span>
+
             <h1 className={styles.heroHeadline}>
               Future-Ready Engineering{" "}
-              <span className={styles.heroHeadlineAccent}>
-                Innovation Ecosystem
-              </span>
+              <span className={styles.heroHeadlineAccent}>Innovation Ecosystem</span>
             </h1>
 
             <p className={styles.heroSubhead}>
@@ -44,34 +55,15 @@ export default function EngineeringInnovationLabsClient() {
 
             <div className={styles.heroAccentBar} aria-hidden="true" />
 
-            <ul
-              className={styles.heroTrustStrip}
-              aria-label="Company trust indicators"
-            >
-              <li className={`${styles.heroTrustPill} ${styles.pillGreen}`}>
-                Since 2005
-              </li>
-              <li className={`${styles.heroTrustPill} ${styles.pillBlue}`}>
-                20+ Years
-              </li>
-              <li className={`${styles.heroTrustPill} ${styles.pillGreen}`}>
-                10,000+ Students Trained
-              </li>
-              <li className={`${styles.heroTrustPill} ${styles.pillBlue}`}>
-                1,000+ Projects Executed
-              </li>
+            <ul className={styles.heroTrustStrip} aria-label="Company trust indicators">
+              <li className={`${styles.heroTrustPill} ${styles.pillGreen}`}>20+ Years</li>
+              <li className={`${styles.heroTrustPill} ${styles.pillBlue}`}>10,000+ Students Trained</li>
+              <li className={`${styles.heroTrustPill} ${styles.pillGreen}`}>1,000+ Projects Executed</li>
             </ul>
           </div>
 
-          {/* RIGHT COLUMN — Ecosystem SVG diagram */}
           <div className={styles.heroRight} aria-hidden="true">
-            <svg
-              viewBox="0 0 500 520"
-              xmlns="http://www.w3.org/2000/svg"
-              className={styles.heroSvg}
-              role="img"
-              aria-label="Knowx Innovation Ecosystem: University to Innovation Labs to Students, Faculty, Industry, Startups and Placements"
-            >
+            <svg viewBox="0 0 500 520" xmlns="http://www.w3.org/2000/svg" className={styles.heroSvg} role="img" aria-label="Knowx Innovation Ecosystem diagram">
               <g stroke="#0f766e" strokeWidth="2" fill="none" opacity="0.35">
                 <path d="M 250 60 L 250 130" />
                 <path d="M 200 175 Q 110 220 90 265" />
@@ -81,7 +73,6 @@ export default function EngineeringInnovationLabsClient() {
                 <path d="M 220 425 Q 170 460 160 480" />
                 <path d="M 280 425 Q 330 460 340 480" />
               </g>
-
               <g>
                 <rect x="180" y="18" width="140" height="52" rx="26" fill="#1e3a8a" />
                 <text x="250" y="50" textAnchor="middle" fill="#ffffff" fontFamily="system-ui, -apple-system, Segoe UI, Roboto, sans-serif" fontSize="16" fontWeight="600">University</text>
@@ -128,7 +119,6 @@ export default function EngineeringInnovationLabsClient() {
           </p>
 
           <div className={styles.s2Panels}>
-            {/* LEFT PANEL — Traditional Engineering */}
             <div className={`${styles.s2Panel} ${styles.s2PanelBlue}`}>
               <div className={styles.s2Icon} aria-hidden="true">
                 <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -146,7 +136,6 @@ export default function EngineeringInnovationLabsClient() {
               </ul>
             </div>
 
-            {/* RIGHT PANEL — Innovation Ecosystem */}
             <div className={`${styles.s2Panel} ${styles.s2PanelGreen}`}>
               <div className={styles.s2Icon} aria-hidden="true">
                 <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -187,13 +176,10 @@ export default function EngineeringInnovationLabsClient() {
           </p>
 
           <div className={styles.s3Grid}>
-            {/* Card 1 — green */}
             <div className={`${styles.s3Card} ${styles.cardGreen}`}>
               <div className={styles.s3CardIcon} aria-hidden="true">
                 <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M3 21h18" />
-                  <path d="M5 21V7l7-4 7 4v14" />
-                  <path d="M9 21v-6h6v6" />
+                  <path d="M3 21h18" /><path d="M5 21V7l7-4 7 4v14" /><path d="M9 21v-6h6v6" />
                 </svg>
               </div>
               <h3 className={styles.s3CardTitle}>Infrastructure Design</h3>
@@ -203,7 +189,6 @@ export default function EngineeringInnovationLabsClient() {
               </p>
             </div>
 
-            {/* Card 2 — blue */}
             <div className={`${styles.s3Card} ${styles.cardBlue}`}>
               <div className={styles.s3CardIcon} aria-hidden="true">
                 <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -218,12 +203,10 @@ export default function EngineeringInnovationLabsClient() {
               </p>
             </div>
 
-            {/* Card 3 — green */}
             <div className={`${styles.s3Card} ${styles.cardGreen}`}>
               <div className={styles.s3CardIcon} aria-hidden="true">
                 <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M22 10L12 5 2 10l10 5 10-5z" />
-                  <path d="M6 12v5c3 3 9 3 12 0v-5" />
+                  <path d="M22 10L12 5 2 10l10 5 10-5z" /><path d="M6 12v5c3 3 9 3 12 0v-5" />
                 </svg>
               </div>
               <h3 className={styles.s3CardTitle}>Faculty Development</h3>
@@ -233,12 +216,10 @@ export default function EngineeringInnovationLabsClient() {
               </p>
             </div>
 
-            {/* Card 4 — blue */}
             <div className={`${styles.s3Card} ${styles.cardBlue}`}>
               <div className={styles.s3CardIcon} aria-hidden="true">
                 <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M9 21h6" />
-                  <path d="M12 17v4" />
+                  <path d="M9 21h6" /><path d="M12 17v4" />
                   <path d="M12 3a6 6 0 0 1 4 10.5c-.7.6-1 1.5-1 2.5H9c0-1-.3-1.9-1-2.5A6 6 0 0 1 12 3z" />
                 </svg>
               </div>
@@ -249,7 +230,6 @@ export default function EngineeringInnovationLabsClient() {
               </p>
             </div>
 
-            {/* Card 5 — green */}
             <div className={`${styles.s3Card} ${styles.cardGreen}`}>
               <div className={styles.s3CardIcon} aria-hidden="true">
                 <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -266,7 +246,6 @@ export default function EngineeringInnovationLabsClient() {
               </p>
             </div>
 
-            {/* Card 6 — blue */}
             <div className={`${styles.s3Card} ${styles.cardBlue}`}>
               <div className={styles.s3CardIcon} aria-hidden="true">
                 <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -290,9 +269,7 @@ export default function EngineeringInnovationLabsClient() {
       <section className={styles.s4} id="ecosystem-model">
         <div className={styles.s4Inner}>
           <h2 className={styles.s4Heading}>Our Ecosystem Model</h2>
-          <p className={styles.s4Subtitle}>
-            From Vision to Placements — One Connected System
-          </p>
+          <p className={styles.s4Subtitle}>From Vision to Placements — One Connected System</p>
 
           <ol className={styles.s4Flow}>
             {[
@@ -325,72 +302,84 @@ export default function EngineeringInnovationLabsClient() {
       </section>
 
       {/* ============================================================ */}
-      {/* Sections 5–16 — placeholders                                   */}
+      {/* Section 5 — WHY CHOOSE US (Comparison Table)                   */}
       {/* ============================================================ */}
-      <section className={styles.section} id="comparison">
-        <h2 className={styles.placeholder}>
-          5. Why Choose Us — Comparison Table — TODO (Step 4)
-        </h2>
+      <section className={styles.s5} id="comparison">
+        <div className={styles.s5Inner}>
+          <h2 className={styles.s5Heading}>Why Choose Us for Your Lab Setup</h2>
+          <p className={styles.s5Intro}>
+            See how a complete innovation ecosystem partner compares to a
+            typical lab equipment vendor — across scope, faculty development,
+            curriculum alignment, and student outcomes.
+          </p>
+
+          {/* Desktop / tablet table */}
+          <div className={styles.s5Table} role="table" aria-label="Comparison: Typical Lab Vendor vs Knowx Innovation Ecosystem">
+            <div className={styles.s5HeaderRow} role="row">
+              <div className={`${styles.s5Cell} ${styles.s5HCriteria}`} role="columnheader">Criteria</div>
+              <div className={`${styles.s5Cell} ${styles.s5HVendor}`} role="columnheader">Typical Lab Vendor</div>
+              <div className={`${styles.s5Cell} ${styles.s5HKnowx}`} role="columnheader">Knowx Innovation Ecosystem</div>
+            </div>
+
+            {comparisonRows.map((row, i) => (
+              <div
+                key={row.criterion}
+                className={`${styles.s5DataRow} ${i % 2 === 1 ? styles.s5RowAlt : ""}`}
+                role="row"
+              >
+                <div className={`${styles.s5Cell} ${styles.s5DCriteria}`} role="cell">
+                  <span className={styles.s5MobileLabel}>Criteria</span>
+                  {row.criterion}
+                </div>
+                <div className={`${styles.s5Cell} ${styles.s5DVendor}`} role="cell">
+                  <span className={styles.s5MobileLabel}>Typical Lab Vendor</span>
+                  <span className={styles.s5Mark} aria-hidden="true">✗</span>
+                  <span>{row.vendor}</span>
+                </div>
+                <div className={`${styles.s5Cell} ${styles.s5DKnowx}`} role="cell">
+                  <span className={styles.s5MobileLabel}>Knowx Innovation Ecosystem</span>
+                  <span className={styles.s5Mark} aria-hidden="true">✓</span>
+                  <span>{row.knowx}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
       </section>
 
+      {/* ============================================================ */}
+      {/* Sections 6–16 — placeholders                                   */}
+      {/* ============================================================ */}
       <section className={styles.section} id="innovation-solutions">
-        <h2 className={styles.placeholder}>
-          6. Innovation Solutions — Catalogue of Labs — TODO (Step 5)
-        </h2>
+        <h2 className={styles.placeholder}>6. Innovation Solutions — Catalogue of Labs — TODO (Step 5)</h2>
       </section>
-
       <section className={styles.section} id="global-alignment">
-        <h2 className={styles.placeholder}>
-          7. Global Engineering Education Alignment — TODO (Step 6)
-        </h2>
+        <h2 className={styles.placeholder}>7. Global Engineering Education Alignment — TODO (Step 6)</h2>
       </section>
-
       <section className={styles.section} id="technologies">
-        <h2 className={styles.placeholder}>
-          8. Technologies We Work With — TODO (Step 6)
-        </h2>
+        <h2 className={styles.placeholder}>8. Technologies We Work With — TODO (Step 6)</h2>
       </section>
-
       <section className={styles.section} id="student-journey">
-        <h2 className={styles.placeholder}>
-          9. Student Innovation Journey — TODO (Step 6)
-        </h2>
+        <h2 className={styles.placeholder}>9. Student Innovation Journey — TODO (Step 6)</h2>
       </section>
-
       <section className={styles.section} id="faculty-enablement">
-        <h2 className={styles.placeholder}>
-          10. Faculty Enablement — TODO (Step 7)
-        </h2>
+        <h2 className={styles.placeholder}>10. Faculty Enablement — TODO (Step 7)</h2>
       </section>
-
       <section className={styles.section} id="funding-guidance">
-        <h2 className={styles.placeholder}>
-          11. Funding &amp; Implementation Guidance — TODO (Step 7)
-        </h2>
+        <h2 className={styles.placeholder}>11. Funding &amp; Implementation Guidance — TODO (Step 7)</h2>
       </section>
-
       <section className={styles.section} id="customer-logos">
-        <h2 className={styles.placeholder}>
-          12. We Have Setup Labs In (Customer Logos) — TODO (Step 8)
-        </h2>
+        <h2 className={styles.placeholder}>12. We Have Setup Labs In (Customer Logos) — TODO (Step 8)</h2>
       </section>
-
       <section className={styles.section} id="gallery">
         <h2 className={styles.placeholder}>13. Gallery — TODO (Step 8)</h2>
       </section>
-
       <section className={styles.section} id="reviews">
-        <h2 className={styles.placeholder}>
-          14. Reviews / Testimonials — TODO (Step 8)
-        </h2>
+        <h2 className={styles.placeholder}>14. Reviews / Testimonials — TODO (Step 8)</h2>
       </section>
-
       <section className={styles.section} id="metrics-cta">
-        <h2 className={styles.placeholder}>
-          15. Success Metrics + Consultation CTA — TODO (Step 9)
-        </h2>
+        <h2 className={styles.placeholder}>15. Success Metrics + Consultation CTA — TODO (Step 9)</h2>
       </section>
-
       <section className={styles.section} id="faq">
         <h2 className={styles.placeholder}>16. FAQ — TODO (Step 9)</h2>
       </section>

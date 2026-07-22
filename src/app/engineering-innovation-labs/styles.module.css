@@ -1,7 +1,7 @@
 /* =========================================================
    Engineering Innovation Labs — Flagship Page (scoped)
    Wrapper: .eil-scope
-   Step 5 — Sections 6, 7, 8 styles added.
+   Step 6 — Sections 9, 10, 11 styles added.
    Palette:
      Green  #0f766e  Blue #1e3a8a  Amber #b45309  Teal #0d9488
      Red    #dc2626 (CTA / vendor ✗ only)
@@ -9,8 +9,7 @@
 
 .scope {
   box-sizing: border-box;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   color: #111827;
   background: #ffffff;
   line-height: 1.6;
@@ -24,111 +23,27 @@
 /* ==========================================================
    SECTION 1 — HERO
    ========================================================== */
-.hero {
-  position: relative;
-  padding: 32px 20px 40px;
-  background:
-    radial-gradient(1000px 400px at 90% -10%, #eafaf5 0%, transparent 60%),
-    linear-gradient(180deg, #ffffff 0%, #f9fbfa 100%);
-  overflow: hidden;
-}
-.heroInner {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 28px;
-  align-items: center;
-}
+.hero { position: relative; padding: 32px 20px 40px; background: radial-gradient(1000px 400px at 90% -10%, #eafaf5 0%, transparent 60%), linear-gradient(180deg, #ffffff 0%, #f9fbfa 100%); overflow: hidden; }
+.heroInner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr; gap: 28px; align-items: center; }
 .heroLeft { display: flex; flex-direction: column; gap: 14px; }
-.heroTag {
-  display: inline-flex;
-  align-items: center;
-  align-self: flex-start;
-  background: rgba(15, 118, 110, 0.08);
-  color: #0f766e;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  padding: 6px 12px;
-  border-radius: 999px;
-  border: 1px solid rgba(15, 118, 110, 0.2);
-}
-.heroHeadline {
-  font-size: 34px;
-  line-height: 1.15;
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  color: #0b1220;
-  margin: 0;
-}
+.heroTag { display: inline-flex; align-items: center; align-self: flex-start; background: rgba(15, 118, 110, 0.08); color: #0f766e; font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 6px 12px; border-radius: 999px; border: 1px solid rgba(15, 118, 110, 0.2); }
+.heroHeadline { font-size: 34px; line-height: 1.15; font-weight: 800; letter-spacing: -0.02em; color: #0b1220; margin: 0; }
 .heroHeadlineAccent { display: inline-block; color: #0f766e; }
-.heroSubhead {
-  font-size: 16px;
-  line-height: 1.6;
-  color: #374151;
-  margin: 0;
-  max-width: 640px;
-}
+.heroSubhead { font-size: 16px; line-height: 1.6; color: #374151; margin: 0; max-width: 640px; }
 .heroCtaRow { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-top: 2px; }
-.heroCtaPrimary {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: #dc2626;
-  color: #ffffff;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 15px;
-  padding: 12px 22px;
-  border-radius: 10px;
-  box-shadow: 0 6px 16px rgba(220, 38, 38, 0.25);
-  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
-  min-height: 46px;
-}
+.heroCtaPrimary { display: inline-flex; align-items: center; justify-content: center; background: #dc2626; color: #ffffff; text-decoration: none; font-weight: 600; font-size: 15px; padding: 12px 22px; border-radius: 10px; box-shadow: 0 6px 16px rgba(220, 38, 38, 0.25); transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease; min-height: 46px; }
 .heroCtaPrimary:hover { background: #b91c1c; transform: translateY(-1px); box-shadow: 0 10px 22px rgba(220, 38, 38, 0.3); }
-.heroCtaSecondary {
-  display: inline-flex;
-  align-items: center;
-  color: #0f766e;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 15px;
-  padding: 10px 4px;
-  border-bottom: 2px solid rgba(15, 118, 110, 0.35);
-  transition: color 0.15s ease, border-color 0.15s ease;
-  min-height: 44px;
-}
+.heroCtaSecondary { display: inline-flex; align-items: center; color: #0f766e; text-decoration: none; font-weight: 600; font-size: 15px; padding: 10px 4px; border-bottom: 2px solid rgba(15, 118, 110, 0.35); transition: color 0.15s ease, border-color 0.15s ease; min-height: 44px; }
 .heroCtaSecondary:hover { color: #0b5b54; border-bottom-color: #0f766e; }
 .heroAccentBar { width: 72px; height: 3px; background: #0f766e; border-radius: 2px; margin-top: 12px; }
-.heroTrustStrip {
-  list-style: none;
-  padding: 0;
-  margin: 4px 0 0 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-.heroTrustPill {
-  display: inline-flex;
-  align-items: center;
-  color: #ffffff;
-  font-size: 14px;
-  font-weight: 600;
-  padding: 8px 14px;
-  border-radius: 999px;
-  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.12);
-  white-space: nowrap;
-}
+.heroTrustStrip { list-style: none; padding: 0; margin: 4px 0 0 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.heroTrustPill { display: inline-flex; align-items: center; color: #ffffff; font-size: 14px; font-weight: 600; padding: 8px 14px; border-radius: 999px; box-shadow: 0 2px 6px rgba(15, 23, 42, 0.12); white-space: nowrap; }
 .pillGreen { background: #0f766e; }
 .pillBlue  { background: #1e3a8a; }
 .heroRight { width: 100%; display: flex; justify-content: center; align-items: center; }
-.heroSvg   { width: 100%; max-width: 400px; height: auto; display: block; }
+.heroSvg { width: 100%; max-width: 400px; height: auto; display: block; }
 
-/* ==========================================================
-   SECTION 2 — UNIVERSITIES NEED MORE THAN LABORATORIES
-   ========================================================== */
+/* SECTION 2 */
 .s2 { padding: 40px 20px; background: #f9fafb; }
 .s2Inner { max-width: 1200px; margin: 0 auto; }
 .s2Heading { font-size: 28px; font-weight: 800; color: #0b1220; text-align: center; margin: 0 0 10px; letter-spacing: -0.01em; }
@@ -144,9 +59,7 @@
 .s2PanelList li::before { content: "—"; position: absolute; left: 0; color: rgba(255, 255, 255, 0.7); }
 .s2Quote { font-size: 16px; font-style: italic; color: #374151; text-align: center; margin: 0 auto; max-width: 720px; padding: 0 12px; }
 
-/* ==========================================================
-   SECTION 3 — WHY KNOWX
-   ========================================================== */
+/* SECTION 3 */
 .s3 { padding: 48px 20px; background: #ffffff; }
 .s3Inner { max-width: 1200px; margin: 0 auto; }
 .s3Heading { font-size: 28px; font-weight: 800; color: #0b1220; text-align: center; margin: 0 0 10px; letter-spacing: -0.01em; }
@@ -162,9 +75,7 @@
 .s3CardTitle { font-size: 17px; font-weight: 700; color: #0b1220; margin: 0 0 6px; }
 .s3CardBody { font-size: 14.5px; line-height: 1.6; color: #4b5563; margin: 0; }
 
-/* ==========================================================
-   SECTION 4 — OUR ECOSYSTEM MODEL
-   ========================================================== */
+/* SECTION 4 */
 .s4 { padding: 48px 20px; background: linear-gradient(135deg, #0f766e 0%, #0b5b54 100%); color: #ffffff; }
 .s4Inner { max-width: 1200px; margin: 0 auto; text-align: center; }
 .s4Heading { font-size: 28px; font-weight: 800; color: #ffffff; margin: 0 0 6px; letter-spacing: -0.01em; }
@@ -177,9 +88,7 @@
 .s4Arrow { font-size: 18px; color: rgba(255, 255, 255, 0.55); margin: 0 2px; }
 .s4Footer { font-size: 15px; color: rgba(255, 255, 255, 0.9); margin: 0 auto; max-width: 720px; line-height: 1.6; }
 
-/* ==========================================================
-   SECTION 5 — COMPARISON TABLE
-   ========================================================== */
+/* SECTION 5 */
 .s5 { padding: 48px 20px; background: #ffffff; }
 .s5Inner { max-width: 1200px; margin: 0 auto; }
 .s5Heading { font-size: 28px; font-weight: 800; color: #0b1220; text-align: center; margin: 0 0 10px; letter-spacing: -0.01em; }
@@ -198,48 +107,21 @@
 .s5DKnowx  .s5Mark { color: #0f766e; }
 .s5MobileLabel { display: block; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: #6b7280; margin-bottom: 2px; }
 
-/* ==========================================================
-   SECTION 6 — INNOVATION SOLUTIONS (12 lab cards)
-   ========================================================== */
+/* SECTION 6 */
 .s6 { padding: 44px 20px; background: #f9fafb; }
 .s6Inner { max-width: 1240px; margin: 0 auto; }
 .s6Heading { font-size: 28px; font-weight: 800; color: #0b1220; text-align: center; margin: 0 0 10px; letter-spacing: -0.01em; }
 .s6Intro { font-size: 15px; line-height: 1.55; color: #4b5563; text-align: center; max-width: 1100px; margin: 0 auto 24px; }
-
 .s6Grid { display: grid; grid-template-columns: 1fr; gap: 12px; }
-.s6Card {
-  position: relative;
-  background: #ffffff;
-  border: 1px solid #e5e7eb;
-  border-top: 4px solid transparent;
-  border-radius: 12px;
-  padding: 18px 16px 20px;
-  display: flex;
-  flex-direction: column;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
-}
+.s6Card { position: relative; background: #ffffff; border: 1px solid #e5e7eb; border-top: 4px solid transparent; border-radius: 12px; padding: 18px 16px 20px; display: flex; flex-direction: column; transition: transform 0.15s ease, box-shadow 0.15s ease; }
 .s6Card:hover { transform: translateY(-3px); box-shadow: 0 14px 30px rgba(15, 23, 42, 0.08); }
-
-/* Icon chip — solid colored square, white icon */
-.s6CardIcon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 44px;
-  height: 44px;
-  border-radius: 10px;
-  color: #ffffff;
-  margin-bottom: 10px;
-}
-
-/* 3-tint rotation */
+.s6CardIcon { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 10px; color: #ffffff; margin-bottom: 10px; }
 .s6Tint_green { border-top-color: #0f766e; }
 .s6Tint_green .s6CardIcon { background: #0f766e; }
 .s6Tint_blue  { border-top-color: #1e3a8a; }
 .s6Tint_blue  .s6CardIcon { background: #1e3a8a; }
 .s6Tint_amber { border-top-color: #b45309; }
 .s6Tint_amber .s6CardIcon { background: #b45309; }
-
 .s6CardTitle { font-size: 16px; font-weight: 700; color: #0b1220; margin: 0 0 6px; }
 .s6CardBody { font-size: 14px; line-height: 1.55; color: #4b5563; margin: 0 0 12px; flex-grow: 1; }
 .s6CardLink { font-size: 14px; font-weight: 700; text-decoration: none; align-self: flex-start; }
@@ -248,93 +130,228 @@
 .s6Tint_amber .s6CardLink { color: #b45309; }
 .s6CardLink:hover { text-decoration: underline; }
 
-/* ==========================================================
-   SECTION 7 — GLOBAL ENGINEERING EDUCATION ALIGNMENT
-   ========================================================== */
+/* SECTION 7 */
 .s7 { padding: 48px 20px; background: #ffffff; }
 .s7Inner { max-width: 1200px; margin: 0 auto; }
 .s7Heading { font-size: 28px; font-weight: 800; color: #0b1220; text-align: center; margin: 0 0 10px; letter-spacing: -0.01em; }
 .s7Intro { font-size: 15px; line-height: 1.6; color: #4b5563; text-align: center; max-width: 780px; margin: 0 auto 26px; }
-
 .s7Grid { display: grid; grid-template-columns: 1fr; gap: 14px; margin-bottom: 22px; }
-.s7Card {
-  padding: 22px 20px;
-  border-radius: 14px;
-  border: 1px solid transparent;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
-}
+.s7Card { padding: 22px 20px; border-radius: 14px; border: 1px solid transparent; transition: transform 0.15s ease, box-shadow 0.15s ease; }
 .s7Card:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08); }
-
-/* 4-color card tints for section 7 */
 .s7Tint_green { background: #f0fdf9; border-color: #cceee5; }
 .s7Tint_blue  { background: #eff3ff; border-color: #d3ddf7; }
 .s7Tint_amber { background: #fef7e6; border-color: #fbd794; }
 .s7Tint_teal  { background: #eefcfa; border-color: #bfeae4; }
-
-.s7CardIcon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 44px;
-  height: 44px;
-  border-radius: 10px;
-  color: #ffffff;
-  margin-bottom: 12px;
-}
+.s7CardIcon { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 10px; color: #ffffff; margin-bottom: 12px; }
 .s7Tint_green .s7CardIcon { background: #0f766e; }
 .s7Tint_blue  .s7CardIcon { background: #1e3a8a; }
 .s7Tint_amber .s7CardIcon { background: #b45309; }
 .s7Tint_teal  .s7CardIcon { background: #0d9488; }
-
 .s7CardTitle { font-size: 17px; font-weight: 700; color: #0b1220; margin: 0 0 8px; }
-
-/* Dark body text — for readability against the tinted backgrounds */
 .s7CardBody { font-size: 14.5px; line-height: 1.65; color: #1f2937; margin: 0; }
-
 .s7Footer { font-size: 15px; line-height: 1.6; color: #374151; text-align: center; margin: 0 auto; max-width: 800px; }
 
-/* ==========================================================
-   SECTION 8 — TECHNOLOGIES WE WORK WITH
-   ========================================================== */
+/* SECTION 8 */
 .s8 { padding: 48px 20px; background: #f9fafb; }
 .s8Inner { max-width: 1200px; margin: 0 auto; }
 .s8Heading { font-size: 28px; font-weight: 800; color: #0b1220; text-align: center; margin: 0 0 10px; letter-spacing: -0.01em; }
 .s8Intro { font-size: 15px; line-height: 1.6; color: #4b5563; text-align: center; max-width: 820px; margin: 0 auto 26px; }
-
-/* Mobile-first: 2 columns */
 .s8Grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
-
-.s8Tile {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 16px 12px;
-  border-radius: 12px;
-  min-height: 68px;
-  border: 1px solid transparent;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
-  text-align: center;
-}
+.s8Tile { display: flex; align-items: center; justify-content: center; padding: 16px 12px; border-radius: 12px; min-height: 68px; border: 1px solid transparent; transition: transform 0.15s ease, box-shadow 0.15s ease; text-align: center; }
 .s8Tile:hover { transform: translateY(-2px); box-shadow: 0 10px 22px rgba(15, 23, 42, 0.08); }
-
 .s8TileText { font-size: 14px; font-weight: 700; line-height: 1.3; }
-
-/* 4-color rotation for tiles — soft tinted backgrounds, dark text */
 .s8Tint_green { background: #d5f5eb; border-color: #a3e2ce; }
 .s8Tint_green .s8TileText { color: #0b5b54; }
-
 .s8Tint_blue  { background: #dfe7fb; border-color: #b7c5f0; }
 .s8Tint_blue  .s8TileText { color: #1e3a8a; }
-
 .s8Tint_amber { background: #fceecc; border-color: #f4c56d; }
 .s8Tint_amber .s8TileText { color: #92400e; }
-
 .s8Tint_teal  { background: #d4f5f0; border-color: #a0dfd6; }
 .s8Tint_teal  .s8TileText { color: #0f766e; }
 
 /* ==========================================================
-   PLACEHOLDER SECTIONS
+   SECTION 9 — STUDENT INNOVATION JOURNEY
    ========================================================== */
+.s9 { padding: 44px 20px; background: #f1f5fb; }
+.s9Inner { max-width: 1240px; margin: 0 auto; }
+.s9Heading { font-size: 28px; font-weight: 800; color: #0b1220; text-align: center; margin: 0 0 10px; letter-spacing: -0.01em; }
+.s9Intro { font-size: 15px; line-height: 1.55; color: #4b5563; text-align: center; max-width: 1100px; margin: 0 auto 26px; }
+
+.s9Flow {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 22px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+.s9Milestone { display: flex; align-items: center; gap: 8px; }
+
+.s9Card {
+  flex: 1;
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  padding: 16px 14px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+}
+.s9Num {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2px;
+}
+.s9Tint_green .s9Num { background: #0f766e; }
+.s9Tint_blue  .s9Num { background: #1e3a8a; }
+.s9Year { font-size: 12px; font-weight: 700; color: #6b7280; letter-spacing: 0.04em; text-transform: uppercase; }
+.s9Title { font-size: 15px; font-weight: 700; color: #0b1220; margin: 0; }
+.s9Body { font-size: 13px; line-height: 1.5; color: #4b5563; margin: 0; }
+
+.s9Arrow {
+  font-size: 20px;
+  color: #1e3a8a;
+  font-weight: 700;
+  display: none;
+}
+
+.s9Footer { font-size: 15px; line-height: 1.6; color: #1e3a8a; text-align: center; margin: 0 auto; max-width: 900px; font-weight: 600; }
+
+/* ==========================================================
+   SECTION 10 — FACULTY ENABLEMENT
+   ========================================================== */
+.s10 { padding: 44px 20px; background: #f0fdf9; }
+.s10Inner { max-width: 1240px; margin: 0 auto; }
+.s10Heading { font-size: 28px; font-weight: 800; color: #0b1220; text-align: center; margin: 0 0 10px; letter-spacing: -0.01em; }
+.s10Intro { font-size: 15px; line-height: 1.55; color: #4b5563; text-align: center; max-width: 1100px; margin: 0 auto 24px; }
+
+.s10Grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.s10Card {
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  padding: 14px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.s10Card:hover { transform: translateY(-2px); box-shadow: 0 10px 22px rgba(15, 23, 42, 0.08); }
+
+.s10Code {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 13px;
+  letter-spacing: 0.02em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.s10Tint_green .s10Code { background: #0f766e; }
+.s10Tint_blue  .s10Code { background: #1e3a8a; }
+
+.s10Body { flex: 1; }
+.s10Title { font-size: 15px; font-weight: 700; color: #0b1220; margin: 0 0 4px; }
+.s10Desc  { font-size: 13.5px; line-height: 1.55; color: #4b5563; margin: 0; }
+
+.s10Footer { font-size: 15px; line-height: 1.6; color: #0b5b54; text-align: center; margin: 0 auto; max-width: 900px; font-weight: 600; }
+
+/* ==========================================================
+   SECTION 11 — FUNDING & IMPLEMENTATION GUIDANCE
+   ========================================================== */
+.s11 {
+  padding: 48px 20px;
+  background: linear-gradient(135deg, #0f766e 0%, #0b5b54 100%);
+  color: #ffffff;
+}
+.s11Inner { max-width: 1240px; margin: 0 auto; }
+.s11Heading { font-size: 28px; font-weight: 800; color: #ffffff; text-align: center; margin: 0 0 10px; letter-spacing: -0.01em; }
+.s11Intro { font-size: 15px; line-height: 1.6; color: rgba(255,255,255,0.9); text-align: center; max-width: 900px; margin: 0 auto 28px; }
+
+.s11Grid { display: grid; grid-template-columns: 1fr; gap: 12px; margin-bottom: 28px; }
+.s11Card {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 12px;
+  padding: 18px 16px;
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+.s11Card:hover { transform: translateY(-2px); background: rgba(255,255,255,0.12); }
+
+.s11CardIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+.s11Tint_green .s11CardIcon { background: rgba(255,255,255,0.18); }
+.s11Tint_blue  .s11CardIcon { background: rgba(255,255,255,0.18); }
+.s11Tint_amber .s11CardIcon { background: rgba(255,255,255,0.18); }
+
+.s11CardTitle { font-size: 16px; font-weight: 700; color: #ffffff; margin: 0 0 6px; }
+.s11CardBody { font-size: 14px; line-height: 1.55; color: rgba(255,255,255,0.88); margin: 0; }
+
+/* Implementation timeline */
+.s11Timeline {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 14px;
+  padding: 18px 16px;
+}
+.s11TimelineTitle {
+  font-size: 14px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.7);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  text-align: center;
+  margin-bottom: 14px;
+}
+.s11TimelineFlow {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.s11TimelineStep {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 12px 14px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.12);
+}
+.s11TimelinePhase { font-size: 11px; font-weight: 800; letter-spacing: 0.08em; color: rgba(255,255,255,0.65); text-transform: uppercase; }
+.s11TimelineLabel { font-size: 15px; font-weight: 700; color: #ffffff; }
+.s11TimelineWeeks { font-size: 12.5px; font-weight: 600; color: rgba(255,255,255,0.78); }
+
+/* PLACEHOLDER SECTIONS */
 .section { min-height: 200px; padding: 40px 20px; border-bottom: 1px dashed #e5e7eb; display: flex; align-items: center; justify-content: center; }
 .placeholder { font-size: 16px; font-weight: 600; color: #6b7280; text-align: center; margin: 0; }
 
@@ -361,8 +378,19 @@
 
   .s6Grid { grid-template-columns: 1fr 1fr; gap: 14px; }
   .s7Grid { grid-template-columns: 1fr 1fr; }
-
   .s8Grid { grid-template-columns: repeat(4, 1fr); gap: 12px; }
+
+  /* Section 9 — 3-col on tablet */
+  .s9Flow { grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .s9Milestone { flex-direction: column; }
+
+  /* Section 10 — 2-col on tablet */
+  .s10Grid { grid-template-columns: 1fr 1fr; }
+
+  /* Section 11 — 2-col on tablet */
+  .s11Grid { grid-template-columns: 1fr 1fr; }
+  .s11TimelineFlow { flex-direction: row; }
+  .s11TimelineStep { flex: 1; }
 }
 
 /* Tablet ≥ 768px */
@@ -413,6 +441,27 @@
   .s8Intro   { font-size: 16px; }
   .s8TileText { font-size: 15px; }
 
+  .s9 { padding: 56px 32px; }
+  .s9Heading { font-size: 32px; }
+  .s9Intro   { font-size: 16px; }
+  .s9Title   { font-size: 16px; }
+  .s9Body    { font-size: 13.5px; }
+  .s9Footer  { font-size: 16px; }
+
+  .s10 { padding: 56px 32px; }
+  .s10Heading { font-size: 32px; }
+  .s10Intro   { font-size: 16px; }
+  .s10Title { font-size: 16px; }
+  .s10Desc  { font-size: 14px; }
+  .s10Footer { font-size: 16px; }
+
+  .s11 { padding: 64px 32px; }
+  .s11Heading { font-size: 32px; }
+  .s11Intro   { font-size: 16px; }
+  .s11CardTitle { font-size: 17px; }
+  .s11CardBody  { font-size: 14.5px; }
+  .s11TimelineLabel { font-size: 15px; }
+
   .section { padding: 56px 32px; min-height: 260px; }
   .placeholder { font-size: 18px; }
 }
@@ -440,7 +489,6 @@
 
   .s6 { padding: 64px 40px; }
   .s6Heading { font-size: 38px; }
-  /* 4-column × 3-row grid for 12 lab cards */
   .s6Grid { grid-template-columns: repeat(4, 1fr); gap: 16px; }
 
   .s7 { padding: 76px 40px; }
@@ -449,9 +497,45 @@
 
   .s8 { padding: 72px 40px; }
   .s8Heading { font-size: 38px; }
-  /* 8 tiles per row × 2 rows on desktop */
   .s8Grid { grid-template-columns: repeat(8, 1fr); gap: 12px; }
   .s8Tile { min-height: 76px; }
+
+  /* SECTION 9 — 6 cards in single row on desktop */
+  .s9 { padding: 68px 40px; }
+  .s9Heading { font-size: 38px; }
+  .s9Flow {
+    grid-template-columns: none;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    gap: 6px;
+  }
+  .s9Milestone {
+    flex: 1;
+    min-width: 0;
+    flex-direction: row;
+    align-items: stretch;
+  }
+  .s9Card { padding: 14px 10px; }
+  .s9Title { font-size: 15px; }
+  .s9Body  { font-size: 12.5px; line-height: 1.45; }
+  .s9Arrow { display: inline-flex; align-items: center; justify-content: center; flex: 0 0 auto; }
+
+  /* SECTION 10 — 4-and-3 layout, bottom row left-aligned */
+  .s10 { padding: 68px 40px; }
+  .s10Heading { font-size: 38px; }
+  .s10Grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    justify-items: stretch;
+  }
+  .s10Card { padding: 16px; }
+
+  /* SECTION 11 — 3-col grid on desktop */
+  .s11 { padding: 80px 40px; }
+  .s11Heading { font-size: 38px; }
+  .s11Grid { grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .s11Card { padding: 20px 18px; }
 
   .section { padding: 64px 40px; min-height: 300px; }
   .placeholder { font-size: 20px; }

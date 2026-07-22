@@ -1,11 +1,15 @@
 /* =========================================================
    Engineering Innovation Labs — Flagship Page (scoped)
-   Wrapper: .eil-scope (Step 1 foundation scaffold)
-   All real styles come in Step 2 onwards.
+   Wrapper: .eil-scope
+   Step 2 — Hero styles added.
+   Palette:
+     Green   #0f766e (primary)
+     Blue    #1e3a8a (deep)
+     Red     #dc2626 (CTA only)
+     Green tint  #f0fdf9  Gray tint #f9fafb
    ========================================================= */
 
 .scope {
-  /* Scope wrapper — resets and base typography for this page only */
   box-sizing: border-box;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, sans-serif;
@@ -22,7 +26,155 @@
   box-sizing: border-box;
 }
 
-/* -------- Section scaffold (temporary placeholders) -------- */
+/* ==========================================================
+   SECTION 1 — HERO
+   ========================================================== */
+
+.hero {
+  position: relative;
+  padding: 48px 20px 56px;
+  background:
+    radial-gradient(1200px 500px at 90% -10%, #eafaf5 0%, transparent 60%),
+    linear-gradient(180deg, #ffffff 0%, #f9fbfa 100%);
+  overflow: hidden;
+}
+
+.heroInner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+/* -------- LEFT COLUMN -------- */
+
+.heroLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.heroHeadline {
+  font-size: 34px;
+  line-height: 1.15;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #0b1220;
+  margin: 0;
+}
+
+.heroHeadlineAccent {
+  display: inline-block;
+  color: #0f766e;
+}
+
+.heroSubhead {
+  font-size: 16px;
+  line-height: 1.65;
+  color: #374151;
+  margin: 0;
+  max-width: 640px;
+}
+
+.heroCtaRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+  margin-top: 4px;
+}
+
+.heroCtaPrimary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #dc2626;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+  padding: 14px 22px;
+  border-radius: 10px;
+  box-shadow: 0 6px 16px rgba(220, 38, 38, 0.25);
+  transition: transform 0.15s ease, box-shadow 0.15s ease,
+    background-color 0.15s ease;
+  min-height: 48px;
+}
+.heroCtaPrimary:hover {
+  background: #b91c1c;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 22px rgba(220, 38, 38, 0.3);
+}
+
+.heroCtaSecondary {
+  display: inline-flex;
+  align-items: center;
+  color: #0f766e;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+  padding: 12px 4px;
+  border-bottom: 2px solid rgba(15, 118, 110, 0.35);
+  transition: color 0.15s ease, border-color 0.15s ease;
+  min-height: 44px;
+}
+.heroCtaSecondary:hover {
+  color: #0b5b54;
+  border-bottom-color: #0f766e;
+}
+
+.heroAccentBar {
+  width: 80px;
+  height: 4px;
+  background: #0f766e;
+  border-radius: 2px;
+  margin-top: 20px;
+}
+
+.heroTrustStrip {
+  list-style: none;
+  padding: 0;
+  margin: 6px 0 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.heroTrustPill {
+  display: inline-flex;
+  align-items: center;
+  background: #ffffff;
+  color: #0b1220;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+  white-space: nowrap;
+}
+
+/* -------- RIGHT COLUMN (SVG) -------- */
+
+.heroRight {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.heroSvg {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  display: block;
+}
+
+/* ==========================================================
+   PLACEHOLDER SECTIONS (Sections 2–16, until built)
+   ========================================================== */
 .section {
   min-height: 240px;
   padding: 48px 20px;
@@ -31,7 +183,6 @@
   align-items: center;
   justify-content: center;
 }
-
 .placeholder {
   font-size: 16px;
   font-weight: 600;
@@ -41,10 +192,36 @@
   letter-spacing: 0.01em;
 }
 
-/* -------- Mobile-first breakpoints (scaffold) -------- */
+/* ==========================================================
+   RESPONSIVE BREAKPOINTS
+   ========================================================== */
 
 /* Tablet ≥ 768px */
 @media (min-width: 768px) {
+  .hero {
+    padding: 72px 32px 80px;
+  }
+  .heroInner {
+    gap: 56px;
+  }
+  .heroHeadline {
+    font-size: 46px;
+  }
+  .heroSubhead {
+    font-size: 17px;
+  }
+  .heroCtaPrimary {
+    font-size: 16px;
+    padding: 15px 26px;
+  }
+  .heroCtaSecondary {
+    font-size: 16px;
+  }
+  .heroTrustPill {
+    font-size: 13px;
+    padding: 9px 16px;
+  }
+
   .section {
     padding: 64px 32px;
     min-height: 320px;
@@ -56,6 +233,20 @@
 
 /* Desktop ≥ 1024px */
 @media (min-width: 1024px) {
+  .hero {
+    padding: 96px 40px 104px;
+  }
+  .heroInner {
+    grid-template-columns: 1.15fr 1fr;
+    gap: 64px;
+  }
+  .heroHeadline {
+    font-size: 56px;
+  }
+  .heroSubhead {
+    font-size: 18px;
+  }
+
   .section {
     padding: 80px 40px;
     min-height: 400px;
@@ -67,6 +258,12 @@
 
 /* Large desktop ≥ 1280px */
 @media (min-width: 1280px) {
+  .hero {
+    padding: 112px 48px 120px;
+  }
+  .heroHeadline {
+    font-size: 62px;
+  }
   .section {
     padding: 96px 48px;
   }

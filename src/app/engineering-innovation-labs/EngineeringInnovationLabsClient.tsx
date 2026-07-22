@@ -1,15 +1,16 @@
 "use client";
 
 import Link from "next/link";
+import { useRef, useState, useEffect, FormEvent } from "react";
 import styles from "./styles.module.css";
 
 /**
  * Engineering Innovation Labs — Flagship pillar page
  * URL: /engineering-innovation-labs/
- *
- * Step 6 — Sections 9, 10, 11 built.
- * Sections 12–16 remain as TODO placeholders.
+ * Step 7 — Sections 12–16 built. All 16 sections complete.
  */
+
+/* ============================ DATA ============================ */
 
 const comparisonRows = [
   { criterion: "Scope of Work", vendor: "Equipment supply only", knowx: "End-to-end innovation ecosystem" },
@@ -54,7 +55,6 @@ const techTiles: { name: string; tint: TileTint }[] = [
   { name: "Wireless (WiFi / GPRS)", tint: "green" }, { name: "VLSI Tools", tint: "blue" }, { name: "Mobile Apps", tint: "amber" }, { name: "Cloud", tint: "teal" },
 ];
 
-// Section 9 — Student Innovation Journey
 type MilestoneTint = "green" | "blue";
 const milestones: { n: string; year: string; title: string; body: string; tint: MilestoneTint }[] = [
   { n: "1", year: "Year 1", title: "Skill Building", body: "Electronics, coding, and hands-on lab fundamentals in makerspace environments.", tint: "green" },
@@ -65,7 +65,6 @@ const milestones: { n: string; year: string; title: string; body: string; tint: 
   { n: "6", year: "Post-Grad", title: "Placement", body: "Career-ready engineers placed in product, R&D, and deep-tech roles.", tint: "blue" },
 ];
 
-// Section 10 — Faculty Enablement (4 top row, 3 bottom row left-aligned)
 type FacTint = "green" | "blue";
 const facultyItems: { code: string; title: string; body: string; tint: FacTint }[] = [
   { code: "FW", title: "Faculty Workshops", body: "Domain workshops in AI, IoT, robotics, EV, and embedded systems.", tint: "green" },
@@ -77,7 +76,6 @@ const facultyItems: { code: string; title: string; body: string; tint: FacTint }
   { code: "CN", title: "Consultancy", body: "Faculty-led industry consultancy models that generate revenue for the department.", tint: "green" },
 ];
 
-// Section 11 — Funding & Implementation Guidance
 type FundTint = "green" | "blue" | "amber";
 const fundingRoutes: { title: string; body: string; tint: FundTint; icon: JSX.Element }[] = [
   { title: "AICTE IDEA Lab Grant", body: "Approved institutions can access AICTE's structured grant support for IDEA Lab setup, with defined milestones and outcomes.", tint: "green", icon: (<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-8h6v8"/></svg>) },
@@ -88,27 +86,122 @@ const fundingRoutes: { title: string; body: string; tint: FundTint; icon: JSX.El
   { title: "Government Schemes", body: "State and central schemes for innovation, skilling, and startup incubation — aligned with your lab's strategic focus.", tint: "amber", icon: (<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2l9 4-9 4-9-4 9-4z"/><path d="M3 10l9 4 9-4"/><path d="M3 14l9 4 9-4"/></svg>) },
 ];
 
+/* SECTION 12 — Customer logos (10 placeholders) */
+const customerLogos = Array.from({ length: 10 }, (_, i) => ({ id: i + 1, label: `Client Logo ${i + 1}` }));
+
+/* SECTION 13 — Gallery photos (12 placeholders) */
+const galleryItems = Array.from({ length: 12 }, (_, i) => ({
+  id: i + 1,
+  label: `Sample photo — replace with real lab image`,
+  caption: `Lab image ${i + 1}`,
+}));
+
+/* SECTION 14 — Testimonials (6 placeholders) */
+const testimonials = Array.from({ length: 6 }, (_, i) => ({
+  id: i + 1,
+  quote: "Testimonial placeholder — real quote pending from partner institution. This card demonstrates the layout and typography that will hold the real endorsement once collected.",
+  name: `Placeholder Name ${i + 1}`,
+  role: i === 0 ? "Principal" : i === 1 ? "Head of Department" : i === 2 ? "Faculty Coordinator" : i === 3 ? "Innovation Cell Lead" : i === 4 ? "Student Ambassador" : "Placement Officer",
+  institution: `Engineering Institution ${i + 1}`,
+}));
+
+/* SECTION 16 — FAQ */
+const faqs: { q: string; a: string }[] = [
+  { q: "What is an AICTE IDEA Lab, and how does Knowx help engineering colleges set one up?", a: "An AICTE IDEA Lab (Innovation, Design & Entrepreneurship Advancement Lab) is a scheme by AICTE to help engineering colleges build multidisciplinary innovation labs that foster hands-on problem solving, product development, and entrepreneurship. Knowx helps institutions design, procure, integrate, and operationalise IDEA Labs aligned to AICTE guidelines — covering infrastructure design, curated equipment, faculty training, curriculum mapping, and student project pipelines. Our approach goes beyond installation: we help your college run the lab as a real innovation ecosystem tied to CDIO, OBE, and industry outcomes." },
+  { q: "How is a Centre of Excellence different from a regular engineering lab or makerspace?", a: "A regular lab typically supports curriculum experiments. A makerspace supports open, cross-disciplinary tinkering. A Centre of Excellence (CoE) is a deep-focus facility built around one strategic technology domain — say EV, IoT, Robotics, or AI — with advanced equipment, research direction, industry partnerships, and student-to-startup pathways. Knowx designs CoEs for engineering colleges and universities that want to lead in a specific domain rather than just teach it, and we integrate CoEs, IDEA Labs, and Makerspaces into a single connected innovation ecosystem." },
+  { q: "What is the typical cost range for setting up an innovation lab or IDEA Lab in an engineering college?", a: "Costs vary significantly based on lab type, scale, and technology domain. A focused IoT or embedded systems lab may start from a few tens of lakhs, while a full AICTE IDEA Lab or a Centre of Excellence for AI, EV, or Robotics can range from ₹60 lakhs to several crores depending on equipment depth and infrastructure. Knowx typically helps colleges phase the rollout — a strong core setup first, expanded through AICTE grants, CSR partnerships, alumni funding, and institutional budgets over 12–24 months." },
+  { q: "How long does it take to set up a complete engineering innovation ecosystem?", a: "A basic lab setup (design, procurement, integration, and initial faculty training) typically takes 3 to 6 months. A full engineering innovation ecosystem — spanning IDEA Lab, CoEs, faculty enablement, curriculum mapping, student project pipelines, and industry linkages — is usually rolled out in phases over 6 to 18 months. Knowx follows a 4-phase model: Discovery, Design & Funding, Setup & Integration, and Faculty Training & Rollout, with clear milestones at each stage." },
+  { q: "Is faculty training and curriculum development included in the lab setup?", a: "Yes — this is a defining part of the Knowx approach. Every lab setup includes structured faculty development programs aligned to AICTE, NBA, and OBE frameworks, along with curriculum mapping for the domain (IoT, Robotics, AI, EV, Industry 4.0, PCB Design, Embedded Systems, or Digital Manufacturing). Faculty are the true multipliers of any innovation lab, so we invest in workshops, research guidance, hackathon hosting, patent support, and consultancy models — helping your teaching team lead innovation, not just deliver theory." },
+  { q: "What funding options are available for engineering colleges to set up innovation labs?", a: "Colleges typically use a mix of funding routes: AICTE IDEA Lab grants for approved institutions, industry CSR partnerships, alumni and trust donations, phased institutional capex, and state or central government schemes for skilling, innovation, and startup incubation. Knowx helps you structure a funding mix suited to your college's strategic priorities and prepares proposals, budgets, and rollout plans that reduce the burden on any single funding source." },
+  { q: "How does Knowx provide post-setup support, maintenance, and student mentorship?", a: "Unlike a typical lab vendor whose responsibility ends at installation, Knowx provides continuous mentorship after setup. This includes ongoing faculty upskilling, refresh cycles on hardware and software, remote and on-site technical support, mentoring for student innovation projects, hackathon and internship connections through our industry network, and periodic reviews of lab outcomes tied to your OBE and NBA targets. Our goal is to keep the innovation ecosystem alive year after year, not just handed over." },
+  { q: "How can our college or university get started with Knowx?", a: "The easiest way to start is to schedule a free consultation with our team — we'll review your college's current lab infrastructure, faculty capabilities, funding position, and strategic goals, and propose a phased innovation ecosystem plan tailored to your institution. From there we help with the AICTE IDEA Lab application, CoE design, CSR proposal drafting, and rollout planning. You can use the Schedule a Consultation button on this page, and one of our engineering education partners will get in touch within one working day." },
+];
+
+/* ============================ COMPONENT ============================ */
+
 export default function EngineeringInnovationLabsClient() {
+  const logosRef = useRef<HTMLDivElement | null>(null);
+  const galleryRef = useRef<HTMLDivElement | null>(null);
+  const reviewsRef = useRef<HTMLDivElement | null>(null);
+
+  const [modalOpen, setModalOpen] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [submitState, setSubmitState] = useState<"idle" | "success" | "error">("idle");
+
+  const scrollBy = (ref: React.RefObject<HTMLDivElement>, dir: 1 | -1) => {
+    const el = ref.current;
+    if (!el) return;
+    const distance = Math.round(el.clientWidth * 0.85);
+    el.scrollBy({ left: distance * dir, behavior: "smooth" });
+  };
+
+  // Close modal on Escape
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setModalOpen(false);
+    };
+    if (modalOpen) window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [modalOpen]);
+
+  // Prevent body scroll when modal open
+  useEffect(() => {
+    if (modalOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => { document.body.style.overflow = ""; };
+  }, [modalOpen]);
+
+  const openModal = (e?: React.MouseEvent) => {
+    if (e) e.preventDefault();
+    setSubmitState("idle");
+    setModalOpen(true);
+  };
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const data = new FormData(form);
+    setSubmitting(true);
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", { method: "POST", body: data });
+      const json = await res.json();
+      if (json.success) {
+        setSubmitState("success");
+        form.reset();
+      } else {
+        setSubmitState("error");
+      }
+    } catch {
+      setSubmitState("error");
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  };
+
   return (
     <div className={`eil-scope ${styles.scope}`}>
-      {/* ============================================================ */}
-      {/* Section 1 — HERO                                              */}
-      {/* ============================================================ */}
+      {/* Section 1 — HERO */}
       <section className={styles.hero} id="hero">
         <div className={styles.heroInner}>
           <div className={styles.heroLeft}>
             <span className={styles.heroTag}>Since 2005 · Trusted Product Engineering Partner</span>
-            <h1 className={styles.heroHeadline}>
-              Future-Ready Engineering{" "}
-              <span className={styles.heroHeadlineAccent}>Innovation Ecosystem</span>
-            </h1>
-            <p className={styles.heroSubhead}>
-              Helping Universities &amp; Engineering Colleges Build World-Class
-              Innovation Centers, AICTE IDEA Labs, Makerspaces, Centres of
-              Excellence and Industry-Integrated Learning Environments.
-            </p>
+            <h1 className={styles.heroHeadline}>Future-Ready Engineering{" "}<span className={styles.heroHeadlineAccent}>Innovation Ecosystem</span></h1>
+            <p className={styles.heroSubhead}>Helping Universities &amp; Engineering Colleges Build World-Class Innovation Centers, AICTE IDEA Labs, Makerspaces, Centres of Excellence and Industry-Integrated Learning Environments.</p>
             <div className={styles.heroCtaRow}>
-              <Link href="#metrics-cta" className={styles.heroCtaPrimary}>Schedule Free Consultation</Link>
+              <button type="button" onClick={openModal} className={styles.heroCtaPrimary}>Schedule Free Consultation</button>
               <Link href="#metrics-cta" className={styles.heroCtaSecondary}>Download Ecosystem Brochure →</Link>
             </div>
             <div className={styles.heroAccentBar} aria-hidden="true" />
@@ -120,24 +213,20 @@ export default function EngineeringInnovationLabsClient() {
           </div>
           <div className={styles.heroRight} aria-hidden="true">
             <svg viewBox="0 0 500 520" xmlns="http://www.w3.org/2000/svg" className={styles.heroSvg} role="img" aria-label="Knowx Innovation Ecosystem diagram">
-              <g stroke="#0f766e" strokeWidth="2" fill="none" opacity="0.35">
-                <path d="M 250 60 L 250 130" /><path d="M 200 175 Q 110 220 90 265" /><path d="M 300 175 Q 390 220 410 265" />
-                <path d="M 90 315 Q 150 360 220 380" /><path d="M 410 315 Q 350 360 280 380" />
-                <path d="M 220 425 Q 170 460 160 480" /><path d="M 280 425 Q 330 460 340 480" />
-              </g>
-              <g><rect x="180" y="18" width="140" height="52" rx="26" fill="#1e3a8a" /><text x="250" y="50" textAnchor="middle" fill="#ffffff" fontFamily="system-ui, sans-serif" fontSize="16" fontWeight="600">University</text></g>
-              <g><rect x="165" y="128" width="170" height="52" rx="26" fill="#0f766e" /><text x="250" y="160" textAnchor="middle" fill="#ffffff" fontFamily="system-ui, sans-serif" fontSize="16" fontWeight="600">Innovation Labs</text></g>
-              <g><rect x="20" y="265" width="140" height="52" rx="26" fill="#ffffff" stroke="#0f766e" strokeWidth="2" /><text x="90" y="297" textAnchor="middle" fill="#0f766e" fontFamily="system-ui, sans-serif" fontSize="15" fontWeight="600">Students</text></g>
-              <g><rect x="340" y="265" width="140" height="52" rx="26" fill="#ffffff" stroke="#1e3a8a" strokeWidth="2" /><text x="410" y="297" textAnchor="middle" fill="#1e3a8a" fontFamily="system-ui, sans-serif" fontSize="15" fontWeight="600">Faculty</text></g>
-              <g><rect x="200" y="380" width="100" height="46" rx="23" fill="#1e3a8a" /><text x="250" y="409" textAnchor="middle" fill="#ffffff" fontFamily="system-ui, sans-serif" fontSize="14" fontWeight="600">Industry</text></g>
-              <g><rect x="90" y="478" width="130" height="42" rx="21" fill="#ffffff" stroke="#0f766e" strokeWidth="2" /><text x="155" y="505" textAnchor="middle" fill="#0f766e" fontFamily="system-ui, sans-serif" fontSize="14" fontWeight="600">Startups</text></g>
-              <g><rect x="280" y="478" width="130" height="42" rx="21" fill="#ffffff" stroke="#1e3a8a" strokeWidth="2" /><text x="345" y="505" textAnchor="middle" fill="#1e3a8a" fontFamily="system-ui, sans-serif" fontSize="14" fontWeight="600">Placements</text></g>
+              <g stroke="#0f766e" strokeWidth="2" fill="none" opacity="0.35"><path d="M 250 60 L 250 130"/><path d="M 200 175 Q 110 220 90 265"/><path d="M 300 175 Q 390 220 410 265"/><path d="M 90 315 Q 150 360 220 380"/><path d="M 410 315 Q 350 360 280 380"/><path d="M 220 425 Q 170 460 160 480"/><path d="M 280 425 Q 330 460 340 480"/></g>
+              <g><rect x="180" y="18" width="140" height="52" rx="26" fill="#1e3a8a"/><text x="250" y="50" textAnchor="middle" fill="#ffffff" fontFamily="system-ui, sans-serif" fontSize="16" fontWeight="600">University</text></g>
+              <g><rect x="165" y="128" width="170" height="52" rx="26" fill="#0f766e"/><text x="250" y="160" textAnchor="middle" fill="#ffffff" fontFamily="system-ui, sans-serif" fontSize="16" fontWeight="600">Innovation Labs</text></g>
+              <g><rect x="20" y="265" width="140" height="52" rx="26" fill="#ffffff" stroke="#0f766e" strokeWidth="2"/><text x="90" y="297" textAnchor="middle" fill="#0f766e" fontFamily="system-ui, sans-serif" fontSize="15" fontWeight="600">Students</text></g>
+              <g><rect x="340" y="265" width="140" height="52" rx="26" fill="#ffffff" stroke="#1e3a8a" strokeWidth="2"/><text x="410" y="297" textAnchor="middle" fill="#1e3a8a" fontFamily="system-ui, sans-serif" fontSize="15" fontWeight="600">Faculty</text></g>
+              <g><rect x="200" y="380" width="100" height="46" rx="23" fill="#1e3a8a"/><text x="250" y="409" textAnchor="middle" fill="#ffffff" fontFamily="system-ui, sans-serif" fontSize="14" fontWeight="600">Industry</text></g>
+              <g><rect x="90" y="478" width="130" height="42" rx="21" fill="#ffffff" stroke="#0f766e" strokeWidth="2"/><text x="155" y="505" textAnchor="middle" fill="#0f766e" fontFamily="system-ui, sans-serif" fontSize="14" fontWeight="600">Startups</text></g>
+              <g><rect x="280" y="478" width="130" height="42" rx="21" fill="#ffffff" stroke="#1e3a8a" strokeWidth="2"/><text x="345" y="505" textAnchor="middle" fill="#1e3a8a" fontFamily="system-ui, sans-serif" fontSize="14" fontWeight="600">Placements</text></g>
             </svg>
           </div>
         </div>
       </section>
 
-      {/* Section 2 — UNIVERSITIES NEED MORE THAN LABORATORIES */}
+      {/* Section 2 */}
       <section className={styles.s2} id="education-changing">
         <div className={styles.s2Inner}>
           <h2 className={styles.s2Heading}>Universities Need More Than Laboratories</h2>
@@ -158,7 +247,7 @@ export default function EngineeringInnovationLabsClient() {
         </div>
       </section>
 
-      {/* Section 3 — WHY KNOWX */}
+      {/* Section 3 */}
       <section className={styles.s3} id="why-knowx">
         <div className={styles.s3Inner}>
           <h2 className={styles.s3Heading}>Why Knowx — Beyond Lab Setup</h2>
@@ -174,7 +263,7 @@ export default function EngineeringInnovationLabsClient() {
         </div>
       </section>
 
-      {/* Section 4 — OUR ECOSYSTEM MODEL */}
+      {/* Section 4 */}
       <section className={styles.s4} id="ecosystem-model">
         <div className={styles.s4Inner}>
           <h2 className={styles.s4Heading}>Our Ecosystem Model</h2>
@@ -191,7 +280,7 @@ export default function EngineeringInnovationLabsClient() {
         </div>
       </section>
 
-      {/* Section 5 — COMPARISON TABLE */}
+      {/* Section 5 */}
       <section className={styles.s5} id="comparison">
         <div className={styles.s5Inner}>
           <h2 className={styles.s5Heading}>Why Choose Us for Your Lab Setup</h2>
@@ -213,7 +302,7 @@ export default function EngineeringInnovationLabsClient() {
         </div>
       </section>
 
-      {/* Section 6 — INNOVATION SOLUTIONS */}
+      {/* Section 6 */}
       <section className={styles.s6} id="innovation-solutions">
         <div className={styles.s6Inner}>
           <h2 className={styles.s6Heading}>A Complete Catalogue of Innovation Labs</h2>
@@ -231,7 +320,7 @@ export default function EngineeringInnovationLabsClient() {
         </div>
       </section>
 
-      {/* Section 7 — GLOBAL ALIGNMENT */}
+      {/* Section 7 */}
       <section className={styles.s7} id="global-alignment">
         <div className={styles.s7Inner}>
           <h2 className={styles.s7Heading}>Inspired by Global Engineering Education Best Practices</h2>
@@ -249,31 +338,22 @@ export default function EngineeringInnovationLabsClient() {
         </div>
       </section>
 
-      {/* Section 8 — TECHNOLOGIES */}
+      {/* Section 8 */}
       <section className={styles.s8} id="technologies">
         <div className={styles.s8Inner}>
           <h2 className={styles.s8Heading}>Technologies We Work With</h2>
           <p className={styles.s8Intro}>A working stack that spans hardware boards, embedded platforms, IoT protocols, wireless communication, VLSI tools, AI/ML, mobile apps, robotics, drones, and cloud — all integrated into student projects and industry-grade prototypes.</p>
           <div className={styles.s8Grid}>
-            {techTiles.map((t) => (
-              <div key={t.name} className={`${styles.s8Tile} ${styles[`s8Tint_${t.tint}`]}`}>
-                <span className={styles.s8TileText}>{t.name}</span>
-              </div>
-            ))}
+            {techTiles.map((t) => (<div key={t.name} className={`${styles.s8Tile} ${styles[`s8Tint_${t.tint}`]}`}><span className={styles.s8TileText}>{t.name}</span></div>))}
           </div>
         </div>
       </section>
 
-      {/* ============================================================ */}
-      {/* Section 9 — STUDENT INNOVATION JOURNEY                         */}
-      {/* ============================================================ */}
+      {/* Section 9 */}
       <section className={styles.s9} id="student-journey">
         <div className={styles.s9Inner}>
           <h2 className={styles.s9Heading}>Student Innovation Journey</h2>
-          <p className={styles.s9Intro}>
-            A structured student innovation journey inside your engineering college — from foundational skill building to product development, industry internships, startup incubation, and placements. Every milestone is aligned with AICTE IDEA Lab outcomes, OBE goals, and industry-ready engineering education.
-          </p>
-
+          <p className={styles.s9Intro}>A structured student innovation journey inside your engineering college — from foundational skill building to product development, industry internships, startup incubation, and placements. Every milestone is aligned with AICTE IDEA Lab outcomes, OBE goals, and industry-ready engineering education.</p>
           <ol className={styles.s9Flow} aria-label="Student innovation journey milestones">
             {milestones.map((m, i, arr) => (
               <li key={m.n} className={styles.s9Milestone}>
@@ -283,57 +363,36 @@ export default function EngineeringInnovationLabsClient() {
                   <div className={styles.s9Title}>{m.title}</div>
                   <div className={styles.s9Body}>{m.body}</div>
                 </div>
-                {i < arr.length - 1 && (
-                  <span className={styles.s9Arrow} aria-hidden="true">→</span>
-                )}
+                {i < arr.length - 1 && (<span className={styles.s9Arrow} aria-hidden="true">→</span>)}
               </li>
             ))}
           </ol>
-
-          <p className={styles.s9Footer}>
-            A complete innovation ecosystem journey that transforms every engineering student into an industry-ready product engineer.
-          </p>
+          <p className={styles.s9Footer}>A complete innovation ecosystem journey that transforms every engineering student into an industry-ready product engineer.</p>
         </div>
       </section>
 
-      {/* ============================================================ */}
-      {/* Section 10 — FACULTY ENABLEMENT                                */}
-      {/* ============================================================ */}
+      {/* Section 10 */}
       <section className={styles.s10} id="faculty-enablement">
         <div className={styles.s10Inner}>
           <h2 className={styles.s10Heading}>Faculty Enablement</h2>
-          <p className={styles.s10Intro}>
-            Faculty are the true multipliers of every innovation lab. Our faculty enablement programs help engineering college teachers build innovation-led teaching capabilities, integrate AICTE and OBE frameworks, and lead student projects, hackathons, research, and industry consultancy inside their institutions.
-          </p>
-
+          <p className={styles.s10Intro}>Faculty are the true multipliers of every innovation lab. Our faculty enablement programs help engineering college teachers build innovation-led teaching capabilities, integrate AICTE and OBE frameworks, and lead student projects, hackathons, research, and industry consultancy inside their institutions.</p>
           <div className={styles.s10Grid}>
             {facultyItems.map((f) => (
               <div key={f.code} className={`${styles.s10Card} ${styles[`s10Tint_${f.tint}`]}`}>
                 <div className={styles.s10Code} aria-hidden="true">{f.code}</div>
-                <div className={styles.s10Body}>
-                  <h3 className={styles.s10Title}>{f.title}</h3>
-                  <p className={styles.s10Desc}>{f.body}</p>
-                </div>
+                <div className={styles.s10Body}><h3 className={styles.s10Title}>{f.title}</h3><p className={styles.s10Desc}>{f.body}</p></div>
               </div>
             ))}
           </div>
-
-          <p className={styles.s10Footer}>
-            Empowering engineering faculty to lead the transformation from teaching-only roles to innovation, research, and industry-driven education leadership.
-          </p>
+          <p className={styles.s10Footer}>Empowering engineering faculty to lead the transformation from teaching-only roles to innovation, research, and industry-driven education leadership.</p>
         </div>
       </section>
 
-      {/* ============================================================ */}
-      {/* Section 11 — FUNDING & IMPLEMENTATION GUIDANCE                 */}
-      {/* ============================================================ */}
+      {/* Section 11 */}
       <section className={styles.s11} id="funding-guidance">
         <div className={styles.s11Inner}>
           <h2 className={styles.s11Heading}>How Institutions Fund Their Innovation Labs</h2>
-          <p className={styles.s11Intro}>
-            Innovation lab and AICTE IDEA Lab setup is rarely funded from a single source. We help engineering colleges and universities structure a mix of government grants, CSR partnerships, alumni contributions, and phased capex — matched to your institution's strategic priorities.
-          </p>
-
+          <p className={styles.s11Intro}>Innovation lab and AICTE IDEA Lab setup is rarely funded from a single source. We help engineering colleges and universities structure a mix of government grants, CSR partnerships, alumni contributions, and phased capex — matched to your institution's strategic priorities.</p>
           <div className={styles.s11Grid}>
             {fundingRoutes.map((f) => (
               <div key={f.title} className={`${styles.s11Card} ${styles[`s11Tint_${f.tint}`]}`}>
@@ -343,7 +402,6 @@ export default function EngineeringInnovationLabsClient() {
               </div>
             ))}
           </div>
-
           <div className={styles.s11Timeline}>
             <div className={styles.s11TimelineTitle}>Typical Implementation Timeline</div>
             <ol className={styles.s11TimelineFlow}>
@@ -357,23 +415,198 @@ export default function EngineeringInnovationLabsClient() {
       </section>
 
       {/* ============================================================ */}
-      {/* Sections 12–16 — placeholders                                  */}
+      {/* Section 12 — CUSTOMER LOGOS (slider)                            */}
       {/* ============================================================ */}
-      <section className={styles.section} id="customer-logos">
-        <h2 className={styles.placeholder}>12. We Have Setup Labs In (Customer Logos) — TODO</h2>
+      <section className={styles.s12} id="customer-logos">
+        <div className={styles.s12Inner}>
+          <h2 className={styles.s12Heading}>Trusted by Leading Engineering Institutions</h2>
+          <p className={styles.s12Intro}>Engineering colleges, universities, and technical institutes across India that partner with Knowx to build innovation labs, AICTE IDEA Labs, Centres of Excellence, and makerspaces.</p>
+
+          <div className={styles.sliderWrap}>
+            <button type="button" className={`${styles.sliderArrow} ${styles.sliderArrowLeft}`} aria-label="Scroll logos left" onClick={() => scrollBy(logosRef, -1)}>‹</button>
+            <div ref={logosRef} className={styles.sliderTrack} role="list">
+              {customerLogos.map((logo) => (
+                <div key={logo.id} className={`${styles.slide} ${styles.logoSlide}`} role="listitem">
+                  <div className={styles.logoBox}>
+                    <span className={styles.logoLabel}>{logo.label}</span>
+                    <span className={styles.logoSubLabel}>Placeholder — replace with real logo</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <button type="button" className={`${styles.sliderArrow} ${styles.sliderArrowRight}`} aria-label="Scroll logos right" onClick={() => scrollBy(logosRef, 1)}>›</button>
+          </div>
+        </div>
       </section>
-      <section className={styles.section} id="gallery">
-        <h2 className={styles.placeholder}>13. Gallery — TODO</h2>
+
+      {/* ============================================================ */}
+      {/* Section 13 — GALLERY (slider)                                   */}
+      {/* ============================================================ */}
+      <section className={styles.s13} id="gallery">
+        <div className={styles.s13Inner}>
+          <h2 className={styles.s13Heading}>Inside Our Labs</h2>
+          <p className={styles.s13Intro}>A look at innovation labs, AICTE IDEA Labs, makerspaces, and Centres of Excellence set up across engineering colleges — where students build real products, faculty run research programs, and industry projects come alive.</p>
+
+          <div className={styles.sliderWrap}>
+            <button type="button" className={`${styles.sliderArrow} ${styles.sliderArrowLeft}`} aria-label="Scroll gallery left" onClick={() => scrollBy(galleryRef, -1)}>‹</button>
+            <div ref={galleryRef} className={styles.sliderTrack} role="list">
+              {galleryItems.map((g) => (
+                <div key={g.id} className={`${styles.slide} ${styles.gallerySlide}`} role="listitem">
+                  <div className={styles.galleryBox}>
+                    <div className={styles.galleryPlaceholder} aria-hidden="true">
+                      <svg viewBox="0 0 24 24" width="42" height="42" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+                    </div>
+                    <div className={styles.galleryCaption}>{g.label}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <button type="button" className={`${styles.sliderArrow} ${styles.sliderArrowRight}`} aria-label="Scroll gallery right" onClick={() => scrollBy(galleryRef, 1)}>›</button>
+          </div>
+        </div>
       </section>
-      <section className={styles.section} id="reviews">
-        <h2 className={styles.placeholder}>14. Reviews / Testimonials — TODO</h2>
+
+      {/* ============================================================ */}
+      {/* Section 14 — REVIEWS / TESTIMONIALS (slider)                    */}
+      {/* ============================================================ */}
+      <section className={styles.s14} id="reviews">
+        <div className={styles.s14Inner}>
+          <h2 className={styles.s14Heading}>What Our Partner Institutions Say</h2>
+          <p className={styles.s14Intro}>Voices from principals, HoDs, faculty coordinators, and student innovators at engineering colleges partnering with Knowx to build long-term innovation ecosystems.</p>
+
+          <div className={styles.sliderWrap}>
+            <button type="button" className={`${styles.sliderArrow} ${styles.sliderArrowLeft}`} aria-label="Scroll reviews left" onClick={() => scrollBy(reviewsRef, -1)}>‹</button>
+            <div ref={reviewsRef} className={styles.sliderTrack} role="list">
+              {testimonials.map((t) => (
+                <div key={t.id} className={`${styles.slide} ${styles.reviewSlide}`} role="listitem">
+                  <div className={styles.reviewBox}>
+                    <div className={styles.reviewMark} aria-hidden="true">“</div>
+                    <p className={styles.reviewQuote}>{t.quote}</p>
+                    <div className={styles.reviewMeta}>
+                      <div className={styles.reviewName}>{t.name}</div>
+                      <div className={styles.reviewRole}>{t.role}</div>
+                      <div className={styles.reviewInstitution}>{t.institution}</div>
+                    </div>
+                    <div className={styles.reviewPlaceholderTag}>Placeholder testimonial</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <button type="button" className={`${styles.sliderArrow} ${styles.sliderArrowRight}`} aria-label="Scroll reviews right" onClick={() => scrollBy(reviewsRef, 1)}>›</button>
+          </div>
+        </div>
       </section>
-      <section className={styles.section} id="metrics-cta">
-        <h2 className={styles.placeholder}>15. Success Metrics + Consultation CTA — TODO</h2>
+
+      {/* ============================================================ */}
+      {/* Section 15 — SUCCESS METRICS + CONSULTATION CTA                 */}
+      {/* ============================================================ */}
+      <section className={styles.s15} id="metrics-cta">
+        <div className={styles.s15Counters}>
+          <div className={styles.s15CountersInner}>
+            <h2 className={styles.s15CountersHeading}>Two Decades of Engineering Innovation Impact</h2>
+            <div className={styles.s15CountersGrid}>
+              <div className={styles.s15Counter}>
+                <div className={styles.s15CounterNum}>20<span className={styles.s15CounterPlus}>+</span></div>
+                <div className={styles.s15CounterLabel}>Years in Business</div>
+              </div>
+              <div className={styles.s15Counter}>
+                <div className={styles.s15CounterNum}>10,000<span className={styles.s15CounterPlus}>+</span></div>
+                <div className={styles.s15CounterLabel}>Students Trained</div>
+              </div>
+              <div className={styles.s15Counter}>
+                <div className={styles.s15CounterNum}>1,000<span className={styles.s15CounterPlus}>+</span></div>
+                <div className={styles.s15CounterLabel}>Projects Executed</div>
+              </div>
+            </div>
+            <div className={styles.s15Underline} aria-hidden="true" />
+          </div>
+        </div>
+
+        <div className={styles.s15Banner}>
+          <div className={styles.s15BannerInner}>
+            <h3 className={styles.s15BannerHeading}>Ready to Transform Your Engineering Campus?</h3>
+            <p className={styles.s15BannerBody}>Talk to our team about designing an AICTE IDEA Lab, Centre of Excellence, or complete engineering innovation ecosystem for your institution.</p>
+            <div className={styles.s15CtaRow}>
+              <button type="button" onClick={openModal} className={styles.s15CtaPrimary}>Schedule a Consultation</button>
+              <button type="button" onClick={openModal} className={styles.s15CtaSecondary}>Download Brochure →</button>
+            </div>
+          </div>
+        </div>
       </section>
-      <section className={styles.section} id="faq">
-        <h2 className={styles.placeholder}>16. FAQ — TODO</h2>
+
+      {/* ============================================================ */}
+      {/* Section 16 — FAQ                                                */}
+      {/* ============================================================ */}
+      <section className={styles.s16} id="faq">
+        <div className={styles.s16Inner}>
+          <h2 className={styles.s16Heading}>Frequently Asked Questions</h2>
+          <p className={styles.s16Intro}>Answers to common questions from principals, HoDs, and administrators evaluating an innovation ecosystem partner for their engineering college or university.</p>
+
+          <div className={styles.s16List}>
+            {faqs.map((f, i) => (
+              <details key={i} className={styles.s16Item}>
+                <summary className={styles.s16Q}>
+                  <span>{f.q}</span>
+                  <span className={styles.s16QChevron} aria-hidden="true">+</span>
+                </summary>
+                <div className={styles.s16A}>{f.a}</div>
+              </details>
+            ))}
+          </div>
+        </div>
+
+        {/* FAQ JSON-LD */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
       </section>
+
+      {/* ============================================================ */}
+      {/* CONSULTATION MODAL                                              */}
+      {/* ============================================================ */}
+      {modalOpen && (
+        <div className={styles.modalBackdrop} onClick={() => setModalOpen(false)} role="dialog" aria-modal="true" aria-labelledby="eil-modal-title">
+          <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
+            <button type="button" className={styles.modalClose} onClick={() => setModalOpen(false)} aria-label="Close">×</button>
+            <h3 id="eil-modal-title" className={styles.modalTitle}>Schedule a Free Consultation</h3>
+            <p className={styles.modalSubtitle}>Share a few details and our engineering education team will get in touch within one working day.</p>
+
+            {submitState === "success" ? (
+              <div className={styles.modalSuccess}>
+                <div className={styles.modalSuccessMark}>✓</div>
+                <div className={styles.modalSuccessTitle}>Request received</div>
+                <div className={styles.modalSuccessBody}>Thank you. Our team will reach out to you shortly.</div>
+                <button type="button" className={styles.modalDoneBtn} onClick={() => setModalOpen(false)}>Close</button>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit} className={styles.modalForm}>
+                <input type="hidden" name="access_key" value="f2635df8-33a5-44ef-889c-9f823771927f" />
+                <input type="hidden" name="subject" value="Engineering Innovation Labs — Consultation Request" />
+                <input type="hidden" name="from_name" value="knowxindia.com — Engineering Innovation Labs page" />
+
+                <div className={styles.modalRow}>
+                  <label className={styles.modalLabel}>Full Name<input required name="name" type="text" className={styles.modalInput} placeholder="Your name" /></label>
+                  <label className={styles.modalLabel}>Role<input name="role" type="text" className={styles.modalInput} placeholder="Principal / HoD / Faculty" /></label>
+                </div>
+                <label className={styles.modalLabel}>Institution<input required name="institution" type="text" className={styles.modalInput} placeholder="Engineering college / university name" /></label>
+                <div className={styles.modalRow}>
+                  <label className={styles.modalLabel}>Email<input required name="email" type="email" className={styles.modalInput} placeholder="you@institution.edu" /></label>
+                  <label className={styles.modalLabel}>Phone<input required name="phone" type="tel" className={styles.modalInput} placeholder="Contact number" /></label>
+                </div>
+                <label className={styles.modalLabel}>What are you looking to set up?<textarea name="message" className={styles.modalTextarea} rows={3} placeholder="AICTE IDEA Lab, CoE, Robotics Lab, Makerspace, faculty training..." /></label>
+
+                {submitState === "error" && (<div className={styles.modalError}>Something went wrong. Please try again or reach us by email.</div>)}
+
+                <button type="submit" disabled={submitting} className={styles.modalSubmit}>
+                  {submitting ? "Sending..." : "Send Request"}
+                </button>
+                <p className={styles.modalFinePrint}>By submitting, you agree to be contacted by Knowx Innovations about engineering innovation lab setup.</p>
+              </form>
+            )}
+          </div>
+        </div>
+      )}
     </div>
   );
 }

@@ -39,6 +39,7 @@ export default function Footer() {
         <div className="ft-c">
           <h4 className="fd">Services</h4>
           <ul>
+            <li><Link href="/engineering-innovation-labs">Engineering Innovation Labs</Link></li>
             <li><Link href="/electronics-hardware-design-services">Hardware Design</Link></li>
             <li><Link href="/embedded-system-design-software-development-bangalore">Embedded Systems</Link></li>
             <li><Link href="/embedded-system-design-software-development-bangalore">Firmware Dev</Link></li>

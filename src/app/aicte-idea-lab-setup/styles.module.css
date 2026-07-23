@@ -1,27 +1,439 @@
 /* =========================================================
    AICTE IDEA Lab Setup — Child Page (scoped)
    Wrapper: .ail-scope
-   Step 1 — Foundation scaffold. Real styles come in Step 2+.
+   Step 2 — Hero, Section 2, Section 3, and Modal styles.
+   Palette:
+     Green  #0f766e  Blue #1e3a8a  Amber #b45309  Teal #0d9488
+     Red    #dc2626 (CTA only)
    ========================================================= */
 
 .scope {
   box-sizing: border-box;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   color: #111827;
   background: #ffffff;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
 .scope *,
 .scope *::before,
-.scope *::after {
-  box-sizing: border-box;
+.scope *::after { box-sizing: border-box; }
+
+/* ==========================================================
+   SECTION 1 — HERO
+   ========================================================== */
+.hero {
+  position: relative;
+  padding: 32px 20px 40px;
+  background:
+    radial-gradient(1000px 400px at 90% -10%, #eafaf5 0%, transparent 60%),
+    linear-gradient(180deg, #ffffff 0%, #f9fbfa 100%);
+  overflow: hidden;
+}
+.heroInner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px;
+  align-items: center;
+}
+.heroLeft { display: flex; flex-direction: column; gap: 14px; }
+
+.heroTag {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  background: rgba(15, 118, 110, 0.08);
+  color: #0f766e;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(15, 118, 110, 0.2);
 }
 
-/* -------- Section scaffold (placeholders) -------- */
+.heroHeadline {
+  font-size: 34px;
+  line-height: 1.15;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #0b1220;
+  margin: 0;
+}
+.heroHeadlineAccent { display: inline-block; color: #0f766e; }
+
+.heroSubhead {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #374151;
+  margin: 0;
+  max-width: 640px;
+}
+
+.heroCtaRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  margin-top: 2px;
+}
+
+.heroCtaPrimary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #dc2626;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 15px;
+  padding: 12px 22px;
+  border-radius: 10px;
+  box-shadow: 0 6px 16px rgba(220, 38, 38, 0.25);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+  min-height: 46px;
+}
+.heroCtaPrimary:hover { background: #b91c1c; transform: translateY(-1px); box-shadow: 0 10px 22px rgba(220, 38, 38, 0.3); }
+
+.heroCtaSecondary {
+  display: inline-flex;
+  align-items: center;
+  background: transparent;
+  color: #0f766e;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 15px;
+  padding: 10px 4px;
+  border-bottom: 2px solid rgba(15, 118, 110, 0.35);
+  transition: color 0.15s ease, border-color 0.15s ease;
+  min-height: 44px;
+}
+.heroCtaSecondary:hover { color: #0b5b54; border-bottom-color: #0f766e; }
+
+.heroAccentBar {
+  width: 72px;
+  height: 3px;
+  background: #0f766e;
+  border-radius: 2px;
+  margin-top: 12px;
+}
+
+.heroTrustStrip {
+  list-style: none;
+  padding: 0;
+  margin: 4px 0 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.heroTrustPill {
+  display: inline-flex;
+  align-items: center;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: 999px;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.12);
+  white-space: nowrap;
+}
+.pillGreen { background: #0f766e; }
+.pillBlue  { background: #1e3a8a; }
+
+.heroRight {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.heroSvg {
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  display: block;
+}
+
+/* ==========================================================
+   SECTION 2 — WHAT IS AN AICTE IDEA LAB
+   ========================================================== */
+.s2 {
+  padding: 44px 20px;
+  background: #f9fafb;
+}
+.s2Inner { max-width: 900px; margin: 0 auto; }
+.s2Heading {
+  font-size: 28px;
+  font-weight: 800;
+  color: #0b1220;
+  text-align: center;
+  margin: 0 0 18px;
+  letter-spacing: -0.01em;
+}
+.s2Intro {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #374151;
+  margin: 0 0 14px;
+}
+.s2Body {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #374151;
+  margin: 0 0 22px;
+}
+
+.s2Features {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-left: 4px solid #0f766e;
+  border-radius: 12px;
+  padding: 20px 22px;
+  margin-bottom: 20px;
+}
+.s2FeatureTitle {
+  font-size: 15px;
+  font-weight: 800;
+  color: #0b5b54;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 12px;
+}
+.s2FeatureList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.s2FeatureList li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 15px;
+  line-height: 1.55;
+  color: #1f2937;
+}
+.s2FeatureCheck {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #0f766e;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2px;
+}
+
+.s2Pillar {
+  text-align: center;
+  font-size: 15px;
+  color: #6b7280;
+  margin: 0;
+  padding-top: 8px;
+}
+.s2PillarLink {
+  color: #0f766e;
+  font-weight: 700;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(15, 118, 110, 0.35);
+  padding-bottom: 1px;
+}
+.s2PillarLink:hover { border-bottom-color: #0f766e; }
+
+/* ==========================================================
+   SECTION 3 — ELIGIBILITY CRITERIA
+   ========================================================== */
+.s3 {
+  padding: 44px 20px;
+  background: #ffffff;
+}
+.s3Inner { max-width: 900px; margin: 0 auto; }
+.s3Heading {
+  font-size: 28px;
+  font-weight: 800;
+  color: #0b1220;
+  text-align: center;
+  margin: 0 0 10px;
+  letter-spacing: -0.01em;
+}
+.s3Intro {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #4b5563;
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 24px;
+}
+
+/* Eligibility table — mobile-first */
+.s3Table {
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 6px 22px rgba(15, 23, 42, 0.05);
+  background: #ffffff;
+  margin-bottom: 20px;
+}
+.s3HeaderRow { display: none; }
+.s3DataRow {
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 16px;
+  border-bottom: 1px solid #e5e7eb;
+  gap: 10px;
+  background: #ffffff;
+}
+.s3RowAlt { background: #f9fafb; }
+.s3DataRow:last-child { border-bottom: none; }
+.s3Cell {
+  font-size: 15px;
+  color: #111827;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.s3DParam { font-weight: 700; color: #0b1220; }
+.s3DReq { color: #374151; }
+.s3MobileLabel {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #6b7280;
+  margin-bottom: 2px;
+}
+
+.s3Tip {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: #f0fdf9;
+  border: 1px solid #cceee5;
+  border-left: 4px solid #0f766e;
+  border-radius: 12px;
+  padding: 16px 18px;
+}
+.s3TipIcon {
+  flex-shrink: 0;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #0f766e;
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.s3TipBody {
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: #0b1220;
+}
+
+/* ==========================================================
+   MODAL (same as flagship for consistency)
+   ========================================================== */
+.modalBackdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  z-index: 1000;
+  animation: ailFadeIn 0.15s ease;
+}
+@keyframes ailFadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+.modal {
+  background: #ffffff;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 520px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 24px;
+  position: relative;
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.3);
+  animation: ailSlideUp 0.2s ease;
+}
+@keyframes ailSlideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+
+.modalClose {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  width: 34px;
+  height: 34px;
+  border: none;
+  background: #f3f4f6;
+  color: #374151;
+  font-size: 22px;
+  line-height: 1;
+  border-radius: 50%;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.15s ease;
+  font-family: inherit;
+}
+.modalClose:hover { background: #e5e7eb; }
+
+.modalTitle { font-size: 22px; font-weight: 800; color: #0b1220; margin: 0 0 6px; letter-spacing: -0.01em; }
+.modalSubtitle { font-size: 14px; color: #6b7280; margin: 0 0 20px; line-height: 1.5; }
+.modalForm { display: flex; flex-direction: column; gap: 12px; }
+.modalRow { display: grid; grid-template-columns: 1fr; gap: 12px; }
+.modalLabel { display: flex; flex-direction: column; gap: 6px; font-size: 12.5px; font-weight: 700; color: #374151; text-transform: uppercase; letter-spacing: 0.04em; }
+.modalInput,
+.modalTextarea {
+  font-family: inherit;
+  font-size: 15px;
+  color: #0b1220;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 11px 12px;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+  text-transform: none;
+  letter-spacing: normal;
+  font-weight: 400;
+  min-height: 44px;
+}
+.modalInput:focus,
+.modalTextarea:focus { outline: none; border-color: #0f766e; background: #ffffff; }
+.modalTextarea { resize: vertical; min-height: 76px; }
+.modalError { background: #fef2f2; border: 1px solid #fecaca; color: #991b1b; padding: 10px 12px; border-radius: 10px; font-size: 13.5px; }
+.modalSubmit { background: #dc2626; color: #ffffff; border: none; font-family: inherit; font-weight: 700; font-size: 15px; padding: 13px 22px; border-radius: 10px; cursor: pointer; transition: background-color 0.15s ease; min-height: 48px; margin-top: 4px; }
+.modalSubmit:hover:not(:disabled) { background: #b91c1c; }
+.modalSubmit:disabled { background: #94a3b8; cursor: not-allowed; }
+.modalFinePrint { font-size: 11.5px; color: #9ca3af; text-align: center; margin: 4px 0 0; }
+.modalSuccess { text-align: center; padding: 12px 0; display: flex; flex-direction: column; gap: 10px; align-items: center; }
+.modalSuccessMark { width: 56px; height: 56px; border-radius: 50%; background: #0f766e; color: #ffffff; font-size: 30px; font-weight: 800; display: inline-flex; align-items: center; justify-content: center; }
+.modalSuccessTitle { font-size: 20px; font-weight: 800; color: #0b1220; }
+.modalSuccessBody { font-size: 14.5px; color: #4b5563; line-height: 1.55; max-width: 340px; }
+.modalDoneBtn { margin-top: 8px; background: #0f766e; color: #ffffff; border: none; font-family: inherit; font-weight: 700; font-size: 14.5px; padding: 11px 22px; border-radius: 10px; cursor: pointer; transition: background-color 0.15s ease; }
+.modalDoneBtn:hover { background: #0b5b54; }
+
+/* ==========================================================
+   PLACEHOLDER SECTIONS (Sections 4–13, until built)
+   ========================================================== */
 .section {
   min-height: 200px;
   padding: 40px 20px;
@@ -30,40 +442,84 @@
   align-items: center;
   justify-content: center;
 }
-
 .placeholder {
   font-size: 16px;
   font-weight: 600;
   color: #6b7280;
   text-align: center;
   margin: 0;
-  letter-spacing: 0.01em;
 }
 
-/* -------- Responsive breakpoints (scaffold) -------- */
+/* ==========================================================
+   RESPONSIVE BREAKPOINTS
+   ========================================================== */
 
+/* Tablet ≥ 640px */
+@media (min-width: 640px) {
+  /* Eligibility table becomes a proper 2-col table */
+  .s3HeaderRow {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    background: #f3f4f6;
+    border-bottom: 1px solid #e5e7eb;
+  }
+  .s3DataRow { grid-template-columns: 1fr 2fr; align-items: stretch; padding: 0; gap: 0; }
+  .s3Cell { padding: 16px 18px; border-right: 1px solid #f1f5f9; gap: 4px; }
+  .s3Cell:last-child { border-right: none; }
+  .s3MobileLabel { display: none; }
+  .s3HParam { background: #0f766e; color: #ffffff; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; font-size: 13px; }
+  .s3HReq { background: #f3f4f6; color: #111827; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; font-size: 13px; }
+  .s3DParam { background: #f9fafb; flex-direction: column; }
+  .s3DReq { flex-direction: column; }
+
+  .modalRow { grid-template-columns: 1fr 1fr; }
+}
+
+/* Tablet ≥ 768px */
 @media (min-width: 768px) {
-  .section {
-    padding: 56px 32px;
-    min-height: 260px;
-  }
-  .placeholder {
-    font-size: 18px;
-  }
+  .hero { padding: 44px 32px 56px; }
+  .heroInner { gap: 40px; }
+  .heroHeadline { font-size: 42px; }
+  .heroSubhead { font-size: 17px; }
+  .heroSvg { max-width: 440px; }
+
+  .s2 { padding: 60px 32px; }
+  .s2Heading { font-size: 34px; }
+  .s2Intro, .s2Body { font-size: 17px; }
+
+  .s3 { padding: 60px 32px; }
+  .s3Heading { font-size: 34px; }
+  .s3Intro { font-size: 16px; }
+
+  .section { padding: 56px 32px; min-height: 260px; }
+  .placeholder { font-size: 18px; }
 }
 
+/* Desktop ≥ 1024px */
 @media (min-width: 1024px) {
-  .section {
-    padding: 64px 40px;
-    min-height: 300px;
+  .hero { padding: 56px 40px 68px; }
+  .heroInner {
+    grid-template-columns: 1.15fr 1fr;
+    gap: 48px;
   }
-  .placeholder {
-    font-size: 20px;
-  }
+  .heroHeadline { font-size: 48px; }
+  .heroSubhead  { font-size: 18px; }
+  .heroSvg      { max-width: 460px; }
+
+  .s2 { padding: 72px 40px; }
+  .s2Heading { font-size: 38px; }
+
+  .s3 { padding: 72px 40px; }
+  .s3Heading { font-size: 38px; }
+
+  .section { padding: 64px 40px; min-height: 300px; }
+  .placeholder { font-size: 20px; }
 }
 
+/* Large desktop ≥ 1280px */
 @media (min-width: 1280px) {
-  .section {
-    padding: 76px 48px;
-  }
+  .hero { padding: 68px 48px 80px; }
+  .heroHeadline { font-size: 54px; }
+  .heroSvg { max-width: 480px; }
+  .section { padding: 76px 48px; }
 }

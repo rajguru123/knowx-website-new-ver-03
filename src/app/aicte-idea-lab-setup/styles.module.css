@@ -1,0 +1,69 @@
+/* =========================================================
+   AICTE IDEA Lab Setup — Child Page (scoped)
+   Wrapper: .ail-scope
+   Step 1 — Foundation scaffold. Real styles come in Step 2+.
+   ========================================================= */
+
+.scope {
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  color: #111827;
+  background: #ffffff;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.scope *,
+.scope *::before,
+.scope *::after {
+  box-sizing: border-box;
+}
+
+/* -------- Section scaffold (placeholders) -------- */
+.section {
+  min-height: 200px;
+  padding: 40px 20px;
+  border-bottom: 1px dashed #e5e7eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.placeholder {
+  font-size: 16px;
+  font-weight: 600;
+  color: #6b7280;
+  text-align: center;
+  margin: 0;
+  letter-spacing: 0.01em;
+}
+
+/* -------- Responsive breakpoints (scaffold) -------- */
+
+@media (min-width: 768px) {
+  .section {
+    padding: 56px 32px;
+    min-height: 260px;
+  }
+  .placeholder {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section {
+    padding: 64px 40px;
+    min-height: 300px;
+  }
+  .placeholder {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .section {
+    padding: 76px 48px;
+  }
+}

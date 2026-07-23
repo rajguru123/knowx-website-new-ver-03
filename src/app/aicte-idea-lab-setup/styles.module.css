@@ -1,7 +1,7 @@
 /* =========================================================
    AICTE IDEA Lab Setup — Child Page (scoped)
    Wrapper: .ail-scope
-   Step 2 — Hero, Section 2, Section 3, and Modal styles.
+   Step 3 — Sections 1-5 styles.
    Palette:
      Green  #0f766e  Blue #1e3a8a  Amber #b45309  Teal #0d9488
      Red    #dc2626 (CTA only)
@@ -20,304 +20,272 @@
 .scope *::before,
 .scope *::after { box-sizing: border-box; }
 
-/* ==========================================================
-   SECTION 1 — HERO
-   ========================================================== */
-.hero {
-  position: relative;
-  padding: 32px 20px 40px;
-  background:
-    radial-gradient(1000px 400px at 90% -10%, #eafaf5 0%, transparent 60%),
-    linear-gradient(180deg, #ffffff 0%, #f9fbfa 100%);
-  overflow: hidden;
-}
-.heroInner {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 28px;
-  align-items: center;
-}
+/* SECTION 1 — HERO */
+.hero { position: relative; padding: 32px 20px 40px; background: radial-gradient(1000px 400px at 90% -10%, #eafaf5 0%, transparent 60%), linear-gradient(180deg, #ffffff 0%, #f9fbfa 100%); overflow: hidden; }
+.heroInner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr; gap: 28px; align-items: center; }
 .heroLeft { display: flex; flex-direction: column; gap: 14px; }
-
-.heroTag {
-  display: inline-flex;
-  align-items: center;
-  align-self: flex-start;
-  background: rgba(15, 118, 110, 0.08);
-  color: #0f766e;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  padding: 6px 12px;
-  border-radius: 999px;
-  border: 1px solid rgba(15, 118, 110, 0.2);
-}
-
-.heroHeadline {
-  font-size: 34px;
-  line-height: 1.15;
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  color: #0b1220;
-  margin: 0;
-}
+.heroTag { display: inline-flex; align-items: center; align-self: flex-start; background: rgba(15, 118, 110, 0.08); color: #0f766e; font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 6px 12px; border-radius: 999px; border: 1px solid rgba(15, 118, 110, 0.2); }
+.heroHeadline { font-size: 34px; line-height: 1.15; font-weight: 800; letter-spacing: -0.02em; color: #0b1220; margin: 0; }
 .heroHeadlineAccent { display: inline-block; color: #0f766e; }
-
-.heroSubhead {
-  font-size: 16px;
-  line-height: 1.6;
-  color: #374151;
-  margin: 0;
-  max-width: 640px;
-}
-
-.heroCtaRow {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  align-items: center;
-  margin-top: 2px;
-}
-
-.heroCtaPrimary {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: #dc2626;
-  color: #ffffff;
-  border: none;
-  cursor: pointer;
-  font-family: inherit;
-  font-weight: 600;
-  font-size: 15px;
-  padding: 12px 22px;
-  border-radius: 10px;
-  box-shadow: 0 6px 16px rgba(220, 38, 38, 0.25);
-  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
-  min-height: 46px;
-}
+.heroSubhead { font-size: 16px; line-height: 1.6; color: #374151; margin: 0; max-width: 640px; }
+.heroCtaRow { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-top: 2px; }
+.heroCtaPrimary { display: inline-flex; align-items: center; justify-content: center; background: #dc2626; color: #ffffff; border: none; cursor: pointer; font-family: inherit; font-weight: 600; font-size: 15px; padding: 12px 22px; border-radius: 10px; box-shadow: 0 6px 16px rgba(220, 38, 38, 0.25); transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease; min-height: 46px; }
 .heroCtaPrimary:hover { background: #b91c1c; transform: translateY(-1px); box-shadow: 0 10px 22px rgba(220, 38, 38, 0.3); }
-
-.heroCtaSecondary {
-  display: inline-flex;
-  align-items: center;
-  background: transparent;
-  color: #0f766e;
-  border: none;
-  cursor: pointer;
-  font-family: inherit;
-  font-weight: 600;
-  font-size: 15px;
-  padding: 10px 4px;
-  border-bottom: 2px solid rgba(15, 118, 110, 0.35);
-  transition: color 0.15s ease, border-color 0.15s ease;
-  min-height: 44px;
-}
+.heroCtaSecondary { display: inline-flex; align-items: center; background: transparent; color: #0f766e; border: none; cursor: pointer; font-family: inherit; font-weight: 600; font-size: 15px; padding: 10px 4px; border-bottom: 2px solid rgba(15, 118, 110, 0.35); transition: color 0.15s ease, border-color 0.15s ease; min-height: 44px; }
 .heroCtaSecondary:hover { color: #0b5b54; border-bottom-color: #0f766e; }
-
-.heroAccentBar {
-  width: 72px;
-  height: 3px;
-  background: #0f766e;
-  border-radius: 2px;
-  margin-top: 12px;
-}
-
-.heroTrustStrip {
-  list-style: none;
-  padding: 0;
-  margin: 4px 0 0 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-.heroTrustPill {
-  display: inline-flex;
-  align-items: center;
-  color: #ffffff;
-  font-size: 14px;
-  font-weight: 600;
-  padding: 8px 14px;
-  border-radius: 999px;
-  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.12);
-  white-space: nowrap;
-}
+.heroAccentBar { width: 72px; height: 3px; background: #0f766e; border-radius: 2px; margin-top: 12px; }
+.heroTrustStrip { list-style: none; padding: 0; margin: 4px 0 0 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.heroTrustPill { display: inline-flex; align-items: center; color: #ffffff; font-size: 14px; font-weight: 600; padding: 8px 14px; border-radius: 999px; box-shadow: 0 2px 6px rgba(15, 23, 42, 0.12); white-space: nowrap; }
 .pillGreen { background: #0f766e; }
-.pillBlue  { background: #1e3a8a; }
+.pillBlue { background: #1e3a8a; }
+.heroRight { width: 100%; display: flex; justify-content: center; align-items: center; }
+.heroSvg { width: 100%; max-width: 420px; height: auto; display: block; }
 
-.heroRight {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.heroSvg {
-  width: 100%;
-  max-width: 420px;
-  height: auto;
-  display: block;
-}
-
-/* ==========================================================
-   SECTION 2 — WHAT IS AN AICTE IDEA LAB
-   ========================================================== */
-.s2 {
-  padding: 44px 20px;
-  background: #f9fafb;
-}
+/* SECTION 2 */
+.s2 { padding: 44px 20px; background: #f9fafb; }
 .s2Inner { max-width: 900px; margin: 0 auto; }
-.s2Heading {
-  font-size: 28px;
-  font-weight: 800;
-  color: #0b1220;
-  text-align: center;
-  margin: 0 0 18px;
-  letter-spacing: -0.01em;
-}
-.s2Intro {
-  font-size: 16px;
-  line-height: 1.7;
-  color: #374151;
-  margin: 0 0 14px;
-}
-.s2Body {
-  font-size: 16px;
-  line-height: 1.7;
-  color: #374151;
-  margin: 0 0 22px;
-}
-
-.s2Features {
-  background: #ffffff;
-  border: 1px solid #e5e7eb;
-  border-left: 4px solid #0f766e;
-  border-radius: 12px;
-  padding: 20px 22px;
-  margin-bottom: 20px;
-}
-.s2FeatureTitle {
-  font-size: 15px;
-  font-weight: 800;
-  color: #0b5b54;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin-bottom: 12px;
-}
-.s2FeatureList {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-.s2FeatureList li {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  font-size: 15px;
-  line-height: 1.55;
-  color: #1f2937;
-}
-.s2FeatureCheck {
-  flex-shrink: 0;
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-  background: #0f766e;
-  color: #ffffff;
-  font-size: 13px;
-  font-weight: 800;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 2px;
-}
-
-.s2Pillar {
-  text-align: center;
-  font-size: 15px;
-  color: #6b7280;
-  margin: 0;
-  padding-top: 8px;
-}
-.s2PillarLink {
-  color: #0f766e;
-  font-weight: 700;
-  text-decoration: none;
-  border-bottom: 1px solid rgba(15, 118, 110, 0.35);
-  padding-bottom: 1px;
-}
+.s2Heading { font-size: 28px; font-weight: 800; color: #0b1220; text-align: center; margin: 0 0 18px; letter-spacing: -0.01em; }
+.s2Intro { font-size: 16px; line-height: 1.7; color: #374151; margin: 0 0 14px; }
+.s2Body { font-size: 16px; line-height: 1.7; color: #374151; margin: 0 0 22px; }
+.s2Features { background: #ffffff; border: 1px solid #e5e7eb; border-left: 4px solid #0f766e; border-radius: 12px; padding: 20px 22px; margin-bottom: 20px; }
+.s2FeatureTitle { font-size: 15px; font-weight: 800; color: #0b5b54; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 12px; }
+.s2FeatureList { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; }
+.s2FeatureList li { display: flex; align-items: flex-start; gap: 10px; font-size: 15px; line-height: 1.55; color: #1f2937; }
+.s2FeatureCheck { flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%; background: #0f766e; color: #ffffff; font-size: 13px; font-weight: 800; display: inline-flex; align-items: center; justify-content: center; margin-top: 2px; }
+.s2Pillar { text-align: center; font-size: 15px; color: #6b7280; margin: 0; padding-top: 8px; }
+.s2PillarLink { color: #0f766e; font-weight: 700; text-decoration: none; border-bottom: 1px solid rgba(15, 118, 110, 0.35); padding-bottom: 1px; }
 .s2PillarLink:hover { border-bottom-color: #0f766e; }
 
-/* ==========================================================
-   SECTION 3 — ELIGIBILITY CRITERIA
-   ========================================================== */
-.s3 {
-  padding: 44px 20px;
-  background: #ffffff;
-}
+/* SECTION 3 */
+.s3 { padding: 44px 20px; background: #ffffff; }
 .s3Inner { max-width: 900px; margin: 0 auto; }
-.s3Heading {
-  font-size: 28px;
-  font-weight: 800;
-  color: #0b1220;
-  text-align: center;
-  margin: 0 0 10px;
-  letter-spacing: -0.01em;
-}
-.s3Intro {
-  font-size: 15px;
-  line-height: 1.6;
-  color: #4b5563;
-  text-align: center;
-  max-width: 720px;
-  margin: 0 auto 24px;
-}
-
-/* Eligibility table — mobile-first */
-.s3Table {
-  border-radius: 14px;
-  overflow: hidden;
-  border: 1px solid #e5e7eb;
-  box-shadow: 0 6px 22px rgba(15, 23, 42, 0.05);
-  background: #ffffff;
-  margin-bottom: 20px;
-}
+.s3Heading { font-size: 28px; font-weight: 800; color: #0b1220; text-align: center; margin: 0 0 10px; letter-spacing: -0.01em; }
+.s3Intro { font-size: 15px; line-height: 1.6; color: #4b5563; text-align: center; max-width: 720px; margin: 0 auto 24px; }
+.s3Table { border-radius: 14px; overflow: hidden; border: 1px solid #e5e7eb; box-shadow: 0 6px 22px rgba(15, 23, 42, 0.05); background: #ffffff; margin-bottom: 20px; }
 .s3HeaderRow { display: none; }
-.s3DataRow {
-  display: grid;
-  grid-template-columns: 1fr;
-  padding: 16px;
-  border-bottom: 1px solid #e5e7eb;
-  gap: 10px;
-  background: #ffffff;
-}
+.s3DataRow { display: grid; grid-template-columns: 1fr; padding: 16px; border-bottom: 1px solid #e5e7eb; gap: 10px; background: #ffffff; }
 .s3RowAlt { background: #f9fafb; }
 .s3DataRow:last-child { border-bottom: none; }
-.s3Cell {
-  font-size: 15px;
-  color: #111827;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
+.s3Cell { font-size: 15px; color: #111827; display: flex; flex-direction: column; gap: 4px; }
 .s3DParam { font-weight: 700; color: #0b1220; }
 .s3DReq { color: #374151; }
-.s3MobileLabel {
-  display: block;
-  font-size: 11px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: #6b7280;
-  margin-bottom: 2px;
+.s3MobileLabel { display: block; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: #6b7280; margin-bottom: 2px; }
+.s3Tip { display: flex; align-items: flex-start; gap: 12px; background: #f0fdf9; border: 1px solid #cceee5; border-left: 4px solid #0f766e; border-radius: 12px; padding: 16px 18px; }
+.s3TipIcon { flex-shrink: 0; width: 34px; height: 34px; border-radius: 50%; background: #0f766e; color: #ffffff; display: inline-flex; align-items: center; justify-content: center; }
+.s3TipBody { font-size: 14.5px; line-height: 1.6; color: #0b1220; }
+
+/* ==========================================================
+   SECTION 4 — THE 6 CORE INNOVATION PILLARS
+   ========================================================== */
+.s4 { padding: 48px 20px; background: #f9fafb; }
+.s4Inner { max-width: 1240px; margin: 0 auto; }
+.s4Heading { font-size: 28px; font-weight: 800; color: #0b1220; text-align: center; margin: 0 0 10px; letter-spacing: -0.01em; }
+.s4Intro { font-size: 15px; line-height: 1.6; color: #4b5563; text-align: center; max-width: 900px; margin: 0 auto 28px; }
+
+.s4Grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  margin-bottom: 22px;
 }
 
-.s3Tip {
+.s4Card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 22px 20px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+.s4Card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.09);
+}
+
+.s4CardHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+.s4CardIcon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.s4CardNum {
+  font-size: 22px;
+  font-weight: 800;
+  color: #e5e7eb;
+  letter-spacing: -0.02em;
+}
+
+/* Pillar tint variants */
+.s4Tint_green { border-top: 4px solid #0f766e; }
+.s4Tint_green .s4CardIcon { background: #0f766e; }
+.s4Tint_green:hover { border-color: #cceee5; }
+
+.s4Tint_blue { border-top: 4px solid #1e3a8a; }
+.s4Tint_blue .s4CardIcon { background: #1e3a8a; }
+.s4Tint_blue:hover { border-color: #d3ddf7; }
+
+.s4Tint_amber { border-top: 4px solid #b45309; }
+.s4Tint_amber .s4CardIcon { background: #b45309; }
+.s4Tint_amber:hover { border-color: #fbd794; }
+
+.s4Tint_teal { border-top: 4px solid #0d9488; }
+.s4Tint_teal .s4CardIcon { background: #0d9488; }
+.s4Tint_teal:hover { border-color: #bfeae4; }
+
+.s4CardTitle {
+  font-size: 17px;
+  font-weight: 700;
+  color: #0b1220;
+  margin: 0 0 4px;
+  line-height: 1.3;
+}
+.s4CardTagline {
+  font-size: 13px;
+  font-weight: 600;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 14px;
+}
+
+.s4CardCaps {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 16px 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px 12px;
+  flex-grow: 1;
+}
+.s4CardCaps li {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: #374151;
+  line-height: 1.4;
+}
+.s4CapDot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.s4Tint_green .s4CapDot { background: #0f766e; }
+.s4Tint_blue  .s4CapDot { background: #1e3a8a; }
+.s4Tint_amber .s4CapDot { background: #b45309; }
+.s4Tint_teal  .s4CapDot { background: #0d9488; }
+
+.s4CardOutcome {
+  padding-top: 14px;
+  border-top: 1px dashed #e5e7eb;
+}
+.s4OutcomeLabel {
+  display: block;
+  font-size: 11px;
+  font-weight: 800;
+  color: #9ca3af;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 4px;
+}
+.s4OutcomeText {
+  display: block;
+  font-size: 14px;
+  line-height: 1.55;
+  color: #1f2937;
+  font-weight: 500;
+}
+
+.s4Footer {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #0b5b54;
+  text-align: center;
+  margin: 0 auto;
+  max-width: 800px;
+  font-weight: 600;
+}
+
+/* ==========================================================
+   SECTION 5 — AICTE-COMPLIANT INFRASTRUCTURE (11 categories)
+   ========================================================== */
+.s5 { padding: 48px 20px; background: #ffffff; }
+.s5Inner { max-width: 1200px; margin: 0 auto; }
+.s5Heading { font-size: 28px; font-weight: 800; color: #0b1220; text-align: center; margin: 0 0 10px; letter-spacing: -0.01em; }
+.s5Intro { font-size: 15px; line-height: 1.6; color: #4b5563; text-align: center; max-width: 900px; margin: 0 auto 28px; }
+
+.s5Grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.s5Card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+.s5Card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(15, 23, 42, 0.07);
+}
+
+.s5CardNum {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 14px;
+  letter-spacing: 0.03em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.s5Tint_green .s5CardNum { background: #0f766e; }
+.s5Tint_blue  .s5CardNum { background: #1e3a8a; }
+.s5Tint_amber .s5CardNum { background: #b45309; }
+.s5Tint_teal  .s5CardNum { background: #0d9488; }
+
+.s5Tint_green:hover { border-color: #cceee5; }
+.s5Tint_blue:hover  { border-color: #d3ddf7; }
+.s5Tint_amber:hover { border-color: #fbd794; }
+.s5Tint_teal:hover  { border-color: #bfeae4; }
+
+.s5CardBody { flex: 1; }
+.s5CardTitle {
+  font-size: 15px;
+  font-weight: 700;
+  color: #0b1220;
+  margin: 0 0 4px;
+  line-height: 1.35;
+}
+.s5CardItems {
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: #4b5563;
+  margin: 0;
+}
+
+.s5Note {
   display: flex;
   align-items: flex-start;
   gap: 12px;
@@ -327,7 +295,7 @@
   border-radius: 12px;
   padding: 16px 18px;
 }
-.s3TipIcon {
+.s5NoteIcon {
   flex-shrink: 0;
   width: 34px;
   height: 34px;
@@ -338,84 +306,26 @@
   align-items: center;
   justify-content: center;
 }
-.s3TipBody {
+.s5NoteBody {
   font-size: 14.5px;
   line-height: 1.6;
   color: #0b1220;
 }
 
-/* ==========================================================
-   MODAL (same as flagship for consistency)
-   ========================================================== */
-.modalBackdrop {
-  position: fixed;
-  inset: 0;
-  background: rgba(15, 23, 42, 0.6);
-  backdrop-filter: blur(4px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 16px;
-  z-index: 1000;
-  animation: ailFadeIn 0.15s ease;
-}
+/* MODAL */
+.modalBackdrop { position: fixed; inset: 0; background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(4px); display: flex; align-items: center; justify-content: center; padding: 16px; z-index: 1000; animation: ailFadeIn 0.15s ease; }
 @keyframes ailFadeIn { from { opacity: 0; } to { opacity: 1; } }
-
-.modal {
-  background: #ffffff;
-  border-radius: 16px;
-  width: 100%;
-  max-width: 520px;
-  max-height: 90vh;
-  overflow-y: auto;
-  padding: 24px;
-  position: relative;
-  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.3);
-  animation: ailSlideUp 0.2s ease;
-}
+.modal { background: #ffffff; border-radius: 16px; width: 100%; max-width: 520px; max-height: 90vh; overflow-y: auto; padding: 24px; position: relative; box-shadow: 0 24px 60px rgba(15, 23, 42, 0.3); animation: ailSlideUp 0.2s ease; }
 @keyframes ailSlideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-
-.modalClose {
-  position: absolute;
-  top: 12px;
-  right: 14px;
-  width: 34px;
-  height: 34px;
-  border: none;
-  background: #f3f4f6;
-  color: #374151;
-  font-size: 22px;
-  line-height: 1;
-  border-radius: 50%;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  transition: background-color 0.15s ease;
-  font-family: inherit;
-}
+.modalClose { position: absolute; top: 12px; right: 14px; width: 34px; height: 34px; border: none; background: #f3f4f6; color: #374151; font-size: 22px; line-height: 1; border-radius: 50%; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; transition: background-color 0.15s ease; font-family: inherit; }
 .modalClose:hover { background: #e5e7eb; }
-
 .modalTitle { font-size: 22px; font-weight: 800; color: #0b1220; margin: 0 0 6px; letter-spacing: -0.01em; }
 .modalSubtitle { font-size: 14px; color: #6b7280; margin: 0 0 20px; line-height: 1.5; }
 .modalForm { display: flex; flex-direction: column; gap: 12px; }
 .modalRow { display: grid; grid-template-columns: 1fr; gap: 12px; }
 .modalLabel { display: flex; flex-direction: column; gap: 6px; font-size: 12.5px; font-weight: 700; color: #374151; text-transform: uppercase; letter-spacing: 0.04em; }
 .modalInput,
-.modalTextarea {
-  font-family: inherit;
-  font-size: 15px;
-  color: #0b1220;
-  background: #f9fafb;
-  border: 1px solid #e5e7eb;
-  border-radius: 10px;
-  padding: 11px 12px;
-  transition: border-color 0.15s ease, background-color 0.15s ease;
-  text-transform: none;
-  letter-spacing: normal;
-  font-weight: 400;
-  min-height: 44px;
-}
+.modalTextarea { font-family: inherit; font-size: 15px; color: #0b1220; background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 10px; padding: 11px 12px; transition: border-color 0.15s ease, background-color 0.15s ease; text-transform: none; letter-spacing: normal; font-weight: 400; min-height: 44px; }
 .modalInput:focus,
 .modalTextarea:focus { outline: none; border-color: #0f766e; background: #ffffff; }
 .modalTextarea { resize: vertical; min-height: 76px; }
@@ -431,24 +341,9 @@
 .modalDoneBtn { margin-top: 8px; background: #0f766e; color: #ffffff; border: none; font-family: inherit; font-weight: 700; font-size: 14.5px; padding: 11px 22px; border-radius: 10px; cursor: pointer; transition: background-color 0.15s ease; }
 .modalDoneBtn:hover { background: #0b5b54; }
 
-/* ==========================================================
-   PLACEHOLDER SECTIONS (Sections 4–13, until built)
-   ========================================================== */
-.section {
-  min-height: 200px;
-  padding: 40px 20px;
-  border-bottom: 1px dashed #e5e7eb;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.placeholder {
-  font-size: 16px;
-  font-weight: 600;
-  color: #6b7280;
-  text-align: center;
-  margin: 0;
-}
+/* PLACEHOLDERS */
+.section { min-height: 200px; padding: 40px 20px; border-bottom: 1px dashed #e5e7eb; display: flex; align-items: center; justify-content: center; }
+.placeholder { font-size: 16px; font-weight: 600; color: #6b7280; text-align: center; margin: 0; }
 
 /* ==========================================================
    RESPONSIVE BREAKPOINTS
@@ -456,13 +351,7 @@
 
 /* Tablet ≥ 640px */
 @media (min-width: 640px) {
-  /* Eligibility table becomes a proper 2-col table */
-  .s3HeaderRow {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    background: #f3f4f6;
-    border-bottom: 1px solid #e5e7eb;
-  }
+  .s3HeaderRow { display: grid; grid-template-columns: 1fr 2fr; background: #f3f4f6; border-bottom: 1px solid #e5e7eb; }
   .s3DataRow { grid-template-columns: 1fr 2fr; align-items: stretch; padding: 0; gap: 0; }
   .s3Cell { padding: 16px 18px; border-right: 1px solid #f1f5f9; gap: 4px; }
   .s3Cell:last-child { border-right: none; }
@@ -471,6 +360,9 @@
   .s3HReq { background: #f3f4f6; color: #111827; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; font-size: 13px; }
   .s3DParam { background: #f9fafb; flex-direction: column; }
   .s3DReq { flex-direction: column; }
+
+  .s4Grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+  .s5Grid { grid-template-columns: 1fr 1fr; gap: 12px; }
 
   .modalRow { grid-template-columns: 1fr 1fr; }
 }
@@ -491,6 +383,20 @@
   .s3Heading { font-size: 34px; }
   .s3Intro { font-size: 16px; }
 
+  .s4 { padding: 64px 32px; }
+  .s4Heading { font-size: 34px; }
+  .s4Intro { font-size: 16px; }
+  .s4CardTitle { font-size: 18px; }
+  .s4CardCaps li { font-size: 13.5px; }
+  .s4OutcomeText { font-size: 14.5px; }
+  .s4Footer { font-size: 16px; }
+
+  .s5 { padding: 64px 32px; }
+  .s5Heading { font-size: 34px; }
+  .s5Intro { font-size: 16px; }
+  .s5CardTitle { font-size: 15.5px; }
+  .s5CardItems { font-size: 14px; }
+
   .section { padding: 56px 32px; min-height: 260px; }
   .placeholder { font-size: 18px; }
 }
@@ -498,10 +404,7 @@
 /* Desktop ≥ 1024px */
 @media (min-width: 1024px) {
   .hero { padding: 56px 40px 68px; }
-  .heroInner {
-    grid-template-columns: 1.15fr 1fr;
-    gap: 48px;
-  }
+  .heroInner { grid-template-columns: 1.15fr 1fr; gap: 48px; }
   .heroHeadline { font-size: 48px; }
   .heroSubhead  { font-size: 18px; }
   .heroSvg      { max-width: 460px; }
@@ -511,6 +414,14 @@
 
   .s3 { padding: 72px 40px; }
   .s3Heading { font-size: 38px; }
+
+  .s4 { padding: 76px 40px; }
+  .s4Heading { font-size: 38px; }
+  .s4Grid { grid-template-columns: repeat(3, 1fr); gap: 18px; }
+
+  .s5 { padding: 76px 40px; }
+  .s5Heading { font-size: 38px; }
+  .s5Grid { grid-template-columns: repeat(3, 1fr); gap: 14px; }
 
   .section { padding: 64px 40px; min-height: 300px; }
   .placeholder { font-size: 20px; }

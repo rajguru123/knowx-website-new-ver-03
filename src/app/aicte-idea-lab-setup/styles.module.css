@@ -1,7 +1,7 @@
 /* =========================================================
    AICTE IDEA Lab Setup — Child Page (scoped)
    Wrapper: .ail-scope
-   Step 4 — Adds Section 7 (Beyond AICTE / Knowx 2.0) + Section 8 (What Students Build).
+   Step 5 — Adds Section 9 (Student Journey), 10 (Outcomes), 11 (Compliance + NAAC/NBA table).
    Palette:
      Green  #0f766e  Blue #1e3a8a  Amber #b45309  Teal #0d9488
      Red    #dc2626 (CTA only)
@@ -79,7 +79,7 @@
 .s3TipIcon { flex-shrink: 0; width: 34px; height: 34px; border-radius: 50%; background: #0f766e; color: #ffffff; display: inline-flex; align-items: center; justify-content: center; }
 .s3TipBody { font-size: 14.5px; line-height: 1.6; color: #0b1220; }
 
-/* SECTION 4 — 6 PILLARS */
+/* SECTION 4 */
 .s4 { padding: 48px 20px; background: #f9fafb; }
 .s4Inner { max-width: 1240px; margin: 0 auto; }
 .s4Heading { font-size: 28px; font-weight: 800; color: #0b1220; text-align: center; margin: 0 0 10px; letter-spacing: -0.01em; }
@@ -116,7 +116,7 @@
 .s4OutcomeText { display: block; font-size: 14px; line-height: 1.55; color: #1f2937; font-weight: 500; }
 .s4Footer { font-size: 15px; line-height: 1.6; color: #0b5b54; text-align: center; margin: 0 auto; max-width: 800px; font-weight: 600; }
 
-/* SECTION 5 — 11 AICTE CATEGORIES */
+/* SECTION 5 */
 .s5 { padding: 48px 20px; background: #ffffff; }
 .s5Inner { max-width: 1200px; margin: 0 auto; }
 .s5Heading { font-size: 28px; font-weight: 800; color: #0b1220; text-align: center; margin: 0 0 10px; letter-spacing: -0.01em; }
@@ -140,7 +140,7 @@
 .s5NoteIcon { flex-shrink: 0; width: 34px; height: 34px; border-radius: 50%; background: #0f766e; color: #ffffff; display: inline-flex; align-items: center; justify-content: center; }
 .s5NoteBody { font-size: 14.5px; line-height: 1.6; color: #0b1220; }
 
-/* SECTION 6 — WHAT WE DELIVER */
+/* SECTION 6 */
 .s6 { padding: 48px 20px; background: #f9fafb; }
 .s6Inner { max-width: 1200px; margin: 0 auto; }
 .s6Heading { font-size: 28px; font-weight: 800; color: #0b1220; text-align: center; margin: 0 0 10px; letter-spacing: -0.01em; }
@@ -165,176 +165,225 @@
 .s6CardBody { font-size: 14px; line-height: 1.55; color: #4b5563; margin: 0; }
 .s6Footer { font-size: 15px; line-height: 1.6; color: #0b5b54; text-align: center; margin: 0 auto; max-width: 800px; font-weight: 500; }
 
-/* ==========================================================
-   SECTION 7 — BEYOND AICTE (Knowx IDEA Lab 2.0)
-   Dark green gradient — signals "this is our differentiator"
-   ========================================================== */
-.s7 {
-  padding: 56px 20px;
-  background: linear-gradient(135deg, #0f766e 0%, #0b5b54 100%);
-  color: #ffffff;
-}
+/* SECTION 7 — Beyond AICTE (dark green) */
+.s7 { padding: 56px 20px; background: linear-gradient(135deg, #0f766e 0%, #0b5b54 100%); color: #ffffff; }
 .s7Inner { max-width: 1200px; margin: 0 auto; text-align: center; }
-
-.s7Tag {
-  display: inline-flex;
-  align-items: center;
-  background: rgba(255, 255, 255, 0.14);
-  color: #ffffff;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  padding: 7px 14px;
-  border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  margin-bottom: 16px;
-}
-
-.s7Heading {
-  font-size: 28px;
-  font-weight: 800;
-  color: #ffffff;
-  margin: 0 0 12px;
-  letter-spacing: -0.01em;
-  line-height: 1.2;
-}
-
-.s7Intro {
-  font-size: 15px;
-  line-height: 1.65;
-  color: rgba(255, 255, 255, 0.9);
-  margin: 0 auto 32px;
-  max-width: 880px;
-  text-align: center;
-}
-
-.s7Grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 14px;
-  margin-bottom: 30px;
-  text-align: left;
-}
-
-.s7Card {
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  border-radius: 14px;
-  padding: 20px 18px;
-  transition: background-color 0.15s ease, transform 0.15s ease;
-}
-.s7Card:hover {
-  background: rgba(255, 255, 255, 0.13);
-  transform: translateY(-2px);
-}
-
-.s7CardIcon {
-  width: 46px;
-  height: 46px;
-  border-radius: 10px;
-  background: rgba(255, 255, 255, 0.18);
-  color: #ffffff;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 12px;
-}
-
-.s7CardTitle {
-  font-size: 16px;
-  font-weight: 700;
-  color: #ffffff;
-  margin: 0 0 10px;
-  line-height: 1.3;
-}
-
-.s7CardList {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-.s7CardList li {
-  font-size: 13.5px;
-  line-height: 1.5;
-  color: rgba(255, 255, 255, 0.9);
-  padding-left: 14px;
-  position: relative;
-}
-.s7CardList li::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 8px;
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.55);
-}
-
-.s7Statement {
-  display: inline-block;
-  padding: 14px 22px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 999px;
-  font-size: 15px;
-  color: #ffffff;
-  background: rgba(255, 255, 255, 0.08);
-  line-height: 1.4;
-  max-width: 100%;
-}
+.s7Tag { display: inline-flex; align-items: center; background: rgba(255, 255, 255, 0.14); color: #ffffff; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 7px 14px; border-radius: 999px; border: 1px solid rgba(255, 255, 255, 0.25); margin-bottom: 16px; }
+.s7Heading { font-size: 28px; font-weight: 800; color: #ffffff; margin: 0 0 12px; letter-spacing: -0.01em; line-height: 1.2; }
+.s7Intro { font-size: 15px; line-height: 1.65; color: rgba(255, 255, 255, 0.9); margin: 0 auto 32px; max-width: 880px; text-align: center; }
+.s7Grid { display: grid; grid-template-columns: 1fr; gap: 14px; margin-bottom: 30px; text-align: left; }
+.s7Card { background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.16); border-radius: 14px; padding: 20px 18px; transition: background-color 0.15s ease, transform 0.15s ease; }
+.s7Card:hover { background: rgba(255, 255, 255, 0.13); transform: translateY(-2px); }
+.s7CardIcon { width: 46px; height: 46px; border-radius: 10px; background: rgba(255, 255, 255, 0.18); color: #ffffff; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 12px; }
+.s7CardTitle { font-size: 16px; font-weight: 700; color: #ffffff; margin: 0 0 10px; line-height: 1.3; }
+.s7CardList { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 6px; }
+.s7CardList li { font-size: 13.5px; line-height: 1.5; color: rgba(255, 255, 255, 0.9); padding-left: 14px; position: relative; }
+.s7CardList li::before { content: ""; position: absolute; left: 0; top: 8px; width: 5px; height: 5px; border-radius: 50%; background: rgba(255, 255, 255, 0.55); }
+.s7Statement { display: inline-block; padding: 14px 22px; border: 1px solid rgba(255, 255, 255, 0.3); border-radius: 999px; font-size: 15px; color: #ffffff; background: rgba(255, 255, 255, 0.08); line-height: 1.4; max-width: 100%; }
 .s7Statement strong { font-weight: 700; }
 
-/* ==========================================================
-   SECTION 8 — WHAT STUDENTS BUILD (10 project categories)
-   ========================================================== */
-.s8 {
-  padding: 48px 20px;
-  background: #ffffff;
-}
+/* SECTION 8 */
+.s8 { padding: 48px 20px; background: #ffffff; }
 .s8Inner { max-width: 1240px; margin: 0 auto; }
-.s8Heading {
-  font-size: 28px;
-  font-weight: 800;
-  color: #0b1220;
-  text-align: center;
-  margin: 0 0 10px;
-  letter-spacing: -0.01em;
-}
-.s8Intro {
-  font-size: 15px;
-  line-height: 1.6;
-  color: #4b5563;
-  text-align: center;
-  max-width: 900px;
-  margin: 0 auto 28px;
-}
+.s8Heading { font-size: 28px; font-weight: 800; color: #0b1220; text-align: center; margin: 0 0 10px; letter-spacing: -0.01em; }
+.s8Intro { font-size: 15px; line-height: 1.6; color: #4b5563; text-align: center; max-width: 900px; margin: 0 auto 28px; }
+.s8Grid { display: grid; grid-template-columns: 1fr; gap: 12px; margin-bottom: 24px; }
+.s8Tile { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 18px 16px; transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease; }
+.s8Tile:hover { transform: translateY(-2px); box-shadow: 0 10px 22px rgba(15, 23, 42, 0.07); }
+.s8TileIcon { width: 42px; height: 42px; border-radius: 10px; color: #ffffff; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 12px; }
+.s8Tint_green { border-top: 3px solid #0f766e; }
+.s8Tint_green .s8TileIcon { background: #0f766e; }
+.s8Tint_green:hover { border-color: #cceee5; }
+.s8Tint_blue { border-top: 3px solid #1e3a8a; }
+.s8Tint_blue .s8TileIcon { background: #1e3a8a; }
+.s8Tint_blue:hover { border-color: #d3ddf7; }
+.s8Tint_amber { border-top: 3px solid #b45309; }
+.s8Tint_amber .s8TileIcon { background: #b45309; }
+.s8Tint_amber:hover { border-color: #fbd794; }
+.s8Tint_teal { border-top: 3px solid #0d9488; }
+.s8Tint_teal .s8TileIcon { background: #0d9488; }
+.s8Tint_teal:hover { border-color: #bfeae4; }
+.s8TileTitle { font-size: 15px; font-weight: 700; color: #0b1220; margin: 0 0 4px; line-height: 1.35; }
+.s8TileBody { font-size: 13.5px; line-height: 1.5; color: #4b5563; margin: 0; }
+.s8Footer { font-size: 15px; line-height: 1.6; color: #374151; text-align: center; margin: 0 auto; max-width: 900px; font-weight: 500; }
 
-.s8Grid {
+/* ==========================================================
+   SECTION 9 — STUDENT INNOVATION JOURNEY
+   ========================================================== */
+.s9 { padding: 48px 20px; background: #f9fafb; }
+.s9Inner { max-width: 1240px; margin: 0 auto; }
+.s9Heading { font-size: 28px; font-weight: 800; color: #0b1220; text-align: center; margin: 0 0 10px; letter-spacing: -0.01em; }
+.s9Intro { font-size: 15px; line-height: 1.6; color: #4b5563; text-align: center; max-width: 900px; margin: 0 auto 28px; }
+
+.s9Flow {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 22px;
   display: grid;
   grid-template-columns: 1fr;
   gap: 12px;
-  margin-bottom: 24px;
 }
 
-.s8Tile {
+.s9Milestone {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.s9Card {
+  flex: 1;
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  padding: 16px 14px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.s9Card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+}
+
+.s9Num {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 15px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2px;
+}
+.s9Tint_green .s9Num { background: #0f766e; }
+.s9Tint_blue .s9Num { background: #1e3a8a; }
+
+.s9Title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #0b1220;
+  margin: 0;
+  line-height: 1.3;
+}
+.s9Body {
+  font-size: 12.5px;
+  line-height: 1.45;
+  color: #4b5563;
+  margin: 0;
+}
+
+.s9Arrow {
+  font-size: 20px;
+  color: #0f766e;
+  font-weight: 700;
+  display: none;
+}
+
+.s9Footer {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #0b5b54;
+  text-align: center;
+  margin: 0 auto;
+  max-width: 800px;
+  font-weight: 600;
+}
+
+/* ==========================================================
+   SECTION 10 — 10 INSTITUTIONAL OUTCOMES
+   ========================================================== */
+.s10 { padding: 48px 20px; background: #ffffff; }
+.s10Inner { max-width: 1240px; margin: 0 auto; }
+.s10Heading { font-size: 28px; font-weight: 800; color: #0b1220; text-align: center; margin: 0 0 10px; letter-spacing: -0.01em; }
+.s10Intro { font-size: 15px; line-height: 1.6; color: #4b5563; text-align: center; max-width: 900px; margin: 0 auto 28px; }
+
+.s10Grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.s10Card {
   background: #ffffff;
   border: 1px solid #e5e7eb;
   border-radius: 12px;
-  padding: 18px 16px;
+  padding: 16px;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
   transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
 }
-.s8Tile:hover {
+.s10Card:hover {
   transform: translateY(-2px);
   box-shadow: 0 10px 22px rgba(15, 23, 42, 0.07);
 }
 
-.s8TileIcon {
-  width: 42px;
-  height: 42px;
+.s10Num {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 14px;
+  letter-spacing: 0.03em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.s10Tint_green .s10Num { background: #0f766e; }
+.s10Tint_blue .s10Num { background: #1e3a8a; }
+.s10Tint_amber .s10Num { background: #b45309; }
+.s10Tint_teal .s10Num { background: #0d9488; }
+.s10Tint_green:hover { border-color: #cceee5; }
+.s10Tint_blue:hover { border-color: #d3ddf7; }
+.s10Tint_amber:hover { border-color: #fbd794; }
+.s10Tint_teal:hover { border-color: #bfeae4; }
+
+.s10Body { flex: 1; }
+.s10Title { font-size: 15px; font-weight: 700; color: #0b1220; margin: 0 0 4px; line-height: 1.35; }
+.s10Desc { font-size: 13.5px; line-height: 1.5; color: #4b5563; margin: 0; }
+
+.s10Footer { font-size: 15px; line-height: 1.6; color: #0b5b54; text-align: center; margin: 0 auto; max-width: 800px; font-weight: 600; }
+
+/* ==========================================================
+   SECTION 11 — AICTE COMPLIANCE + NAAC/NBA MAPPING
+   ========================================================== */
+.s11 { padding: 48px 20px; background: #f9fafb; }
+.s11Inner { max-width: 1200px; margin: 0 auto; }
+.s11Heading { font-size: 28px; font-weight: 800; color: #0b1220; text-align: center; margin: 0 0 10px; letter-spacing: -0.01em; }
+.s11Intro { font-size: 15px; line-height: 1.6; color: #4b5563; text-align: center; max-width: 900px; margin: 0 auto 28px; }
+
+/* 4 alignment cards */
+.s11Grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  margin-bottom: 36px;
+}
+
+.s11Card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 22px 20px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+.s11Card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 26px rgba(15, 23, 42, 0.08);
+}
+
+.s11CardIcon {
+  width: 44px;
+  height: 44px;
   border-radius: 10px;
   color: #ffffff;
   display: inline-flex;
@@ -342,45 +391,81 @@
   justify-content: center;
   margin-bottom: 12px;
 }
+.s11Tint_green { border-top: 3px solid #0f766e; }
+.s11Tint_green .s11CardIcon { background: #0f766e; }
+.s11Tint_green:hover { border-color: #cceee5; }
+.s11Tint_blue { border-top: 3px solid #1e3a8a; }
+.s11Tint_blue .s11CardIcon { background: #1e3a8a; }
+.s11Tint_blue:hover { border-color: #d3ddf7; }
+.s11Tint_amber { border-top: 3px solid #b45309; }
+.s11Tint_amber .s11CardIcon { background: #b45309; }
+.s11Tint_amber:hover { border-color: #fbd794; }
+.s11Tint_teal { border-top: 3px solid #0d9488; }
+.s11Tint_teal .s11CardIcon { background: #0d9488; }
+.s11Tint_teal:hover { border-color: #bfeae4; }
 
-.s8Tint_green { border-top: 3px solid #0f766e; }
-.s8Tint_green .s8TileIcon { background: #0f766e; }
-.s8Tint_green:hover { border-color: #cceee5; }
+.s11CardTitle { font-size: 16px; font-weight: 700; color: #0b1220; margin: 0 0 6px; line-height: 1.35; }
+.s11CardBody { font-size: 14px; line-height: 1.55; color: #4b5563; margin: 0; }
 
-.s8Tint_blue { border-top: 3px solid #1e3a8a; }
-.s8Tint_blue .s8TileIcon { background: #1e3a8a; }
-.s8Tint_blue:hover { border-color: #d3ddf7; }
-
-.s8Tint_amber { border-top: 3px solid #b45309; }
-.s8Tint_amber .s8TileIcon { background: #b45309; }
-.s8Tint_amber:hover { border-color: #fbd794; }
-
-.s8Tint_teal { border-top: 3px solid #0d9488; }
-.s8Tint_teal .s8TileIcon { background: #0d9488; }
-.s8Tint_teal:hover { border-color: #bfeae4; }
-
-.s8TileTitle {
-  font-size: 15px;
-  font-weight: 700;
+/* NAAC criteria mapping table */
+.s11NaacHeading {
+  font-size: 20px;
+  font-weight: 800;
   color: #0b1220;
-  margin: 0 0 4px;
-  line-height: 1.35;
-}
-.s8TileBody {
-  font-size: 13.5px;
-  line-height: 1.5;
-  color: #4b5563;
-  margin: 0;
+  text-align: center;
+  margin: 0 0 20px;
+  letter-spacing: -0.01em;
 }
 
-.s8Footer {
+.s11Table {
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 6px 22px rgba(15, 23, 42, 0.05);
+  background: #ffffff;
+  margin-bottom: 20px;
+}
+
+.s11HeaderRow { display: none; }
+
+.s11DataRow {
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 16px;
+  border-bottom: 1px solid #e5e7eb;
+  gap: 10px;
+  background: #ffffff;
+}
+.s11RowAlt { background: #f9fafb; }
+.s11DataRow:last-child { border-bottom: none; }
+
+.s11Cell {
+  font-size: 14.5px;
+  color: #111827;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.s11DCrit { font-weight: 700; color: #0b5b54; }
+.s11DContrib { color: #374151; line-height: 1.55; }
+.s11MobileLabel {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #6b7280;
+  margin-bottom: 2px;
+}
+
+.s11Footer {
   font-size: 15px;
   line-height: 1.6;
-  color: #374151;
+  color: #0b5b54;
   text-align: center;
   margin: 0 auto;
   max-width: 900px;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 /* MODAL */
@@ -438,6 +523,24 @@
   .s7Grid { grid-template-columns: 1fr 1fr; gap: 16px; }
   .s8Grid { grid-template-columns: 1fr 1fr; gap: 14px; }
 
+  .s9Flow { grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .s9Milestone { flex-direction: column; }
+
+  .s10Grid { grid-template-columns: 1fr 1fr; gap: 14px; }
+
+  .s11Grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+
+  /* NAAC table becomes 2-col */
+  .s11HeaderRow { display: grid; grid-template-columns: 1fr 2fr; background: #f3f4f6; border-bottom: 1px solid #e5e7eb; }
+  .s11DataRow { grid-template-columns: 1fr 2fr; align-items: stretch; padding: 0; gap: 0; }
+  .s11Cell { padding: 16px 18px; border-right: 1px solid #f1f5f9; gap: 4px; }
+  .s11Cell:last-child { border-right: none; }
+  .s11MobileLabel { display: none; }
+  .s11HCrit { background: #0f766e; color: #ffffff; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; font-size: 13px; }
+  .s11HContrib { background: #f3f4f6; color: #111827; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; font-size: 13px; }
+  .s11DCrit { background: #f9fafb; flex-direction: column; }
+  .s11DContrib { flex-direction: column; }
+
   .modalRow { grid-template-columns: 1fr 1fr; }
 }
 
@@ -493,6 +596,26 @@
   .s8TileBody { font-size: 14px; }
   .s8Footer { font-size: 16px; }
 
+  .s9 { padding: 64px 32px; }
+  .s9Heading { font-size: 34px; }
+  .s9Intro { font-size: 16px; }
+  .s9Title { font-size: 15.5px; }
+  .s9Body { font-size: 13px; }
+  .s9Footer { font-size: 16px; }
+
+  .s10 { padding: 64px 32px; }
+  .s10Heading { font-size: 34px; }
+  .s10Intro { font-size: 16px; }
+  .s10Title { font-size: 16px; }
+  .s10Desc { font-size: 14px; }
+  .s10Footer { font-size: 16px; }
+
+  .s11 { padding: 64px 32px; }
+  .s11Heading { font-size: 34px; }
+  .s11Intro { font-size: 16px; }
+  .s11NaacHeading { font-size: 22px; }
+  .s11Footer { font-size: 16px; }
+
   .section { padding: 56px 32px; min-height: 260px; }
   .placeholder { font-size: 18px; }
 }
@@ -530,6 +653,27 @@
   .s8 { padding: 76px 40px; }
   .s8Heading { font-size: 38px; }
   .s8Grid { grid-template-columns: repeat(5, 1fr); gap: 16px; }
+
+  .s9 { padding: 76px 40px; }
+  .s9Heading { font-size: 38px; }
+  .s9Flow {
+    grid-template-columns: none;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    gap: 6px;
+  }
+  .s9Milestone { flex: 1; min-width: 0; flex-direction: row; align-items: stretch; }
+  .s9Arrow { display: inline-flex; align-items: center; justify-content: center; flex: 0 0 auto; }
+
+  .s10 { padding: 76px 40px; }
+  .s10Heading { font-size: 38px; }
+  .s10Grid { grid-template-columns: repeat(5, 1fr); gap: 14px; }
+
+  .s11 { padding: 84px 40px; }
+  .s11Heading { font-size: 38px; }
+  .s11Grid { grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .s11NaacHeading { font-size: 26px; }
 
   .section { padding: 64px 40px; min-height: 300px; }
   .placeholder { font-size: 20px; }

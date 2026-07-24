@@ -1,7 +1,7 @@
 /* =========================================================
    AICTE IDEA Lab Setup — Child Page (scoped)
    Wrapper: .ail-scope
-   Step 3.5 — Adds Section 2 services chip strip + Section 6 "What We Deliver".
+   Step 4 — Adds Section 7 (Beyond AICTE / Knowx 2.0) + Section 8 (What Students Build).
    Palette:
      Green  #0f766e  Blue #1e3a8a  Amber #b45309  Teal #0d9488
      Red    #dc2626 (CTA only)
@@ -52,51 +52,11 @@
 .s2FeatureList { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; }
 .s2FeatureList li { display: flex; align-items: flex-start; gap: 10px; font-size: 15px; line-height: 1.55; color: #1f2937; }
 .s2FeatureCheck { flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%; background: #0f766e; color: #ffffff; font-size: 13px; font-weight: 800; display: inline-flex; align-items: center; justify-content: center; margin-top: 2px; }
-
-/* Section 2 — NEW: services chip strip */
-.s2Services {
-  margin: 20px 0 22px;
-  padding: 16px 18px;
-  background: #ffffff;
-  border: 1px solid #e5e7eb;
-  border-radius: 12px;
-}
-.s2ServiceLabel {
-  font-size: 12px;
-  font-weight: 800;
-  color: #6b7280;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  margin-bottom: 10px;
-  text-align: center;
-}
-.s2ChipStrip {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 8px;
-}
-.s2Chip {
-  display: inline-flex;
-  align-items: center;
-  padding: 7px 14px;
-  border-radius: 999px;
-  background: #f0fdf9;
-  color: #0b5b54;
-  border: 1px solid #cceee5;
-  font-size: 13px;
-  font-weight: 600;
-  white-space: nowrap;
-  transition: background-color 0.15s ease, transform 0.15s ease;
-}
-.s2Chip:hover {
-  background: #d5f5eb;
-  transform: translateY(-1px);
-}
-
+.s2Services { margin: 20px 0 22px; padding: 16px 18px; background: #ffffff; border: 1px solid #e5e7eb; border-radius: 12px; }
+.s2ServiceLabel { font-size: 12px; font-weight: 800; color: #6b7280; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 10px; text-align: center; }
+.s2ChipStrip { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
+.s2Chip { display: inline-flex; align-items: center; padding: 7px 14px; border-radius: 999px; background: #f0fdf9; color: #0b5b54; border: 1px solid #cceee5; font-size: 13px; font-weight: 600; white-space: nowrap; transition: background-color 0.15s ease, transform 0.15s ease; }
+.s2Chip:hover { background: #d5f5eb; transform: translateY(-1px); }
 .s2Pillar { text-align: center; font-size: 15px; color: #6b7280; margin: 0; padding-top: 8px; }
 .s2PillarLink { color: #0f766e; font-weight: 700; text-decoration: none; border-bottom: 1px solid rgba(15, 118, 110, 0.35); padding-bottom: 1px; }
 .s2PillarLink:hover { border-bottom-color: #0f766e; }
@@ -119,7 +79,7 @@
 .s3TipIcon { flex-shrink: 0; width: 34px; height: 34px; border-radius: 50%; background: #0f766e; color: #ffffff; display: inline-flex; align-items: center; justify-content: center; }
 .s3TipBody { font-size: 14.5px; line-height: 1.6; color: #0b1220; }
 
-/* SECTION 4 — 6 CORE INNOVATION PILLARS */
+/* SECTION 4 — 6 PILLARS */
 .s4 { padding: 48px 20px; background: #f9fafb; }
 .s4Inner { max-width: 1240px; margin: 0 auto; }
 .s4Heading { font-size: 28px; font-weight: 800; color: #0b1220; text-align: center; margin: 0 0 10px; letter-spacing: -0.01em; }
@@ -156,7 +116,7 @@
 .s4OutcomeText { display: block; font-size: 14px; line-height: 1.55; color: #1f2937; font-weight: 500; }
 .s4Footer { font-size: 15px; line-height: 1.6; color: #0b5b54; text-align: center; margin: 0 auto; max-width: 800px; font-weight: 600; }
 
-/* SECTION 5 — AICTE 11 CATEGORIES */
+/* SECTION 5 — 11 AICTE CATEGORIES */
 .s5 { padding: 48px 20px; background: #ffffff; }
 .s5Inner { max-width: 1200px; margin: 0 auto; }
 .s5Heading { font-size: 28px; font-weight: 800; color: #0b1220; text-align: center; margin: 0 0 10px; letter-spacing: -0.01em; }
@@ -180,84 +140,246 @@
 .s5NoteIcon { flex-shrink: 0; width: 34px; height: 34px; border-radius: 50%; background: #0f766e; color: #ffffff; display: inline-flex; align-items: center; justify-content: center; }
 .s5NoteBody { font-size: 14.5px; line-height: 1.6; color: #0b1220; }
 
-/* ==========================================================
-   SECTION 6 — WHAT WE DELIVER (NEW)
-   ========================================================== */
+/* SECTION 6 — WHAT WE DELIVER */
 .s6 { padding: 48px 20px; background: #f9fafb; }
 .s6Inner { max-width: 1200px; margin: 0 auto; }
 .s6Heading { font-size: 28px; font-weight: 800; color: #0b1220; text-align: center; margin: 0 0 10px; letter-spacing: -0.01em; }
 .s6Intro { font-size: 15px; line-height: 1.6; color: #4b5563; text-align: center; max-width: 880px; margin: 0 auto 28px; }
+.s6Grid { display: grid; grid-template-columns: 1fr; gap: 14px; margin-bottom: 22px; }
+.s6Card { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 14px; padding: 22px 20px; display: flex; flex-direction: column; align-items: flex-start; transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease; }
+.s6Card:hover { transform: translateY(-3px); box-shadow: 0 14px 30px rgba(15, 23, 42, 0.08); }
+.s6CardIcon { width: 46px; height: 46px; border-radius: 10px; color: #ffffff; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 14px; }
+.s6Tint_green { border-top: 3px solid #0f766e; }
+.s6Tint_green .s6CardIcon { background: #0f766e; }
+.s6Tint_green:hover { border-color: #cceee5; }
+.s6Tint_blue { border-top: 3px solid #1e3a8a; }
+.s6Tint_blue .s6CardIcon { background: #1e3a8a; }
+.s6Tint_blue:hover { border-color: #d3ddf7; }
+.s6Tint_amber { border-top: 3px solid #b45309; }
+.s6Tint_amber .s6CardIcon { background: #b45309; }
+.s6Tint_amber:hover { border-color: #fbd794; }
+.s6Tint_teal { border-top: 3px solid #0d9488; }
+.s6Tint_teal .s6CardIcon { background: #0d9488; }
+.s6Tint_teal:hover { border-color: #bfeae4; }
+.s6CardTitle { font-size: 16px; font-weight: 700; color: #0b1220; margin: 0 0 6px; line-height: 1.35; }
+.s6CardBody { font-size: 14px; line-height: 1.55; color: #4b5563; margin: 0; }
+.s6Footer { font-size: 15px; line-height: 1.6; color: #0b5b54; text-align: center; margin: 0 auto; max-width: 800px; font-weight: 500; }
 
-.s6Grid {
+/* ==========================================================
+   SECTION 7 — BEYOND AICTE (Knowx IDEA Lab 2.0)
+   Dark green gradient — signals "this is our differentiator"
+   ========================================================== */
+.s7 {
+  padding: 56px 20px;
+  background: linear-gradient(135deg, #0f766e 0%, #0b5b54 100%);
+  color: #ffffff;
+}
+.s7Inner { max-width: 1200px; margin: 0 auto; text-align: center; }
+
+.s7Tag {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.14);
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 7px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  margin-bottom: 16px;
+}
+
+.s7Heading {
+  font-size: 28px;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 12px;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+.s7Intro {
+  font-size: 15px;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0 auto 32px;
+  max-width: 880px;
+  text-align: center;
+}
+
+.s7Grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 14px;
-  margin-bottom: 22px;
+  margin-bottom: 30px;
+  text-align: left;
 }
 
-.s6Card {
-  background: #ffffff;
-  border: 1px solid #e5e7eb;
+.s7Card {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
   border-radius: 14px;
-  padding: 22px 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+  padding: 20px 18px;
+  transition: background-color 0.15s ease, transform 0.15s ease;
 }
-.s6Card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.08);
+.s7Card:hover {
+  background: rgba(255, 255, 255, 0.13);
+  transform: translateY(-2px);
 }
 
-.s6CardIcon {
+.s7CardIcon {
   width: 46px;
   height: 46px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.s7CardTitle {
+  font-size: 16px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 10px;
+  line-height: 1.3;
+}
+
+.s7CardList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.s7CardList li {
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.9);
+  padding-left: 14px;
+  position: relative;
+}
+.s7CardList li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.55);
+}
+
+.s7Statement {
+  display: inline-block;
+  padding: 14px 22px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 999px;
+  font-size: 15px;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.08);
+  line-height: 1.4;
+  max-width: 100%;
+}
+.s7Statement strong { font-weight: 700; }
+
+/* ==========================================================
+   SECTION 8 — WHAT STUDENTS BUILD (10 project categories)
+   ========================================================== */
+.s8 {
+  padding: 48px 20px;
+  background: #ffffff;
+}
+.s8Inner { max-width: 1240px; margin: 0 auto; }
+.s8Heading {
+  font-size: 28px;
+  font-weight: 800;
+  color: #0b1220;
+  text-align: center;
+  margin: 0 0 10px;
+  letter-spacing: -0.01em;
+}
+.s8Intro {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #4b5563;
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto 28px;
+}
+
+.s8Grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.s8Tile {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 18px 16px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+.s8Tile:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(15, 23, 42, 0.07);
+}
+
+.s8TileIcon {
+  width: 42px;
+  height: 42px;
   border-radius: 10px;
   color: #ffffff;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 14px;
+  margin-bottom: 12px;
 }
 
-.s6Tint_green { border-top: 3px solid #0f766e; }
-.s6Tint_green .s6CardIcon { background: #0f766e; }
-.s6Tint_green:hover { border-color: #cceee5; }
+.s8Tint_green { border-top: 3px solid #0f766e; }
+.s8Tint_green .s8TileIcon { background: #0f766e; }
+.s8Tint_green:hover { border-color: #cceee5; }
 
-.s6Tint_blue { border-top: 3px solid #1e3a8a; }
-.s6Tint_blue .s6CardIcon { background: #1e3a8a; }
-.s6Tint_blue:hover { border-color: #d3ddf7; }
+.s8Tint_blue { border-top: 3px solid #1e3a8a; }
+.s8Tint_blue .s8TileIcon { background: #1e3a8a; }
+.s8Tint_blue:hover { border-color: #d3ddf7; }
 
-.s6Tint_amber { border-top: 3px solid #b45309; }
-.s6Tint_amber .s6CardIcon { background: #b45309; }
-.s6Tint_amber:hover { border-color: #fbd794; }
+.s8Tint_amber { border-top: 3px solid #b45309; }
+.s8Tint_amber .s8TileIcon { background: #b45309; }
+.s8Tint_amber:hover { border-color: #fbd794; }
 
-.s6Tint_teal { border-top: 3px solid #0d9488; }
-.s6Tint_teal .s6CardIcon { background: #0d9488; }
-.s6Tint_teal:hover { border-color: #bfeae4; }
+.s8Tint_teal { border-top: 3px solid #0d9488; }
+.s8Tint_teal .s8TileIcon { background: #0d9488; }
+.s8Tint_teal:hover { border-color: #bfeae4; }
 
-.s6CardTitle {
-  font-size: 16px;
+.s8TileTitle {
+  font-size: 15px;
   font-weight: 700;
   color: #0b1220;
-  margin: 0 0 6px;
+  margin: 0 0 4px;
   line-height: 1.35;
 }
-.s6CardBody {
-  font-size: 14px;
-  line-height: 1.55;
+.s8TileBody {
+  font-size: 13.5px;
+  line-height: 1.5;
   color: #4b5563;
   margin: 0;
 }
 
-.s6Footer {
+.s8Footer {
   font-size: 15px;
   line-height: 1.6;
-  color: #0b5b54;
+  color: #374151;
   text-align: center;
   margin: 0 auto;
-  max-width: 800px;
+  max-width: 900px;
   font-weight: 500;
 }
 
@@ -313,6 +435,8 @@
   .s4Grid { grid-template-columns: 1fr 1fr; gap: 16px; }
   .s5Grid { grid-template-columns: 1fr 1fr; gap: 12px; }
   .s6Grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+  .s7Grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+  .s8Grid { grid-template-columns: 1fr 1fr; gap: 14px; }
 
   .modalRow { grid-template-columns: 1fr 1fr; }
 }
@@ -355,6 +479,20 @@
   .s6CardBody { font-size: 14.5px; }
   .s6Footer { font-size: 16px; }
 
+  .s7 { padding: 72px 32px; }
+  .s7Heading { font-size: 34px; }
+  .s7Intro { font-size: 16px; }
+  .s7CardTitle { font-size: 17px; }
+  .s7CardList li { font-size: 14px; }
+  .s7Statement { font-size: 16px; padding: 16px 28px; }
+
+  .s8 { padding: 64px 32px; }
+  .s8Heading { font-size: 34px; }
+  .s8Intro { font-size: 16px; }
+  .s8TileTitle { font-size: 16px; }
+  .s8TileBody { font-size: 14px; }
+  .s8Footer { font-size: 16px; }
+
   .section { padding: 56px 32px; min-height: 260px; }
   .placeholder { font-size: 18px; }
 }
@@ -384,6 +522,14 @@
   .s6 { padding: 76px 40px; }
   .s6Heading { font-size: 38px; }
   .s6Grid { grid-template-columns: repeat(3, 1fr); gap: 18px; }
+
+  .s7 { padding: 84px 40px; }
+  .s7Heading { font-size: 38px; }
+  .s7Grid { grid-template-columns: repeat(5, 1fr); gap: 16px; }
+
+  .s8 { padding: 76px 40px; }
+  .s8Heading { font-size: 38px; }
+  .s8Grid { grid-template-columns: repeat(5, 1fr); gap: 16px; }
 
   .section { padding: 64px 40px; min-height: 300px; }
   .placeholder { font-size: 20px; }

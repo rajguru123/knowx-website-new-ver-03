@@ -8,11 +8,10 @@ import styles from "./styles.module.css";
  * AICTE IDEA Lab Setup — Child page under Engineering Innovation Labs pillar
  * URL: /aicte-idea-lab-setup/
  *
- * Step 3.5 — Keyword additions:
- *   - Hero subhead: "turnkey solution · consultancy, design, installation"
- *   - Section 2: services chip strip + consultancy partner sentence
- *   - Section 5: "AICTE IDEA Lab equipment list" phrasing
- *   - NEW Section 6 — "What We Deliver" (page grows to 14 sections)
+ * Step 4 — Sections 1-8 built.
+ *   - Section 7 added: Beyond AICTE / Knowx IDEA Lab 2.0
+ *   - Section 8 added: What Students Build (10 projects)
+ * Sections 9-14 remain as placeholders.
  */
 
 const eligibilityRows: { criterion: string; requirement: string }[] = [
@@ -49,54 +48,60 @@ const aicteCategories: { n: string; title: string; items: string; tint: Category
   { n: "11", title: "General Workshop Tools", items: "Jigsaw · Scroll Saw · Circular Saw · Rotary Tool · Heat Gun · Screwdriver Set", tint: "amber" },
 ];
 
-// NEW — Section 6: What We Deliver
 type DeliverTint = "green" | "blue" | "amber" | "teal";
 const deliverables: { title: string; body: string; tint: DeliverTint; icon: JSX.Element }[] = [
+  { title: "Consultancy", body: "Strategy, scoping, and a phased roadmap for your AICTE IDEA Lab from day one.", tint: "green", icon: (<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7c.6.6 1 1.5 1 2.3v1h6v-1c0-.8.4-1.7 1-2.3A7 7 0 0 0 12 2z"/></svg>) },
+  { title: "Proposal Development", body: "Documentation and proposal drafting aligned to AICTE and funding scheme guidelines.", tint: "blue", icon: (<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h6"/></svg>) },
+  { title: "Infrastructure Design", body: "Lab layout, workflow, and workstation planning for optimal AICTE IDEA Lab utilization.", tint: "amber", icon: (<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-6h6v6"/><path d="M9 9h.01M15 9h.01M9 13h.01M15 13h.01"/></svg>) },
+  { title: "Equipment Supply & Installation", body: "All 11 AICTE-mandated equipment categories sourced, integrated, and commissioned.", tint: "teal", icon: (<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="M3.3 7L12 12l8.7-5M12 22V12"/></svg>) },
+  { title: "Faculty Training & Enablement", body: "Structured programs to build innovation-led teaching, mentoring, and research capability.", tint: "green", icon: (<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>) },
+  { title: "Turnkey Setup", body: "End-to-end delivery — you focus on academics, we handle everything else.", tint: "blue", icon: (<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="7" cy="15" r="4"/><path d="M10.5 12.5L20 3M17 6l3 3M14 9l3 3"/></svg>) },
+];
+
+const s2ServiceChips = ["Consultancy", "Proposal Development", "Design & Installation", "Equipment Supply", "Turnkey Setup"];
+
+// NEW — Section 7: Beyond AICTE (Knowx IDEA Lab 2.0) — 5 extension domains
+const knowx2Domains: { title: string; items: string[]; icon: JSX.Element }[] = [
   {
-    title: "Consultancy",
-    body: "Strategy, scoping, and a phased roadmap for your AICTE IDEA Lab from day one.",
-    tint: "green",
-    icon: (<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7c.6.6 1 1.5 1 2.3v1h6v-1c0-.8.4-1.7 1-2.3A7 7 0 0 0 12 2z"/></svg>),
+    title: "Embedded Systems & IoT Stack",
+    items: ["Arduino UNO / Mega", "ESP32 Development Kits", "Raspberry Pi 5", "STM32 Boards", "Jetson Nano / Orin Nano", "FPGA Development Boards"],
+    icon: (<svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"/></svg>),
   },
   {
-    title: "Proposal Development",
-    body: "Documentation and proposal drafting aligned to AICTE and funding scheme guidelines.",
-    tint: "blue",
-    icon: (<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h6"/></svg>),
+    title: "AI & Vision Systems",
+    items: ["AI Cameras", "USB Industrial Cameras", "Depth Cameras", "Thermal Cameras", "Edge Vision Modules", "AIoT Development Kits"],
+    icon: (<svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>),
   },
   {
-    title: "Infrastructure Design",
-    body: "Lab layout, workflow, and workstation planning for optimal AICTE IDEA Lab utilization.",
-    tint: "amber",
-    icon: (<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-6h6v6"/><path d="M9 9h.01M15 9h.01M9 13h.01M15 13h.01"/></svg>),
+    title: "Sensor Ecosystem",
+    items: ["Temperature / Humidity", "Gas Sensors", "IMU / Motion Sensors", "LiDAR / Ultrasonic", "Load Cells", "Soil Moisture / Water Quality"],
+    icon: (<svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="2"/><path d="M8.5 8.5a5 5 0 0 1 7 0M5.5 5.5a9 9 0 0 1 13 0M15.5 15.5a5 5 0 0 1-7 0M18.5 18.5a9 9 0 0 1-13 0"/></svg>),
   },
   {
-    title: "Equipment Supply & Installation",
-    body: "All 11 AICTE-mandated equipment categories sourced, integrated, and commissioned.",
-    tint: "teal",
-    icon: (<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="M3.3 7L12 12l8.7-5M12 22V12"/></svg>),
+    title: "IoT Infrastructure",
+    items: ["Wi-Fi Routers", "LoRa Gateways", "Zigbee Modules", "BLE Beacons", "MQTT Server", "Cloud Access"],
+    icon: (<svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M5 12l7-7M5 12l7 7M19 12l-7-7M19 12l-7 7"/><circle cx="5" cy="12" r="1.5" fill="currentColor"/><circle cx="19" cy="12" r="1.5" fill="currentColor"/><circle cx="12" cy="5" r="1.5" fill="currentColor"/><circle cx="12" cy="19" r="1.5" fill="currentColor"/></svg>),
   },
   {
-    title: "Faculty Training & Enablement",
-    body: "Structured programs to build innovation-led teaching, mentoring, and research capability.",
-    tint: "green",
-    icon: (<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>),
-  },
-  {
-    title: "Turnkey Setup",
-    body: "End-to-end delivery — you focus on academics, we handle everything else.",
-    tint: "blue",
-    icon: (<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="7" cy="15" r="4"/><path d="M10.5 12.5L20 3M17 6l3 3M14 9l3 3"/></svg>),
+    title: "Safety & ESD",
+    items: ["ESD Workstations", "Fume Extractor", "Fire Extinguishers", "First Aid Kit", "Safety Goggles", "PPE Kits"],
+    icon: (<svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>),
   },
 ];
 
-// Services chip strip (in Section 2)
-const s2ServiceChips = [
-  "Consultancy",
-  "Proposal Development",
-  "Design & Installation",
-  "Equipment Supply",
-  "Turnkey Setup",
+// NEW — Section 8: What Students Build — 10 project categories
+type ProjectTint = "green" | "blue" | "amber" | "teal";
+const studentProjects: { title: string; body: string; tint: ProjectTint; icon: JSX.Element }[] = [
+  { title: "Smart Agriculture Systems", body: "Precision farming, soil monitoring, irrigation automation.", tint: "green", icon: (<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2v20M12 8c-3-3-6-3-9-3 0 5 3 8 9 8M12 12c3-3 6-3 9-3 0 5-3 8-9 8"/></svg>) },
+  { title: "Industrial Automation", body: "PLC, SCADA, robotic arms, factory-floor process control.", tint: "blue", icon: (<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M2 20h20V10l-6 4V10l-6 4V6L2 10v10z"/><path d="M6 20v-4M10 20v-4M14 20v-4M18 20v-4"/></svg>) },
+  { title: "Medical IoT Devices", body: "Patient monitoring, portable diagnostics, connected health.", tint: "amber", icon: (<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1 7.8 7.8 7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg>) },
+  { title: "Autonomous Robots", body: "Mobile robots, SLAM navigation, delivery bots, service robots.", tint: "teal", icon: (<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="4" y="8" width="16" height="12" rx="2"/><path d="M12 2v4M8 14h.01M16 14h.01M9 18h6"/></svg>) },
+  { title: "Drone Solutions", body: "Agri-spraying drones, mapping, surveillance, logistics UAVs.", tint: "green", icon: (<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="5" cy="5" r="3"/><circle cx="19" cy="5" r="3"/><circle cx="5" cy="19" r="3"/><circle cx="19" cy="19" r="3"/><path d="M8 8l3 3M16 8l-3 3M8 16l3-3M16 16l-3-3"/></svg>) },
+  { title: "AI Cameras", body: "Object detection, facial recognition, quality inspection.", tint: "blue", icon: (<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>) },
+  { title: "Electric Vehicle Systems", body: "BMS, motor control, charger design, EV telematics.", tint: "amber", icon: (<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="7" width="14" height="10" rx="2"/><path d="M16 10h3l2 2v3h-5"/><circle cx="6" cy="19" r="2"/><circle cx="18" cy="19" r="2"/><path d="M7 4v3M11 4v3"/></svg>) },
+  { title: "Smart City Applications", body: "Smart lighting, waste, traffic, and public infrastructure.", tint: "teal", icon: (<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 21h18M4 21V8l6-4v17M14 21V11l6-3v13M8 8v0M8 12v0M8 16v0M17 12v0M17 16v0"/></svg>) },
+  { title: "Environmental Monitoring", body: "Air quality, water quality, weather stations, climate sensors.", tint: "green", icon: (<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg>) },
+  { title: "Assistive Technologies", body: "Devices for accessibility, mobility aids, sensory augmentation.", tint: "blue", icon: (<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="4" r="2"/><path d="M12 6v10M8 22l4-6 4 6M6 12h12"/></svg>) },
 ];
 
 export default function AicteIdeaLabClient() {
@@ -138,23 +143,13 @@ export default function AicteIdeaLabClient() {
 
   return (
     <div className={`ail-scope ${styles.scope}`}>
-      {/* ============================================================ */}
-      {/* Section 1 — HERO                                              */}
-      {/* ============================================================ */}
+      {/* Section 1 — HERO */}
       <section className={styles.hero} id="hero">
         <div className={styles.heroInner}>
           <div className={styles.heroLeft}>
             <span className={styles.heroTag}>AICTE IDEA Lab · Innovation Ecosystem Partner</span>
-            <h1 className={styles.heroHeadline}>
-              AICTE IDEA Lab Setup for{" "}
-              <span className={styles.heroHeadlineAccent}>Engineering Colleges</span>
-            </h1>
-            <p className={styles.heroSubhead}>
-              End-to-end <strong>AICTE IDEA Lab turnkey solution</strong> —{" "}
-              <strong>consultancy, design, installation</strong> across Fabrication, PCB,
-              Robotics, IoT, AI, and Drones — with faculty training and NBA / NAAC
-              outcome mapping.
-            </p>
+            <h1 className={styles.heroHeadline}>AICTE IDEA Lab Setup for <span className={styles.heroHeadlineAccent}>Engineering Colleges</span></h1>
+            <p className={styles.heroSubhead}>End-to-end <strong>AICTE IDEA Lab turnkey solution</strong> — <strong>consultancy, design, installation</strong> across Fabrication, PCB, Robotics, IoT, AI, and Drones — with faculty training and NBA / NAAC outcome mapping.</p>
             <div className={styles.heroCtaRow}>
               <button type="button" onClick={openModal} className={styles.heroCtaPrimary}>Schedule AICTE IDEA Lab Consultation</button>
               <button type="button" onClick={openModal} className={styles.heroCtaSecondary}>Download IDEA Lab Blueprint →</button>
@@ -181,36 +176,13 @@ export default function AicteIdeaLabClient() {
         </div>
       </section>
 
-      {/* ============================================================ */}
-      {/* Section 2 — WHAT IS AN AICTE IDEA LAB                          */}
-      {/* + services chip strip + consultancy sentence                   */}
-      {/* ============================================================ */}
+      {/* Section 2 — WHAT IS AN AICTE IDEA LAB */}
       <section className={styles.s2} id="what-is">
         <div className={styles.s2Inner}>
           <h2 className={styles.s2Heading}>What is an AICTE IDEA Lab?</h2>
-          <p className={styles.s2Intro}>
-            The AICTE IDEA Lab is an initiative by the{" "}
-            <strong>All India Council for Technical Education (AICTE)</strong> —{" "}
-            <em>IDEA</em> stands for <strong>Idea Development, Evaluation &amp; Application</strong>.
-            It is a multidisciplinary innovation lab set up inside AICTE-approved engineering
-            colleges and universities to give students hands-on capability to design, prototype,
-            validate, and commercialize real-world engineering solutions.
-          </p>
-          <p className={styles.s2Body}>
-            Unlike conventional labs organized by a single department, an IDEA Lab is
-            cross-disciplinary by design — bringing together <strong>fabrication, electronics,
-            PCB manufacturing, robotics, IoT, AI, and drone technology</strong> under one roof.
-            It aligns with NEP 2020, strengthens NBA / NAAC accreditation outcomes, and creates
-            a real pipeline from student projects to industry-ready products, patents, and
-            startups.
-          </p>
-          <p className={styles.s2Body}>
-            Knowx works as your <strong>AICTE IDEA Lab consultancy partner</strong> — from{" "}
-            <strong>proposal development</strong> and infrastructure design through equipment
-            supply, installation, and faculty enablement — delivering a fully operational
-            innovation lab, not just a room full of equipment.
-          </p>
-
+          <p className={styles.s2Intro}>The AICTE IDEA Lab is an initiative by the <strong>All India Council for Technical Education (AICTE)</strong> — <em>IDEA</em> stands for <strong>Idea Development, Evaluation &amp; Application</strong>. It is a multidisciplinary innovation lab set up inside AICTE-approved engineering colleges and universities to give students hands-on capability to design, prototype, validate, and commercialize real-world engineering solutions.</p>
+          <p className={styles.s2Body}>Unlike conventional labs organized by a single department, an IDEA Lab is cross-disciplinary by design — bringing together <strong>fabrication, electronics, PCB manufacturing, robotics, IoT, AI, and drone technology</strong> under one roof. It aligns with NEP 2020, strengthens NBA / NAAC accreditation outcomes, and creates a real pipeline from student projects to industry-ready products, patents, and startups.</p>
+          <p className={styles.s2Body}>Knowx works as your <strong>AICTE IDEA Lab consultancy partner</strong> — from <strong>proposal development</strong> and infrastructure design through equipment supply, installation, and faculty enablement — delivering a fully operational innovation lab, not just a room full of equipment.</p>
           <div className={styles.s2Features}>
             <div className={styles.s2FeatureTitle}>Core Features of an AICTE IDEA Lab</div>
             <ul className={styles.s2FeatureList}>
@@ -222,31 +194,23 @@ export default function AicteIdeaLabClient() {
               <li><span className={styles.s2FeatureCheck} aria-hidden="true">✓</span>Directly strengthens NBA and NAAC accreditation outcomes</li>
             </ul>
           </div>
-
-          {/* NEW — Services chip strip */}
           <div className={styles.s2Services}>
             <div className={styles.s2ServiceLabel}>What Knowx Delivers</div>
             <ul className={styles.s2ChipStrip} aria-label="Knowx AICTE IDEA Lab services">
-              {s2ServiceChips.map((chip) => (
-                <li key={chip} className={styles.s2Chip}>{chip}</li>
-              ))}
+              {s2ServiceChips.map((chip) => (<li key={chip} className={styles.s2Chip}>{chip}</li>))}
             </ul>
           </div>
-
           <p className={styles.s2Pillar}>Part of the complete <Link href="/engineering-innovation-labs" className={styles.s2PillarLink}>Engineering Innovation Ecosystem →</Link></p>
         </div>
       </section>
 
-      {/* Section 3 — ELIGIBILITY CRITERIA */}
+      {/* Section 3 — ELIGIBILITY */}
       <section className={styles.s3} id="eligibility">
         <div className={styles.s3Inner}>
           <h2 className={styles.s3Heading}>Is Your College Eligible for an AICTE IDEA Lab?</h2>
           <p className={styles.s3Intro}>A quick self-assessment of what AICTE and Knowx look for before an IDEA Lab is set up in your engineering college or university.</p>
           <div className={styles.s3Table} role="table" aria-label="AICTE IDEA Lab eligibility criteria">
-            <div className={styles.s3HeaderRow} role="row">
-              <div className={`${styles.s3Cell} ${styles.s3HParam}`} role="columnheader">Parameter</div>
-              <div className={`${styles.s3Cell} ${styles.s3HReq}`} role="columnheader">Requirement</div>
-            </div>
+            <div className={styles.s3HeaderRow} role="row"><div className={`${styles.s3Cell} ${styles.s3HParam}`} role="columnheader">Parameter</div><div className={`${styles.s3Cell} ${styles.s3HReq}`} role="columnheader">Requirement</div></div>
             {eligibilityRows.map((row, i) => (
               <div key={row.criterion} className={`${styles.s3DataRow} ${i % 2 === 1 ? styles.s3RowAlt : ""}`} role="row">
                 <div className={`${styles.s3Cell} ${styles.s3DParam}`} role="cell"><span className={styles.s3MobileLabel}>Parameter</span>{row.criterion}</div>
@@ -261,7 +225,7 @@ export default function AicteIdeaLabClient() {
         </div>
       </section>
 
-      {/* Section 4 — 6 CORE INNOVATION PILLARS */}
+      {/* Section 4 — 6 PILLARS */}
       <section className={styles.s4} id="pillars">
         <div className={styles.s4Inner}>
           <h2 className={styles.s4Heading}>The 6 Core Innovation Pillars</h2>
@@ -269,19 +233,11 @@ export default function AicteIdeaLabClient() {
           <div className={styles.s4Grid}>
             {pillars.map((p) => (
               <div key={p.n} className={`${styles.s4Card} ${styles[`s4Tint_${p.tint}`]}`}>
-                <div className={styles.s4CardHead}>
-                  <div className={styles.s4CardIcon} aria-hidden="true">{p.icon}</div>
-                  <span className={styles.s4CardNum}>{p.n}</span>
-                </div>
+                <div className={styles.s4CardHead}><div className={styles.s4CardIcon} aria-hidden="true">{p.icon}</div><span className={styles.s4CardNum}>{p.n}</span></div>
                 <h3 className={styles.s4CardTitle}>{p.title}</h3>
                 <div className={styles.s4CardTagline}>{p.tagline}</div>
-                <ul className={styles.s4CardCaps}>
-                  {p.capabilities.map((c) => (<li key={c}><span className={styles.s4CapDot} aria-hidden="true" />{c}</li>))}
-                </ul>
-                <div className={styles.s4CardOutcome}>
-                  <span className={styles.s4OutcomeLabel}>Outcome</span>
-                  <span className={styles.s4OutcomeText}>{p.outcome}</span>
-                </div>
+                <ul className={styles.s4CardCaps}>{p.capabilities.map((c) => (<li key={c}><span className={styles.s4CapDot} aria-hidden="true" />{c}</li>))}</ul>
+                <div className={styles.s4CardOutcome}><span className={styles.s4OutcomeLabel}>Outcome</span><span className={styles.s4OutcomeText}>{p.outcome}</span></div>
               </div>
             ))}
           </div>
@@ -289,7 +245,7 @@ export default function AicteIdeaLabClient() {
         </div>
       </section>
 
-      {/* Section 5 — AICTE-COMPLIANT INFRASTRUCTURE (11 categories) */}
+      {/* Section 5 — 11 CATEGORIES */}
       <section className={styles.s5} id="infrastructure">
         <div className={styles.s5Inner}>
           <h2 className={styles.s5Heading}>State-of-the-Art AICTE-Compliant Infrastructure</h2>
@@ -298,10 +254,7 @@ export default function AicteIdeaLabClient() {
             {aicteCategories.map((c) => (
               <div key={c.n} className={`${styles.s5Card} ${styles[`s5Tint_${c.tint}`]}`}>
                 <div className={styles.s5CardNum}>{c.n}</div>
-                <div className={styles.s5CardBody}>
-                  <h3 className={styles.s5CardTitle}>{c.title}</h3>
-                  <p className={styles.s5CardItems}>{c.items}</p>
-                </div>
+                <div className={styles.s5CardBody}><h3 className={styles.s5CardTitle}>{c.title}</h3><p className={styles.s5CardItems}>{c.items}</p></div>
               </div>
             ))}
           </div>
@@ -312,18 +265,11 @@ export default function AicteIdeaLabClient() {
         </div>
       </section>
 
-      {/* ============================================================ */}
-      {/* Section 6 — WHAT WE DELIVER (NEW)                              */}
-      {/* ============================================================ */}
+      {/* Section 6 — WHAT WE DELIVER */}
       <section className={styles.s6} id="what-we-deliver">
         <div className={styles.s6Inner}>
           <h2 className={styles.s6Heading}>What We Deliver</h2>
-          <p className={styles.s6Intro}>
-            A complete end-to-end AICTE IDEA Lab service — from initial consultancy and
-            proposal development through equipment supply, installation, faculty training,
-            and turnkey handover.
-          </p>
-
+          <p className={styles.s6Intro}>A complete end-to-end AICTE IDEA Lab service — from initial consultancy and proposal development through equipment supply, installation, faculty training, and turnkey handover.</p>
           <div className={styles.s6Grid}>
             {deliverables.map((d) => (
               <div key={d.title} className={`${styles.s6Card} ${styles[`s6Tint_${d.tint}`]}`}>
@@ -333,42 +279,80 @@ export default function AicteIdeaLabClient() {
               </div>
             ))}
           </div>
-
-          <p className={styles.s6Footer}>
-            One partner. One accountable timeline. A fully operational{" "}
-            <strong>AICTE IDEA Lab</strong> at your college — designed, installed, trained,
-            and handed over.
-          </p>
+          <p className={styles.s6Footer}>One partner. One accountable timeline. A fully operational <strong>AICTE IDEA Lab</strong> at your college — designed, installed, trained, and handed over.</p>
         </div>
       </section>
 
       {/* ============================================================ */}
-      {/* Sections 7–14 — placeholders (shifted by 1)                    */}
+      {/* Section 7 — BEYOND AICTE (Knowx IDEA Lab 2.0)                  */}
       {/* ============================================================ */}
-      <section className={styles.section} id="beyond-aicte">
-        <h2 className={styles.placeholder}>7. Beyond AICTE — Knowx IDEA Lab 2.0 — TODO (Step 4)</h2>
+      <section className={styles.s7} id="beyond-aicte">
+        <div className={styles.s7Inner}>
+          <span className={styles.s7Tag}>Beyond AICTE Minimum</span>
+          <h2 className={styles.s7Heading}>Knowx IDEA Lab 2.0 — Next-Generation Innovation Ecosystem</h2>
+          <p className={styles.s7Intro}>
+            The AICTE IDEA Lab standard is a strong foundation — Knowx goes further. Our IDEA
+            Lab 2.0 upgrades the baseline with modern embedded, AI, IoT, and safety extensions
+            that reflect what industry actually uses in 2026. Same AICTE compliance. Higher
+            capability. Longer relevance.
+          </p>
+
+          <div className={styles.s7Grid}>
+            {knowx2Domains.map((d) => (
+              <div key={d.title} className={styles.s7Card}>
+                <div className={styles.s7CardIcon} aria-hidden="true">{d.icon}</div>
+                <h3 className={styles.s7CardTitle}>{d.title}</h3>
+                <ul className={styles.s7CardList}>
+                  {d.items.map((item) => (<li key={item}>{item}</li>))}
+                </ul>
+              </div>
+            ))}
+          </div>
+
+          <div className={styles.s7Statement}>
+            <strong>Meets AICTE compliance. Built for what industry actually uses in 2026.</strong>
+          </div>
+        </div>
       </section>
-      <section className={styles.section} id="student-projects">
-        <h2 className={styles.placeholder}>8. What Students Build — TODO (Step 4)</h2>
+
+      {/* ============================================================ */}
+      {/* Section 8 — WHAT STUDENTS BUILD (10 project categories)        */}
+      {/* ============================================================ */}
+      <section className={styles.s8} id="student-projects">
+        <div className={styles.s8Inner}>
+          <h2 className={styles.s8Heading}>What Students Build</h2>
+          <p className={styles.s8Intro}>
+            Real projects across ten domains — from smart agriculture and industrial automation
+            to autonomous robots, drones, and AI cameras. Every project category maps to a real
+            industry problem and gives students end-to-end product development experience inside
+            the AICTE IDEA Lab.
+          </p>
+
+          <div className={styles.s8Grid}>
+            {studentProjects.map((p) => (
+              <div key={p.title} className={`${styles.s8Tile} ${styles[`s8Tint_${p.tint}`]}`}>
+                <div className={styles.s8TileIcon} aria-hidden="true">{p.icon}</div>
+                <h3 className={styles.s8TileTitle}>{p.title}</h3>
+                <p className={styles.s8TileBody}>{p.body}</p>
+              </div>
+            ))}
+          </div>
+
+          <p className={styles.s8Footer}>
+            Each project category is aligned to real market demand — agri-tech, industrial IoT,
+            healthcare, mobility, and public infrastructure — so students graduate with
+            portfolio-ready work, not lab kits.
+          </p>
+        </div>
       </section>
-      <section className={styles.section} id="student-journey">
-        <h2 className={styles.placeholder}>9. Student Innovation Journey — TODO (Step 5)</h2>
-      </section>
-      <section className={styles.section} id="institutional-outcomes">
-        <h2 className={styles.placeholder}>10. Institutional Outcomes — TODO (Step 5)</h2>
-      </section>
-      <section className={styles.section} id="compliance">
-        <h2 className={styles.placeholder}>11. AICTE Compliance &amp; NAAC/NBA Mapping — TODO (Step 5)</h2>
-      </section>
-      <section className={styles.section} id="timeline">
-        <h2 className={styles.placeholder}>12. Implementation Timeline &amp; Funding — TODO (Step 6)</h2>
-      </section>
-      <section className={styles.section} id="faq">
-        <h2 className={styles.placeholder}>13. FAQ — TODO (Step 6)</h2>
-      </section>
-      <section className={styles.section} id="cta">
-        <h2 className={styles.placeholder}>14. Final CTA — TODO (Step 6)</h2>
-      </section>
+
+      {/* Sections 9–14 — placeholders */}
+      <section className={styles.section} id="student-journey"><h2 className={styles.placeholder}>9. Student Innovation Journey — TODO (Step 5)</h2></section>
+      <section className={styles.section} id="institutional-outcomes"><h2 className={styles.placeholder}>10. Institutional Outcomes — TODO (Step 5)</h2></section>
+      <section className={styles.section} id="compliance"><h2 className={styles.placeholder}>11. AICTE Compliance &amp; NAAC/NBA Mapping — TODO (Step 5)</h2></section>
+      <section className={styles.section} id="timeline"><h2 className={styles.placeholder}>12. Implementation Timeline &amp; Funding — TODO (Step 6)</h2></section>
+      <section className={styles.section} id="faq"><h2 className={styles.placeholder}>13. FAQ — TODO (Step 6)</h2></section>
+      <section className={styles.section} id="cta"><h2 className={styles.placeholder}>14. Final CTA — TODO (Step 6)</h2></section>
 
       {/* MODAL */}
       {modalOpen && (
@@ -389,15 +373,9 @@ export default function AicteIdeaLabClient() {
                 <input type="hidden" name="access_key" value="f2635df8-33a5-44ef-889c-9f823771927f" />
                 <input type="hidden" name="subject" value="AICTE IDEA Lab — Consultation Request" />
                 <input type="hidden" name="from_name" value="knowxindia.com — AICTE IDEA Lab page" />
-                <div className={styles.modalRow}>
-                  <label className={styles.modalLabel}>Full Name<input required name="name" type="text" className={styles.modalInput} placeholder="Your name" /></label>
-                  <label className={styles.modalLabel}>Role<input name="role" type="text" className={styles.modalInput} placeholder="Principal / HoD / IIC Coordinator" /></label>
-                </div>
+                <div className={styles.modalRow}><label className={styles.modalLabel}>Full Name<input required name="name" type="text" className={styles.modalInput} placeholder="Your name" /></label><label className={styles.modalLabel}>Role<input name="role" type="text" className={styles.modalInput} placeholder="Principal / HoD / IIC Coordinator" /></label></div>
                 <label className={styles.modalLabel}>Institution<input required name="institution" type="text" className={styles.modalInput} placeholder="Engineering college / university name" /></label>
-                <div className={styles.modalRow}>
-                  <label className={styles.modalLabel}>Email<input required name="email" type="email" className={styles.modalInput} placeholder="you@institution.edu" /></label>
-                  <label className={styles.modalLabel}>Phone<input required name="phone" type="tel" className={styles.modalInput} placeholder="Contact number" /></label>
-                </div>
+                <div className={styles.modalRow}><label className={styles.modalLabel}>Email<input required name="email" type="email" className={styles.modalInput} placeholder="you@institution.edu" /></label><label className={styles.modalLabel}>Phone<input required name="phone" type="tel" className={styles.modalInput} placeholder="Contact number" /></label></div>
                 <label className={styles.modalLabel}>What stage are you at?<textarea name="message" className={styles.modalTextarea} rows={3} placeholder="Exploring AICTE IDEA Lab · Applied for AICTE grant · Ready to set up · Have PM-USHA funding..." /></label>
                 {submitState === "error" && (<div className={styles.modalError}>Something went wrong. Please try again or reach us by email.</div>)}
                 <button type="submit" disabled={submitting} className={styles.modalSubmit}>{submitting ? "Sending..." : "Send Request"}</button>

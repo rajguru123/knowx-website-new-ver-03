@@ -1,7 +1,7 @@
 /* =========================================================
    AICTE IDEA Lab Setup — Child Page (scoped)
    Wrapper: .ail-scope
-   Step 3 — Sections 1-5 styles.
+   Step 3.5 — Adds Section 2 services chip strip + Section 6 "What We Deliver".
    Palette:
      Green  #0f766e  Blue #1e3a8a  Amber #b45309  Teal #0d9488
      Red    #dc2626 (CTA only)
@@ -46,12 +46,57 @@
 .s2Inner { max-width: 900px; margin: 0 auto; }
 .s2Heading { font-size: 28px; font-weight: 800; color: #0b1220; text-align: center; margin: 0 0 18px; letter-spacing: -0.01em; }
 .s2Intro { font-size: 16px; line-height: 1.7; color: #374151; margin: 0 0 14px; }
-.s2Body { font-size: 16px; line-height: 1.7; color: #374151; margin: 0 0 22px; }
-.s2Features { background: #ffffff; border: 1px solid #e5e7eb; border-left: 4px solid #0f766e; border-radius: 12px; padding: 20px 22px; margin-bottom: 20px; }
+.s2Body { font-size: 16px; line-height: 1.7; color: #374151; margin: 0 0 14px; }
+.s2Features { background: #ffffff; border: 1px solid #e5e7eb; border-left: 4px solid #0f766e; border-radius: 12px; padding: 20px 22px; margin: 22px 0 20px; }
 .s2FeatureTitle { font-size: 15px; font-weight: 800; color: #0b5b54; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 12px; }
 .s2FeatureList { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; }
 .s2FeatureList li { display: flex; align-items: flex-start; gap: 10px; font-size: 15px; line-height: 1.55; color: #1f2937; }
 .s2FeatureCheck { flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%; background: #0f766e; color: #ffffff; font-size: 13px; font-weight: 800; display: inline-flex; align-items: center; justify-content: center; margin-top: 2px; }
+
+/* Section 2 — NEW: services chip strip */
+.s2Services {
+  margin: 20px 0 22px;
+  padding: 16px 18px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+}
+.s2ServiceLabel {
+  font-size: 12px;
+  font-weight: 800;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.s2ChipStrip {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+.s2Chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 14px;
+  border-radius: 999px;
+  background: #f0fdf9;
+  color: #0b5b54;
+  border: 1px solid #cceee5;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: background-color 0.15s ease, transform 0.15s ease;
+}
+.s2Chip:hover {
+  background: #d5f5eb;
+  transform: translateY(-1px);
+}
+
 .s2Pillar { text-align: center; font-size: 15px; color: #6b7280; margin: 0; padding-top: 8px; }
 .s2PillarLink { color: #0f766e; font-weight: 700; text-decoration: none; border-bottom: 1px solid rgba(15, 118, 110, 0.35); padding-bottom: 1px; }
 .s2PillarLink:hover { border-bottom-color: #0f766e; }
@@ -74,242 +119,146 @@
 .s3TipIcon { flex-shrink: 0; width: 34px; height: 34px; border-radius: 50%; background: #0f766e; color: #ffffff; display: inline-flex; align-items: center; justify-content: center; }
 .s3TipBody { font-size: 14.5px; line-height: 1.6; color: #0b1220; }
 
-/* ==========================================================
-   SECTION 4 — THE 6 CORE INNOVATION PILLARS
-   ========================================================== */
+/* SECTION 4 — 6 CORE INNOVATION PILLARS */
 .s4 { padding: 48px 20px; background: #f9fafb; }
 .s4Inner { max-width: 1240px; margin: 0 auto; }
 .s4Heading { font-size: 28px; font-weight: 800; color: #0b1220; text-align: center; margin: 0 0 10px; letter-spacing: -0.01em; }
 .s4Intro { font-size: 15px; line-height: 1.6; color: #4b5563; text-align: center; max-width: 900px; margin: 0 auto 28px; }
+.s4Grid { display: grid; grid-template-columns: 1fr; gap: 14px; margin-bottom: 22px; }
+.s4Card { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 14px; padding: 22px 20px; display: flex; flex-direction: column; transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease; }
+.s4Card:hover { transform: translateY(-3px); box-shadow: 0 14px 30px rgba(15, 23, 42, 0.09); }
+.s4CardHead { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; }
+.s4CardIcon { width: 44px; height: 44px; border-radius: 10px; color: #ffffff; display: inline-flex; align-items: center; justify-content: center; }
+.s4CardNum { font-size: 22px; font-weight: 800; color: #e5e7eb; letter-spacing: -0.02em; }
+.s4Tint_green { border-top: 4px solid #0f766e; }
+.s4Tint_green .s4CardIcon { background: #0f766e; }
+.s4Tint_green:hover { border-color: #cceee5; }
+.s4Tint_blue { border-top: 4px solid #1e3a8a; }
+.s4Tint_blue .s4CardIcon { background: #1e3a8a; }
+.s4Tint_blue:hover { border-color: #d3ddf7; }
+.s4Tint_amber { border-top: 4px solid #b45309; }
+.s4Tint_amber .s4CardIcon { background: #b45309; }
+.s4Tint_amber:hover { border-color: #fbd794; }
+.s4Tint_teal { border-top: 4px solid #0d9488; }
+.s4Tint_teal .s4CardIcon { background: #0d9488; }
+.s4Tint_teal:hover { border-color: #bfeae4; }
+.s4CardTitle { font-size: 17px; font-weight: 700; color: #0b1220; margin: 0 0 4px; line-height: 1.3; }
+.s4CardTagline { font-size: 13px; font-weight: 600; color: #6b7280; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 14px; }
+.s4CardCaps { list-style: none; padding: 0; margin: 0 0 16px 0; display: grid; grid-template-columns: 1fr 1fr; gap: 6px 12px; flex-grow: 1; }
+.s4CardCaps li { display: flex; align-items: center; gap: 6px; font-size: 13px; color: #374151; line-height: 1.4; }
+.s4CapDot { width: 5px; height: 5px; border-radius: 50%; flex-shrink: 0; }
+.s4Tint_green .s4CapDot { background: #0f766e; }
+.s4Tint_blue .s4CapDot { background: #1e3a8a; }
+.s4Tint_amber .s4CapDot { background: #b45309; }
+.s4Tint_teal .s4CapDot { background: #0d9488; }
+.s4CardOutcome { padding-top: 14px; border-top: 1px dashed #e5e7eb; }
+.s4OutcomeLabel { display: block; font-size: 11px; font-weight: 800; color: #9ca3af; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 4px; }
+.s4OutcomeText { display: block; font-size: 14px; line-height: 1.55; color: #1f2937; font-weight: 500; }
+.s4Footer { font-size: 15px; line-height: 1.6; color: #0b5b54; text-align: center; margin: 0 auto; max-width: 800px; font-weight: 600; }
 
-.s4Grid {
+/* SECTION 5 — AICTE 11 CATEGORIES */
+.s5 { padding: 48px 20px; background: #ffffff; }
+.s5Inner { max-width: 1200px; margin: 0 auto; }
+.s5Heading { font-size: 28px; font-weight: 800; color: #0b1220; text-align: center; margin: 0 0 10px; letter-spacing: -0.01em; }
+.s5Intro { font-size: 15px; line-height: 1.6; color: #4b5563; text-align: center; max-width: 900px; margin: 0 auto 28px; }
+.s5Grid { display: grid; grid-template-columns: 1fr; gap: 12px; margin-bottom: 24px; }
+.s5Card { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 16px; display: flex; align-items: flex-start; gap: 14px; transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease; }
+.s5Card:hover { transform: translateY(-2px); box-shadow: 0 10px 22px rgba(15, 23, 42, 0.07); }
+.s5CardNum { flex-shrink: 0; width: 40px; height: 40px; border-radius: 10px; color: #ffffff; font-weight: 800; font-size: 14px; letter-spacing: 0.03em; display: inline-flex; align-items: center; justify-content: center; }
+.s5Tint_green .s5CardNum { background: #0f766e; }
+.s5Tint_blue .s5CardNum { background: #1e3a8a; }
+.s5Tint_amber .s5CardNum { background: #b45309; }
+.s5Tint_teal .s5CardNum { background: #0d9488; }
+.s5Tint_green:hover { border-color: #cceee5; }
+.s5Tint_blue:hover { border-color: #d3ddf7; }
+.s5Tint_amber:hover { border-color: #fbd794; }
+.s5Tint_teal:hover { border-color: #bfeae4; }
+.s5CardBody { flex: 1; }
+.s5CardTitle { font-size: 15px; font-weight: 700; color: #0b1220; margin: 0 0 4px; line-height: 1.35; }
+.s5CardItems { font-size: 13.5px; line-height: 1.5; color: #4b5563; margin: 0; }
+.s5Note { display: flex; align-items: flex-start; gap: 12px; background: #f0fdf9; border: 1px solid #cceee5; border-left: 4px solid #0f766e; border-radius: 12px; padding: 16px 18px; }
+.s5NoteIcon { flex-shrink: 0; width: 34px; height: 34px; border-radius: 50%; background: #0f766e; color: #ffffff; display: inline-flex; align-items: center; justify-content: center; }
+.s5NoteBody { font-size: 14.5px; line-height: 1.6; color: #0b1220; }
+
+/* ==========================================================
+   SECTION 6 — WHAT WE DELIVER (NEW)
+   ========================================================== */
+.s6 { padding: 48px 20px; background: #f9fafb; }
+.s6Inner { max-width: 1200px; margin: 0 auto; }
+.s6Heading { font-size: 28px; font-weight: 800; color: #0b1220; text-align: center; margin: 0 0 10px; letter-spacing: -0.01em; }
+.s6Intro { font-size: 15px; line-height: 1.6; color: #4b5563; text-align: center; max-width: 880px; margin: 0 auto 28px; }
+
+.s6Grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 14px;
   margin-bottom: 22px;
 }
 
-.s4Card {
+.s6Card {
   background: #ffffff;
   border: 1px solid #e5e7eb;
   border-radius: 14px;
   padding: 22px 20px;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
 }
-.s4Card:hover {
+.s6Card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.09);
+  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.08);
 }
 
-.s4CardHead {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 14px;
-}
-.s4CardIcon {
-  width: 44px;
-  height: 44px;
+.s6CardIcon {
+  width: 46px;
+  height: 46px;
   border-radius: 10px;
   color: #ffffff;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-}
-.s4CardNum {
-  font-size: 22px;
-  font-weight: 800;
-  color: #e5e7eb;
-  letter-spacing: -0.02em;
-}
-
-/* Pillar tint variants */
-.s4Tint_green { border-top: 4px solid #0f766e; }
-.s4Tint_green .s4CardIcon { background: #0f766e; }
-.s4Tint_green:hover { border-color: #cceee5; }
-
-.s4Tint_blue { border-top: 4px solid #1e3a8a; }
-.s4Tint_blue .s4CardIcon { background: #1e3a8a; }
-.s4Tint_blue:hover { border-color: #d3ddf7; }
-
-.s4Tint_amber { border-top: 4px solid #b45309; }
-.s4Tint_amber .s4CardIcon { background: #b45309; }
-.s4Tint_amber:hover { border-color: #fbd794; }
-
-.s4Tint_teal { border-top: 4px solid #0d9488; }
-.s4Tint_teal .s4CardIcon { background: #0d9488; }
-.s4Tint_teal:hover { border-color: #bfeae4; }
-
-.s4CardTitle {
-  font-size: 17px;
-  font-weight: 700;
-  color: #0b1220;
-  margin: 0 0 4px;
-  line-height: 1.3;
-}
-.s4CardTagline {
-  font-size: 13px;
-  font-weight: 600;
-  color: #6b7280;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
   margin-bottom: 14px;
 }
 
-.s4CardCaps {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 16px 0;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 6px 12px;
-  flex-grow: 1;
-}
-.s4CardCaps li {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 13px;
-  color: #374151;
-  line-height: 1.4;
-}
-.s4CapDot {
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  flex-shrink: 0;
-}
-.s4Tint_green .s4CapDot { background: #0f766e; }
-.s4Tint_blue  .s4CapDot { background: #1e3a8a; }
-.s4Tint_amber .s4CapDot { background: #b45309; }
-.s4Tint_teal  .s4CapDot { background: #0d9488; }
+.s6Tint_green { border-top: 3px solid #0f766e; }
+.s6Tint_green .s6CardIcon { background: #0f766e; }
+.s6Tint_green:hover { border-color: #cceee5; }
 
-.s4CardOutcome {
-  padding-top: 14px;
-  border-top: 1px dashed #e5e7eb;
+.s6Tint_blue { border-top: 3px solid #1e3a8a; }
+.s6Tint_blue .s6CardIcon { background: #1e3a8a; }
+.s6Tint_blue:hover { border-color: #d3ddf7; }
+
+.s6Tint_amber { border-top: 3px solid #b45309; }
+.s6Tint_amber .s6CardIcon { background: #b45309; }
+.s6Tint_amber:hover { border-color: #fbd794; }
+
+.s6Tint_teal { border-top: 3px solid #0d9488; }
+.s6Tint_teal .s6CardIcon { background: #0d9488; }
+.s6Tint_teal:hover { border-color: #bfeae4; }
+
+.s6CardTitle {
+  font-size: 16px;
+  font-weight: 700;
+  color: #0b1220;
+  margin: 0 0 6px;
+  line-height: 1.35;
 }
-.s4OutcomeLabel {
-  display: block;
-  font-size: 11px;
-  font-weight: 800;
-  color: #9ca3af;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  margin-bottom: 4px;
-}
-.s4OutcomeText {
-  display: block;
+.s6CardBody {
   font-size: 14px;
   line-height: 1.55;
-  color: #1f2937;
-  font-weight: 500;
+  color: #4b5563;
+  margin: 0;
 }
 
-.s4Footer {
+.s6Footer {
   font-size: 15px;
   line-height: 1.6;
   color: #0b5b54;
   text-align: center;
   margin: 0 auto;
   max-width: 800px;
-  font-weight: 600;
-}
-
-/* ==========================================================
-   SECTION 5 — AICTE-COMPLIANT INFRASTRUCTURE (11 categories)
-   ========================================================== */
-.s5 { padding: 48px 20px; background: #ffffff; }
-.s5Inner { max-width: 1200px; margin: 0 auto; }
-.s5Heading { font-size: 28px; font-weight: 800; color: #0b1220; text-align: center; margin: 0 0 10px; letter-spacing: -0.01em; }
-.s5Intro { font-size: 15px; line-height: 1.6; color: #4b5563; text-align: center; max-width: 900px; margin: 0 auto 28px; }
-
-.s5Grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 12px;
-  margin-bottom: 24px;
-}
-
-.s5Card {
-  background: #ffffff;
-  border: 1px solid #e5e7eb;
-  border-radius: 12px;
-  padding: 16px;
-  display: flex;
-  align-items: flex-start;
-  gap: 14px;
-  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
-}
-.s5Card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 22px rgba(15, 23, 42, 0.07);
-}
-
-.s5CardNum {
-  flex-shrink: 0;
-  width: 40px;
-  height: 40px;
-  border-radius: 10px;
-  color: #ffffff;
-  font-weight: 800;
-  font-size: 14px;
-  letter-spacing: 0.03em;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-.s5Tint_green .s5CardNum { background: #0f766e; }
-.s5Tint_blue  .s5CardNum { background: #1e3a8a; }
-.s5Tint_amber .s5CardNum { background: #b45309; }
-.s5Tint_teal  .s5CardNum { background: #0d9488; }
-
-.s5Tint_green:hover { border-color: #cceee5; }
-.s5Tint_blue:hover  { border-color: #d3ddf7; }
-.s5Tint_amber:hover { border-color: #fbd794; }
-.s5Tint_teal:hover  { border-color: #bfeae4; }
-
-.s5CardBody { flex: 1; }
-.s5CardTitle {
-  font-size: 15px;
-  font-weight: 700;
-  color: #0b1220;
-  margin: 0 0 4px;
-  line-height: 1.35;
-}
-.s5CardItems {
-  font-size: 13.5px;
-  line-height: 1.5;
-  color: #4b5563;
-  margin: 0;
-}
-
-.s5Note {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  background: #f0fdf9;
-  border: 1px solid #cceee5;
-  border-left: 4px solid #0f766e;
-  border-radius: 12px;
-  padding: 16px 18px;
-}
-.s5NoteIcon {
-  flex-shrink: 0;
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
-  background: #0f766e;
-  color: #ffffff;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-.s5NoteBody {
-  font-size: 14.5px;
-  line-height: 1.6;
-  color: #0b1220;
+  font-weight: 500;
 }
 
 /* MODAL */
@@ -363,6 +312,7 @@
 
   .s4Grid { grid-template-columns: 1fr 1fr; gap: 16px; }
   .s5Grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .s6Grid { grid-template-columns: 1fr 1fr; gap: 16px; }
 
   .modalRow { grid-template-columns: 1fr 1fr; }
 }
@@ -378,6 +328,7 @@
   .s2 { padding: 60px 32px; }
   .s2Heading { font-size: 34px; }
   .s2Intro, .s2Body { font-size: 17px; }
+  .s2Chip { font-size: 13.5px; padding: 8px 16px; }
 
   .s3 { padding: 60px 32px; }
   .s3Heading { font-size: 34px; }
@@ -396,6 +347,13 @@
   .s5Intro { font-size: 16px; }
   .s5CardTitle { font-size: 15.5px; }
   .s5CardItems { font-size: 14px; }
+
+  .s6 { padding: 64px 32px; }
+  .s6Heading { font-size: 34px; }
+  .s6Intro { font-size: 16px; }
+  .s6CardTitle { font-size: 17px; }
+  .s6CardBody { font-size: 14.5px; }
+  .s6Footer { font-size: 16px; }
 
   .section { padding: 56px 32px; min-height: 260px; }
   .placeholder { font-size: 18px; }
@@ -422,6 +380,10 @@
   .s5 { padding: 76px 40px; }
   .s5Heading { font-size: 38px; }
   .s5Grid { grid-template-columns: repeat(3, 1fr); gap: 14px; }
+
+  .s6 { padding: 76px 40px; }
+  .s6Heading { font-size: 38px; }
+  .s6Grid { grid-template-columns: repeat(3, 1fr); gap: 18px; }
 
   .section { padding: 64px 40px; min-height: 300px; }
   .placeholder { font-size: 20px; }

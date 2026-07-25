@@ -8,11 +8,10 @@ import styles from "./styles.module.css";
  * AICTE IDEA Lab Setup — Child page under Engineering Innovation Labs pillar
  * URL: /aicte-idea-lab-setup/
  *
- * Step 5 — Sections 1-11 built.
- *   - Section 9 added: Student Innovation Journey (6 milestones)
- *   - Section 10 added: 10 Institutional Outcomes
- *   - Section 11 added: AICTE Compliance + NAAC/NBA Mapping table
- * Sections 12-14 remain as placeholders.
+ * Step 6 — All 14 sections built. Page content-complete.
+ *   - Section 12: Implementation Timeline (8-row week table) + 6 Funding Routes (PM-USHA named)
+ *   - Section 13: FAQ (8 questions) + FAQPage JSON-LD schema
+ *   - Section 14: Final CTA banner + flagship cross-link
  */
 
 const eligibilityRows: { criterion: string; requirement: string }[] = [
@@ -83,7 +82,6 @@ const studentProjects: { title: string; body: string; tint: ProjectTint; icon: J
   { title: "Assistive Technologies", body: "Devices for accessibility, mobility aids, sensory augmentation.", tint: "blue", icon: (<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="4" r="2"/><path d="M12 6v10M8 22l4-6 4 6M6 12h12"/></svg>) },
 ];
 
-// NEW — Section 9: Student Innovation Journey (6 milestones)
 type MilestoneTint = "green" | "blue";
 const milestones: { n: string; title: string; body: string; tint: MilestoneTint }[] = [
   { n: "1", title: "Ideate", body: "Design thinking, problem discovery, brainstorming, and idea validation.", tint: "green" },
@@ -94,7 +92,6 @@ const milestones: { n: string; title: string; body: string; tint: MilestoneTint 
   { n: "6", title: "Patent · Startup · Product", body: "IP filing, incubation, market launch, and commercial deployment.", tint: "blue" },
 ];
 
-// NEW — Section 10: 10 Institutional Outcomes
 type OutcomeTint = "green" | "blue" | "amber" | "teal";
 const outcomes: { n: string; title: string; body: string; tint: OutcomeTint }[] = [
   { n: "01", title: "Innovation Culture", body: "Campus-wide creativity, design thinking, and problem-solving culture.", tint: "green" },
@@ -109,7 +106,6 @@ const outcomes: { n: string; title: string; body: string; tint: OutcomeTint }[] 
   { n: "10", title: "CoE & Institutional Reputation", body: "Regional hub for innovation, entrepreneurship, and emerging technologies.", tint: "blue" },
 ];
 
-// NEW — Section 11: AICTE Compliance & Framework Alignment cards
 type ComplianceTint = "green" | "blue" | "amber" | "teal";
 const complianceCards: { title: string; body: string; tint: ComplianceTint; icon: JSX.Element }[] = [
   { title: "AICTE IDEA Lab Scheme", body: "Full alignment with AICTE's scheme document, mandated equipment, and lab governance requirements.", tint: "green", icon: (<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>) },
@@ -118,7 +114,6 @@ const complianceCards: { title: string; body: string; tint: ComplianceTint; icon
   { title: "IIC — Innovation Cell", body: "Fully integrates with the Institutional Innovation Council (IIC) mandate and quarterly reporting.", tint: "teal", icon: (<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 3.13a4 4 0 0 1 0 7.75"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><circle cx="9" cy="7" r="4"/><path d="M3 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/></svg>) },
 ];
 
-// NAAC Criteria mapping table rows
 const naacMapping: { criterion: string; contribution: string }[] = [
   { criterion: "Criterion 1 — Curricular Aspects", contribution: "Project-based learning, industry-relevant experiential courses, POs/COs mapping to innovation modules." },
   { criterion: "Criterion 2 — Teaching-Learning & Evaluation", contribution: "Multidisciplinary hands-on projects, ICT-enabled teaching via digital fabrication and simulation." },
@@ -126,6 +121,65 @@ const naacMapping: { criterion: string; contribution: string }[] = [
   { criterion: "Criterion 4 — Infrastructure & Learning Resources", contribution: "State-of-the-art AICTE-mandated infrastructure across fabrication, PCB, robotics, IoT, and AI." },
   { criterion: "Criterion 5 — Student Support & Progression", contribution: "Startup incubation pathway, national hackathon exposure, and R&D placement improvement." },
   { criterion: "Criterion 7 — Institutional Values & Best Practices", contribution: "Innovation culture, industry linkages, and best practice showcasing at institutional level." },
+];
+
+/* SECTION 12 — Implementation Timeline (8 rows) */
+const timelineRows: { week: string; milestone: string; body: string }[] = [
+  { week: "Week 1–2", milestone: "Discovery & Feasibility", body: "Needs assessment, space evaluation, stakeholder alignment, and scoping." },
+  { week: "Week 3–4", milestone: "Proposal Development", body: "Documentation, budget preparation, and stakeholder review of the AICTE IDEA Lab proposal." },
+  { week: "Week 5–6", milestone: "Funding Application", body: "Application to AICTE, PM-USHA, CSR partners, or institutional capex approval." },
+  { week: "Week 7–8", milestone: "Lab Design & Layout", body: "Infrastructure layout, workflow planning, workstation design, and safety planning." },
+  { week: "Week 9–10", milestone: "Equipment Specification", body: "Detailed equipment specs, brand options, and vendor tie-ups across 11 categories." },
+  { week: "Week 11–14", milestone: "Procurement & Site Prep", body: "Equipment procurement, site readiness, civil work, electrical, and network setup." },
+  { week: "Week 15–18", milestone: "Installation & Commissioning", body: "Equipment installation, integration, testing, and quality validation." },
+  { week: "Week 19–20", milestone: "Training & Handover", body: "Faculty training, student onboarding, documentation, and turnkey handover." },
+];
+
+/* SECTION 12 — 6 Funding Routes */
+type FundTint = "green" | "blue" | "amber";
+const fundingRoutes: { title: string; body: string; tint: FundTint; icon: JSX.Element }[] = [
+  { title: "AICTE IDEA Lab Grant", body: "Direct AICTE scheme funding for approved institutions, with defined milestones and outcomes.", tint: "green", icon: (<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-8h6v8"/></svg>) },
+  { title: "PM-USHA Scheme", body: "Pradhan Mantri Uchchatar Shiksha Abhiyan — central scheme with substantial infrastructure funding for higher education.", tint: "blue", icon: (<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2l9 4-9 4-9-4 9-4z"/><path d="M3 10l9 4 9-4"/><path d="M3 14l9 4 9-4"/></svg>) },
+  { title: "CSR Partnerships", body: "Structured CSR proposals for industry partners — position the lab as an impact-driven skilling initiative.", tint: "amber", icon: (<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1 7.8 7.8 7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg>) },
+  { title: "Alumni & Trust Funding", body: "Alumni networks, trust boards, and philanthropic capital channelled into named labs and long-term innovation programs.", tint: "green", icon: (<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 3.13a4 4 0 0 1 0 7.75"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><circle cx="9" cy="7" r="4"/><path d="M3 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/></svg>) },
+  { title: "Institutional Capex", body: "Direct capex allocation from institutional reserves — often blended with grants and CSR to accelerate rollout.", tint: "blue", icon: (<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18M7 15h2M12 15h5"/></svg>) },
+  { title: "State Government Schemes", body: "State-level innovation, skilling, and startup incubation schemes aligned to your college's strategic focus.", tint: "amber", icon: (<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>) },
+];
+
+/* SECTION 13 — FAQ (8 questions) */
+const faqs: { q: string; a: string }[] = [
+  {
+    q: "What is an AICTE IDEA Lab and who is it for?",
+    a: "An AICTE IDEA Lab (Idea Development, Evaluation & Application Lab) is a multidisciplinary innovation facility established under AICTE's scheme to help engineering colleges and universities give students hands-on capability to design, prototype, validate, and commercialize real engineering solutions. It serves ECE, Mechanical, CSE, AI, EEE and allied disciplines together, and is meant for AICTE-approved institutions that want to build innovation culture, boost NBA/NAAC accreditation, and create pathways for startups, patents, and industry projects. Knowx works as an implementation partner for engineering colleges setting up their AICTE IDEA Lab end-to-end.",
+  },
+  {
+    q: "Which engineering colleges are eligible to apply for an AICTE IDEA Lab grant?",
+    a: "AICTE-approved engineering, technology, management, and pharmacy institutions with valid current-year approval are eligible. The institution typically needs to have 1,500 to 3,000 sq. ft. of dedicated lab space, at least 2 faculty members designated as IDEA Lab coordinators, high-speed internet, and willingness to form an Innovation Cell or student club. Institutions with strong NAAC / NBA scores and a track record of research publications are viewed favourably during the AICTE evaluation process.",
+  },
+  {
+    q: "What equipment and infrastructure does an AICTE IDEA Lab require?",
+    a: "AICTE mandates 11 equipment categories covering the complete product development lifecycle — digital fabrication (3D printers, laser cutters), CNC and precision manufacturing, mechanical workshop tools, electronics prototyping, test and measurement instruments, inspection and quality tools, textile and product design, networked computing workstations, presentation and collaboration systems, product testing and material processing, and general workshop tools. Knowx sources, integrates, and commissions the complete AICTE IDEA Lab equipment list aligned to AICTE and BIS standards, along with software and workstation setup for CAD, simulation, and programming.",
+  },
+  {
+    q: "How does Knowx help colleges apply for and implement an AICTE IDEA Lab?",
+    a: "Knowx works as your end-to-end AICTE IDEA Lab consultancy and turnkey partner. We help with feasibility assessment, AICTE IDEA Lab proposal development, funding routes (AICTE, PM-USHA, CSR, alumni, institutional capex), infrastructure design and layout, equipment supply and installation across all 11 AICTE categories, faculty training and enablement, and student innovation programs. Our approach positions the lab as an outcome-driven innovation ecosystem — not a room full of equipment — and directly supports NBA / NAAC accreditation outcomes.",
+  },
+  {
+    q: "What is the typical timeline from application to a fully operational AICTE IDEA Lab?",
+    a: "A complete AICTE IDEA Lab setup typically takes 20 weeks from discovery to handover — around 5 months. This includes discovery and feasibility (weeks 1–2), proposal development and funding (weeks 3–6), lab design and equipment specification (weeks 7–10), procurement and site preparation (weeks 11–14), installation and commissioning (weeks 15–18), and faculty training with student onboarding (weeks 19–20). Timelines vary based on funding approval speed, procurement lead times, and civil readiness of the space.",
+  },
+  {
+    q: "Is faculty training included in the AICTE IDEA Lab setup?",
+    a: "Yes, faculty training and enablement is a core part of every Knowx AICTE IDEA Lab setup. We deliver structured faculty development programs across the 6 innovation pillars (fabrication, PCB, robotics, IoT, AI, drones), curriculum mapping aligned to CDIO / OBE / NBA frameworks, ongoing research guidance, patent support, and hackathon hosting capability. Faculty are the true multipliers of any innovation lab — we invest in them so your IDEA Lab actually runs long after installation is done.",
+  },
+  {
+    q: "How does an AICTE IDEA Lab differ from a Centre of Excellence or a Makerspace?",
+    a: "An AICTE IDEA Lab is a multidisciplinary innovation lab covering fabrication, electronics, robotics, IoT, AI, and drones — with AICTE-mandated equipment and governance. A Centre of Excellence (CoE) is a deep-focus facility built around a single strategic technology domain (like EV, AI, or IoT) with advanced equipment and research direction. A Makerspace is a shared cross-disciplinary tinkering space with more open-access hardware. Knowx sets up IDEA Labs, CoEs, and Makerspaces individually or as an integrated engineering innovation ecosystem — part of the broader Knowx Engineering Innovation Labs offering.",
+  },
+  {
+    q: "How can our college get started with Knowx as an AICTE IDEA Lab implementation partner?",
+    a: "The easiest way to start is to schedule a consultation using the button on this page — our team will review your college's current infrastructure, AICTE approval status, funding position, and academic goals, and propose a phased AICTE IDEA Lab implementation plan. From there we help with proposal drafting, funding applications (AICTE, PM-USHA, CSR), lab design, equipment supply and installation, and faculty training. Our consultants typically respond within one working day to schedule an initial discovery call.",
+  },
 ];
 
 export default function AicteIdeaLabClient() {
@@ -163,6 +217,17 @@ export default function AicteIdeaLabClient() {
       else setSubmitState("error");
     } catch { setSubmitState("error"); }
     finally { setSubmitting(false); }
+  };
+
+  // FAQ JSON-LD schema
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
   };
 
   return (
@@ -307,7 +372,7 @@ export default function AicteIdeaLabClient() {
         </div>
       </section>
 
-      {/* Section 7 — Beyond AICTE / Knowx 2.0 */}
+      {/* Section 7 */}
       <section className={styles.s7} id="beyond-aicte">
         <div className={styles.s7Inner}>
           <span className={styles.s7Tag}>Beyond AICTE Minimum</span>
@@ -326,7 +391,7 @@ export default function AicteIdeaLabClient() {
         </div>
       </section>
 
-      {/* Section 8 — What Students Build */}
+      {/* Section 8 */}
       <section className={styles.s8} id="student-projects">
         <div className={styles.s8Inner}>
           <h2 className={styles.s8Heading}>What Students Build</h2>
@@ -344,18 +409,11 @@ export default function AicteIdeaLabClient() {
         </div>
       </section>
 
-      {/* ============================================================ */}
-      {/* Section 9 — STUDENT INNOVATION JOURNEY                         */}
-      {/* ============================================================ */}
+      {/* Section 9 */}
       <section className={styles.s9} id="student-journey">
         <div className={styles.s9Inner}>
           <h2 className={styles.s9Heading}>Student Innovation Journey</h2>
-          <p className={styles.s9Intro}>
-            Every student in the AICTE IDEA Lab follows a structured innovation journey — from
-            idea to prototype to patent, startup, or commercial product. Six milestones,
-            multidisciplinary by design, mapped to real industry outcomes.
-          </p>
-
+          <p className={styles.s9Intro}>Every student in the AICTE IDEA Lab follows a structured innovation journey — from idea to prototype to patent, startup, or commercial product. Six milestones, multidisciplinary by design, mapped to real industry outcomes.</p>
           <ol className={styles.s9Flow} aria-label="Student innovation journey milestones">
             {milestones.map((m, i, arr) => (
               <li key={m.n} className={styles.s9Milestone}>
@@ -368,27 +426,15 @@ export default function AicteIdeaLabClient() {
               </li>
             ))}
           </ol>
-
-          <p className={styles.s9Footer}>
-            A complete innovation journey — turning engineering students into product
-            engineers, researchers, and startup founders.
-          </p>
+          <p className={styles.s9Footer}>A complete innovation journey — turning engineering students into product engineers, researchers, and startup founders.</p>
         </div>
       </section>
 
-      {/* ============================================================ */}
-      {/* Section 10 — 10 INSTITUTIONAL OUTCOMES                         */}
-      {/* ============================================================ */}
+      {/* Section 10 */}
       <section className={styles.s10} id="institutional-outcomes">
         <div className={styles.s10Inner}>
           <h2 className={styles.s10Heading}>10 Institutional Outcomes</h2>
-          <p className={styles.s10Intro}>
-            An AICTE IDEA Lab is not just a facility — it is an institutional transformation.
-            Ten measurable outcomes that principals, HoDs, and management can point to when
-            accreditors, industry partners, and parents ask what the college is doing
-            differently.
-          </p>
-
+          <p className={styles.s10Intro}>An AICTE IDEA Lab is not just a facility — it is an institutional transformation. Ten measurable outcomes that principals, HoDs, and management can point to when accreditors, industry partners, and parents ask what the college is doing differently.</p>
           <div className={styles.s10Grid}>
             {outcomes.map((o) => (
               <div key={o.n} className={`${styles.s10Card} ${styles[`s10Tint_${o.tint}`]}`}>
@@ -400,26 +446,15 @@ export default function AicteIdeaLabClient() {
               </div>
             ))}
           </div>
-
-          <p className={styles.s10Footer}>
-            Ten outcomes. One institutional transformation. Real, measurable, defensible.
-          </p>
+          <p className={styles.s10Footer}>Ten outcomes. One institutional transformation. Real, measurable, defensible.</p>
         </div>
       </section>
 
-      {/* ============================================================ */}
-      {/* Section 11 — AICTE COMPLIANCE & NAAC/NBA MAPPING               */}
-      {/* ============================================================ */}
+      {/* Section 11 */}
       <section className={styles.s11} id="compliance">
         <div className={styles.s11Inner}>
           <h2 className={styles.s11Heading}>AICTE Compliance &amp; NAAC / NBA Framework Mapping</h2>
-          <p className={styles.s11Intro}>
-            The AICTE IDEA Lab is more than infrastructure — it is a strategic accreditation
-            asset. Every element aligns with AICTE guidelines, NBA outcomes, NAAC criteria,
-            and the Institutional Innovation Council (IIC) mandate.
-          </p>
-
-          {/* 4 alignment cards */}
+          <p className={styles.s11Intro}>The AICTE IDEA Lab is more than infrastructure — it is a strategic accreditation asset. Every element aligns with AICTE guidelines, NBA outcomes, NAAC criteria, and the Institutional Innovation Council (IIC) mandate.</p>
           <div className={styles.s11Grid}>
             {complianceCards.map((c) => (
               <div key={c.title} className={`${styles.s11Card} ${styles[`s11Tint_${c.tint}`]}`}>
@@ -429,10 +464,7 @@ export default function AicteIdeaLabClient() {
               </div>
             ))}
           </div>
-
-          {/* NAAC criteria mapping table */}
           <div className={styles.s11NaacHeading}>How an AICTE IDEA Lab Strengthens Your NAAC Score</div>
-
           <div className={styles.s11Table} role="table" aria-label="AICTE IDEA Lab NAAC criteria mapping">
             <div className={styles.s11HeaderRow} role="row">
               <div className={`${styles.s11Cell} ${styles.s11HCrit}`} role="columnheader">NAAC Criterion</div>
@@ -440,27 +472,123 @@ export default function AicteIdeaLabClient() {
             </div>
             {naacMapping.map((row, i) => (
               <div key={row.criterion} className={`${styles.s11DataRow} ${i % 2 === 1 ? styles.s11RowAlt : ""}`} role="row">
-                <div className={`${styles.s11Cell} ${styles.s11DCrit}`} role="cell">
-                  <span className={styles.s11MobileLabel}>NAAC Criterion</span>{row.criterion}
+                <div className={`${styles.s11Cell} ${styles.s11DCrit}`} role="cell"><span className={styles.s11MobileLabel}>NAAC Criterion</span>{row.criterion}</div>
+                <div className={`${styles.s11Cell} ${styles.s11DContrib}`} role="cell"><span className={styles.s11MobileLabel}>IDEA Lab Contribution</span>{row.contribution}</div>
+              </div>
+            ))}
+          </div>
+          <p className={styles.s11Footer}>An AICTE IDEA Lab strengthens 6 of the 7 NAAC criteria — a strategic accreditation investment, not just a lab.</p>
+        </div>
+      </section>
+
+      {/* ============================================================ */}
+      {/* Section 12 — IMPLEMENTATION TIMELINE + FUNDING (PM-USHA)       */}
+      {/* ============================================================ */}
+      <section className={styles.s12} id="timeline">
+        <div className={styles.s12Inner}>
+          <h2 className={styles.s12Heading}>Implementation Timeline &amp; Funding Routes</h2>
+          <p className={styles.s12Intro}>
+            A complete AICTE IDEA Lab is typically operational in <strong>20 weeks</strong>
+            from discovery to handover — supported by multiple funding routes including AICTE
+            scheme grants, PM-USHA, CSR partnerships, and phased institutional capex.
+          </p>
+
+          {/* Timeline table */}
+          <div className={styles.s12TimelineHeading}>Week-by-Week Implementation Timeline</div>
+          <div className={styles.s12Table} role="table" aria-label="AICTE IDEA Lab implementation timeline">
+            <div className={styles.s12HeaderRow} role="row">
+              <div className={`${styles.s12Cell} ${styles.s12HWeek}`} role="columnheader">Week</div>
+              <div className={`${styles.s12Cell} ${styles.s12HMilestone}`} role="columnheader">Milestone</div>
+              <div className={`${styles.s12Cell} ${styles.s12HBody}`} role="columnheader">Activities</div>
+            </div>
+            {timelineRows.map((row, i) => (
+              <div key={row.week} className={`${styles.s12DataRow} ${i % 2 === 1 ? styles.s12RowAlt : ""}`} role="row">
+                <div className={`${styles.s12Cell} ${styles.s12DWeek}`} role="cell">
+                  <span className={styles.s12MobileLabel}>Week</span>{row.week}
                 </div>
-                <div className={`${styles.s11Cell} ${styles.s11DContrib}`} role="cell">
-                  <span className={styles.s11MobileLabel}>IDEA Lab Contribution</span>{row.contribution}
+                <div className={`${styles.s12Cell} ${styles.s12DMilestone}`} role="cell">
+                  <span className={styles.s12MobileLabel}>Milestone</span>{row.milestone}
+                </div>
+                <div className={`${styles.s12Cell} ${styles.s12DBody}`} role="cell">
+                  <span className={styles.s12MobileLabel}>Activities</span>{row.body}
                 </div>
               </div>
             ))}
           </div>
 
-          <p className={styles.s11Footer}>
-            An AICTE IDEA Lab strengthens 6 of the 7 NAAC criteria — a strategic accreditation
-            investment, not just a lab.
+          {/* Funding routes */}
+          <div className={styles.s12FundingHeading}>6 Funding Routes for Your AICTE IDEA Lab</div>
+          <p className={styles.s12FundingIntro}>
+            AICTE IDEA Lab setup is rarely funded from a single source. Knowx helps you
+            structure a mix of grants, schemes, CSR, and institutional capital — matched to
+            your college&apos;s strategic priorities.
           </p>
+
+          <div className={styles.s12FundingGrid}>
+            {fundingRoutes.map((f) => (
+              <div key={f.title} className={`${styles.s12FundCard} ${styles[`s12FundTint_${f.tint}`]}`}>
+                <div className={styles.s12FundIcon} aria-hidden="true">{f.icon}</div>
+                <h3 className={styles.s12FundTitle}>{f.title}</h3>
+                <p className={styles.s12FundBody}>{f.body}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* Sections 12–14 — placeholders */}
-      <section className={styles.section} id="timeline"><h2 className={styles.placeholder}>12. Implementation Timeline &amp; Funding — TODO (Step 6)</h2></section>
-      <section className={styles.section} id="faq"><h2 className={styles.placeholder}>13. FAQ — TODO (Step 6)</h2></section>
-      <section className={styles.section} id="cta"><h2 className={styles.placeholder}>14. Final CTA — TODO (Step 6)</h2></section>
+      {/* ============================================================ */}
+      {/* Section 13 — FAQ                                               */}
+      {/* ============================================================ */}
+      <section className={styles.s13} id="faq">
+        <div className={styles.s13Inner}>
+          <h2 className={styles.s13Heading}>AICTE IDEA Lab — Frequently Asked Questions</h2>
+          <p className={styles.s13Intro}>
+            Answers to common questions from principals, HoDs, and IIC coordinators evaluating
+            an AICTE IDEA Lab implementation partner for their engineering college.
+          </p>
+
+          <div className={styles.s13List}>
+            {faqs.map((f, i) => (
+              <details key={i} className={styles.s13Item}>
+                <summary className={styles.s13Q}>
+                  <span>{f.q}</span>
+                  <span className={styles.s13QChevron} aria-hidden="true">+</span>
+                </summary>
+                <div className={styles.s13A}>{f.a}</div>
+              </details>
+            ))}
+          </div>
+        </div>
+
+        {/* FAQ JSON-LD schema */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      </section>
+
+      {/* ============================================================ */}
+      {/* Section 14 — FINAL CTA BANNER                                  */}
+      {/* ============================================================ */}
+      <section className={styles.s14} id="cta">
+        <div className={styles.s14Inner}>
+          <h2 className={styles.s14Heading}>Ready to Establish a Future-Ready AICTE IDEA Lab at Your Institution?</h2>
+          <p className={styles.s14Body}>
+            Talk to our team about designing, funding, and setting up your AICTE IDEA Lab —
+            complete turnkey delivery, aligned with AICTE guidelines and NBA / NAAC outcomes.
+          </p>
+          <div className={styles.s14CtaRow}>
+            <button type="button" onClick={openModal} className={styles.s14CtaPrimary}>Schedule AICTE IDEA Lab Consultation</button>
+            <button type="button" onClick={openModal} className={styles.s14CtaSecondary}>Download IDEA Lab Blueprint →</button>
+          </div>
+          <p className={styles.s14Link}>
+            Explore the complete{" "}
+            <Link href="/engineering-innovation-labs" className={styles.s14LinkAnchor}>
+              Engineering Innovation Ecosystem →
+            </Link>
+          </p>
+        </div>
+      </section>
 
       {/* MODAL */}
       {modalOpen && (

@@ -7,7 +7,8 @@ import styles from "./styles.module.css";
 /**
  * Engineering Innovation Labs — Flagship pillar page
  * URL: /engineering-innovation-labs/
- * Step 7 — Sections 12–16 built. All 16 sections complete.
+ * Step 8 — AICTE IDEA Lab card cross-linked to /aicte-idea-lab-setup child page.
+ * All other 11 lab cards unchanged.
  */
 
 /* ============================ DATA ============================ */
@@ -25,8 +26,8 @@ const comparisonRows = [
 type Tint = "green" | "blue" | "amber";
 type Alignment = "green" | "blue" | "amber" | "teal";
 
-const labs: { title: string; body: string; tint: Tint; icon: JSX.Element }[] = [
-  { title: "AICTE IDEA Lab", body: "Innovation, Design & Entrepreneurship Advancement lab aligned to AICTE guidelines.", tint: "green", icon: (<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7c.6.6 1 1.5 1 2.3v1h6v-1c0-.8.4-1.7 1-2.3A7 7 0 0 0 12 2z"/></svg>) },
+const labs: { title: string; body: string; tint: Tint; icon: JSX.Element; href?: string }[] = [
+  { title: "AICTE IDEA Lab", body: "Innovation, Design & Entrepreneurship Advancement lab aligned to AICTE guidelines.", tint: "green", href: "/aicte-idea-lab-setup", icon: (<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7c.6.6 1 1.5 1 2.3v1h6v-1c0-.8.4-1.7 1-2.3A7 7 0 0 0 12 2z"/></svg>) },
   { title: "Centre of Excellence", body: "A dedicated, deep-focus facility built around one strategic technology domain.", tint: "blue", icon: (<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M6 9V3h12v6"/><path d="M6 9a6 6 0 0 0 12 0"/><path d="M8 21h8M12 15v6"/></svg>) },
   { title: "Embedded Systems Lab", body: "Microcontroller and firmware development for real-time embedded applications.", tint: "amber", icon: (<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="6" y="6" width="12" height="12" rx="1"/><path d="M9 3v3M15 3v3M9 18v3M15 18v3M3 9h3M3 15h3M18 9h3M18 15h3"/></svg>) },
   { title: "IoT Lab", body: "Connected sensor networks, edge devices, and cloud dashboards for smart systems.", tint: "green", icon: (<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M2 12a15.3 15.3 0 0 1 20 0"/><path d="M5 15a10 10 0 0 1 14 0"/><path d="M8.5 18a5 5 0 0 1 7 0"/><circle cx="12" cy="21" r="1"/></svg>) },
@@ -302,7 +303,8 @@ export default function EngineeringInnovationLabsClient() {
         </div>
       </section>
 
-      {/* Section 6 */}
+      {/* Section 6 — Innovation Solutions (12 lab cards) */}
+      {/* AICTE IDEA Lab card is cross-linked to /aicte-idea-lab-setup child page. */}
       <section className={styles.s6} id="innovation-solutions">
         <div className={styles.s6Inner}>
           <h2 className={styles.s6Heading}>A Complete Catalogue of Innovation Labs</h2>
@@ -313,7 +315,11 @@ export default function EngineeringInnovationLabsClient() {
                 <div className={styles.s6CardIcon} aria-hidden="true">{lab.icon}</div>
                 <h3 className={styles.s6CardTitle}>{lab.title}</h3>
                 <p className={styles.s6CardBody}>{lab.body}</p>
-                <a href="#" className={styles.s6CardLink}>Learn More →</a>
+                {lab.href ? (
+                  <Link href={lab.href} className={styles.s6CardLink}>Learn More →</Link>
+                ) : (
+                  <a href="#" className={styles.s6CardLink}>Learn More →</a>
+                )}
               </div>
             ))}
           </div>

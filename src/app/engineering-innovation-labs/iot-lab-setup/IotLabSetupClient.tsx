@@ -9,11 +9,12 @@ import styles from "./styles.module.css";
  * IoT Lab Setup — Child page under Engineering Innovation Labs pillar
  * URL: /engineering-innovation-labs/iot-lab-setup/
  *
- * Step 4 — Sections 6 + 7 + 8 built.
- *   - Section 6: IoT Lab Experiments & Project-Based Learning (8 domain cards)
- *   - Section 7: IoT Lab Requirements Table (11 rows, responsive)
- *   - Section 8: IoT Lab Setup for VTU Engineering Colleges (checklist + CTA)
- * Sections 9–14 remain as placeholders.
+ * Step 5 — Sections 9 + 10 + 11 + 12 built.
+ *   - Section 9:  How Much Does an IoT Lab Setup Cost? (12-factor chips, no prices)
+ *   - Section 10: IoT Lab Design, Installation & Deployment (6-step process)
+ *   - Section 11: Why Choose Knowx India (dark green — 8 differentiators)
+ *   - Section 12: IoT Lab Solutions for Different Institution Needs (6 cards)
+ * Sections 13–14 remain as placeholders.
  */
 
 const heroTrust = [
@@ -76,7 +77,6 @@ const s5Kits: { title: string; badge: string; idealFor: string; capabilities: st
   { title: "Smart Factory Learning Platform", badge: "Industry 4.0", idealFor: "Innovation centres, CoEs & smart manufacturing labs", capabilities: ["Smart manufacturing simulation", "Digital factory modelling", "Machine vision integration", "AI predictive maintenance", "OPC-UA & Industry 4.0 stack", "Complete IIoT ecosystem demo"], tint: "blue", imgAlt: "Smart Factory Learning Platform — Knowx India", imgGradient: "linear-gradient(135deg,#1e3a8a 0%,#0d9488 100%)" },
 ];
 
-/* ─── Section 6 — 8 experiment domains ─── */
 type ExpTint = "green" | "blue" | "amber" | "teal";
 const s6Experiments: { title: string; items: string[]; tint: ExpTint; icon: JSX.Element }[] = [
   { title: "IoT Fundamentals", items: ["Introduction to IoT architecture", "Device programming basics", "Sensor interfacing", "Basic wireless communication", "Data acquisition & logging"], tint: "green", icon: (<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>) },
@@ -89,7 +89,6 @@ const s6Experiments: { title: string; items: string[]; tint: ExpTint; icon: JSX.
   { title: "Industry 4.0", items: ["Digital twin implementation", "Smart manufacturing systems", "IIoT network design", "Quality inspection with AI", "End-to-end factory automation"], tint: "teal", icon: (<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>) },
 ];
 
-/* ─── Section 7 — Requirements table ─── */
 const s7Requirements: { requirement: string; purpose: string }[] = [
   { requirement: "IoT Development Boards", purpose: "ESP32, STM32, Raspberry Pi, Arduino — core platforms for building and programming connected IoT devices." },
   { requirement: "Sensors", purpose: "Temperature, humidity, gas, motion, LiDAR, IMU and other sensors for real-world data acquisition." },
@@ -104,7 +103,6 @@ const s7Requirements: { requirement: string; purpose: string }[] = [
   { requirement: "Lab Infrastructure", purpose: "Power distribution, UPS, benching, ESD protection, storage and safety equipment for lab operations." },
 ];
 
-/* ─── Section 8 — VTU checklist ─── */
 const s8VtuChecklist = [
   "IoT fundamentals — device programming, sensor interfacing, communication",
   "Sensors, embedded systems and microcontroller applications",
@@ -114,6 +112,55 @@ const s8VtuChecklist = [
   "Student mini projects, capstone projects and innovation activities",
   "Industry-oriented applications across ECE, CSE, EEE and AI & ML programs",
   "Faculty enablement and curriculum alignment support",
+];
+
+/* ─── Section 9 — Cost factors (12 chips) ─── */
+const s9Factors = [
+  "Number of students",
+  "Number of workstations",
+  "IoT platforms chosen",
+  "Sensors & modules required",
+  "Project kits needed",
+  "Networking infrastructure",
+  "Edge computing hardware",
+  "Industrial IoT equipment",
+  "Software & licenses",
+  "Installation & commissioning",
+  "Faculty training program",
+  "Ongoing technical support",
+];
+
+/* ─── Section 10 — 6-step process ─── */
+const s10Steps: { n: string; title: string; body: string }[] = [
+  { n: "1", title: "Requirement Analysis", body: "We understand your student capacity, curriculum, technology requirements and learning objectives." },
+  { n: "2", title: "Lab Planning & Design", body: "We design the equipment layout, infrastructure plan and mapped learning outcomes for your IoT lab." },
+  { n: "3", title: "Equipment & Kit Selection", body: "We finalise platforms, sensors, kits, software and infrastructure suited to your institution's needs." },
+  { n: "4", title: "Installation & Configuration", body: "We deploy, install and configure all lab equipment and systems ready for classroom use." },
+  { n: "5", title: "Faculty Training", body: "We deliver relevant training and resources so faculty can run practical sessions confidently." },
+  { n: "6", title: "Student & Technical Support", body: "We provide ongoing support for practical learning, student projects and day-to-day lab operations." },
+];
+
+/* ─── Section 11 — Why Knowx (8 differentiators) ─── */
+const s11Why: { title: string; body: string; icon: JSX.Element }[] = [
+  { title: "Complete Laboratory Solutions", body: "End-to-end IoT lab setup — planning, equipment, installation, training and support under one partner.", icon: (<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="M3.3 7L12 12l8.7-5M12 22V12"/></svg>) },
+  { title: "Engineering-Focused Learning", body: "Curriculum-mapped experiments and projects designed specifically for engineering outcomes.", icon: (<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>) },
+  { title: "Multiple Technology Platforms", body: "ESP32, STM32, Raspberry Pi and Industrial IoT — a complete multi-platform learning ecosystem.", icon: (<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"/></svg>) },
+  { title: "Project-Based Learning", body: "Real, structured projects that build practical engineering skills — not just theoretical exposure.", icon: (<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 10l2 2 4-4"/><path d="M9 16h6"/></svg>) },
+  { title: "Faculty Enablement", body: "Structured training programs that turn faculty into confident IoT lab instructors and mentors.", icon: (<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 3.13a4 4 0 0 1 0 7.75"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><circle cx="9" cy="7" r="4"/><path d="M3 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/></svg>) },
+  { title: "Industry-Oriented Applications", body: "Projects and use cases mapped to real industry problems — agri-tech, healthcare, manufacturing.", icon: (<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-6h6v6"/></svg>) },
+  { title: "Pan-India Support", body: "Implementation and technical support delivered to engineering colleges across India.", icon: (<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>) },
+  { title: "Bangalore & Karnataka Focus", body: "Deep regional presence and faster on-ground support for colleges across Karnataka.", icon: (<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="10" r="3"/><path d="M12 21s-7-6.5-7-11a7 7 0 0 1 14 0c0 4.5-7 11-7 11z"/></svg>) },
+];
+
+/* ─── Section 12 — Institution types (6 cards) ─── */
+type InstTint = "green" | "blue" | "amber" | "teal";
+const s12Institutions: { title: string; body: string; tint: InstTint; icon: JSX.Element }[] = [
+  { title: "First-Year & Foundation Programs", body: "IoT fundamentals, sensor basics and beginner-friendly guided mini projects for early-year students.", tint: "green", icon: (<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>) },
+  { title: "CSE, ECE, EEE & ISE Programs", body: "Embedded IoT, connectivity protocols, cloud integration and structured project development.", tint: "blue", icon: (<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 3v4M16 3v4M3 8h4M3 16h4M17 21v-4M8 21v-4M17 8h4M17 16h4"/></svg>) },
+  { title: "AI & IoT Programs", body: "Edge AI, computer vision and intelligent IoT systems for specialised AI & ML curricula.", tint: "amber", icon: (<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2a4 4 0 0 0-4 4v1a4 4 0 0 0-3 6.6A4 4 0 0 0 8 20v1h8v-1a4 4 0 0 0 3-6.4A4 4 0 0 0 16 7V6a4 4 0 0 0-4-4z"/><path d="M9 12h6M12 9v6"/></svg>) },
+  { title: "Final-Year Projects", body: "Advanced platforms, project kits and industry-grade applications for capstone project work.", tint: "teal", icon: (<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7c.6.6 1 1.5 1 2.3v1h6v-1c0-.8.4-1.7 1-2.3A7 7 0 0 0 12 2z"/></svg>) },
+  { title: "Innovation Centres", body: "Advanced IoT, Edge AI, Industrial IoT and Industry 4.0 systems for innovation-focused centres.", tint: "green", icon: (<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.3 2.3-2-2 2.3-2.3z"/></svg>) },
+  { title: "Research Centres", body: "Advanced hardware, industrial applications and specialised environments for applied research.", tint: "blue", icon: (<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>) },
 ];
 
 export default function IotLabSetupClient() {
@@ -189,7 +236,7 @@ export default function IotLabSetupClient() {
         </div>
       </section>
 
-      {/* ── S2 COMPLETE SETUP ── */}
+      {/* ── S2 ── */}
       <section className={styles.s2} id="complete-setup">
         <div className={styles.s2Inner}>
           <h2 className={styles.s2Heading}>Complete IoT Lab Setup for Engineering Colleges</h2>
@@ -217,7 +264,7 @@ export default function IotLabSetupClient() {
         </div>
       </section>
 
-      {/* ── S3 WHAT IS AN IOT LAB ── */}
+      {/* ── S3 ── */}
       <section className={styles.s3} id="what-is-iot-lab">
         <div className={styles.s3Inner}>
           <h2 className={styles.s3Heading}>What Is an IoT Laboratory?</h2>
@@ -249,7 +296,7 @@ export default function IotLabSetupClient() {
         </div>
       </section>
 
-      {/* ── S4 EQUIPMENT ── */}
+      {/* ── S4 ── */}
       <section className={styles.s4} id="equipment">
         <div className={styles.s4Inner}>
           <h2 className={styles.s4Heading}>IoT Lab Equipment &amp; Infrastructure</h2>
@@ -272,7 +319,7 @@ export default function IotLabSetupClient() {
         </div>
       </section>
 
-      {/* ── S5 IOT KITS ── */}
+      {/* ── S5 ── */}
       <section className={styles.s5} id="iot-kits">
         <div className={styles.s5Inner}>
           <h2 className={styles.s5Heading}>IoT Kits for Engineering Students</h2>
@@ -298,141 +345,63 @@ export default function IotLabSetupClient() {
         </div>
       </section>
 
-      {/* ============================================================
-          SECTION 6 — IOT LAB EXPERIMENTS & PBL
-          8 domain cards in 4-col grid desktop
-          ============================================================ */}
+      {/* ── S6 ── */}
       <section className={styles.s6} id="experiments">
         <div className={styles.s6Inner}>
           <h2 className={styles.s6Heading}>IoT Lab Experiments &amp; Project-Based Learning</h2>
-          <p className={styles.s6Intro}>
-            A well-designed IoT laboratory supports a wide range of structured experiments and
-            project-based learning activities — from basic sensor interfacing and wireless
-            communication to advanced edge AI, industrial IoT and Industry 4.0 applications.
-            Knowx India provides experiment guides, project templates and learning resources
-            mapped to engineering curriculum outcomes.
-          </p>
-
+          <p className={styles.s6Intro}>A well-designed IoT laboratory supports a wide range of structured experiments and project-based learning activities — from basic sensor interfacing and wireless communication to advanced edge AI, industrial IoT and Industry 4.0 applications. Knowx India provides experiment guides, project templates and learning resources mapped to engineering curriculum outcomes.</p>
           <div className={styles.s6Grid}>
             {s6Experiments.map((exp) => (
               <div key={exp.title} className={`${styles.s6Card} ${styles[`s6Tint_${exp.tint}`]}`}>
                 <div className={styles.s6CardIcon} aria-hidden="true">{exp.icon}</div>
                 <h3 className={styles.s6CardTitle}>{exp.title}</h3>
-                <ul className={styles.s6CardItems}>
-                  {exp.items.map((item) => (
-                    <li key={item} className={styles.s6CardItem}>
-                      <span className={`${styles.s6ItemDot} ${styles[`s6Dot_${exp.tint}`]}`} aria-hidden="true" />{item}
-                    </li>
-                  ))}
-                </ul>
+                <ul className={styles.s6CardItems}>{exp.items.map((item) => (<li key={item} className={styles.s6CardItem}><span className={`${styles.s6ItemDot} ${styles[`s6Dot_${exp.tint}`]}`} aria-hidden="true" />{item}</li>))}</ul>
               </div>
             ))}
           </div>
-
-          <div className={styles.s6CtaRow}>
-            <button type="button" onClick={openModal} className={styles.s6CtaPrimary}>
-              Explore IoT Lab Experiments →
-            </button>
-          </div>
+          <div className={styles.s6CtaRow}><button type="button" onClick={openModal} className={styles.s6CtaPrimary}>Explore IoT Lab Experiments →</button></div>
         </div>
       </section>
 
-      {/* ============================================================
-          SECTION 7 — IOT LAB REQUIREMENTS TABLE
-          11-row responsive table (green header, alternating rows)
-          ============================================================ */}
+      {/* ── S7 ── */}
       <section className={styles.s7} id="requirements">
         <div className={styles.s7Inner}>
           <h2 className={styles.s7Heading}>IoT Lab Requirements for Engineering Colleges</h2>
-          <p className={styles.s7Intro}>
-            Setting up an effective <strong>IoT laboratory</strong> for an engineering college
-            requires a structured combination of hardware, software, infrastructure and learning
-            resources. The specific requirements depend on the institution's curriculum,
-            department focus, student batch size and academic objectives.
-          </p>
-
+          <p className={styles.s7Intro}>Setting up an effective <strong>IoT laboratory</strong> for an engineering college requires a structured combination of hardware, software, infrastructure and learning resources. The specific requirements depend on the institution's curriculum, department focus, student batch size and academic objectives.</p>
           <div className={styles.s7Table} role="table" aria-label="IoT lab requirements for engineering colleges">
-            {/* Header row — hidden on mobile, shown on tablet+ */}
             <div className={styles.s7HeaderRow} role="row">
               <div className={`${styles.s7Cell} ${styles.s7HReq}`} role="columnheader">Requirement</div>
               <div className={`${styles.s7Cell} ${styles.s7HPurpose}`} role="columnheader">Purpose</div>
             </div>
-
             {s7Requirements.map((row, i) => (
-              <div
-                key={row.requirement}
-                className={`${styles.s7DataRow} ${i % 2 === 1 ? styles.s7RowAlt : ""}`}
-                role="row"
-              >
-                <div className={`${styles.s7Cell} ${styles.s7DReq}`} role="cell">
-                  <span className={styles.s7MobileLabel}>Requirement</span>
-                  {row.requirement}
-                </div>
-                <div className={`${styles.s7Cell} ${styles.s7DPurpose}`} role="cell">
-                  <span className={styles.s7MobileLabel}>Purpose</span>
-                  {row.purpose}
-                </div>
+              <div key={row.requirement} className={`${styles.s7DataRow} ${i % 2 === 1 ? styles.s7RowAlt : ""}`} role="row">
+                <div className={`${styles.s7Cell} ${styles.s7DReq}`} role="cell"><span className={styles.s7MobileLabel}>Requirement</span>{row.requirement}</div>
+                <div className={`${styles.s7Cell} ${styles.s7DPurpose}`} role="cell"><span className={styles.s7MobileLabel}>Purpose</span>{row.purpose}</div>
               </div>
             ))}
           </div>
-
-          <div className={styles.s7CtaRow}>
-            <button type="button" onClick={openModal} className={styles.s7CtaPrimary}>
-              View IoT Lab Requirements Guide →
-            </button>
-          </div>
+          <div className={styles.s7CtaRow}><button type="button" onClick={openModal} className={styles.s7CtaPrimary}>View IoT Lab Requirements Guide →</button></div>
         </div>
       </section>
 
-      {/* ============================================================
-          SECTION 8 — IOT LAB SETUP FOR VTU ENGINEERING COLLEGES
-          No accreditation claims — capability-only, fact-based
-          ============================================================ */}
+      {/* ── S8 ── */}
       <section className={styles.s8} id="vtu">
         <div className={styles.s8Inner}>
           <div className={styles.s8Content}>
             <h2 className={styles.s8Heading}>IoT Lab Setup for VTU Engineering Colleges</h2>
-            <p className={styles.s8Para}>
-              Engineering colleges affiliated to Visvesvaraya Technological University (VTU) can
-              establish IoT laboratories that support their academic programs across ECE, CSE, EEE,
-              ISE and emerging AI &amp; IoT specializations. Knowx India works with VTU-affiliated
-              institutions to plan and implement IoT laboratories aligned to their curriculum
-              requirements, practical session structures and student learning outcomes.
-            </p>
-            <p className={styles.s8Para}>
-              Our IoT lab setup for VTU engineering colleges covers the practical learning
-              requirements across multiple semesters and departments — from fundamental IoT
-              programming and sensor applications to advanced cloud IoT, edge computing and
-              industry-oriented project development.
-            </p>
-
+            <p className={styles.s8Para}>Engineering colleges affiliated to Visvesvaraya Technological University (VTU) can establish IoT laboratories that support their academic programs across ECE, CSE, EEE, ISE and emerging AI &amp; IoT specializations. Knowx India works with VTU-affiliated institutions to plan and implement IoT laboratories aligned to their curriculum requirements, practical session structures and student learning outcomes.</p>
+            <p className={styles.s8Para}>Our IoT lab setup for VTU engineering colleges covers the practical learning requirements across multiple semesters and departments — from fundamental IoT programming and sensor applications to advanced cloud IoT, edge computing and industry-oriented project development.</p>
             <div className={styles.s8ChecklistWrap}>
               <div className={styles.s8ChecklistTitle}>What the IoT Lab Supports for VTU Colleges</div>
-              <ul className={styles.s8Checklist}>
-                {s8VtuChecklist.map((item) => (
-                  <li key={item} className={styles.s8CheckItem}>
-                    <span className={styles.s8CheckMark} aria-hidden="true">✓</span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
+              <ul className={styles.s8Checklist}>{s8VtuChecklist.map((item) => (<li key={item} className={styles.s8CheckItem}><span className={styles.s8CheckMark} aria-hidden="true">✓</span>{item}</li>))}</ul>
             </div>
-
-            <div className={styles.s8CtaRow}>
-              <button type="button" onClick={openModal} className={styles.s8CtaPrimary}>
-                Explore IoT Lab Setup for VTU Colleges →
-              </button>
-            </div>
+            <div className={styles.s8CtaRow}><button type="button" onClick={openModal} className={styles.s8CtaPrimary}>Explore IoT Lab Setup for VTU Colleges →</button></div>
           </div>
-
-          {/* Right panel — visual callout */}
           <div className={styles.s8Panel} aria-hidden="true">
             <div className={styles.s8PanelTag}>VTU-Affiliated Colleges</div>
             <div className={styles.s8PanelHeading}>Departments Served</div>
             {["ECE — Electronics & Communication", "CSE — Computer Science", "EEE — Electrical & Electronics", "ISE — Information Science", "AI & ML — Artificial Intelligence", "Mechatronics & Robotics"].map((dept) => (
-              <div key={dept} className={styles.s8PanelItem}>
-                <span className={styles.s8PanelDot} aria-hidden="true" />{dept}
-              </div>
+              <div key={dept} className={styles.s8PanelItem}><span className={styles.s8PanelDot} aria-hidden="true" />{dept}</div>
             ))}
             <div className={styles.s8PanelDivider} />
             <div className={styles.s8PanelStat}>
@@ -443,19 +412,125 @@ export default function IotLabSetupClient() {
         </div>
       </section>
 
-      {/* ── Sections 9–14 placeholders ── */}
-      <section className={`${styles.placeholder} ${styles.placeholderAlt}`} id="cost">
-        <div className={styles.placeholderInner}><div className={styles.placeholderNum}>S9</div><h2 className={styles.placeholderTitle}>How Much Does an IoT Lab Setup Cost?</h2><p className={styles.placeholderNote}>Step 5 — 12-factor chip list + quote CTA</p></div>
+      {/* ============================================================
+          SECTION 9 — HOW MUCH DOES AN IOT LAB SETUP COST?
+          12-factor chip list — NO price figures
+          ============================================================ */}
+      <section className={styles.s9} id="cost">
+        <div className={styles.s9Inner}>
+          <h2 className={styles.s9Heading}>How Much Does an IoT Lab Setup Cost?</h2>
+          <p className={styles.s9Body}>
+            The cost of setting up an IoT laboratory varies significantly based on the institution's
+            requirements — there is no single fixed package that fits every engineering college.
+            Knowx India works with institutions to identify the right configuration for their
+            student capacity, curriculum focus and academic objectives, rather than offering a
+            one-size-fits-all product.
+          </p>
+
+          <div className={styles.s9FactorsWrap}>
+            <div className={styles.s9FactorsTitle}>Factors That Influence IoT Lab Setup Cost</div>
+            <ul className={styles.s9Chips} aria-label="Factors influencing IoT lab setup cost">
+              {s9Factors.map((f) => (<li key={f} className={styles.s9Chip}>{f}</li>))}
+            </ul>
+          </div>
+
+          <p className={styles.s9Closing}>
+            Knowx can help institutions identify the appropriate configuration for their student
+            capacity and academic objectives — with transparent scoping before any commitment.
+          </p>
+
+          <div className={styles.s9CtaRow}>
+            <button type="button" onClick={openModal} className={styles.s9CtaPrimary}>
+              Request an IoT Lab Setup Quote
+            </button>
+          </div>
+        </div>
       </section>
-      <section className={styles.placeholder} id="process">
-        <div className={styles.placeholderInner}><div className={styles.placeholderNum}>S10</div><h2 className={styles.placeholderTitle}>IoT Lab Design, Installation &amp; Deployment</h2><p className={styles.placeholderNote}>Step 5 — 6-step process + CTA</p></div>
+
+      {/* ============================================================
+          SECTION 10 — IOT LAB DESIGN, INSTALLATION & DEPLOYMENT
+          6-step implementation process
+          ============================================================ */}
+      <section className={styles.s10} id="process">
+        <div className={styles.s10Inner}>
+          <h2 className={styles.s10Heading}>IoT Lab Design, Installation &amp; Deployment</h2>
+          <p className={styles.s10Intro}>
+            A structured six-step process that takes your IoT laboratory from initial requirement
+            analysis through to fully operational, faculty-trained, student-ready deployment.
+          </p>
+
+          <ol className={styles.s10Steps} aria-label="IoT lab implementation process">
+            {s10Steps.map((step, i, arr) => (
+              <li key={step.n} className={styles.s10Step}>
+                <div className={styles.s10StepCard}>
+                  <div className={styles.s10StepNum}>{step.n}</div>
+                  <h3 className={styles.s10StepTitle}>{step.title}</h3>
+                  <p className={styles.s10StepBody}>{step.body}</p>
+                </div>
+                {i < arr.length - 1 && (<span className={styles.s10StepArrow} aria-hidden="true">→</span>)}
+              </li>
+            ))}
+          </ol>
+
+          <div className={styles.s10CtaRow}>
+            <button type="button" onClick={openModal} className={styles.s10CtaPrimary}>
+              Plan Your IoT Laboratory With Knowx
+            </button>
+          </div>
+        </div>
       </section>
-      <section className={`${styles.placeholder} ${styles.placeholderDark}`} id="why-knowx">
-        <div className={styles.placeholderInner}><div className={styles.placeholderNum}>S11</div><h2 className={styles.placeholderTitle}>Why Choose Knowx India for IoT Lab Setup?</h2><p className={styles.placeholderNote}>Step 5 — 8 differentiator cards on dark green gradient</p></div>
+
+      {/* ============================================================
+          SECTION 11 — WHY CHOOSE KNOWX INDIA (dark green)
+          8 differentiator cards
+          ============================================================ */}
+      <section className={styles.s11} id="why-knowx">
+        <div className={styles.s11Inner}>
+          <span className={styles.s11Tag}>Why Knowx India</span>
+          <h2 className={styles.s11Heading}>Why Choose Knowx India for IoT Lab Setup?</h2>
+          <p className={styles.s11Intro}>
+            A dedicated partner for engineering colleges building practical, industry-relevant
+            IoT laboratories — from first conversation through years of operational support.
+          </p>
+
+          <div className={styles.s11Grid}>
+            {s11Why.map((w) => (
+              <div key={w.title} className={styles.s11Card}>
+                <div className={styles.s11CardIcon} aria-hidden="true">{w.icon}</div>
+                <h3 className={styles.s11CardTitle}>{w.title}</h3>
+                <p className={styles.s11CardBody}>{w.body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
       </section>
-      <section className={`${styles.placeholder} ${styles.placeholderAlt}`} id="institution-types">
-        <div className={styles.placeholderInner}><div className={styles.placeholderNum}>S12</div><h2 className={styles.placeholderTitle}>IoT Lab Solutions for Different Institution Needs</h2><p className={styles.placeholderNote}>Step 5 — 6 institution-type cards</p></div>
+
+      {/* ============================================================
+          SECTION 12 — IOT LAB SOLUTIONS FOR DIFFERENT INSTITUTION NEEDS
+          6 institution-type cards
+          ============================================================ */}
+      <section className={styles.s12} id="institution-types">
+        <div className={styles.s12Inner}>
+          <h2 className={styles.s12Heading}>IoT Lab Solutions for Different Institution Needs</h2>
+          <p className={styles.s12Intro}>
+            Every engineering college has a different mix of departments, student levels and
+            academic priorities. Knowx India configures IoT lab solutions to match your
+            institution's specific stage and focus area.
+          </p>
+
+          <div className={styles.s12Grid}>
+            {s12Institutions.map((inst) => (
+              <div key={inst.title} className={`${styles.s12Card} ${styles[`s12Tint_${inst.tint}`]}`}>
+                <div className={styles.s12CardIcon} aria-hidden="true">{inst.icon}</div>
+                <h3 className={styles.s12CardTitle}>{inst.title}</h3>
+                <p className={styles.s12CardBody}>{inst.body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
       </section>
+
+      {/* ── Sections 13–14 placeholders ── */}
       <section className={styles.placeholder} id="faq">
         <div className={styles.placeholderInner}><div className={styles.placeholderNum}>S13</div><h2 className={styles.placeholderTitle}>Frequently Asked Questions About IoT Lab Setup</h2><p className={styles.placeholderNote}>Step 6 — 10-question FAQ + FAQPage JSON-LD schema</p></div>
       </section>

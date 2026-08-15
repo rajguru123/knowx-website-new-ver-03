@@ -1,0 +1,313 @@
+/* =========================================================
+   IoT Lab Equipment — Child Page (scoped)
+   Wrapper:  .iole-scope
+   URL:      /engineering-innovation-labs/iot-lab-equipment/
+   Built complete, single pass. Icon-based — no images.
+   Palette: Green #0f766e  Blue #1e3a8a  Amber #b45309  Teal #0d9488  Red #dc2626 (CTA)
+   ========================================================= */
+
+.scope {
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: #111827;
+  background: #ffffff;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.scope *, .scope *::before, .scope *::after { box-sizing: border-box; }
+
+/* ── SECTION 1 — HERO + BREADCRUMB ── */
+.hero { padding: 24px 20px 40px; background: radial-gradient(900px 360px at 90% -10%, #e6faf5 0%, transparent 60%), linear-gradient(180deg, #ffffff 0%, #f9fbfa 100%); }
+.heroInner { max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; gap: 14px; }
+
+.breadcrumb { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; font-size: 12.5px; margin-bottom: 6px; }
+.breadcrumbLink { color: #0f766e; text-decoration: none; font-weight: 600; }
+.breadcrumbLink:hover { text-decoration: underline; }
+.breadcrumbSep { color: #9ca3af; }
+.breadcrumbCurrent { color: #6b7280; font-weight: 500; }
+
+.heroTag { display: inline-flex; align-items: center; align-self: flex-start; background: rgba(15,118,110,0.08); color: #0f766e; font-size: 11.5px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 6px 12px; border-radius: 999px; border: 1px solid rgba(15,118,110,0.2); }
+.heroHeadline { font-size: 30px; line-height: 1.18; font-weight: 800; letter-spacing: -0.02em; color: #0b1220; margin: 0; }
+.heroHeadlineAccent { color: #0f766e; }
+.heroSubhead { font-size: 15.5px; line-height: 1.65; color: #374151; margin: 0; }
+.heroSubheadB { font-size: 14.5px; line-height: 1.65; color: #4b5563; margin: 0; }
+.heroCtaRow { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-top: 6px; }
+.heroCtaPrimary { display: inline-flex; align-items: center; justify-content: center; background: #dc2626; color: #fff; border: none; cursor: pointer; font-family: inherit; font-weight: 700; font-size: 15px; padding: 13px 22px; border-radius: 10px; box-shadow: 0 6px 16px rgba(220,38,38,0.25); transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease; min-height: 48px; }
+.heroCtaPrimary:hover { background: #b91c1c; transform: translateY(-1px); box-shadow: 0 10px 22px rgba(220,38,38,0.3); }
+.heroCtaSecondary { display: inline-flex; align-items: center; background: transparent; color: #0f766e; border: none; cursor: pointer; font-family: inherit; font-weight: 600; font-size: 15px; padding: 10px 4px; border-bottom: 2px solid rgba(15,118,110,0.35); transition: color 0.15s ease, border-color 0.15s ease; min-height: 44px; }
+.heroCtaSecondary:hover { color: #0b5b54; border-bottom-color: #0f766e; }
+
+/* ── SECTION 2 — BENEFITS STRIP ── */
+.s2 { padding: 32px 20px; background: #f9fafb; border-bottom: 1px solid #e5e7eb; }
+.s2Inner { max-width: 1100px; margin: 0 auto; }
+.s2Grid { display: grid; grid-template-columns: 1fr; gap: 12px; }
+.s2Card { background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 16px 18px; }
+.s2CardTitle { font-size: 14.5px; font-weight: 700; color: #0b1220; margin: 0 0 4px; }
+.s2CardBody { font-size: 13px; line-height: 1.5; color: #6b7280; margin: 0; }
+
+/* ── SECTION 3 — COMPLETE EQUIPMENT INTRO ── */
+.s3 { padding: 40px 20px; background: #ffffff; }
+.s3Inner { max-width: 800px; margin: 0 auto; }
+.s3Heading { font-size: 26px; font-weight: 800; color: #0b1220; text-align: center; margin: 0 0 18px; letter-spacing: -0.01em; }
+.s3Para { font-size: 15px; line-height: 1.7; color: #374151; margin: 0 0 14px; text-align: center; }
+
+/* ── SECTION 4 — CATEGORY GRID ── */
+.s4 { padding: 32px 20px 44px; background: #ffffff; }
+.s4Inner { max-width: 1200px; margin: 0 auto; }
+.s4Grid { display: grid; grid-template-columns: 1fr; gap: 14px; }
+.s4Card { display: block; text-decoration: none; background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 14px; padding: 20px 18px; transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease; }
+.s4Card:hover { transform: translateY(-3px); box-shadow: 0 14px 30px rgba(15,23,42,0.08); }
+.s4CardIcon { width: 44px; height: 44px; border-radius: 10px; color: #fff; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 12px; }
+.s4Tint_green .s4CardIcon { background: #0f766e; } .s4Tint_green:hover { border-color: #cceee5; }
+.s4Tint_blue .s4CardIcon { background: #1e3a8a; } .s4Tint_blue:hover { border-color: #d3ddf7; }
+.s4Tint_amber .s4CardIcon { background: #b45309; } .s4Tint_amber:hover { border-color: #fbd794; }
+.s4Tint_teal .s4CardIcon { background: #0d9488; } .s4Tint_teal:hover { border-color: #bfeae4; }
+.s4CardTitle { font-size: 15.5px; font-weight: 700; color: #0b1220; margin: 0 0 6px; line-height: 1.3; }
+.s4CardBody { font-size: 13px; line-height: 1.5; color: #6b7280; margin: 0 0 10px; }
+.s4CardLink { font-size: 13px; font-weight: 700; color: #0f766e; }
+
+/* ── SECTION 5 — DEVELOPMENT BOARDS ── */
+.s5 { padding: 44px 20px; background: #f9fafb; }
+.s5Inner { max-width: 1200px; margin: 0 auto; }
+.s5Heading { font-size: 26px; font-weight: 800; color: #0b1220; text-align: center; margin: 0 0 26px; letter-spacing: -0.01em; }
+.s5Grid { display: grid; grid-template-columns: 1fr; gap: 14px; margin-bottom: 24px; }
+.s5Card { background: #fff; border: 1px solid #e5e7eb; border-radius: 14px; padding: 20px 18px; }
+.s5CardIcon { width: 42px; height: 42px; border-radius: 10px; background: #0f766e; color: #fff; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 12px; }
+.s5CardTitle { font-size: 16px; font-weight: 700; color: #0b1220; margin: 0 0 12px; }
+.s5CardItems { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 7px; }
+.s5CardItem { display: flex; align-items: center; gap: 8px; font-size: 13.5px; color: #374151; }
+.s5Dot { width: 5px; height: 5px; border-radius: 50%; background: #0f766e; flex-shrink: 0; }
+.s5CtaRow { display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center; }
+.s5CtaText { font-size: 14.5px; color: #4b5563; margin: 0; }
+.s5CtaPrimary { display: inline-flex; align-items: center; background: transparent; color: #0f766e; border: 2px solid #0f766e; cursor: pointer; font-family: inherit; font-weight: 700; font-size: 14.5px; padding: 11px 22px; border-radius: 10px; transition: background-color 0.15s ease, color 0.15s ease; }
+.s5CtaPrimary:hover { background: #0f766e; color: #fff; }
+
+/* ── SECTION 6 — SENSORS & ACTUATORS ── */
+.s6 { padding: 44px 20px; background: #ffffff; }
+.s6Inner { max-width: 1200px; margin: 0 auto; }
+.s6Heading { font-size: 26px; font-weight: 800; color: #0b1220; text-align: center; margin: 0 0 10px; letter-spacing: -0.01em; }
+.s6Intro { font-size: 14.5px; color: #6b7280; text-align: center; max-width: 700px; margin: 0 auto 26px; }
+.s6Grid { display: grid; grid-template-columns: 1fr; gap: 12px; }
+.s6Card { background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 12px; padding: 16px 18px; }
+.s6CardTitle { font-size: 14.5px; font-weight: 700; color: #0b5b54; margin: 0 0 10px; text-transform: uppercase; letter-spacing: 0.03em; }
+.s6CardItems { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 6px; }
+.s6CardItem { font-size: 13.5px; color: #374151; }
+
+/* ── SECTION 7 — COMMUNICATION ── */
+.s7 { padding: 44px 20px; background: #f9fafb; }
+.s7Inner { max-width: 800px; margin: 0 auto; }
+.s7Heading { font-size: 26px; font-weight: 800; color: #0b1220; text-align: center; margin: 0 0 14px; letter-spacing: -0.01em; }
+.s7Intro { font-size: 14.5px; line-height: 1.65; color: #4b5563; text-align: center; margin: 0 auto 22px; }
+.s7Chips { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
+.s7Chip { padding: 8px 15px; border-radius: 999px; background: #ffffff; color: #0b5b54; border: 1px solid #cceee5; font-size: 13px; font-weight: 600; }
+
+/* ── SECTION 8 — EDGE & AI ── */
+.s8 { padding: 44px 20px; background: #ffffff; }
+.s8Inner { max-width: 1000px; margin: 0 auto; }
+.s8Heading { font-size: 26px; font-weight: 800; color: #0b1220; text-align: center; margin: 0 0 26px; letter-spacing: -0.01em; }
+.s8Grid { display: grid; grid-template-columns: 1fr; gap: 14px; margin-bottom: 20px; }
+.s8Card { background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 14px; padding: 18px; }
+.s8CardIcon { width: 40px; height: 40px; border-radius: 10px; background: #0d9488; color: #fff; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 10px; }
+.s8CardTitle { font-size: 15px; font-weight: 700; color: #0b1220; margin: 0 0 10px; }
+.s8CardItems { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 6px; }
+.s8CardItem { font-size: 13.5px; color: #374151; }
+.s8CrossLink { font-size: 14px; color: #4b5563; text-align: center; margin: 0; }
+.s8CrossLinkBtn { background: none; border: none; color: #0f766e; font-weight: 700; font-size: 14px; cursor: pointer; font-family: inherit; padding: 0; }
+.s8CrossLinkBtn:hover { text-decoration: underline; }
+
+/* ── SECTION 9 — INDUSTRIAL IOT ── */
+.s9 { padding: 44px 20px; background: #f9fafb; }
+.s9Inner { max-width: 900px; margin: 0 auto; }
+.s9Heading { font-size: 26px; font-weight: 800; color: #0b1220; text-align: center; margin: 0 0 14px; letter-spacing: -0.01em; }
+.s9Intro { font-size: 14.5px; line-height: 1.65; color: #4b5563; text-align: center; margin: 0 auto 22px; }
+.s9Chips { list-style: none; padding: 0; margin: 0 0 24px; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
+.s9Chip { padding: 8px 15px; border-radius: 999px; background: #ffffff; color: #92400e; border: 1px solid #fde9ba; font-size: 13px; font-weight: 600; }
+.s9CtaRow { display: flex; justify-content: center; }
+.s9CtaPrimary { display: inline-flex; align-items: center; background: transparent; color: #0f766e; border: 2px solid #0f766e; cursor: pointer; font-family: inherit; font-weight: 700; font-size: 14.5px; padding: 12px 22px; border-radius: 10px; transition: background-color 0.15s ease, color 0.15s ease; }
+.s9CtaPrimary:hover { background: #0f766e; color: #fff; }
+
+/* ── SECTION 10 — INFRASTRUCTURE ── */
+.s10 { padding: 44px 20px; background: #ffffff; }
+.s10Inner { max-width: 900px; margin: 0 auto; }
+.s10Heading { font-size: 26px; font-weight: 800; color: #0b1220; text-align: center; margin: 0 0 22px; letter-spacing: -0.01em; }
+.s10Grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 20px; }
+.s10Item { display: flex; align-items: center; gap: 8px; font-size: 13.5px; color: #374151; background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 10px; padding: 10px 12px; }
+.s10ItemDot { width: 6px; height: 6px; border-radius: 50%; background: #0f766e; flex-shrink: 0; }
+.s10Para { font-size: 14.5px; line-height: 1.65; color: #4b5563; text-align: center; margin: 0 0 20px; }
+.s10CtaRow { display: flex; justify-content: center; }
+.s10CtaPrimary { display: inline-flex; align-items: center; background: #0f766e; color: #fff; text-decoration: none; font-weight: 700; font-size: 14.5px; padding: 12px 22px; border-radius: 10px; transition: background-color 0.15s ease; }
+.s10CtaPrimary:hover { background: #0b5b54; }
+
+/* ── SECTION 11 — REQUIREMENTS TABLE ── */
+.s11 { padding: 44px 20px; background: #f9fafb; }
+.s11Inner { max-width: 1000px; margin: 0 auto; }
+.s11Heading { font-size: 26px; font-weight: 800; color: #0b1220; text-align: center; margin: 0 0 24px; letter-spacing: -0.01em; }
+.s11Table { border-radius: 14px; overflow: hidden; border: 1px solid #e5e7eb; box-shadow: 0 6px 22px rgba(15,23,42,0.05); background: #ffffff; margin-bottom: 22px; }
+.s11HeaderRow { display: none; }
+.s11DataRow { display: grid; grid-template-columns: 1fr; padding: 14px 16px; border-bottom: 1px solid #e5e7eb; gap: 6px; background: #fff; }
+.s11RowAlt { background: #f9fafb; }
+.s11DataRow:last-child { border-bottom: none; }
+.s11Cell { font-size: 14px; color: #111827; display: flex; flex-direction: column; gap: 3px; }
+.s11DCat { font-weight: 700; color: #0b5b54; }
+.s11DEx, .s11DPurpose { color: #374151; }
+.s11MobileLabel { display: block; font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: #6b7280; }
+.s11CtaRow { display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center; }
+.s11CtaText { font-size: 14.5px; color: #4b5563; margin: 0; }
+.s11CtaPrimary { display: inline-flex; align-items: center; background: #dc2626; color: #fff; border: none; cursor: pointer; font-family: inherit; font-weight: 700; font-size: 14.5px; padding: 12px 22px; border-radius: 10px; transition: background-color 0.15s ease; }
+.s11CtaPrimary:hover { background: #b91c1c; }
+
+/* ── SECTION 12 — BY DEPARTMENT ── */
+.s12 { padding: 44px 20px; background: #ffffff; }
+.s12Inner { max-width: 1200px; margin: 0 auto; }
+.s12Heading { font-size: 26px; font-weight: 800; color: #0b1220; text-align: center; margin: 0 0 26px; letter-spacing: -0.01em; }
+.s12Grid { display: grid; grid-template-columns: 1fr; gap: 12px; }
+.s12Card { background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 12px; padding: 16px 18px; }
+.s12Tint_green { border-top: 3px solid #0f766e; } .s12Tint_blue { border-top: 3px solid #1e3a8a; } .s12Tint_amber { border-top: 3px solid #b45309; } .s12Tint_teal { border-top: 3px solid #0d9488; }
+.s12CardTitle { font-size: 15px; font-weight: 700; color: #0b1220; margin: 0 0 10px; }
+.s12CardItems { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 6px; }
+.s12CardItem { display: flex; align-items: center; gap: 7px; font-size: 13px; color: #374151; }
+.s12Dot { width: 4px; height: 4px; border-radius: 50%; background: #0f766e; flex-shrink: 0; }
+
+/* ── SECTION 13 — HOW TO CHOOSE ── */
+.s13 { padding: 44px 20px; background: #f9fafb; }
+.s13Inner { max-width: 800px; margin: 0 auto; }
+.s13Heading { font-size: 26px; font-weight: 800; color: #0b1220; text-align: center; margin: 0 0 24px; letter-spacing: -0.01em; }
+.s13List { list-style: none; padding: 0; margin: 0 0 26px; display: flex; flex-direction: column; gap: 10px; }
+.s13Item { display: flex; align-items: center; gap: 12px; background: #ffffff; border: 1px solid #e5e7eb; border-radius: 10px; padding: 12px 16px; }
+.s13Num { width: 26px; height: 26px; border-radius: 50%; background: #0f766e; color: #fff; font-size: 12.5px; font-weight: 800; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.s13Text { font-size: 14.5px; color: #1f2937; }
+.s13CtaRow { display: flex; justify-content: center; }
+.s13CtaPrimary { display: inline-flex; align-items: center; background: #0f766e; color: #fff; border: none; cursor: pointer; font-family: inherit; font-weight: 700; font-size: 14.5px; padding: 13px 22px; border-radius: 10px; transition: background-color 0.15s ease; text-align: center; }
+.s13CtaPrimary:hover { background: #0b5b54; }
+
+/* ── SECTION 14 — PACKAGES ── */
+.s14 { padding: 44px 20px; background: #ffffff; }
+.s14Inner { max-width: 1100px; margin: 0 auto; }
+.s14Heading { font-size: 26px; font-weight: 800; color: #0b1220; text-align: center; margin: 0 0 26px; letter-spacing: -0.01em; }
+.s14Grid { display: grid; grid-template-columns: 1fr; gap: 14px; }
+.s14Card { background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 14px; padding: 22px 20px; display: flex; flex-direction: column; gap: 12px; }
+.s14CardTitle { font-size: 16px; font-weight: 700; color: #0b1220; margin: 0; }
+.s14CardBody { font-size: 13.5px; line-height: 1.55; color: #4b5563; margin: 0; flex-grow: 1; }
+.s14CardCta { display: inline-flex; align-items: center; justify-content: center; background: #0f766e; color: #fff; border: none; cursor: pointer; font-family: inherit; font-weight: 700; font-size: 13.5px; padding: 10px 18px; border-radius: 8px; transition: background-color 0.15s ease; align-self: flex-start; }
+.s14CardCta:hover { background: #0b5b54; }
+
+/* ── SECTION 15 — EQUIPMENT VS KITS ── */
+.s15 { padding: 44px 20px; background: #f9fafb; }
+.s15Inner { max-width: 900px; margin: 0 auto; }
+.s15Heading { font-size: 26px; font-weight: 800; color: #0b1220; text-align: center; margin: 0 0 24px; letter-spacing: -0.01em; }
+.s15Table { border-radius: 14px; overflow: hidden; border: 1px solid #e5e7eb; box-shadow: 0 6px 22px rgba(15,23,42,0.05); background: #ffffff; margin-bottom: 20px; }
+.s15HeaderRow { display: grid; grid-template-columns: 1fr 1fr; background: #f3f4f6; border-bottom: 1px solid #e5e7eb; }
+.s15DataRow { display: grid; grid-template-columns: 1fr 1fr; }
+.s15RowAlt { background: #f9fafb; }
+.s15Cell { padding: 13px 16px; font-size: 13.5px; color: #374151; border-right: 1px solid #f1f5f9; }
+.s15Cell:last-child { border-right: none; }
+.s15HEquip { background: #0f766e; color: #fff; font-weight: 700; font-size: 12.5px; text-transform: uppercase; letter-spacing: 0.04em; }
+.s15HKits { background: #f3f4f6; color: #111827; font-weight: 700; font-size: 12.5px; text-transform: uppercase; letter-spacing: 0.04em; }
+.s15CrossLink { font-size: 14px; color: #4b5563; text-align: center; margin: 0; }
+.s15CrossLinkBtn { background: none; border: none; color: #0f766e; font-weight: 700; font-size: 14px; cursor: pointer; font-family: inherit; padding: 0; }
+.s15CrossLinkBtn:hover { text-decoration: underline; }
+
+/* ── SECTION 16 — WHY KNOWX (dark green) ── */
+.s16 { padding: 48px 20px; background: linear-gradient(135deg, #0f766e 0%, #0b5b54 100%); color: #fff; }
+.s16Inner { max-width: 1200px; margin: 0 auto; text-align: center; }
+.s16Tag { display: inline-flex; align-items: center; background: rgba(255,255,255,0.14); color: #fff; font-size: 11.5px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 6px 13px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.25); margin-bottom: 14px; }
+.s16Heading { font-size: 26px; font-weight: 800; color: #fff; margin: 0 0 26px; letter-spacing: -0.01em; }
+.s16Grid { display: grid; grid-template-columns: 1fr; gap: 12px; text-align: left; }
+.s16Card { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.16); border-radius: 12px; padding: 18px 16px; }
+.s16CardIcon { width: 40px; height: 40px; border-radius: 10px; background: rgba(255,255,255,0.18); color: #fff; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 10px; }
+.s16CardTitle { font-size: 14.5px; font-weight: 700; color: #fff; margin: 0 0 6px; }
+.s16CardBody { font-size: 13px; line-height: 1.5; color: rgba(255,255,255,0.85); margin: 0; }
+
+/* ── SECTION 17 — FAQ ── */
+.s17 { padding: 44px 20px; background: #f9fafb; }
+.s17Inner { max-width: 900px; margin: 0 auto; }
+.s17Heading { font-size: 26px; font-weight: 800; color: #0b1220; text-align: center; margin: 0 0 24px; letter-spacing: -0.01em; }
+.s17List { display: flex; flex-direction: column; gap: 10px; }
+.s17Item { background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; overflow: hidden; }
+.s17Item[open] { border-color: #cceee5; box-shadow: 0 8px 22px rgba(15,23,42,0.08); }
+.s17Q { cursor: pointer; list-style: none; padding: 15px 18px; font-size: 14.5px; font-weight: 700; color: #0b1220; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.s17Q::-webkit-details-marker { display: none; }
+.s17Item[open] .s17Q { background: #f0fdf9; color: #0b5b54; }
+.s17QChevron { width: 22px; height: 22px; border-radius: 50%; background: #f0fdf9; color: #0f766e; font-size: 16px; font-weight: 700; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; transition: transform 0.2s ease, background-color 0.15s ease; }
+.s17Item[open] .s17QChevron { transform: rotate(45deg); background: #0f766e; color: #fff; }
+.s17A { padding: 4px 18px 18px; font-size: 13.5px; line-height: 1.65; color: #374151; }
+
+/* ── SECTION 18 — FINAL CTA ── */
+.s18 { padding: 48px 20px; background: linear-gradient(135deg, #0f766e 0%, #0b5b54 100%); color: #fff; }
+.s18Inner { max-width: 800px; margin: 0 auto; text-align: center; }
+.s18Heading { font-size: 24px; font-weight: 800; color: #fff; margin: 0 0 12px; letter-spacing: -0.01em; }
+.s18Body { font-size: 14.5px; line-height: 1.65; color: rgba(255,255,255,0.92); margin: 0 auto 22px; }
+.s18CtaRow { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+.s18CtaPrimary { display: inline-flex; align-items: center; justify-content: center; background: #fff; color: #0f766e; border: none; cursor: pointer; font-family: inherit; font-weight: 700; font-size: 14.5px; padding: 13px 22px; border-radius: 10px; transition: transform 0.15s ease; }
+.s18CtaPrimary:hover { transform: translateY(-2px); }
+.s18CtaSecondary { display: inline-flex; align-items: center; justify-content: center; background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.5); text-decoration: none; font-weight: 600; font-size: 14.5px; padding: 12px 20px; border-radius: 10px; transition: background-color 0.15s ease; }
+.s18CtaSecondary:hover { background: rgba(255,255,255,0.12); }
+
+/* ── MODAL ── */
+.modalBackdrop { position: fixed; inset: 0; background: rgba(15,23,42,0.6); backdrop-filter: blur(4px); display: flex; align-items: center; justify-content: center; padding: 16px; z-index: 1000; }
+.modal { background: #fff; border-radius: 16px; width: 100%; max-width: 560px; max-height: 92vh; overflow-y: auto; padding: 26px 24px; position: relative; box-shadow: 0 24px 60px rgba(15,23,42,0.3); }
+.modalClose { position: absolute; top: 14px; right: 14px; width: 34px; height: 34px; border: none; background: #f3f4f6; color: #374151; font-size: 22px; border-radius: 50%; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; }
+.modalClose:hover { background: #e5e7eb; }
+.modalTitle { font-size: 20px; font-weight: 800; color: #0b1220; margin: 0 0 6px; padding-right: 32px; }
+.modalSubtitle { font-size: 13.5px; color: #6b7280; margin: 0 0 18px; }
+.modalForm { display: flex; flex-direction: column; gap: 11px; }
+.modalRow { display: grid; grid-template-columns: 1fr; gap: 11px; }
+.modalLabel { display: flex; flex-direction: column; gap: 5px; font-size: 11.5px; font-weight: 700; color: #374151; text-transform: uppercase; letter-spacing: 0.045em; }
+.modalInput, .modalTextarea { font-family: inherit; font-size: 14.5px; color: #0b1220; background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 9px; padding: 10px 12px; text-transform: none; letter-spacing: normal; font-weight: 400; min-height: 42px; width: 100%; }
+.modalInput:focus, .modalTextarea:focus { outline: none; border-color: #0f766e; background: #fff; }
+.modalTextarea { resize: vertical; min-height: 72px; }
+.modalError { background: #fef2f2; border: 1px solid #fecaca; color: #991b1b; padding: 10px 12px; border-radius: 9px; font-size: 13px; }
+.modalSubmit { background: #dc2626; color: #fff; border: none; font-family: inherit; font-weight: 700; font-size: 15px; padding: 13px 22px; border-radius: 10px; cursor: pointer; min-height: 48px; margin-top: 4px; width: 100%; }
+.modalSubmit:hover:not(:disabled) { background: #b91c1c; }
+.modalSubmit:disabled { background: #94a3b8; cursor: not-allowed; }
+.modalFinePrint { font-size: 11px; color: #9ca3af; text-align: center; margin: 2px 0 0; }
+.modalSuccess { text-align: center; padding: 16px 0 8px; display: flex; flex-direction: column; gap: 10px; align-items: center; }
+.modalSuccessMark { width: 56px; height: 56px; border-radius: 50%; background: #0f766e; color: #fff; font-size: 28px; font-weight: 800; display: inline-flex; align-items: center; justify-content: center; }
+.modalSuccessTitle { font-size: 20px; font-weight: 800; color: #0b1220; }
+.modalSuccessBody { font-size: 14px; color: #4b5563; max-width: 340px; }
+.modalDoneBtn { margin-top: 8px; background: #0f766e; color: #fff; border: none; font-family: inherit; font-weight: 700; font-size: 14.5px; padding: 11px 24px; border-radius: 10px; cursor: pointer; }
+.modalDoneBtn:hover { background: #0b5b54; }
+
+/* ==========================================================
+   RESPONSIVE
+   ========================================================== */
+@media (min-width: 640px) {
+  .s2Grid { grid-template-columns: repeat(4, 1fr); }
+  .s4Grid { grid-template-columns: 1fr 1fr; }
+  .s5Grid { grid-template-columns: repeat(3, 1fr); }
+  .s6Grid { grid-template-columns: repeat(4, 1fr); }
+  .s8Grid { grid-template-columns: 1fr 1fr; }
+  .s12Grid { grid-template-columns: 1fr 1fr; }
+  .s14Grid { grid-template-columns: repeat(3, 1fr); }
+  .s16Grid { grid-template-columns: repeat(2, 1fr); }
+  .s11HeaderRow { display: grid; grid-template-columns: 1fr 1.3fr 1.3fr; background: #f3f4f6; border-bottom: 1px solid #e5e7eb; }
+  .s11DataRow { grid-template-columns: 1fr 1.3fr 1.3fr; padding: 0; gap: 0; }
+  .s11Cell { padding: 13px 16px; border-right: 1px solid #f1f5f9; }
+  .s11Cell:last-child { border-right: none; }
+  .s11MobileLabel { display: none; }
+  .s11HCat { background: #0f766e; color: #fff; font-weight: 700; text-transform: uppercase; font-size: 12.5px; }
+  .s11HEx, .s11HPurpose { background: #f3f4f6; color: #111827; font-weight: 700; text-transform: uppercase; font-size: 12.5px; }
+  .s11DCat { background: #f9fafb; }
+  .modalRow { grid-template-columns: 1fr 1fr; }
+}
+
+@media (min-width: 768px) {
+  .hero { padding: 32px 32px 48px; }
+  .heroHeadline { font-size: 40px; }
+  .heroSubhead { font-size: 16.5px; }
+  .s3Heading, .s4Heading, .s5Heading, .s6Heading, .s7Heading, .s8Heading, .s9Heading, .s10Heading, .s11Heading, .s12Heading, .s13Heading, .s14Heading, .s15Heading, .s16Heading, .s17Heading { font-size: 32px; }
+  .s18Heading { font-size: 30px; }
+  .s9Chips, .s7Chips { gap: 10px; }
+}
+
+@media (min-width: 1024px) {
+  .heroHeadline { font-size: 46px; }
+  .s4Grid { grid-template-columns: repeat(3, 1fr); }
+  .s5Grid { grid-template-columns: repeat(3, 1fr); }
+  .s6Grid { grid-template-columns: repeat(4, 1fr); }
+  .s10Grid { grid-template-columns: repeat(4, 1fr); }
+  .s12Grid { grid-template-columns: repeat(3, 1fr); }
+  .s16Grid { grid-template-columns: repeat(4, 1fr); }
+  .s2Grid { grid-template-columns: repeat(4, 1fr); }
+}

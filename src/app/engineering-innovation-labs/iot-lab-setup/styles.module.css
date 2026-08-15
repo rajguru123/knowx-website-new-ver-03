@@ -1,7 +1,7 @@
 /* =========================================================
    IoT Lab Setup — Child Page (scoped)
    Wrapper:  .iol-scope
-   Step 4    S6 (Experiments) + S7 (Requirements Table) + S8 (VTU)
+   Step 5    S9 (Cost) + S10 (Process) + S11 (Why Knowx) + S12 (Institutions)
    ========================================================= */
 
 .scope { box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; color: #111827; background: #ffffff; line-height: 1.6; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
@@ -124,34 +124,285 @@
 .s5KitCta_green { background: #0f766e; color: #fff; } .s5KitCta_blue { background: #1e3a8a; color: #fff; } .s5KitCta_amber { background: #b45309; color: #fff; } .s5KitCta_teal { background: #0d9488; color: #fff; }
 .s5Footer { font-size: 14px; line-height: 1.6; color: #6b7280; text-align: center; margin: 0 auto; max-width: 800px; font-style: italic; }
 
-/* ==========================================================
-   SECTION 6 — EXPERIMENTS & PBL
-   ========================================================== */
+/* ── S6 ── */
 .s6 { padding: 48px 20px; background: #f9fafb; }
 .s6Inner { max-width: 1240px; margin: 0 auto; }
 .s6Heading { font-size: 28px; font-weight: 800; color: #0b1220; text-align: center; margin: 0 0 10px; letter-spacing: -0.01em; }
 .s6Intro { font-size: 15px; line-height: 1.65; color: #4b5563; text-align: center; max-width: 900px; margin: 0 auto 28px; }
+.s6Grid { display: grid; grid-template-columns: 1fr; gap: 12px; margin-bottom: 24px; }
+.s6Card { background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 18px 16px; transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease; }
+.s6Card:hover { transform: translateY(-2px); box-shadow: 0 10px 22px rgba(15,23,42,0.07); }
+.s6CardIcon { width: 44px; height: 44px; border-radius: 10px; color: #fff; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 12px; }
+.s6Tint_green { border-top: 3px solid #0f766e; } .s6Tint_green .s6CardIcon { background: #0f766e; } .s6Tint_green:hover { border-color: #cceee5; }
+.s6Tint_blue  { border-top: 3px solid #1e3a8a; } .s6Tint_blue .s6CardIcon  { background: #1e3a8a; } .s6Tint_blue:hover  { border-color: #d3ddf7; }
+.s6Tint_amber { border-top: 3px solid #b45309; } .s6Tint_amber .s6CardIcon { background: #b45309; } .s6Tint_amber:hover { border-color: #fbd794; }
+.s6Tint_teal  { border-top: 3px solid #0d9488; } .s6Tint_teal .s6CardIcon  { background: #0d9488; } .s6Tint_teal:hover  { border-color: #bfeae4; }
+.s6CardTitle { font-size: 15px; font-weight: 700; color: #0b1220; margin: 0 0 10px; line-height: 1.35; }
+.s6CardItems { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 6px; }
+.s6CardItem  { display: flex; align-items: center; gap: 7px; font-size: 13px; color: #374151; line-height: 1.4; }
+.s6ItemDot   { width: 4px; height: 4px; border-radius: 50%; flex-shrink: 0; }
+.s6Dot_green { background: #0f766e; } .s6Dot_blue { background: #1e3a8a; } .s6Dot_amber { background: #b45309; } .s6Dot_teal { background: #0d9488; }
+.s6CtaRow { display: flex; justify-content: center; }
+.s6CtaPrimary { display: inline-flex; align-items: center; background: transparent; color: #0f766e; border: 2px solid #0f766e; cursor: pointer; font-family: inherit; font-weight: 700; font-size: 15px; padding: 12px 24px; border-radius: 10px; transition: background-color 0.15s ease, color 0.15s ease; min-height: 46px; }
+.s6CtaPrimary:hover { background: #0f766e; color: #fff; }
 
-.s6Grid {
+/* ── S7 ── */
+.s7 { padding: 48px 20px; background: #ffffff; }
+.s7Inner { max-width: 1100px; margin: 0 auto; }
+.s7Heading { font-size: 28px; font-weight: 800; color: #0b1220; text-align: center; margin: 0 0 10px; letter-spacing: -0.01em; }
+.s7Intro { font-size: 15px; line-height: 1.65; color: #4b5563; text-align: center; max-width: 860px; margin: 0 auto 24px; }
+.s7Table { border-radius: 14px; overflow: hidden; border: 1px solid #e5e7eb; box-shadow: 0 6px 22px rgba(15,23,42,0.05); background: #ffffff; margin-bottom: 22px; }
+.s7HeaderRow { display: none; }
+.s7DataRow { display: grid; grid-template-columns: 1fr; padding: 14px 16px; border-bottom: 1px solid #e5e7eb; gap: 8px; background: #ffffff; }
+.s7RowAlt { background: #f9fafb; }
+.s7DataRow:last-child { border-bottom: none; }
+.s7Cell { font-size: 14.5px; color: #111827; display: flex; flex-direction: column; gap: 3px; }
+.s7DReq { font-weight: 700; color: #0b5b54; }
+.s7DPurpose { color: #374151; line-height: 1.55; }
+.s7MobileLabel { display: block; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: #6b7280; margin-bottom: 2px; }
+.s7CtaRow { display: flex; justify-content: center; }
+.s7CtaPrimary { display: inline-flex; align-items: center; background: transparent; color: #0f766e; border: 2px solid #0f766e; cursor: pointer; font-family: inherit; font-weight: 700; font-size: 15px; padding: 12px 24px; border-radius: 10px; transition: background-color 0.15s ease, color 0.15s ease; min-height: 46px; }
+.s7CtaPrimary:hover { background: #0f766e; color: #fff; }
+
+/* ── S8 ── */
+.s8 { padding: 48px 20px; background: #f9fafb; }
+.s8Inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr; gap: 32px; align-items: start; }
+.s8Content { display: flex; flex-direction: column; gap: 16px; }
+.s8Heading { font-size: 28px; font-weight: 800; color: #0b1220; margin: 0; letter-spacing: -0.01em; line-height: 1.25; }
+.s8Para { font-size: 15px; line-height: 1.7; color: #374151; margin: 0; }
+.s8ChecklistWrap { background: #fff; border: 1px solid #e5e7eb; border-left: 4px solid #0f766e; border-radius: 12px; padding: 18px 20px; }
+.s8ChecklistTitle { font-size: 13px; font-weight: 800; color: #0b5b54; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 12px; }
+.s8Checklist { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 9px; }
+.s8CheckItem { display: flex; align-items: flex-start; gap: 9px; font-size: 14px; line-height: 1.5; color: #1f2937; }
+.s8CheckMark { flex-shrink: 0; width: 20px; height: 20px; border-radius: 50%; background: #0f766e; color: #fff; font-size: 11px; font-weight: 800; display: inline-flex; align-items: center; justify-content: center; margin-top: 2px; }
+.s8CtaRow { display: flex; }
+.s8CtaPrimary { display: inline-flex; align-items: center; background: #0f766e; color: #fff; border: none; cursor: pointer; font-family: inherit; font-weight: 700; font-size: 15px; padding: 13px 22px; border-radius: 10px; transition: background-color 0.15s ease, transform 0.15s ease; min-height: 48px; }
+.s8CtaPrimary:hover { background: #0b5b54; transform: translateY(-1px); }
+.s8Panel { background: linear-gradient(135deg, #0f766e 0%, #0b5b54 100%); border-radius: 16px; padding: 26px 24px; display: flex; flex-direction: column; gap: 12px; }
+.s8PanelTag { display: inline-flex; align-self: flex-start; background: rgba(255,255,255,0.15); color: #fff; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; padding: 5px 12px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.25); }
+.s8PanelHeading { font-size: 15px; font-weight: 700; color: rgba(255,255,255,0.9); text-transform: uppercase; letter-spacing: 0.05em; }
+.s8PanelItem { display: flex; align-items: center; gap: 10px; font-size: 14px; color: rgba(255,255,255,0.92); line-height: 1.4; }
+.s8PanelDot { width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,0.5); flex-shrink: 0; }
+.s8PanelDivider { height: 1px; background: rgba(255,255,255,0.15); margin: 4px 0; }
+.s8PanelStat { text-align: center; padding-top: 4px; }
+.s8PanelStatNum { font-size: 44px; font-weight: 800; color: #fff; line-height: 1; letter-spacing: -0.02em; }
+.s8PanelStatNum span { font-size: 28px; }
+.s8PanelStatLabel { font-size: 13px; color: rgba(255,255,255,0.8); margin-top: 4px; line-height: 1.4; }
+
+/* ==========================================================
+   SECTION 9 — HOW MUCH DOES AN IOT LAB SETUP COST?
+   ========================================================== */
+.s9 { padding: 48px 20px; background: #ffffff; }
+.s9Inner { max-width: 900px; margin: 0 auto; }
+.s9Heading {
+  font-size: 28px;
+  font-weight: 800;
+  color: #0b1220;
+  text-align: center;
+  margin: 0 0 18px;
+  letter-spacing: -0.01em;
+}
+.s9Body {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #374151;
+  text-align: center;
+  margin: 0 auto 26px;
+}
+
+.s9FactorsWrap {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 20px 22px;
+  margin-bottom: 22px;
+}
+.s9FactorsTitle {
+  font-size: 13px;
+  font-weight: 800;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  text-align: center;
+  margin-bottom: 14px;
+}
+.s9Chips {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+.s9Chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 15px;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #0b5b54;
+  border: 1px solid #cceee5;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: background-color 0.15s ease, transform 0.15s ease;
+}
+.s9Chip:hover { background: #f0fdf9; transform: translateY(-1px); }
+
+.s9Closing {
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: #4b5563;
+  text-align: center;
+  margin: 0 0 24px;
+  font-style: italic;
+}
+
+.s9CtaRow { display: flex; justify-content: center; }
+.s9CtaPrimary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #dc2626;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 15px;
+  padding: 13px 24px;
+  border-radius: 10px;
+  box-shadow: 0 6px 16px rgba(220,38,38,0.22);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+  min-height: 48px;
+}
+.s9CtaPrimary:hover { background: #b91c1c; transform: translateY(-1px); box-shadow: 0 10px 22px rgba(220,38,38,0.28); }
+
+/* ==========================================================
+   SECTION 10 — IOT LAB DESIGN, INSTALLATION & DEPLOYMENT
+   6-step process
+   ========================================================== */
+.s10 { padding: 48px 20px; background: #f9fafb; }
+.s10Inner { max-width: 1240px; margin: 0 auto; }
+.s10Heading { font-size: 28px; font-weight: 800; color: #0b1220; text-align: center; margin: 0 0 10px; letter-spacing: -0.01em; }
+.s10Intro { font-size: 15px; line-height: 1.65; color: #4b5563; text-align: center; max-width: 860px; margin: 0 auto 30px; }
+
+.s10Steps {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 26px;
   display: grid;
   grid-template-columns: 1fr;
   gap: 12px;
-  margin-bottom: 24px;
 }
 
-.s6Card {
+.s10Step {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.s10StepCard {
+  flex: 1;
   background: #ffffff;
   border: 1px solid #e5e7eb;
-  border-radius: 12px;
-  padding: 18px 16px;
-  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+  border-radius: 14px;
+  padding: 20px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
-.s6Card:hover { transform: translateY(-2px); box-shadow: 0 10px 22px rgba(15,23,42,0.07); }
+.s10StepCard:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(15,23,42,0.07); }
 
-.s6CardIcon {
+.s10StepNum {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #0f766e;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.s10StepTitle { font-size: 15.5px; font-weight: 700; color: #0b1220; margin: 0; line-height: 1.3; }
+.s10StepBody { font-size: 13.5px; line-height: 1.55; color: #4b5563; margin: 0; }
+
+.s10StepArrow {
+  font-size: 20px;
+  color: #0f766e;
+  font-weight: 700;
+  display: none;
+  flex-shrink: 0;
+}
+
+.s10CtaRow { display: flex; justify-content: center; }
+.s10CtaPrimary { display: inline-flex; align-items: center; background: #0f766e; color: #fff; border: none; cursor: pointer; font-family: inherit; font-weight: 700; font-size: 15px; padding: 13px 24px; border-radius: 10px; transition: background-color 0.15s ease, transform 0.15s ease; min-height: 48px; }
+.s10CtaPrimary:hover { background: #0b5b54; transform: translateY(-1px); }
+
+/* ==========================================================
+   SECTION 11 — WHY CHOOSE KNOWX INDIA (dark green)
+   ========================================================== */
+.s11 { padding: 56px 20px; background: linear-gradient(135deg, #0f766e 0%, #0b5b54 100%); color: #ffffff; }
+.s11Inner { max-width: 1240px; margin: 0 auto; text-align: center; }
+
+.s11Tag {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(255,255,255,0.14);
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 7px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.25);
+  margin-bottom: 16px;
+}
+
+.s11Heading {
+  font-size: 28px;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 12px;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+}
+
+.s11Intro {
+  font-size: 15px;
+  line-height: 1.65;
+  color: rgba(255,255,255,0.9);
+  margin: 0 auto 32px;
+  max-width: 800px;
+}
+
+.s11Grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  text-align: left;
+}
+
+.s11Card {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.16);
+  border-radius: 14px;
+  padding: 20px 18px;
+  transition: background-color 0.15s ease, transform 0.15s ease;
+}
+.s11Card:hover { background: rgba(255,255,255,0.13); transform: translateY(-2px); }
+
+.s11CardIcon {
   width: 44px;
   height: 44px;
   border-radius: 10px;
+  background: rgba(255,255,255,0.18);
   color: #ffffff;
   display: inline-flex;
   align-items: center;
@@ -159,126 +410,50 @@
   margin-bottom: 12px;
 }
 
-.s6Tint_green { border-top: 3px solid #0f766e; } .s6Tint_green .s6CardIcon { background: #0f766e; } .s6Tint_green:hover { border-color: #cceee5; }
-.s6Tint_blue  { border-top: 3px solid #1e3a8a; } .s6Tint_blue .s6CardIcon  { background: #1e3a8a; } .s6Tint_blue:hover  { border-color: #d3ddf7; }
-.s6Tint_amber { border-top: 3px solid #b45309; } .s6Tint_amber .s6CardIcon { background: #b45309; } .s6Tint_amber:hover { border-color: #fbd794; }
-.s6Tint_teal  { border-top: 3px solid #0d9488; } .s6Tint_teal .s6CardIcon  { background: #0d9488; } .s6Tint_teal:hover  { border-color: #bfeae4; }
-
-.s6CardTitle { font-size: 15px; font-weight: 700; color: #0b1220; margin: 0 0 10px; line-height: 1.35; }
-
-.s6CardItems { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 6px; }
-.s6CardItem  { display: flex; align-items: center; gap: 7px; font-size: 13px; color: #374151; line-height: 1.4; }
-.s6ItemDot   { width: 4px; height: 4px; border-radius: 50%; flex-shrink: 0; }
-.s6Dot_green { background: #0f766e; } .s6Dot_blue { background: #1e3a8a; } .s6Dot_amber { background: #b45309; } .s6Dot_teal { background: #0d9488; }
-
-.s6CtaRow { display: flex; justify-content: center; }
-.s6CtaPrimary { display: inline-flex; align-items: center; background: transparent; color: #0f766e; border: 2px solid #0f766e; cursor: pointer; font-family: inherit; font-weight: 700; font-size: 15px; padding: 12px 24px; border-radius: 10px; transition: background-color 0.15s ease, color 0.15s ease; min-height: 46px; }
-.s6CtaPrimary:hover { background: #0f766e; color: #fff; }
+.s11CardTitle { font-size: 15.5px; font-weight: 700; color: #ffffff; margin: 0 0 8px; line-height: 1.3; }
+.s11CardBody { font-size: 13.5px; line-height: 1.55; color: rgba(255,255,255,0.85); margin: 0; }
 
 /* ==========================================================
-   SECTION 7 — IOT LAB REQUIREMENTS TABLE
+   SECTION 12 — IOT LAB SOLUTIONS FOR DIFFERENT INSTITUTIONS
    ========================================================== */
-.s7 { padding: 48px 20px; background: #ffffff; }
-.s7Inner { max-width: 1100px; margin: 0 auto; }
-.s7Heading { font-size: 28px; font-weight: 800; color: #0b1220; text-align: center; margin: 0 0 10px; letter-spacing: -0.01em; }
-.s7Intro { font-size: 15px; line-height: 1.65; color: #4b5563; text-align: center; max-width: 860px; margin: 0 auto 24px; }
+.s12 { padding: 48px 20px; background: #ffffff; }
+.s12Inner { max-width: 1240px; margin: 0 auto; }
+.s12Heading { font-size: 28px; font-weight: 800; color: #0b1220; text-align: center; margin: 0 0 10px; letter-spacing: -0.01em; }
+.s12Intro { font-size: 15px; line-height: 1.65; color: #4b5563; text-align: center; max-width: 900px; margin: 0 auto 28px; }
 
-.s7Table {
-  border-radius: 14px;
-  overflow: hidden;
+.s12Grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+.s12Card {
+  background: #ffffff;
   border: 1px solid #e5e7eb;
-  box-shadow: 0 6px 22px rgba(15,23,42,0.05);
-  background: #ffffff;
-  margin-bottom: 22px;
+  border-radius: 14px;
+  padding: 20px 18px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
 }
+.s12Card:hover { transform: translateY(-3px); box-shadow: 0 14px 30px rgba(15,23,42,0.08); }
 
-/* Mobile: stacked */
-.s7HeaderRow { display: none; }
-.s7DataRow {
-  display: grid;
-  grid-template-columns: 1fr;
-  padding: 14px 16px;
-  border-bottom: 1px solid #e5e7eb;
-  gap: 8px;
-  background: #ffffff;
-}
-.s7RowAlt { background: #f9fafb; }
-.s7DataRow:last-child { border-bottom: none; }
-
-.s7Cell { font-size: 14.5px; color: #111827; display: flex; flex-direction: column; gap: 3px; }
-.s7DReq { font-weight: 700; color: #0b5b54; }
-.s7DPurpose { color: #374151; line-height: 1.55; }
-.s7MobileLabel { display: block; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: #6b7280; margin-bottom: 2px; }
-
-.s7CtaRow { display: flex; justify-content: center; }
-.s7CtaPrimary { display: inline-flex; align-items: center; background: transparent; color: #0f766e; border: 2px solid #0f766e; cursor: pointer; font-family: inherit; font-weight: 700; font-size: 15px; padding: 12px 24px; border-radius: 10px; transition: background-color 0.15s ease, color 0.15s ease; min-height: 46px; }
-.s7CtaPrimary:hover { background: #0f766e; color: #fff; }
-
-/* ==========================================================
-   SECTION 8 — VTU ENGINEERING COLLEGES
-   ========================================================== */
-.s8 { padding: 48px 20px; background: #f9fafb; }
-.s8Inner {
-  max-width: 1100px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 32px;
-  align-items: start;
-}
-
-/* Left content */
-.s8Content { display: flex; flex-direction: column; gap: 16px; }
-.s8Heading { font-size: 28px; font-weight: 800; color: #0b1220; margin: 0; letter-spacing: -0.01em; line-height: 1.25; }
-.s8Para { font-size: 15px; line-height: 1.7; color: #374151; margin: 0; }
-
-.s8ChecklistWrap { background: #fff; border: 1px solid #e5e7eb; border-left: 4px solid #0f766e; border-radius: 12px; padding: 18px 20px; }
-.s8ChecklistTitle { font-size: 13px; font-weight: 800; color: #0b5b54; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 12px; }
-.s8Checklist { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 9px; }
-.s8CheckItem { display: flex; align-items: flex-start; gap: 9px; font-size: 14px; line-height: 1.5; color: #1f2937; }
-.s8CheckMark { flex-shrink: 0; width: 20px; height: 20px; border-radius: 50%; background: #0f766e; color: #fff; font-size: 11px; font-weight: 800; display: inline-flex; align-items: center; justify-content: center; margin-top: 2px; }
-
-.s8CtaRow { display: flex; }
-.s8CtaPrimary { display: inline-flex; align-items: center; background: #0f766e; color: #fff; border: none; cursor: pointer; font-family: inherit; font-weight: 700; font-size: 15px; padding: 13px 22px; border-radius: 10px; transition: background-color 0.15s ease, transform 0.15s ease; min-height: 48px; }
-.s8CtaPrimary:hover { background: #0b5b54; transform: translateY(-1px); }
-
-/* Right panel */
-.s8Panel {
-  background: linear-gradient(135deg, #0f766e 0%, #0b5b54 100%);
-  border-radius: 16px;
-  padding: 26px 24px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-.s8PanelTag {
+.s12CardIcon {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  color: #ffffff;
   display: inline-flex;
-  align-self: flex-start;
-  background: rgba(255,255,255,0.15);
-  color: #fff;
-  font-size: 11px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.07em;
-  padding: 5px 12px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.25);
-}
-.s8PanelHeading { font-size: 15px; font-weight: 700; color: rgba(255,255,255,0.9); text-transform: uppercase; letter-spacing: 0.05em; }
-.s8PanelItem {
-  display: flex;
   align-items: center;
-  gap: 10px;
-  font-size: 14px;
-  color: rgba(255,255,255,0.92);
-  line-height: 1.4;
+  justify-content: center;
+  margin-bottom: 12px;
 }
-.s8PanelDot { width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,0.5); flex-shrink: 0; }
-.s8PanelDivider { height: 1px; background: rgba(255,255,255,0.15); margin: 4px 0; }
-.s8PanelStat { text-align: center; padding-top: 4px; }
-.s8PanelStatNum { font-size: 44px; font-weight: 800; color: #fff; line-height: 1; letter-spacing: -0.02em; }
-.s8PanelStatNum span { font-size: 28px; }
-.s8PanelStatLabel { font-size: 13px; color: rgba(255,255,255,0.8); margin-top: 4px; line-height: 1.4; }
+
+.s12Tint_green { border-top: 3px solid #0f766e; } .s12Tint_green .s12CardIcon { background: #0f766e; } .s12Tint_green:hover { border-color: #cceee5; }
+.s12Tint_blue  { border-top: 3px solid #1e3a8a; } .s12Tint_blue .s12CardIcon  { background: #1e3a8a; } .s12Tint_blue:hover  { border-color: #d3ddf7; }
+.s12Tint_amber { border-top: 3px solid #b45309; } .s12Tint_amber .s12CardIcon { background: #b45309; } .s12Tint_amber:hover { border-color: #fbd794; }
+.s12Tint_teal  { border-top: 3px solid #0d9488; } .s12Tint_teal .s12CardIcon  { background: #0d9488; } .s12Tint_teal:hover  { border-color: #bfeae4; }
+
+.s12CardTitle { font-size: 15.5px; font-weight: 700; color: #0b1220; margin: 0 0 8px; line-height: 1.35; }
+.s12CardBody { font-size: 13.5px; line-height: 1.55; color: #4b5563; margin: 0; }
 
 /* ==========================================================
    PLACEHOLDERS
@@ -333,7 +508,6 @@
   .s4Grid { grid-template-columns: 1fr 1fr; }
   .s5Grid { grid-template-columns: 1fr 1fr; }
   .s6Grid { grid-template-columns: 1fr 1fr; }
-  /* Requirements table — 2 col */
   .s7HeaderRow { display: grid; grid-template-columns: 1fr 2fr; background: #f3f4f6; border-bottom: 1px solid #e5e7eb; }
   .s7DataRow { grid-template-columns: 1fr 2fr; align-items: stretch; padding: 0; gap: 0; }
   .s7Cell { padding: 14px 18px; border-right: 1px solid #f1f5f9; gap: 4px; }
@@ -343,57 +517,57 @@
   .s7HPurpose { background: #f3f4f6; color: #111827; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; font-size: 13px; }
   .s7DReq { background: #f9fafb; flex-direction: column; }
   .s7DPurpose { flex-direction: column; }
-  /* VTU 2-col */
   .s8Inner { grid-template-columns: 1.1fr 0.9fr; gap: 40px; }
+  .s10Steps { grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .s10Step { flex-direction: column; }
+  .s11Grid { grid-template-columns: 1fr 1fr; }
+  .s12Grid { grid-template-columns: 1fr 1fr; }
   .placeholder { min-height: 260px; }
   .modalRow { grid-template-columns: 1fr 1fr; }
 }
 
 @media (min-width: 768px) {
-  .hero { padding: 48px 32px 60px; }
-  .heroHeadline { font-size: 42px; }
-  .heroSubhead { font-size: 16.5px; }
-  .heroSvg { max-width: 420px; }
+  .hero { padding: 48px 32px 60px; } .heroHeadline { font-size: 42px; } .heroSubhead { font-size: 16.5px; } .heroSvg { max-width: 420px; }
   .s2 { padding: 64px 32px; } .s2Heading { font-size: 34px; }
   .s3 { padding: 64px 32px; } .s3Heading { font-size: 34px; }
   .s4 { padding: 64px 32px; } .s4Heading { font-size: 34px; }
   .s5 { padding: 64px 32px; } .s5Heading { font-size: 34px; }
-  .s6 { padding: 64px 32px; } .s6Heading { font-size: 34px; } .s6Intro { font-size: 16px; } .s6CardTitle { font-size: 16px; } .s6CardItem { font-size: 13.5px; }
-  .s7 { padding: 64px 32px; } .s7Heading { font-size: 34px; } .s7Intro { font-size: 16px; }
-  .s8 { padding: 64px 32px; } .s8Heading { font-size: 34px; } .s8Para { font-size: 16px; }
+  .s6 { padding: 64px 32px; } .s6Heading { font-size: 34px; }
+  .s7 { padding: 64px 32px; } .s7Heading { font-size: 34px; }
+  .s8 { padding: 64px 32px; } .s8Heading { font-size: 34px; }
+  .s9 { padding: 64px 32px; } .s9Heading { font-size: 34px; } .s9Body { font-size: 16px; }
+  .s10 { padding: 64px 32px; } .s10Heading { font-size: 34px; } .s10Intro { font-size: 16px; }
+  .s11 { padding: 72px 32px; } .s11Heading { font-size: 34px; } .s11Intro { font-size: 16px; } .s11CardTitle { font-size: 16px; }
+  .s12 { padding: 64px 32px; } .s12Heading { font-size: 34px; } .s12Intro { font-size: 16px; } .s12CardTitle { font-size: 16px; }
   .placeholder { padding: 56px 32px; min-height: 300px; }
   .placeholderTitle { font-size: 20px; }
   .modalTitle { font-size: 22px; }
 }
 
 @media (min-width: 1024px) {
-  .hero { padding: 60px 40px 72px; }
-  .heroInner { grid-template-columns: 1.2fr 1fr; gap: 48px; }
-  .heroHeadline { font-size: 50px; }
-  .heroSubhead { font-size: 17px; }
-  .heroSvg { max-width: 440px; }
-  .s2 { padding: 76px 40px; } .s2Heading { font-size: 38px; }
-  .s2Body { grid-template-columns: 1fr 1.1fr; gap: 48px; }
-  .s2ImagePlaceholder { min-height: 360px; }
-  .s3 { padding: 76px 40px; } .s3Heading { font-size: 38px; }
-  .s3Body { grid-template-columns: 1.1fr 1fr; gap: 48px; }
-  .s4 { padding: 76px 40px; } .s4Heading { font-size: 38px; }
-  .s4Grid { grid-template-columns: repeat(3,1fr); gap: 18px; }
-  .s5 { padding: 76px 40px; } .s5Heading { font-size: 38px; }
-  .s5Grid { grid-template-columns: repeat(3,1fr); gap: 20px; }
-  .s6 { padding: 76px 40px; } .s6Heading { font-size: 38px; }
-  .s6Grid { grid-template-columns: repeat(4,1fr); gap: 14px; }
+  .hero { padding: 60px 40px 72px; } .heroInner { grid-template-columns: 1.2fr 1fr; gap: 48px; } .heroHeadline { font-size: 50px; } .heroSubhead { font-size: 17px; } .heroSvg { max-width: 440px; }
+  .s2 { padding: 76px 40px; } .s2Heading { font-size: 38px; } .s2Body { grid-template-columns: 1fr 1.1fr; gap: 48px; } .s2ImagePlaceholder { min-height: 360px; }
+  .s3 { padding: 76px 40px; } .s3Heading { font-size: 38px; } .s3Body { grid-template-columns: 1.1fr 1fr; gap: 48px; }
+  .s4 { padding: 76px 40px; } .s4Heading { font-size: 38px; } .s4Grid { grid-template-columns: repeat(3,1fr); gap: 18px; }
+  .s5 { padding: 76px 40px; } .s5Heading { font-size: 38px; } .s5Grid { grid-template-columns: repeat(3,1fr); gap: 20px; }
+  .s6 { padding: 76px 40px; } .s6Heading { font-size: 38px; } .s6Grid { grid-template-columns: repeat(4,1fr); gap: 14px; }
   .s7 { padding: 76px 40px; } .s7Heading { font-size: 38px; }
   .s8 { padding: 76px 40px; } .s8Heading { font-size: 38px; }
+  .s9 { padding: 84px 40px; } .s9Heading { font-size: 38px; }
+  .s10 { padding: 84px 40px; } .s10Heading { font-size: 38px; }
+  .s10Steps { grid-template-columns: none; display: flex; flex-wrap: nowrap; align-items: stretch; gap: 4px; }
+  .s10Step { flex: 1; min-width: 0; flex-direction: row; align-items: stretch; }
+  .s10StepArrow { display: inline-flex; align-items: center; justify-content: center; flex: 0 0 auto; }
+  .s11 { padding: 88px 40px; } .s11Heading { font-size: 38px; } .s11Grid { grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .s12 { padding: 76px 40px; } .s12Heading { font-size: 38px; } .s12Grid { grid-template-columns: repeat(3, 1fr); gap: 16px; }
   .placeholder { padding: 64px 40px; min-height: 320px; }
   .placeholderTitle { font-size: 22px; }
 }
 
 @media (min-width: 1280px) {
-  .hero { padding: 72px 48px 84px; }
-  .heroHeadline { font-size: 56px; }
-  .heroSvg { max-width: 460px; }
-  .s6 { padding: 84px 48px; }
-  .s7 { padding: 84px 48px; }
-  .s8 { padding: 84px 48px; }
+  .hero { padding: 72px 48px 84px; } .heroHeadline { font-size: 56px; } .heroSvg { max-width: 460px; }
+  .s9 { padding: 96px 48px; }
+  .s10 { padding: 96px 48px; }
+  .s11 { padding: 96px 48px; }
+  .s12 { padding: 84px 48px; }
 }

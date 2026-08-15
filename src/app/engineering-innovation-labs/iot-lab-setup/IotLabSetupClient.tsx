@@ -9,12 +9,9 @@ import styles from "./styles.module.css";
  * IoT Lab Setup — Child page under Engineering Innovation Labs pillar
  * URL: /engineering-innovation-labs/iot-lab-setup/
  *
- * Step 5 — Sections 9 + 10 + 11 + 12 built.
- *   - Section 9:  How Much Does an IoT Lab Setup Cost? (12-factor chips, no prices)
- *   - Section 10: IoT Lab Design, Installation & Deployment (6-step process)
- *   - Section 11: Why Choose Knowx India (dark green — 8 differentiators)
- *   - Section 12: IoT Lab Solutions for Different Institution Needs (6 cards)
- * Sections 13–14 remain as placeholders.
+ * Step 6 — FINAL STEP. All 14 sections built. Page content-complete.
+ *   - Section 13: FAQ (10 questions) + FAQPage JSON-LD schema
+ *   - Section 14: Final CTA banner + flagship cross-link
  */
 
 const heroTrust = [
@@ -114,7 +111,6 @@ const s8VtuChecklist = [
   "Faculty enablement and curriculum alignment support",
 ];
 
-/* ─── Section 9 — Cost factors (12 chips) ─── */
 const s9Factors = [
   "Number of students",
   "Number of workstations",
@@ -130,7 +126,6 @@ const s9Factors = [
   "Ongoing technical support",
 ];
 
-/* ─── Section 10 — 6-step process ─── */
 const s10Steps: { n: string; title: string; body: string }[] = [
   { n: "1", title: "Requirement Analysis", body: "We understand your student capacity, curriculum, technology requirements and learning objectives." },
   { n: "2", title: "Lab Planning & Design", body: "We design the equipment layout, infrastructure plan and mapped learning outcomes for your IoT lab." },
@@ -140,7 +135,6 @@ const s10Steps: { n: string; title: string; body: string }[] = [
   { n: "6", title: "Student & Technical Support", body: "We provide ongoing support for practical learning, student projects and day-to-day lab operations." },
 ];
 
-/* ─── Section 11 — Why Knowx (8 differentiators) ─── */
 const s11Why: { title: string; body: string; icon: JSX.Element }[] = [
   { title: "Complete Laboratory Solutions", body: "End-to-end IoT lab setup — planning, equipment, installation, training and support under one partner.", icon: (<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="M3.3 7L12 12l8.7-5M12 22V12"/></svg>) },
   { title: "Engineering-Focused Learning", body: "Curriculum-mapped experiments and projects designed specifically for engineering outcomes.", icon: (<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>) },
@@ -152,7 +146,6 @@ const s11Why: { title: string; body: string; icon: JSX.Element }[] = [
   { title: "Bangalore & Karnataka Focus", body: "Deep regional presence and faster on-ground support for colleges across Karnataka.", icon: (<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="10" r="3"/><path d="M12 21s-7-6.5-7-11a7 7 0 0 1 14 0c0 4.5-7 11-7 11z"/></svg>) },
 ];
 
-/* ─── Section 12 — Institution types (6 cards) ─── */
 type InstTint = "green" | "blue" | "amber" | "teal";
 const s12Institutions: { title: string; body: string; tint: InstTint; icon: JSX.Element }[] = [
   { title: "First-Year & Foundation Programs", body: "IoT fundamentals, sensor basics and beginner-friendly guided mini projects for early-year students.", tint: "green", icon: (<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>) },
@@ -161,6 +154,50 @@ const s12Institutions: { title: string; body: string; tint: InstTint; icon: JSX.
   { title: "Final-Year Projects", body: "Advanced platforms, project kits and industry-grade applications for capstone project work.", tint: "teal", icon: (<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7c.6.6 1 1.5 1 2.3v1h6v-1c0-.8.4-1.7 1-2.3A7 7 0 0 0 12 2z"/></svg>) },
   { title: "Innovation Centres", body: "Advanced IoT, Edge AI, Industrial IoT and Industry 4.0 systems for innovation-focused centres.", tint: "green", icon: (<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.3 2.3-2-2 2.3-2.3z"/></svg>) },
   { title: "Research Centres", body: "Advanced hardware, industrial applications and specialised environments for applied research.", tint: "blue", icon: (<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>) },
+];
+
+/* ─── Section 13 — FAQ (10 questions from doc) ─── */
+const faqs: { q: string; a: string }[] = [
+  {
+    q: "What is an IoT lab?",
+    a: "An IoT (Internet of Things) lab is a practical learning environment where engineering students work with microcontrollers, sensors, actuators, communication modules and cloud platforms to design, build and deploy connected devices and applications. It brings together embedded systems, wireless communication, cloud computing and data analytics in a single, hands-on learning space.",
+  },
+  {
+    q: "What equipment is required for an IoT lab?",
+    a: "A typical IoT lab requires development boards (ESP32, STM32, Raspberry Pi, Arduino), sensors and actuators, communication modules (Wi-Fi, BLE, LoRa, Zigbee), edge computing devices, networking infrastructure, software and development tools, IoT project kits, student workstations, and supporting lab infrastructure. The exact equipment list depends on your curriculum and student capacity.",
+  },
+  {
+    q: "How much does an IoT lab setup cost?",
+    a: "IoT lab setup cost varies based on student capacity, number of workstations, choice of platforms, sensor requirements, project kits, networking, edge computing hardware, and the level of specialization required. There is no single fixed package — Knowx India works with institutions to scope the right configuration and provide a transparent quote based on actual requirements.",
+  },
+  {
+    q: "What is included in an IoT lab setup for engineering colleges?",
+    a: "A complete IoT lab setup from Knowx India includes laboratory planning and design, IoT development platforms, sensors and communication modules, cloud IoT and edge computing systems, structured experiments and project-based learning resources, lab infrastructure, faculty training and enablement, installation and commissioning, and ongoing student and technical support.",
+  },
+  {
+    q: "Do you provide IoT lab equipment for engineering colleges?",
+    a: "Yes. Knowx India sources, supplies and integrates the complete range of IoT lab equipment — development platforms, sensors, actuators, communication modules, edge computing devices, industrial IoT hardware and laboratory infrastructure — configured to your institution's curriculum and student batch size.",
+  },
+  {
+    q: "Do you provide IoT kits for engineering students?",
+    a: "Yes. We provide purpose-built IoT project kits including the IoT Starter Kit, ESP32 Professional IoT Kit, Industrial IoT Kit, Raspberry Pi Edge AI Kit, STM32 Embedded Systems Kit and Smart Factory Learning Platform — each with structured experiment guides mapped to engineering curriculum outcomes.",
+  },
+  {
+    q: "Can you set up an IoT lab for VTU engineering colleges?",
+    a: "Yes. Knowx India works with VTU-affiliated engineering colleges to plan and implement IoT laboratories that support ECE, CSE, EEE, ISE and AI & ML programs — aligned to VTU curriculum requirements, practical session structures and student learning outcomes across multiple semesters.",
+  },
+  {
+    q: "Do you provide faculty training for IoT laboratories?",
+    a: "Yes. Faculty training and enablement is a core part of every IoT lab setup. We deliver structured training programs so faculty can confidently run practical sessions, guide student projects, and use the lab's platforms, sensors and cloud tools effectively in classroom teaching.",
+  },
+  {
+    q: "What IoT projects can engineering students build?",
+    a: "Students can build a wide range of projects — smart agriculture systems, home automation, health monitoring devices, industrial automation demos, environmental monitoring, smart city applications, predictive maintenance systems, edge AI vision projects, and Industry 4.0 smart factory simulations — depending on the lab configuration and kit selection.",
+  },
+  {
+    q: "Do you provide IoT lab installation and technical support?",
+    a: "Yes. Knowx India handles complete installation, configuration and commissioning of all IoT lab equipment, followed by ongoing technical support, maintenance assistance and student project mentoring to keep your laboratory fully operational.",
+  },
 ];
 
 export default function IotLabSetupClient() {
@@ -197,6 +234,16 @@ export default function IotLabSetupClient() {
       else setSubmitState("error");
     } catch { setSubmitState("error"); }
     finally { setSubmitting(false); }
+  };
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
   };
 
   return (
@@ -412,53 +459,25 @@ export default function IotLabSetupClient() {
         </div>
       </section>
 
-      {/* ============================================================
-          SECTION 9 — HOW MUCH DOES AN IOT LAB SETUP COST?
-          12-factor chip list — NO price figures
-          ============================================================ */}
+      {/* ── S9 ── */}
       <section className={styles.s9} id="cost">
         <div className={styles.s9Inner}>
           <h2 className={styles.s9Heading}>How Much Does an IoT Lab Setup Cost?</h2>
-          <p className={styles.s9Body}>
-            The cost of setting up an IoT laboratory varies significantly based on the institution's
-            requirements — there is no single fixed package that fits every engineering college.
-            Knowx India works with institutions to identify the right configuration for their
-            student capacity, curriculum focus and academic objectives, rather than offering a
-            one-size-fits-all product.
-          </p>
-
+          <p className={styles.s9Body}>The cost of setting up an IoT laboratory varies significantly based on the institution's requirements — there is no single fixed package that fits every engineering college. Knowx India works with institutions to identify the right configuration for their student capacity, curriculum focus and academic objectives, rather than offering a one-size-fits-all product.</p>
           <div className={styles.s9FactorsWrap}>
             <div className={styles.s9FactorsTitle}>Factors That Influence IoT Lab Setup Cost</div>
-            <ul className={styles.s9Chips} aria-label="Factors influencing IoT lab setup cost">
-              {s9Factors.map((f) => (<li key={f} className={styles.s9Chip}>{f}</li>))}
-            </ul>
+            <ul className={styles.s9Chips} aria-label="Factors influencing IoT lab setup cost">{s9Factors.map((f) => (<li key={f} className={styles.s9Chip}>{f}</li>))}</ul>
           </div>
-
-          <p className={styles.s9Closing}>
-            Knowx can help institutions identify the appropriate configuration for their student
-            capacity and academic objectives — with transparent scoping before any commitment.
-          </p>
-
-          <div className={styles.s9CtaRow}>
-            <button type="button" onClick={openModal} className={styles.s9CtaPrimary}>
-              Request an IoT Lab Setup Quote
-            </button>
-          </div>
+          <p className={styles.s9Closing}>Knowx can help institutions identify the appropriate configuration for their student capacity and academic objectives — with transparent scoping before any commitment.</p>
+          <div className={styles.s9CtaRow}><button type="button" onClick={openModal} className={styles.s9CtaPrimary}>Request an IoT Lab Setup Quote</button></div>
         </div>
       </section>
 
-      {/* ============================================================
-          SECTION 10 — IOT LAB DESIGN, INSTALLATION & DEPLOYMENT
-          6-step implementation process
-          ============================================================ */}
+      {/* ── S10 ── */}
       <section className={styles.s10} id="process">
         <div className={styles.s10Inner}>
           <h2 className={styles.s10Heading}>IoT Lab Design, Installation &amp; Deployment</h2>
-          <p className={styles.s10Intro}>
-            A structured six-step process that takes your IoT laboratory from initial requirement
-            analysis through to fully operational, faculty-trained, student-ready deployment.
-          </p>
-
+          <p className={styles.s10Intro}>A structured six-step process that takes your IoT laboratory from initial requirement analysis through to fully operational, faculty-trained, student-ready deployment.</p>
           <ol className={styles.s10Steps} aria-label="IoT lab implementation process">
             {s10Steps.map((step, i, arr) => (
               <li key={step.n} className={styles.s10Step}>
@@ -471,28 +490,16 @@ export default function IotLabSetupClient() {
               </li>
             ))}
           </ol>
-
-          <div className={styles.s10CtaRow}>
-            <button type="button" onClick={openModal} className={styles.s10CtaPrimary}>
-              Plan Your IoT Laboratory With Knowx
-            </button>
-          </div>
+          <div className={styles.s10CtaRow}><button type="button" onClick={openModal} className={styles.s10CtaPrimary}>Plan Your IoT Laboratory With Knowx</button></div>
         </div>
       </section>
 
-      {/* ============================================================
-          SECTION 11 — WHY CHOOSE KNOWX INDIA (dark green)
-          8 differentiator cards
-          ============================================================ */}
+      {/* ── S11 ── */}
       <section className={styles.s11} id="why-knowx">
         <div className={styles.s11Inner}>
           <span className={styles.s11Tag}>Why Knowx India</span>
           <h2 className={styles.s11Heading}>Why Choose Knowx India for IoT Lab Setup?</h2>
-          <p className={styles.s11Intro}>
-            A dedicated partner for engineering colleges building practical, industry-relevant
-            IoT laboratories — from first conversation through years of operational support.
-          </p>
-
+          <p className={styles.s11Intro}>A dedicated partner for engineering colleges building practical, industry-relevant IoT laboratories — from first conversation through years of operational support.</p>
           <div className={styles.s11Grid}>
             {s11Why.map((w) => (
               <div key={w.title} className={styles.s11Card}>
@@ -505,19 +512,11 @@ export default function IotLabSetupClient() {
         </div>
       </section>
 
-      {/* ============================================================
-          SECTION 12 — IOT LAB SOLUTIONS FOR DIFFERENT INSTITUTION NEEDS
-          6 institution-type cards
-          ============================================================ */}
+      {/* ── S12 ── */}
       <section className={styles.s12} id="institution-types">
         <div className={styles.s12Inner}>
           <h2 className={styles.s12Heading}>IoT Lab Solutions for Different Institution Needs</h2>
-          <p className={styles.s12Intro}>
-            Every engineering college has a different mix of departments, student levels and
-            academic priorities. Knowx India configures IoT lab solutions to match your
-            institution's specific stage and focus area.
-          </p>
-
+          <p className={styles.s12Intro}>Every engineering college has a different mix of departments, student levels and academic priorities. Knowx India configures IoT lab solutions to match your institution's specific stage and focus area.</p>
           <div className={styles.s12Grid}>
             {s12Institutions.map((inst) => (
               <div key={inst.title} className={`${styles.s12Card} ${styles[`s12Tint_${inst.tint}`]}`}>
@@ -530,12 +529,65 @@ export default function IotLabSetupClient() {
         </div>
       </section>
 
-      {/* ── Sections 13–14 placeholders ── */}
-      <section className={styles.placeholder} id="faq">
-        <div className={styles.placeholderInner}><div className={styles.placeholderNum}>S13</div><h2 className={styles.placeholderTitle}>Frequently Asked Questions About IoT Lab Setup</h2><p className={styles.placeholderNote}>Step 6 — 10-question FAQ + FAQPage JSON-LD schema</p></div>
+      {/* ============================================================
+          SECTION 13 — FAQ
+          10 questions + FAQPage JSON-LD schema
+          ============================================================ */}
+      <section className={styles.s13} id="faq">
+        <div className={styles.s13Inner}>
+          <h2 className={styles.s13Heading}>IoT Lab Setup — Frequently Asked Questions</h2>
+          <p className={styles.s13Intro}>
+            Answers to common questions from principals, HoDs and lab in-charges evaluating an
+            IoT lab implementation partner for their engineering college.
+          </p>
+
+          <div className={styles.s13List}>
+            {faqs.map((f, i) => (
+              <details key={i} className={styles.s13Item}>
+                <summary className={styles.s13Q}>
+                  <span>{f.q}</span>
+                  <span className={styles.s13QChevron} aria-hidden="true">+</span>
+                </summary>
+                <div className={styles.s13A}>{f.a}</div>
+              </details>
+            ))}
+          </div>
+        </div>
+
+        {/* FAQ JSON-LD schema */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
       </section>
-      <section className={`${styles.placeholder} ${styles.placeholderDark}`} id="cta">
-        <div className={styles.placeholderInner}><div className={styles.placeholderNum}>S14</div><h2 className={styles.placeholderTitle}>Build Your Engineering College's IoT Laboratory With Knowx</h2><p className={styles.placeholderNote}>Step 6 — Final CTA banner + flagship cross-link</p></div>
+
+      {/* ============================================================
+          SECTION 14 — FINAL CTA BANNER
+          Dark green gradient + flagship cross-link
+          ============================================================ */}
+      <section className={styles.s14} id="cta">
+        <div className={styles.s14Inner}>
+          <h2 className={styles.s14Heading}>Build Your Engineering College&apos;s IoT Laboratory With Knowx</h2>
+          <p className={styles.s14Body}>
+            Whether you are planning a new IoT laboratory or upgrading an existing lab, Knowx
+            India can help you design, equip, install and operationalise a practical,
+            industry-oriented IoT lab — with faculty training and ongoing support built in.
+          </p>
+          <div className={styles.s14CtaRow}>
+            <button type="button" onClick={openModal} className={styles.s14CtaPrimary}>
+              Request an IoT Lab Proposal
+            </button>
+            <button type="button" onClick={openModal} className={styles.s14CtaSecondary}>
+              Speak With Our IoT Lab Team →
+            </button>
+          </div>
+          <p className={styles.s14Link}>
+            Part of the complete{" "}
+            <Link href="/engineering-innovation-labs" className={styles.s14LinkAnchor}>
+              Engineering Innovation Ecosystem →
+            </Link>
+          </p>
+        </div>
       </section>
 
       {/* ── MODAL ── */}

@@ -1,7 +1,7 @@
 /* =========================================================
    IoT Lab Setup — Child Page (scoped)
    Wrapper:  .iol-scope
-   Step 5    S9 (Cost) + S10 (Process) + S11 (Why Knowx) + S12 (Institutions)
+   Step 6    FINAL — S13 (FAQ) + S14 (Final CTA). All 14 sections complete.
    ========================================================= */
 
 .scope { box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; color: #111827; background: #ffffff; line-height: 1.6; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
@@ -189,285 +189,191 @@
 .s8PanelStatNum span { font-size: 28px; }
 .s8PanelStatLabel { font-size: 13px; color: rgba(255,255,255,0.8); margin-top: 4px; line-height: 1.4; }
 
-/* ==========================================================
-   SECTION 9 — HOW MUCH DOES AN IOT LAB SETUP COST?
-   ========================================================== */
+/* ── S9 ── */
 .s9 { padding: 48px 20px; background: #ffffff; }
 .s9Inner { max-width: 900px; margin: 0 auto; }
-.s9Heading {
-  font-size: 28px;
-  font-weight: 800;
-  color: #0b1220;
-  text-align: center;
-  margin: 0 0 18px;
-  letter-spacing: -0.01em;
-}
-.s9Body {
-  font-size: 15px;
-  line-height: 1.7;
-  color: #374151;
-  text-align: center;
-  margin: 0 auto 26px;
-}
-
-.s9FactorsWrap {
-  background: #f9fafb;
-  border: 1px solid #e5e7eb;
-  border-radius: 12px;
-  padding: 20px 22px;
-  margin-bottom: 22px;
-}
-.s9FactorsTitle {
-  font-size: 13px;
-  font-weight: 800;
-  color: #6b7280;
-  text-transform: uppercase;
-  letter-spacing: 0.07em;
-  text-align: center;
-  margin-bottom: 14px;
-}
-.s9Chips {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 8px;
-}
-.s9Chip {
-  display: inline-flex;
-  align-items: center;
-  padding: 8px 15px;
-  border-radius: 999px;
-  background: #ffffff;
-  color: #0b5b54;
-  border: 1px solid #cceee5;
-  font-size: 13px;
-  font-weight: 600;
-  white-space: nowrap;
-  transition: background-color 0.15s ease, transform 0.15s ease;
-}
+.s9Heading { font-size: 28px; font-weight: 800; color: #0b1220; text-align: center; margin: 0 0 18px; letter-spacing: -0.01em; }
+.s9Body { font-size: 15px; line-height: 1.7; color: #374151; text-align: center; margin: 0 auto 26px; }
+.s9FactorsWrap { background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 12px; padding: 20px 22px; margin-bottom: 22px; }
+.s9FactorsTitle { font-size: 13px; font-weight: 800; color: #6b7280; text-transform: uppercase; letter-spacing: 0.07em; text-align: center; margin-bottom: 14px; }
+.s9Chips { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
+.s9Chip { display: inline-flex; align-items: center; padding: 8px 15px; border-radius: 999px; background: #ffffff; color: #0b5b54; border: 1px solid #cceee5; font-size: 13px; font-weight: 600; white-space: nowrap; transition: background-color 0.15s ease, transform 0.15s ease; }
 .s9Chip:hover { background: #f0fdf9; transform: translateY(-1px); }
-
-.s9Closing {
-  font-size: 14.5px;
-  line-height: 1.65;
-  color: #4b5563;
-  text-align: center;
-  margin: 0 0 24px;
-  font-style: italic;
-}
-
+.s9Closing { font-size: 14.5px; line-height: 1.65; color: #4b5563; text-align: center; margin: 0 0 24px; font-style: italic; }
 .s9CtaRow { display: flex; justify-content: center; }
-.s9CtaPrimary {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: #dc2626;
-  color: #ffffff;
-  border: none;
-  cursor: pointer;
-  font-family: inherit;
-  font-weight: 700;
-  font-size: 15px;
-  padding: 13px 24px;
-  border-radius: 10px;
-  box-shadow: 0 6px 16px rgba(220,38,38,0.22);
-  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
-  min-height: 48px;
-}
+.s9CtaPrimary { display: inline-flex; align-items: center; justify-content: center; background: #dc2626; color: #ffffff; border: none; cursor: pointer; font-family: inherit; font-weight: 700; font-size: 15px; padding: 13px 24px; border-radius: 10px; box-shadow: 0 6px 16px rgba(220,38,38,0.22); transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease; min-height: 48px; }
 .s9CtaPrimary:hover { background: #b91c1c; transform: translateY(-1px); box-shadow: 0 10px 22px rgba(220,38,38,0.28); }
 
-/* ==========================================================
-   SECTION 10 — IOT LAB DESIGN, INSTALLATION & DEPLOYMENT
-   6-step process
-   ========================================================== */
+/* ── S10 ── */
 .s10 { padding: 48px 20px; background: #f9fafb; }
 .s10Inner { max-width: 1240px; margin: 0 auto; }
 .s10Heading { font-size: 28px; font-weight: 800; color: #0b1220; text-align: center; margin: 0 0 10px; letter-spacing: -0.01em; }
 .s10Intro { font-size: 15px; line-height: 1.65; color: #4b5563; text-align: center; max-width: 860px; margin: 0 auto 30px; }
-
-.s10Steps {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 26px;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 12px;
-}
-
-.s10Step {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.s10StepCard {
-  flex: 1;
-  background: #ffffff;
-  border: 1px solid #e5e7eb;
-  border-radius: 14px;
-  padding: 20px 18px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
-}
+.s10Steps { list-style: none; padding: 0; margin: 0 0 26px; display: grid; grid-template-columns: 1fr; gap: 12px; }
+.s10Step { display: flex; align-items: center; gap: 8px; }
+.s10StepCard { flex: 1; background: #ffffff; border: 1px solid #e5e7eb; border-radius: 14px; padding: 20px 18px; display: flex; flex-direction: column; gap: 8px; transition: transform 0.15s ease, box-shadow 0.15s ease; }
 .s10StepCard:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(15,23,42,0.07); }
-
-.s10StepNum {
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
-  background: #0f766e;
-  color: #ffffff;
-  font-size: 15px;
-  font-weight: 800;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
+.s10StepNum { width: 34px; height: 34px; border-radius: 50%; background: #0f766e; color: #ffffff; font-size: 15px; font-weight: 800; display: inline-flex; align-items: center; justify-content: center; }
 .s10StepTitle { font-size: 15.5px; font-weight: 700; color: #0b1220; margin: 0; line-height: 1.3; }
 .s10StepBody { font-size: 13.5px; line-height: 1.55; color: #4b5563; margin: 0; }
-
-.s10StepArrow {
-  font-size: 20px;
-  color: #0f766e;
-  font-weight: 700;
-  display: none;
-  flex-shrink: 0;
-}
-
+.s10StepArrow { font-size: 20px; color: #0f766e; font-weight: 700; display: none; flex-shrink: 0; }
 .s10CtaRow { display: flex; justify-content: center; }
 .s10CtaPrimary { display: inline-flex; align-items: center; background: #0f766e; color: #fff; border: none; cursor: pointer; font-family: inherit; font-weight: 700; font-size: 15px; padding: 13px 24px; border-radius: 10px; transition: background-color 0.15s ease, transform 0.15s ease; min-height: 48px; }
 .s10CtaPrimary:hover { background: #0b5b54; transform: translateY(-1px); }
 
-/* ==========================================================
-   SECTION 11 — WHY CHOOSE KNOWX INDIA (dark green)
-   ========================================================== */
+/* ── S11 ── */
 .s11 { padding: 56px 20px; background: linear-gradient(135deg, #0f766e 0%, #0b5b54 100%); color: #ffffff; }
 .s11Inner { max-width: 1240px; margin: 0 auto; text-align: center; }
+.s11Tag { display: inline-flex; align-items: center; background: rgba(255,255,255,0.14); color: #ffffff; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 7px 14px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.25); margin-bottom: 16px; }
+.s11Heading { font-size: 28px; font-weight: 800; color: #ffffff; margin: 0 0 12px; letter-spacing: -0.01em; line-height: 1.25; }
+.s11Intro { font-size: 15px; line-height: 1.65; color: rgba(255,255,255,0.9); margin: 0 auto 32px; max-width: 800px; }
+.s11Grid { display: grid; grid-template-columns: 1fr; gap: 14px; text-align: left; }
+.s11Card { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.16); border-radius: 14px; padding: 20px 18px; transition: background-color 0.15s ease, transform 0.15s ease; }
+.s11Card:hover { background: rgba(255,255,255,0.13); transform: translateY(-2px); }
+.s11CardIcon { width: 44px; height: 44px; border-radius: 10px; background: rgba(255,255,255,0.18); color: #ffffff; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 12px; }
+.s11CardTitle { font-size: 15.5px; font-weight: 700; color: #ffffff; margin: 0 0 8px; line-height: 1.3; }
+.s11CardBody { font-size: 13.5px; line-height: 1.55; color: rgba(255,255,255,0.85); margin: 0; }
 
-.s11Tag {
+/* ── S12 ── */
+.s12 { padding: 48px 20px; background: #ffffff; }
+.s12Inner { max-width: 1240px; margin: 0 auto; }
+.s12Heading { font-size: 28px; font-weight: 800; color: #0b1220; text-align: center; margin: 0 0 10px; letter-spacing: -0.01em; }
+.s12Intro { font-size: 15px; line-height: 1.65; color: #4b5563; text-align: center; max-width: 900px; margin: 0 auto 28px; }
+.s12Grid { display: grid; grid-template-columns: 1fr; gap: 14px; }
+.s12Card { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 14px; padding: 20px 18px; transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease; }
+.s12Card:hover { transform: translateY(-3px); box-shadow: 0 14px 30px rgba(15,23,42,0.08); }
+.s12CardIcon { width: 46px; height: 46px; border-radius: 12px; color: #ffffff; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 12px; }
+.s12Tint_green { border-top: 3px solid #0f766e; } .s12Tint_green .s12CardIcon { background: #0f766e; } .s12Tint_green:hover { border-color: #cceee5; }
+.s12Tint_blue  { border-top: 3px solid #1e3a8a; } .s12Tint_blue .s12CardIcon  { background: #1e3a8a; } .s12Tint_blue:hover  { border-color: #d3ddf7; }
+.s12Tint_amber { border-top: 3px solid #b45309; } .s12Tint_amber .s12CardIcon { background: #b45309; } .s12Tint_amber:hover { border-color: #fbd794; }
+.s12Tint_teal  { border-top: 3px solid #0d9488; } .s12Tint_teal .s12CardIcon  { background: #0d9488; } .s12Tint_teal:hover  { border-color: #bfeae4; }
+.s12CardTitle { font-size: 15.5px; font-weight: 700; color: #0b1220; margin: 0 0 8px; line-height: 1.35; }
+.s12CardBody { font-size: 13.5px; line-height: 1.55; color: #4b5563; margin: 0; }
+
+/* ==========================================================
+   SECTION 13 — FAQ (with JSON-LD schema)
+   ========================================================== */
+.s13 { padding: 48px 20px; background: #f9fafb; }
+.s13Inner { max-width: 900px; margin: 0 auto; }
+.s13Heading { font-size: 28px; font-weight: 800; color: #0b1220; text-align: center; margin: 0 0 10px; letter-spacing: -0.01em; }
+.s13Intro { font-size: 15px; line-height: 1.6; color: #4b5563; text-align: center; margin: 0 auto 26px; max-width: 800px; }
+
+.s13List { display: flex; flex-direction: column; gap: 10px; }
+.s13Item { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 12px; overflow: hidden; transition: box-shadow 0.15s ease; }
+.s13Item:hover { box-shadow: 0 6px 18px rgba(15,23,42,0.06); }
+.s13Item[open] { box-shadow: 0 8px 22px rgba(15,23,42,0.08); border-color: #cceee5; }
+
+.s13Q {
+  cursor: pointer;
+  list-style: none;
+  padding: 16px 18px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #0b1220;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  line-height: 1.5;
+  transition: background-color 0.15s ease;
+}
+.s13Q::-webkit-details-marker { display: none; }
+.s13Q:hover { background: #f9fafb; }
+.s13Item[open] .s13Q { background: #f0fdf9; color: #0b5b54; }
+.s13QChevron {
   display: inline-flex;
   align-items: center;
-  background: rgba(255,255,255,0.14);
-  color: #ffffff;
-  font-size: 12px;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #f0fdf9;
+  color: #0f766e;
+  font-size: 18px;
   font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  padding: 7px 14px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.25);
-  margin-bottom: 16px;
+  line-height: 1;
+  flex-shrink: 0;
+  transition: transform 0.2s ease, background-color 0.15s ease;
+}
+.s13Item[open] .s13QChevron { transform: rotate(45deg); background: #0f766e; color: #ffffff; }
+.s13A {
+  padding: 6px 20px 20px;
+  font-size: 14.5px;
+  line-height: 1.7;
+  color: #374151;
 }
 
-.s11Heading {
-  font-size: 28px;
+/* ==========================================================
+   SECTION 14 — FINAL CTA BANNER
+   ========================================================== */
+.s14 {
+  padding: 56px 20px;
+  background: linear-gradient(135deg, #0f766e 0%, #0b5b54 100%);
+  color: #ffffff;
+}
+.s14Inner { max-width: 900px; margin: 0 auto; text-align: center; }
+
+.s14Heading {
+  font-size: 26px;
   font-weight: 800;
   color: #ffffff;
   margin: 0 0 12px;
   letter-spacing: -0.01em;
   line-height: 1.25;
 }
-
-.s11Intro {
+.s14Body {
   font-size: 15px;
   line-height: 1.65;
-  color: rgba(255,255,255,0.9);
-  margin: 0 auto 32px;
-  max-width: 800px;
+  color: rgba(255,255,255,0.92);
+  margin: 0 auto 24px;
+  max-width: 760px;
 }
-
-.s11Grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 14px;
-  text-align: left;
+.s14CtaRow {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 20px;
 }
-
-.s11Card {
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(255,255,255,0.16);
-  border-radius: 14px;
-  padding: 20px 18px;
-  transition: background-color 0.15s ease, transform 0.15s ease;
-}
-.s11Card:hover { background: rgba(255,255,255,0.13); transform: translateY(-2px); }
-
-.s11CardIcon {
-  width: 44px;
-  height: 44px;
-  border-radius: 10px;
-  background: rgba(255,255,255,0.18);
-  color: #ffffff;
+.s14CtaPrimary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 12px;
-}
-
-.s11CardTitle { font-size: 15.5px; font-weight: 700; color: #ffffff; margin: 0 0 8px; line-height: 1.3; }
-.s11CardBody { font-size: 13.5px; line-height: 1.55; color: rgba(255,255,255,0.85); margin: 0; }
-
-/* ==========================================================
-   SECTION 12 — IOT LAB SOLUTIONS FOR DIFFERENT INSTITUTIONS
-   ========================================================== */
-.s12 { padding: 48px 20px; background: #ffffff; }
-.s12Inner { max-width: 1240px; margin: 0 auto; }
-.s12Heading { font-size: 28px; font-weight: 800; color: #0b1220; text-align: center; margin: 0 0 10px; letter-spacing: -0.01em; }
-.s12Intro { font-size: 15px; line-height: 1.65; color: #4b5563; text-align: center; max-width: 900px; margin: 0 auto 28px; }
-
-.s12Grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 14px;
-}
-
-.s12Card {
   background: #ffffff;
-  border: 1px solid #e5e7eb;
-  border-radius: 14px;
-  padding: 20px 18px;
-  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+  color: #0f766e;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 15px;
+  padding: 14px 24px;
+  border-radius: 10px;
+  box-shadow: 0 6px 16px rgba(15,23,42,0.15);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  min-height: 48px;
 }
-.s12Card:hover { transform: translateY(-3px); box-shadow: 0 14px 30px rgba(15,23,42,0.08); }
-
-.s12CardIcon {
-  width: 46px;
-  height: 46px;
-  border-radius: 12px;
-  color: #ffffff;
+.s14CtaPrimary:hover { transform: translateY(-2px); box-shadow: 0 10px 22px rgba(15,23,42,0.2); }
+.s14CtaSecondary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 12px;
+  background: transparent;
+  color: #ffffff;
+  border: 1px solid rgba(255,255,255,0.5);
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 15px;
+  padding: 13px 22px;
+  border-radius: 10px;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+  min-height: 48px;
 }
+.s14CtaSecondary:hover { background: rgba(255,255,255,0.12); border-color: #ffffff; }
 
-.s12Tint_green { border-top: 3px solid #0f766e; } .s12Tint_green .s12CardIcon { background: #0f766e; } .s12Tint_green:hover { border-color: #cceee5; }
-.s12Tint_blue  { border-top: 3px solid #1e3a8a; } .s12Tint_blue .s12CardIcon  { background: #1e3a8a; } .s12Tint_blue:hover  { border-color: #d3ddf7; }
-.s12Tint_amber { border-top: 3px solid #b45309; } .s12Tint_amber .s12CardIcon { background: #b45309; } .s12Tint_amber:hover { border-color: #fbd794; }
-.s12Tint_teal  { border-top: 3px solid #0d9488; } .s12Tint_teal .s12CardIcon  { background: #0d9488; } .s12Tint_teal:hover  { border-color: #bfeae4; }
-
-.s12CardTitle { font-size: 15.5px; font-weight: 700; color: #0b1220; margin: 0 0 8px; line-height: 1.35; }
-.s12CardBody { font-size: 13.5px; line-height: 1.55; color: #4b5563; margin: 0; }
-
-/* ==========================================================
-   PLACEHOLDERS
-   ========================================================== */
-.placeholder { min-height: 220px; padding: 44px 20px; background: #ffffff; border-bottom: 2px dashed #e5e7eb; display: flex; align-items: center; justify-content: center; }
-.placeholderAlt { background: #f9fafb; }
-.placeholderDark { background: linear-gradient(135deg,#0f766e 0%,#0b5b54 100%); border-bottom-color: rgba(255,255,255,0.15); }
-.placeholderInner { max-width: 700px; width: 100%; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 10px; }
-.placeholderNum { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 50%; background: #0f766e; color: #fff; font-size: 14px; font-weight: 800; flex-shrink: 0; }
-.placeholderDark .placeholderNum { background: rgba(255,255,255,0.2); }
-.placeholderTitle { font-size: 18px; font-weight: 700; color: #0b1220; margin: 0; line-height: 1.35; }
-.placeholderDark .placeholderTitle { color: #fff; }
-.placeholderNote { font-size: 13px; color: #6b7280; margin: 0; line-height: 1.5; max-width: 480px; }
-.placeholderDark .placeholderNote { color: rgba(255,255,255,0.7); }
+.s14Link { font-size: 14px; color: rgba(255,255,255,0.8); margin: 8px 0 0; }
+.s14LinkAnchor { color: #ffffff; font-weight: 700; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.4); padding-bottom: 1px; }
+.s14LinkAnchor:hover { border-bottom-color: #ffffff; }
 
 /* ==========================================================
    MODAL
@@ -522,7 +428,6 @@
   .s10Step { flex-direction: column; }
   .s11Grid { grid-template-columns: 1fr 1fr; }
   .s12Grid { grid-template-columns: 1fr 1fr; }
-  .placeholder { min-height: 260px; }
   .modalRow { grid-template-columns: 1fr 1fr; }
 }
 
@@ -539,8 +444,10 @@
   .s10 { padding: 64px 32px; } .s10Heading { font-size: 34px; } .s10Intro { font-size: 16px; }
   .s11 { padding: 72px 32px; } .s11Heading { font-size: 34px; } .s11Intro { font-size: 16px; } .s11CardTitle { font-size: 16px; }
   .s12 { padding: 64px 32px; } .s12Heading { font-size: 34px; } .s12Intro { font-size: 16px; } .s12CardTitle { font-size: 16px; }
-  .placeholder { padding: 56px 32px; min-height: 300px; }
-  .placeholderTitle { font-size: 20px; }
+  .s13 { padding: 64px 32px; } .s13Heading { font-size: 34px; } .s13Intro { font-size: 16px; }
+  .s13Q { font-size: 16px; padding: 18px 22px; }
+  .s13A { font-size: 15px; padding: 6px 24px 22px; }
+  .s14 { padding: 72px 32px; } .s14Heading { font-size: 32px; } .s14Body { font-size: 16px; } .s14Link { font-size: 15px; }
   .modalTitle { font-size: 22px; }
 }
 
@@ -560,8 +467,8 @@
   .s10StepArrow { display: inline-flex; align-items: center; justify-content: center; flex: 0 0 auto; }
   .s11 { padding: 88px 40px; } .s11Heading { font-size: 38px; } .s11Grid { grid-template-columns: repeat(4, 1fr); gap: 16px; }
   .s12 { padding: 76px 40px; } .s12Heading { font-size: 38px; } .s12Grid { grid-template-columns: repeat(3, 1fr); gap: 16px; }
-  .placeholder { padding: 64px 40px; min-height: 320px; }
-  .placeholderTitle { font-size: 22px; }
+  .s13 { padding: 84px 40px; } .s13Heading { font-size: 38px; }
+  .s14 { padding: 88px 40px; } .s14Heading { font-size: 36px; }
 }
 
 @media (min-width: 1280px) {
@@ -570,4 +477,5 @@
   .s10 { padding: 96px 48px; }
   .s11 { padding: 96px 48px; }
   .s12 { padding: 84px 48px; }
+  .s13 { padding: 96px 48px; }
 }

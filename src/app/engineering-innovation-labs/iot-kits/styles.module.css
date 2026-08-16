@@ -1,0 +1,158 @@
+/* =========================================================
+   IoT Kits — Child Page (scoped)
+   Wrapper:  .iok-scope
+   URL:      /engineering-innovation-labs/iot-kits/
+   Step 1    Hero + Quick Answer + Why KnowX + Choose Right Kit + Modal + Placeholders
+   Palette: Green #0f766e  Blue #1e3a8a  Amber #b45309  Teal #0d9488  Red #dc2626 (CTA)
+   ========================================================= */
+
+.scope {
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: #111827;
+  background: #ffffff;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.scope *, .scope *::before, .scope *::after { box-sizing: border-box; }
+
+/* ── SECTION 1 — HERO ── */
+.hero { padding: 24px 20px 40px; background: radial-gradient(900px 360px at 90% -10%, #e6faf5 0%, transparent 60%), linear-gradient(180deg, #ffffff 0%, #f9fbfa 100%); }
+.heroInner { max-width: 1200px; margin: 0 auto; }
+
+.breadcrumb { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; font-size: 12.5px; margin-bottom: 18px; }
+.breadcrumbLink { color: #0f766e; text-decoration: none; font-weight: 600; }
+.breadcrumbLink:hover { text-decoration: underline; }
+.breadcrumbSep { color: #9ca3af; }
+.breadcrumbCurrent { color: #6b7280; font-weight: 500; }
+
+.heroGrid { display: grid; grid-template-columns: 1fr; gap: 28px; align-items: center; }
+.heroLeft { display: flex; flex-direction: column; gap: 14px; }
+
+.heroTag { display: inline-flex; align-items: center; align-self: flex-start; background: rgba(15,118,110,0.08); color: #0f766e; font-size: 11.5px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 6px 12px; border-radius: 999px; border: 1px solid rgba(15,118,110,0.2); }
+.heroHeadline { font-size: 32px; line-height: 1.15; font-weight: 800; letter-spacing: -0.02em; color: #0b1220; margin: 0; }
+.heroHeadlineAccent { color: #0f766e; }
+.heroSubhead { font-size: 15px; line-height: 1.65; color: #374151; margin: 0; }
+
+.heroCtaRow { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-top: 4px; }
+.heroCtaPrimary { display: inline-flex; align-items: center; justify-content: center; background: #dc2626; color: #fff; text-decoration: none; font-weight: 700; font-size: 15px; padding: 13px 22px; border-radius: 10px; box-shadow: 0 6px 16px rgba(220,38,38,0.25); transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease; min-height: 48px; }
+.heroCtaPrimary:hover { background: #b91c1c; transform: translateY(-1px); box-shadow: 0 10px 22px rgba(220,38,38,0.3); }
+.heroCtaSecondary { display: inline-flex; align-items: center; justify-content: center; background: transparent; color: #0f766e; border: 2px solid #0f766e; cursor: pointer; font-family: inherit; font-weight: 700; font-size: 14.5px; padding: 11px 20px; border-radius: 10px; transition: background-color 0.15s ease, color 0.15s ease; min-height: 46px; }
+.heroCtaSecondary:hover { background: #0f766e; color: #fff; }
+
+.heroTrustStrip { list-style: none; padding: 0; margin: 6px 0 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.heroTrustPill { display: inline-flex; align-items: center; color: #fff; font-size: 12px; font-weight: 600; padding: 7px 13px; border-radius: 999px; box-shadow: 0 2px 6px rgba(15,23,42,0.12); white-space: nowrap; }
+.pillGreen { background: #0f766e; }
+.pillBlue { background: #1e3a8a; }
+
+.heroRight { display: flex; justify-content: center; }
+.heroSvg { width: 100%; max-width: 320px; height: auto; }
+
+/* ── SECTION 2 — QUICK ANSWER ── */
+.s2 { padding: 26px 20px; background: #f0fdf9; border-top: 1px solid #cceee5; border-bottom: 1px solid #cceee5; }
+.s2Inner { max-width: 1000px; margin: 0 auto; display: flex; gap: 16px; align-items: flex-start; }
+.s2Icon { flex-shrink: 0; width: 44px; height: 44px; border-radius: 50%; background: #0f766e; color: #fff; display: inline-flex; align-items: center; justify-content: center; }
+.s2Content { flex: 1; }
+.s2Heading { font-size: 17px; font-weight: 800; color: #0b1220; margin: 0 0 8px; }
+.s2Body { font-size: 14.5px; line-height: 1.65; color: #1f2937; margin: 0; }
+
+/* ── SECTION 3 — WHY CHOOSE KNOWX ── */
+.s3 { padding: 44px 20px; background: #ffffff; }
+.s3Inner { max-width: 1200px; margin: 0 auto; }
+.s3Heading { font-size: 26px; font-weight: 800; color: #0b1220; text-align: center; margin: 0 0 26px; letter-spacing: -0.01em; }
+.s3Grid { display: grid; grid-template-columns: 1fr; gap: 14px; margin-bottom: 26px; }
+.s3Card { background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 14px; padding: 20px 18px; transition: transform 0.15s ease, box-shadow 0.15s ease; }
+.s3Card:hover { transform: translateY(-3px); box-shadow: 0 12px 26px rgba(15,23,42,0.07); }
+.s3CardIcon { width: 44px; height: 44px; border-radius: 10px; color: #fff; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 12px; }
+.s3Tint_green .s3CardIcon { background: #0f766e; }
+.s3Tint_blue .s3CardIcon { background: #1e3a8a; }
+.s3Tint_amber .s3CardIcon { background: #b45309; }
+.s3Tint_teal .s3CardIcon { background: #0d9488; }
+.s3CardTitle { font-size: 15.5px; font-weight: 700; color: #0b1220; margin: 0 0 6px; }
+.s3CardBody { font-size: 13px; line-height: 1.5; color: #6b7280; margin: 0; }
+.s3Institutional { font-size: 14.5px; line-height: 1.7; color: #374151; text-align: center; max-width: 900px; margin: 0 auto; background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 12px; padding: 18px 22px; }
+
+/* ── SECTION 4 — CHOOSE THE RIGHT KIT ── */
+.s4 { padding: 44px 20px; background: #f9fafb; }
+.s4Inner { max-width: 1100px; margin: 0 auto; }
+.s4Heading { font-size: 26px; font-weight: 800; color: #0b1220; text-align: center; margin: 0 0 10px; letter-spacing: -0.01em; }
+.s4Intro { font-size: 14.5px; line-height: 1.6; color: #6b7280; text-align: center; max-width: 760px; margin: 0 auto 24px; }
+.s4Table { border-radius: 14px; overflow: hidden; border: 1px solid #e5e7eb; box-shadow: 0 6px 22px rgba(15,23,42,0.05); background: #fff; }
+.s4HeaderRow { display: none; }
+.s4DataRow { display: grid; grid-template-columns: 1fr; padding: 14px 16px; border-bottom: 1px solid #e5e7eb; gap: 6px; background: #fff; }
+.s4RowAlt { background: #f9fafb; }
+.s4DataRow:last-child { border-bottom: none; }
+.s4Cell { font-size: 14px; color: #111827; display: flex; flex-direction: column; gap: 2px; }
+.s4DProfile { font-weight: 700; color: #0b5b54; }
+.s4DFocus { color: #374151; }
+.s4DKit strong { color: #0b1220; }
+.s4MobileLabel { display: block; font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: #6b7280; }
+
+/* ── PLACEHOLDERS ── */
+.placeholder { min-height: 200px; padding: 40px 20px; background: #ffffff; border-bottom: 2px dashed #e5e7eb; display: flex; align-items: center; justify-content: center; }
+.placeholderAlt { background: #f9fafb; }
+.placeholderDark { background: linear-gradient(135deg, #0f766e 0%, #0b5b54 100%); border-bottom-color: rgba(255,255,255,0.15); }
+.placeholderInner { max-width: 700px; width: 100%; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 10px; }
+.placeholderNum { display: inline-flex; align-items: center; justify-content: center; width: 42px; height: 42px; border-radius: 50%; background: #0f766e; color: #fff; font-size: 13.5px; font-weight: 800; flex-shrink: 0; }
+.placeholderDark .placeholderNum { background: rgba(255,255,255,0.2); }
+.placeholderTitle { font-size: 17px; font-weight: 700; color: #0b1220; margin: 0; }
+.placeholderDark .placeholderTitle { color: #fff; }
+.placeholderNote { font-size: 12.5px; color: #6b7280; margin: 0; max-width: 480px; }
+.placeholderDark .placeholderNote { color: rgba(255,255,255,0.7); }
+
+/* ── MODAL ── */
+.modalBackdrop { position: fixed; inset: 0; background: rgba(15,23,42,0.6); backdrop-filter: blur(4px); display: flex; align-items: center; justify-content: center; padding: 16px; z-index: 1000; }
+.modal { background: #fff; border-radius: 16px; width: 100%; max-width: 560px; max-height: 92vh; overflow-y: auto; padding: 26px 24px; position: relative; box-shadow: 0 24px 60px rgba(15,23,42,0.3); }
+.modalClose { position: absolute; top: 14px; right: 14px; width: 34px; height: 34px; border: none; background: #f3f4f6; color: #374151; font-size: 22px; border-radius: 50%; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; }
+.modalClose:hover { background: #e5e7eb; }
+.modalTitle { font-size: 20px; font-weight: 800; color: #0b1220; margin: 0 0 6px; padding-right: 32px; }
+.modalSubtitle { font-size: 13.5px; color: #6b7280; margin: 0 0 18px; }
+.modalForm { display: flex; flex-direction: column; gap: 11px; }
+.modalRow { display: grid; grid-template-columns: 1fr; gap: 11px; }
+.modalLabel { display: flex; flex-direction: column; gap: 5px; font-size: 11.5px; font-weight: 700; color: #374151; text-transform: uppercase; letter-spacing: 0.045em; }
+.modalInput, .modalTextarea { font-family: inherit; font-size: 14.5px; color: #0b1220; background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 9px; padding: 10px 12px; text-transform: none; letter-spacing: normal; font-weight: 400; min-height: 42px; width: 100%; }
+.modalInput:focus, .modalTextarea:focus { outline: none; border-color: #0f766e; background: #fff; }
+.modalTextarea { resize: vertical; min-height: 72px; }
+.modalError { background: #fef2f2; border: 1px solid #fecaca; color: #991b1b; padding: 10px 12px; border-radius: 9px; font-size: 13px; }
+.modalSubmit { background: #dc2626; color: #fff; border: none; font-family: inherit; font-weight: 700; font-size: 15px; padding: 13px 22px; border-radius: 10px; cursor: pointer; min-height: 48px; margin-top: 4px; width: 100%; }
+.modalSubmit:hover:not(:disabled) { background: #b91c1c; }
+.modalSubmit:disabled { background: #94a3b8; cursor: not-allowed; }
+.modalFinePrint { font-size: 11px; color: #9ca3af; text-align: center; margin: 2px 0 0; }
+.modalSuccess { text-align: center; padding: 16px 0 8px; display: flex; flex-direction: column; gap: 10px; align-items: center; }
+.modalSuccessMark { width: 56px; height: 56px; border-radius: 50%; background: #0f766e; color: #fff; font-size: 28px; font-weight: 800; display: inline-flex; align-items: center; justify-content: center; }
+.modalSuccessTitle { font-size: 20px; font-weight: 800; color: #0b1220; }
+.modalSuccessBody { font-size: 14px; color: #4b5563; max-width: 340px; }
+.modalDoneBtn { margin-top: 8px; background: #0f766e; color: #fff; border: none; font-family: inherit; font-weight: 700; font-size: 14.5px; padding: 11px 24px; border-radius: 10px; cursor: pointer; }
+.modalDoneBtn:hover { background: #0b5b54; }
+
+/* ==========================================================
+   RESPONSIVE
+   ========================================================== */
+@media (min-width: 640px) {
+  .s3Grid { grid-template-columns: repeat(3, 1fr); }
+  .s4HeaderRow { display: grid; grid-template-columns: 1.1fr 1.6fr 1.3fr; background: #f3f4f6; border-bottom: 1px solid #e5e7eb; }
+  .s4DataRow { grid-template-columns: 1.1fr 1.6fr 1.3fr; padding: 0; gap: 0; }
+  .s4Cell { padding: 13px 16px; border-right: 1px solid #f1f5f9; }
+  .s4Cell:last-child { border-right: none; }
+  .s4MobileLabel { display: none; }
+  .s4HProfile { background: #0f766e; color: #fff; font-weight: 700; text-transform: uppercase; font-size: 12.5px; }
+  .s4HFocus, .s4HKit { background: #f3f4f6; color: #111827; font-weight: 700; text-transform: uppercase; font-size: 12.5px; }
+  .s4DProfile { background: #f9fafb; }
+  .modalRow { grid-template-columns: 1fr 1fr; }
+}
+
+@media (min-width: 768px) {
+  .hero { padding: 32px 32px 48px; }
+  .heroHeadline { font-size: 40px; }
+  .heroSubhead { font-size: 16px; }
+  .s2Inner { padding: 4px 0; }
+  .s3Heading, .s4Heading { font-size: 32px; }
+}
+
+@media (min-width: 1024px) {
+  .heroGrid { grid-template-columns: 1.15fr 1fr; gap: 40px; }
+  .heroHeadline { font-size: 46px; }
+  .heroSvg { max-width: 360px; }
+  .s3Grid { grid-template-columns: repeat(3, 1fr); }
+}

@@ -9,24 +9,18 @@ import styles from "./styles.module.css";
  * IoT Kits — Child page under Engineering Innovation Labs / IoT Lab Setup family
  * URL: /engineering-innovation-labs/iot-kits/
  *
- * Step 1 — Foundation build. Hero now uses the real product photo.
- *   - page.tsx metadata (separate file)
- *   - Section 1: Hero (breadcrumb + real image)
- *   - Section 2: Quick Answer — What Is an IoT Kit?
- *   - Section 3: Why Choose KnowX IoT Kits?
- *   - Section 4: Choose the Right IoT Kit (finder table)
- *   - Modal — fully built
- *   - Sections 5–14 — labeled placeholders
+ * Step 2 — Section 5 built: Our IoT Kits (all 6 cards + click-to-enlarge lightbox).
+ * Sections 6–14 remain as placeholders.
  *
- * HERO IMAGE — live:
- *   Path:   public/images/iot-kits/hero-iot-kit.jpg
- *   Alt:    "KnowX IoT Development Kit with ESP32 board, sensors, breadboard and LCD display"
+ * KIT IMAGES — drop-in spec (per kit):
+ *   Path:   public/images/iot-kits/kit-<slug>.jpg
+ *   Source: 1200×1200px (1:1 square), JPG
+ *   Same file powers both the 320×320 card thumbnail and the up-to-900×900 lightbox.
  *
- * Each kit in Section 5 (Step 2) will get a stable id (e.g. id="esp32-professional-iot-kit")
- * so other pages (Setup, Equipment) can deep-link with #anchors once this page is live.
+ * Each kit has a stable id (e.g. id="esp32-professional-iot-kit") for cross-page
+ * deep-linking from the Setup and Equipment pages.
  */
 
-/* 5-item trust strip — matches reference hero image exactly */
 const heroTrust = [
   "Curriculum-Aligned Experiments",
   "Industry-Oriented Projects",
@@ -35,7 +29,6 @@ const heroTrust = [
   "Trusted by Colleges Across India",
 ];
 
-/* ─── Section 3 — Why Choose KnowX (6 pillars) ─── */
 type WhyTint = "green" | "blue" | "amber" | "teal";
 const whyItems: { title: string; body: string; tint: WhyTint; icon: JSX.Element }[] = [
   { title: "Hardware", body: "Development platforms, sensors, modules and connectivity hardware.", tint: "green", icon: (<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"/></svg>) },
@@ -46,32 +39,108 @@ const whyItems: { title: string; body: string; tint: WhyTint; icon: JSX.Element 
   { title: "Technical Support", body: "Implementation and technical support for institutional deployments.", tint: "blue", icon: (<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.3 2.3-2-2 2.3-2.3z"/></svg>) },
 ];
 
-/* ─── Section 4 — Choose the Right Kit finder table ─── */
 const finderRows: { profile: string; focus: string; kit: string }[] = [
   { profile: "Beginners / First Year", focus: "IoT fundamentals, sensors, basic programming", kit: "IoT Starter Kit" },
   { profile: "Diploma / Polytechnic", focus: "Hands-on learning, embedded & IoT applications", kit: "IoT Starter Kit" },
   { profile: "CSE / ECE / EEE / ISE", focus: "Connected devices, cloud, APIs, dashboards, advanced IoT", kit: "ESP32 Professional IoT Kit" },
   { profile: "Advanced Projects", focus: "Complex applications, edge devices, data analytics", kit: "ESP32 Professional / Industrial IoT Kit" },
   { profile: "Industry 4.0", focus: "Industrial IoT, SCADA, predictive maintenance, smart factory", kit: "Industrial IoT Kit" },
-  { profile: "AI / Computer Vision", focus: "Edge AI, machine learning, computer vision applications", kit: "Raspberry Pi Edge AI Kit" },
+  { profile: "AI / Computer Vision", focus: "Edge AI, computer vision, voice AI, robotics applications", kit: "Knowx Edge AI & Computer Vision Kit" },
   { profile: "Embedded Systems", focus: "Real-time systems, RTOS, industrial applications", kit: "STM32 Embedded Systems Kit" },
+];
+
+/* SECTION 5 — Our IoT Kits (6 cards) */
+type KitTint = "green" | "blue" | "amber" | "teal";
+type Kit = {
+  id: string;
+  title: string;
+  badge: string;
+  imgSrc: string;
+  imgAlt: string;
+  facts: string[];
+  tint: KitTint;
+  popular?: boolean;
+};
+
+const kits: Kit[] = [
+  {
+    id: "iot-starter-kit",
+    title: "IoT Starter Kit",
+    badge: "Beginners",
+    imgSrc: "/images/iot-kits/kit-iot-starter.jpg",
+    imgAlt: "IoT Starter Kit — ESP32 based development kit for engineering students",
+    facts: ["ESP32 based", "30+ Experiments", "10 Mini Projects", "Wi-Fi & Bluetooth", "Beginner Friendly", "Manual & Source Code"],
+    tint: "green",
+  },
+  {
+    id: "esp32-professional-iot-kit",
+    title: "ESP32 Professional IoT Kit",
+    badge: "Most Popular",
+    imgSrc: "/images/iot-kits/kit-esp32-professional.jpg",
+    imgAlt: "ESP32 Professional IoT Kit — 60+ experiments and 25 industry projects",
+    facts: ["60+ Experiments", "25 Industry Projects", "40+ Modules", "MQTT, HTTP/REST", "Cloud & Dashboards", "Manual & Source Code"],
+    tint: "green",
+    popular: true,
+  },
+  {
+    id: "industrial-iot-kit",
+    title: "Industrial IoT Kit",
+    badge: "Advanced",
+    imgSrc: "/images/iot-kits/kit-industrial-iot.jpg",
+    imgAlt: "Industrial IoT Kit — ESP32, STM32 and Raspberry Pi for Industry 4.0 projects",
+    facts: ["80+ Experiments", "30 Industry 4.0 Projects", "ESP32, STM32, RPi", "Industrial Sensors", "SCADA / Cloud", "Manual & Source Code"],
+    tint: "amber",
+  },
+  {
+    id: "edge-ai-computer-vision-kit",
+    title: "Knowx Edge AI & Computer Vision Kit",
+    badge: "Powered by Raspberry Pi",
+    imgSrc: "/images/iot-kits/kit-edge-ai-computer-vision.jpg",
+    imgAlt: "Knowx Edge AI & Computer Vision Kit — Raspberry Pi based kit for AI, vision, voice and robotics projects",
+    facts: ["50+ Hands-On Experiments", "25+ AI & Edge Projects", "Computer Vision + Voice AI", "Robotics + IoT", "450+ Components & Accessories", "Complete Manual with Source Code"],
+    tint: "teal",
+  },
+  {
+    id: "stm32-embedded-systems-kit",
+    title: "STM32 Embedded Systems Kit",
+    badge: "Embedded",
+    imgSrc: "/images/iot-kits/kit-stm32-embedded.jpg",
+    imgAlt: "STM32 Embedded Systems Kit — real-time systems and industrial embedded applications",
+    facts: ["STM32 Platform", "Embedded C / C++", "RTOS & Peripherals", "Industrial Comms", "Automotive Applications", "Manual & Source Code"],
+    tint: "blue",
+  },
+  {
+    id: "smart-factory-learning-platform",
+    title: "Smart Factory Learning Platform",
+    badge: "Industry 4.0",
+    imgSrc: "/images/iot-kits/kit-smart-factory.jpg",
+    imgAlt: "Smart Factory Learning Platform — Industry 4.0 digital factory and predictive maintenance kit",
+    facts: ["Industry 4.0 Platform", "Digital Factory Simulation", "Machine Vision", "Predictive Maintenance", "Smart Manufacturing", "Manual & Source Code"],
+    tint: "amber",
+  },
 ];
 
 export default function IotKitsClient() {
   const [modalOpen, setModalOpen] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [submitState, setSubmitState] = useState<"idle" | "success" | "error">("idle");
+  const [lightboxKit, setLightboxKit] = useState<Kit | null>(null);
 
   useEffect(() => {
-    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") setModalOpen(false); };
-    if (modalOpen) window.addEventListener("keydown", onKey);
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setModalOpen(false);
+        setLightboxKit(null);
+      }
+    };
+    if (modalOpen || lightboxKit) window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [modalOpen]);
+  }, [modalOpen, lightboxKit]);
 
   useEffect(() => {
-    document.body.style.overflow = modalOpen ? "hidden" : "";
+    document.body.style.overflow = modalOpen || lightboxKit ? "hidden" : "";
     return () => { document.body.style.overflow = ""; };
-  }, [modalOpen]);
+  }, [modalOpen, lightboxKit]);
 
   const openModal = (e?: React.MouseEvent) => {
     if (e) e.preventDefault();
@@ -96,9 +165,7 @@ export default function IotKitsClient() {
   return (
     <div className={`iok-scope ${styles.scope}`}>
 
-      {/* ============================================================
-          SECTION 1 — HERO (+ breadcrumb + real image)
-          ============================================================ */}
+      {/* S1 HERO */}
       <section className={styles.hero} id="hero">
         <div className={styles.heroInner}>
           <nav className={styles.breadcrumb} aria-label="Breadcrumb">
@@ -126,7 +193,6 @@ export default function IotKitsClient() {
                 <button type="button" onClick={openModal} className={styles.heroCtaSecondary}>Request Institutional Quote</button>
               </div>
             </div>
-
             <div className={styles.heroRight}>
               <Image
                 src="/images/iot-kits/hero-iot-kit.jpg"
@@ -140,7 +206,6 @@ export default function IotKitsClient() {
             </div>
           </div>
 
-          {/* 5-item trust strip — full width below hero grid */}
           <ul className={styles.heroTrustStrip} aria-label="IoT kit highlights">
             {heroTrust.map((item) => (
               <li key={item} className={styles.heroTrustItem}>
@@ -152,9 +217,7 @@ export default function IotKitsClient() {
         </div>
       </section>
 
-      {/* ============================================================
-          SECTION 2 — QUICK ANSWER: WHAT IS AN IOT KIT?
-          ============================================================ */}
+      {/* S2 QUICK ANSWER */}
       <section className={styles.s2} id="quick-answer">
         <div className={styles.s2Inner}>
           <div className={styles.s2Icon} aria-hidden="true">
@@ -173,9 +236,7 @@ export default function IotKitsClient() {
         </div>
       </section>
 
-      {/* ============================================================
-          SECTION 3 — WHY CHOOSE KNOWX IOT KITS?
-          ============================================================ */}
+      {/* S3 WHY CHOOSE KNOWX */}
       <section className={styles.s3} id="why-knowx">
         <div className={styles.s3Inner}>
           <h2 className={styles.s3Heading}>Why Choose Knowx IoT Kits?</h2>
@@ -198,9 +259,7 @@ export default function IotKitsClient() {
         </div>
       </section>
 
-      {/* ============================================================
-          SECTION 4 — CHOOSE THE RIGHT IOT KIT (finder table)
-          ============================================================ */}
+      {/* S4 CHOOSE THE RIGHT KIT */}
       <section className={styles.s4} id="choose-right-kit">
         <div className={styles.s4Inner}>
           <h2 className={styles.s4Heading}>Choose the Right IoT Kit</h2>
@@ -208,7 +267,6 @@ export default function IotKitsClient() {
             A quick reference to help you match your student profile, focus
             area and objectives to the right Knowx IoT kit.
           </p>
-
           <div className={styles.s4Table} role="table" aria-label="Choose the right IoT kit">
             <div className={styles.s4HeaderRow} role="row">
               <div className={`${styles.s4Cell} ${styles.s4HProfile}`} role="columnheader">Profile</div>
@@ -226,12 +284,61 @@ export default function IotKitsClient() {
         </div>
       </section>
 
-      {/* ============================================================
-          SECTIONS 5–14 — Placeholders (built in Steps 2–5)
-          ============================================================ */}
-      <section className={styles.placeholder} id="our-kits">
-        <div className={styles.placeholderInner}><div className={styles.placeholderNum}>S5</div><h2 className={styles.placeholderTitle}>Our IoT Kits</h2><p className={styles.placeholderNote}>Step 2 — All 6 kit cards, each with a stable anchor id for cross-page deep-linking</p></div>
+      {/* SECTION 5 — OUR IOT KITS */}
+      <section className={styles.s5} id="our-kits">
+        <div className={styles.s5Inner}>
+          <h2 className={styles.s5Heading}>Our IoT Kits</h2>
+          <p className={styles.s5Intro}>
+            Six purpose-built IoT kits spanning first-year fundamentals through
+            Industry 4.0 and Edge AI. Each kit includes hardware, structured
+            experiments, projects, and a complete manual with source code.
+            Click any image to view it larger.
+          </p>
+
+          <div className={styles.s5Grid}>
+            {kits.map((kit) => (
+              <div key={kit.id} id={kit.id} className={`${styles.s5Card} ${kit.popular ? styles.s5CardPopular : ""}`}>
+                {kit.popular && <span className={styles.s5PopularTag}>Most Popular</span>}
+
+                <button type="button" className={styles.s5ImgBtn} onClick={() => setLightboxKit(kit)} aria-label={`View larger image of ${kit.title}`}>
+                  <Image
+                    src={kit.imgSrc}
+                    alt={kit.imgAlt}
+                    width={320}
+                    height={320}
+                    loading="lazy"
+                    sizes="(max-width: 640px) 45vw, (max-width: 1024px) 30vw, 220px"
+                    className={styles.s5Img}
+                  />
+                  <span className={styles.s5ImgZoom} aria-hidden="true">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>
+                  </span>
+                </button>
+
+                <div className={styles.s5CardBody}>
+                  <div className={styles.s5BadgeRow}>
+                    <span className={`${styles.s5Badge} ${styles[`s5Badge_${kit.tint}`]}`}>{kit.badge}</span>
+                  </div>
+                  <h3 className={styles.s5CardTitle}>{kit.title}</h3>
+                  <ul className={styles.s5Facts}>
+                    {kit.facts.map((f) => (
+                      <li key={f} className={styles.s5Fact}>
+                        <span className={`${styles.s5FactDot} ${styles[`s5FactDot_${kit.tint}`]}`} aria-hidden="true" />
+                        {f}
+                      </li>
+                    ))}
+                  </ul>
+                  <button type="button" onClick={openModal} className={`${styles.s5Cta} ${styles[`s5Cta_${kit.tint}`]}`}>
+                    View {kit.title.split(" ")[0]} Kit →
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
       </section>
+
+      {/* Placeholders S6–S14 */}
       <section className={`${styles.placeholder} ${styles.placeholderAlt}`} id="student-projects">
         <div className={styles.placeholderInner}><div className={styles.placeholderNum}>S6</div><h2 className={styles.placeholderTitle}>What Can Students Build With IoT Kits?</h2><p className={styles.placeholderNote}>Step 3 — Beginner / Connected / Advanced project categories</p></div>
       </section>
@@ -260,9 +367,25 @@ export default function IotKitsClient() {
         <div className={styles.placeholderInner}><div className={styles.placeholderNum}>S14</div><h2 className={styles.placeholderTitle}>Get an IoT Kit Recommendation</h2><p className={styles.placeholderNote}>Step 5 — Final CTA banner + cross-links to Setup &amp; Equipment pages</p></div>
       </section>
 
-      {/* ============================================================
-          MODAL
-          ============================================================ */}
+      {/* LIGHTBOX */}
+      {lightboxKit && (
+        <div className={styles.lightboxBackdrop} onClick={() => setLightboxKit(null)} role="dialog" aria-modal="true" aria-label={`${lightboxKit.title} — enlarged image`}>
+          <div className={styles.lightboxInner} onClick={(e) => e.stopPropagation()}>
+            <button type="button" className={styles.lightboxClose} onClick={() => setLightboxKit(null)} aria-label="Close">×</button>
+            <Image
+              src={lightboxKit.imgSrc}
+              alt={lightboxKit.imgAlt}
+              width={900}
+              height={900}
+              sizes="(max-width: 900px) 90vw, 900px"
+              className={styles.lightboxImg}
+            />
+            <p className={styles.lightboxCaption}>{lightboxKit.title}</p>
+          </div>
+        </div>
+      )}
+
+      {/* MODAL */}
       {modalOpen && (
         <div className={styles.modalBackdrop} onClick={() => setModalOpen(false)} role="dialog" aria-modal="true" aria-labelledby="iok-modal-title">
           <div className={styles.modal} onClick={(e) => e.stopPropagation()}>

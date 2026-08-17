@@ -144,19 +144,17 @@ export default function IotKitsClient() {
                   className={styles.heroImage}
                 />
             */}
-            <div className={styles.heroRight}>
-              <div className={styles.heroImagePlaceholder} role="img" aria-label="KnowX IoT Development Kit with ESP32 board, sensors, breadboard and LCD display">
-                <svg viewBox="0 0 64 48" width="56" height="42" fill="none" stroke="rgba(255,255,255,0.55)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                  <rect x="2" y="2" width="60" height="44" rx="4" />
-                  <rect x="8" y="8" width="20" height="14" rx="2" />
-                  <circle cx="44" cy="15" r="7" />
-                  <path d="M2 34l14-10 10 8 8-6 14 10" />
-                </svg>
-                <span className={styles.heroImageLabel}>KnowX IoT Development Kit</span>
-                <span className={styles.heroImageSub}>Real product photo coming soon · 1280 × 960 px</span>
-              </div>
-            </div>
-          </div>
+           <div className={styles.heroRight}>
+  <Image
+    src="/images/iot-kits/hero-iot-kit.jpg"
+    alt="KnowX IoT Development Kit with ESP32 board, sensors, breadboard and LCD display"
+    width={1280}
+    height={960}
+    priority
+    sizes="(max-width: 767px) 100vw, (max-width: 1023px) 45vw, 520px"
+    className={styles.heroImage}
+  />
+</div>
 
           {/* 5-item trust strip — full width below hero grid */}
           <ul className={styles.heroTrustStrip} aria-label="IoT kit highlights">

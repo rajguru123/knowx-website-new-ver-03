@@ -1,7 +1,7 @@
 /* =========================================================
    IoT Kits — Child Page (scoped)
    Wrapper:  .iok-scope
-   Step 3    Adds Section 6 (Student Projects) + 7 (Kit Finder) + 8 (What's Included)
+   FINAL — All 14 sections. Page content-complete.
    Palette: Green #0f766e  Blue #1e3a8a  Amber #b45309  Teal #0d9488  Red #dc2626 (CTA)
    ========================================================= */
 
@@ -118,14 +118,11 @@
 .s5Cta_amber { background: #b45309; color: #fff; }
 .s5Cta_teal { background: #0d9488; color: #fff; }
 
-/* ==========================================================
-   SECTION 6 — WHAT CAN STUDENTS BUILD WITH IOT KITS?
-   ========================================================== */
+/* ── SECTION 6 — STUDENT PROJECTS ── */
 .s6 { padding: 44px 20px; background: #f9fafb; }
 .s6Inner { max-width: 1240px; margin: 0 auto; }
 .s6Heading { font-size: 26px; font-weight: 800; color: #0b1220; text-align: center; margin: 0 0 10px; letter-spacing: -0.01em; }
 .s6Intro { font-size: 14.5px; line-height: 1.6; color: #6b7280; text-align: center; max-width: 800px; margin: 0 auto 28px; }
-
 .s6Grid { display: grid; grid-template-columns: 1fr; gap: 12px; }
 .s6Card { background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 18px 16px; transition: transform 0.15s ease, box-shadow 0.15s ease; }
 .s6Card:hover { transform: translateY(-2px); box-shadow: 0 10px 22px rgba(15,23,42,0.06); }
@@ -133,14 +130,11 @@
 .s6CardTitle { font-size: 14.5px; font-weight: 700; color: #0b1220; margin: 0 0 6px; line-height: 1.3; }
 .s6CardBody { font-size: 12.5px; line-height: 1.5; color: #6b7280; margin: 0; }
 
-/* ==========================================================
-   SECTION 7 — IOT KITS BY DEPARTMENT & ACADEMIC LEVEL
-   ========================================================== */
+/* ── SECTION 7 — KIT FINDER ── */
 .s7 { padding: 44px 20px; background: #ffffff; }
 .s7Inner { max-width: 1100px; margin: 0 auto; }
 .s7Heading { font-size: 26px; font-weight: 800; color: #0b1220; text-align: center; margin: 0 0 10px; letter-spacing: -0.01em; }
 .s7Intro { font-size: 14.5px; line-height: 1.6; color: #6b7280; text-align: center; max-width: 760px; margin: 0 auto 28px; }
-
 .s7Panels { display: grid; grid-template-columns: 1fr; gap: 20px; }
 .s7Panel { background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 14px; padding: 20px; }
 .s7PanelTitle { font-size: 15px; font-weight: 800; color: #0b5b54; margin: 0 0 14px; text-transform: uppercase; letter-spacing: 0.03em; }
@@ -151,19 +145,114 @@
 .s7PanelArrow { color: #0f766e; font-weight: 700; }
 .s7PanelKit { color: #0b5b54; font-weight: 700; }
 
-/* ==========================================================
-   SECTION 8 — WHAT'S INCLUDED IN AN IOT KIT?
-   ========================================================== */
+/* ── SECTION 8 — WHAT'S INCLUDED ── */
 .s8 { padding: 44px 20px; background: #f9fafb; }
 .s8Inner { max-width: 900px; margin: 0 auto; }
 .s8Heading { font-size: 26px; font-weight: 800; color: #0b1220; text-align: center; margin: 0 0 10px; letter-spacing: -0.01em; }
 .s8Intro { font-size: 14.5px; line-height: 1.6; color: #6b7280; text-align: center; max-width: 700px; margin: 0 auto 26px; }
-
 .s8Grid { display: grid; grid-template-columns: 1fr; gap: 10px; background: #fff; border: 1px solid #e5e7eb; border-radius: 14px; padding: 22px 24px; }
 .s8List { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px; }
 .s8Item { display: flex; align-items: center; gap: 10px; font-size: 14px; color: #1f2937; }
 .s8Check { flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%; background: #0f766e; color: #fff; display: inline-flex; align-items: center; justify-content: center; }
 .s8Note { font-size: 12.5px; color: #9ca3af; text-align: center; margin: 16px 0 0; font-style: italic; }
+
+/* ==========================================================
+   SECTION 9 — COMPARE IOT KITS
+   ========================================================== */
+.s9 { padding: 44px 20px; background: #ffffff; }
+.s9Inner { max-width: 1100px; margin: 0 auto; }
+.s9Heading { font-size: 26px; font-weight: 800; color: #0b1220; text-align: center; margin: 0 0 10px; letter-spacing: -0.01em; }
+.s9Intro { font-size: 14.5px; line-height: 1.6; color: #6b7280; text-align: center; max-width: 800px; margin: 0 auto 26px; }
+
+.s9TableWrap { overflow-x: auto; border-radius: 14px; border: 1px solid #e5e7eb; box-shadow: 0 6px 22px rgba(15,23,42,0.05); margin-bottom: 24px; -webkit-overflow-scrolling: touch; }
+.s9Table { width: 100%; min-width: 640px; border-collapse: collapse; background: #fff; }
+.s9Th { text-align: left; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #fff; background: #0f766e; padding: 12px 14px; white-space: nowrap; }
+.s9Th:first-child { border-top-left-radius: 14px; }
+.s9RowAlt { background: #f9fafb; }
+.s9Td { font-size: 13.5px; color: #374151; padding: 12px 14px; border-bottom: 1px solid #f1f5f9; white-space: nowrap; }
+.s9TdKit { font-weight: 700; color: #0b1220; white-space: normal; }
+
+.s9CtaRow { display: flex; justify-content: center; }
+.s9CtaPrimary { display: inline-flex; align-items: center; justify-content: center; background: #dc2626; color: #fff; border: none; cursor: pointer; font-family: inherit; font-weight: 700; font-size: 15px; padding: 13px 24px; border-radius: 10px; box-shadow: 0 6px 16px rgba(220,38,38,0.22); transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease; min-height: 48px; }
+.s9CtaPrimary:hover { background: #b91c1c; transform: translateY(-1px); box-shadow: 0 10px 22px rgba(220,38,38,0.28); }
+
+/* ==========================================================
+   SECTION 10 — KITS VS EQUIPMENT
+   ========================================================== */
+.s10 { padding: 44px 20px; background: #f9fafb; }
+.s10Inner { max-width: 900px; margin: 0 auto; }
+.s10Heading { font-size: 26px; font-weight: 800; color: #0b1220; text-align: center; margin: 0 0 24px; letter-spacing: -0.01em; }
+.s10Table { border-radius: 14px; overflow: hidden; border: 1px solid #e5e7eb; box-shadow: 0 6px 22px rgba(15,23,42,0.05); background: #fff; margin-bottom: 20px; }
+.s10HeaderRow { display: grid; grid-template-columns: 1fr 1fr; background: #f3f4f6; border-bottom: 1px solid #e5e7eb; }
+.s10DataRow { display: grid; grid-template-columns: 1fr 1fr; }
+.s10RowAlt { background: #f9fafb; }
+.s10Cell { padding: 13px 16px; font-size: 13.5px; color: #374151; border-right: 1px solid #f1f5f9; }
+.s10Cell:last-child { border-right: none; }
+.s10HKits { background: #0f766e; color: #fff; font-weight: 700; font-size: 12.5px; text-transform: uppercase; letter-spacing: 0.04em; }
+.s10HEquip { background: #f3f4f6; color: #111827; font-weight: 700; font-size: 12.5px; text-transform: uppercase; letter-spacing: 0.04em; }
+.s10CrossLink { font-size: 14px; color: #4b5563; text-align: center; margin: 0; }
+.s10CrossLinkAnchor { color: #0f766e; font-weight: 700; text-decoration: none; }
+.s10CrossLinkAnchor:hover { text-decoration: underline; }
+
+/* ==========================================================
+   SECTION 11 — FACULTY RESOURCES
+   ========================================================== */
+.s11 { padding: 44px 20px; background: #ffffff; }
+.s11Inner { max-width: 1240px; margin: 0 auto; }
+.s11Heading { font-size: 26px; font-weight: 800; color: #0b1220; text-align: center; margin: 0 0 10px; letter-spacing: -0.01em; }
+.s11Intro { font-size: 14.5px; line-height: 1.6; color: #6b7280; text-align: center; max-width: 800px; margin: 0 auto 28px; }
+.s11Grid { display: grid; grid-template-columns: 1fr; gap: 14px; }
+.s11Card { background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 14px; padding: 20px 18px; transition: transform 0.15s ease, box-shadow 0.15s ease; }
+.s11Card:hover { transform: translateY(-3px); box-shadow: 0 12px 26px rgba(15,23,42,0.07); }
+.s11CardIcon { width: 42px; height: 42px; border-radius: 10px; background: #0f766e; color: #fff; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 12px; }
+.s11CardTitle { font-size: 15px; font-weight: 700; color: #0b1220; margin: 0 0 6px; }
+.s11CardBody { font-size: 13px; line-height: 1.5; color: #6b7280; margin: 0; }
+
+/* ==========================================================
+   SECTION 12 — HOW TO CHOOSE
+   ========================================================== */
+.s12 { padding: 44px 20px; background: #f9fafb; }
+.s12Inner { max-width: 800px; margin: 0 auto; }
+.s12Heading { font-size: 26px; font-weight: 800; color: #0b1220; text-align: center; margin: 0 0 24px; letter-spacing: -0.01em; }
+.s12List { list-style: none; padding: 0; margin: 0 0 26px; display: flex; flex-direction: column; gap: 10px; }
+.s12Item { display: flex; align-items: center; gap: 12px; background: #ffffff; border: 1px solid #e5e7eb; border-radius: 10px; padding: 12px 16px; }
+.s12Num { width: 26px; height: 26px; border-radius: 50%; background: #0f766e; color: #fff; font-size: 12.5px; font-weight: 800; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.s12Text { font-size: 14.5px; color: #1f2937; }
+.s12CtaRow { display: flex; justify-content: center; }
+.s12CtaPrimary { display: inline-flex; align-items: center; background: #0f766e; color: #fff; border: none; cursor: pointer; font-family: inherit; font-weight: 700; font-size: 14.5px; padding: 13px 22px; border-radius: 10px; transition: background-color 0.15s ease; text-align: center; }
+.s12CtaPrimary:hover { background: #0b5b54; }
+
+/* ==========================================================
+   SECTION 13 — FAQ
+   ========================================================== */
+.s13 { padding: 44px 20px; background: #ffffff; }
+.s13Inner { max-width: 900px; margin: 0 auto; }
+.s13Heading { font-size: 26px; font-weight: 800; color: #0b1220; text-align: center; margin: 0 0 24px; letter-spacing: -0.01em; }
+.s13List { display: flex; flex-direction: column; gap: 10px; }
+.s13Item { background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 12px; overflow: hidden; }
+.s13Item[open] { border-color: #cceee5; box-shadow: 0 8px 22px rgba(15,23,42,0.08); }
+.s13Q { cursor: pointer; list-style: none; padding: 15px 18px; font-size: 14.5px; font-weight: 700; color: #0b1220; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.s13Q::-webkit-details-marker { display: none; }
+.s13Item[open] .s13Q { background: #f0fdf9; color: #0b5b54; }
+.s13QChevron { width: 22px; height: 22px; border-radius: 50%; background: #f0fdf9; color: #0f766e; font-size: 16px; font-weight: 700; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; transition: transform 0.2s ease, background-color 0.15s ease; }
+.s13Item[open] .s13QChevron { transform: rotate(45deg); background: #0f766e; color: #fff; }
+.s13A { padding: 4px 18px 18px; font-size: 13.5px; line-height: 1.65; color: #374151; background: #fff; }
+
+/* ==========================================================
+   SECTION 14 — FINAL CTA
+   ========================================================== */
+.s14 { padding: 48px 20px; background: linear-gradient(135deg, #0f766e 0%, #0b5b54 100%); color: #fff; }
+.s14Inner { max-width: 800px; margin: 0 auto; text-align: center; }
+.s14Heading { font-size: 24px; font-weight: 800; color: #fff; margin: 0 0 12px; letter-spacing: -0.01em; }
+.s14Body { font-size: 14.5px; line-height: 1.65; color: rgba(255,255,255,0.92); margin: 0 auto 22px; }
+.s14CtaRow { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-bottom: 18px; }
+.s14CtaPrimary { display: inline-flex; align-items: center; justify-content: center; background: #fff; color: #0f766e; border: none; cursor: pointer; font-family: inherit; font-weight: 700; font-size: 14.5px; padding: 13px 22px; border-radius: 10px; transition: transform 0.15s ease; }
+.s14CtaPrimary:hover { transform: translateY(-2px); }
+.s14CtaSecondary { display: inline-flex; align-items: center; justify-content: center; background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.5); cursor: pointer; font-family: inherit; font-weight: 600; font-size: 14.5px; padding: 12px 20px; border-radius: 10px; transition: background-color 0.15s ease; }
+.s14CtaSecondary:hover { background: rgba(255,255,255,0.12); }
+.s14Link { font-size: 13px; color: rgba(255,255,255,0.8); margin: 0; }
+.s14LinkAnchor { color: #fff; font-weight: 700; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.4); padding-bottom: 1px; }
+.s14LinkAnchor:hover { border-bottom-color: #fff; }
 
 /* ── LIGHTBOX ── */
 .lightboxBackdrop { position: fixed; inset: 0; background: rgba(11, 18, 32, 0.88); display: flex; align-items: center; justify-content: center; padding: 24px; z-index: 1100; }
@@ -172,18 +261,6 @@
 .lightboxClose:hover { background: rgba(255,255,255,0.2); }
 .lightboxImg { width: 100%; height: auto; max-height: 78vh; object-fit: contain; border-radius: 12px; background: #fff; }
 .lightboxCaption { font-size: 14px; font-weight: 600; color: #fff; text-align: center; margin: 0; }
-
-/* ── PLACEHOLDERS ── */
-.placeholder { min-height: 200px; padding: 40px 20px; background: #ffffff; border-bottom: 2px dashed #e5e7eb; display: flex; align-items: center; justify-content: center; }
-.placeholderAlt { background: #f9fafb; }
-.placeholderDark { background: linear-gradient(135deg, #0f766e 0%, #0b5b54 100%); border-bottom-color: rgba(255,255,255,0.15); }
-.placeholderInner { max-width: 700px; width: 100%; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 10px; }
-.placeholderNum { display: inline-flex; align-items: center; justify-content: center; width: 42px; height: 42px; border-radius: 50%; background: #0f766e; color: #fff; font-size: 13.5px; font-weight: 800; flex-shrink: 0; }
-.placeholderDark .placeholderNum { background: rgba(255,255,255,0.2); }
-.placeholderTitle { font-size: 17px; font-weight: 700; color: #0b1220; margin: 0; }
-.placeholderDark .placeholderTitle { color: #fff; }
-.placeholderNote { font-size: 12.5px; color: #6b7280; margin: 0; max-width: 480px; }
-.placeholderDark .placeholderNote { color: rgba(255,255,255,0.7); }
 
 /* ── MODAL ── */
 .modalBackdrop { position: fixed; inset: 0; background: rgba(15,23,42,0.6); backdrop-filter: blur(4px); display: flex; align-items: center; justify-content: center; padding: 16px; z-index: 1000; }
@@ -220,6 +297,7 @@
   .s6Grid { grid-template-columns: repeat(2, 1fr); }
   .s7Panels { grid-template-columns: 1fr 1fr; }
   .s8Grid { grid-template-columns: 1fr 1fr; }
+  .s11Grid { grid-template-columns: repeat(2, 1fr); }
   .s4HeaderRow { display: grid; grid-template-columns: 1.1fr 1.6fr 1.3fr; background: #f3f4f6; border-bottom: 1px solid #e5e7eb; }
   .s4DataRow { grid-template-columns: 1.1fr 1.6fr 1.3fr; padding: 0; gap: 0; }
   .s4Cell { padding: 13px 16px; border-right: 1px solid #f1f5f9; }
@@ -236,9 +314,9 @@
   .heroHeadline { font-size: 40px; }
   .heroSubhead { font-size: 16px; }
   .heroTrustStrip { grid-template-columns: repeat(3, 1fr); padding: 26px 0; }
-  .s3Heading, .s4Heading, .s5Heading, .s6Heading, .s7Heading, .s8Heading { font-size: 32px; }
-  .s5Intro, .s6Intro, .s7Intro, .s8Intro { font-size: 15px; }
-  .s6Grid { grid-template-columns: repeat(3, 1fr); }
+  .s3Heading, .s4Heading, .s5Heading, .s6Heading, .s7Heading, .s8Heading, .s9Heading, .s10Heading, .s11Heading, .s12Heading, .s13Heading { font-size: 32px; }
+  .s14Heading { font-size: 30px; }
+  .s5Intro, .s6Intro, .s7Intro, .s8Intro, .s9Intro, .s11Intro { font-size: 15px; }
 }
 
 @media (min-width: 1024px) {
@@ -249,4 +327,5 @@
   .s3Grid { grid-template-columns: repeat(3, 1fr); }
   .s5Grid { grid-template-columns: repeat(3, 1fr); }
   .s6Grid { grid-template-columns: repeat(4, 1fr); }
+  .s11Grid { grid-template-columns: repeat(3, 1fr); }
 }

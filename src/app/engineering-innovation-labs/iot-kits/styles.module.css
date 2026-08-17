@@ -1,7 +1,7 @@
 /* =========================================================
    IoT Kits — Child Page (scoped)
    Wrapper:  .iok-scope
-   Step 2    Adds Section 5 (Our IoT Kits) + Lightbox popup
+   Step 3    Adds Section 6 (Student Projects) + 7 (Kit Finder) + 8 (What's Included)
    Palette: Green #0f766e  Blue #1e3a8a  Amber #b45309  Teal #0d9488  Red #dc2626 (CTA)
    ========================================================= */
 
@@ -81,71 +81,21 @@
 .s4DKit strong { color: #0b1220; }
 .s4MobileLabel { display: block; font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: #6b7280; }
 
-/* ==========================================================
-   SECTION 5 — OUR IOT KITS
-   ========================================================== */
+/* ── SECTION 5 — OUR IOT KITS ── */
 .s5 { padding: 44px 20px; background: #ffffff; }
 .s5Inner { max-width: 1240px; margin: 0 auto; }
 .s5Heading { font-size: 26px; font-weight: 800; color: #0b1220; text-align: center; margin: 0 0 10px; letter-spacing: -0.01em; }
 .s5Intro { font-size: 14.5px; line-height: 1.6; color: #6b7280; text-align: center; max-width: 800px; margin: 0 auto 28px; }
-
 .s5Grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
-
-.s5Card {
-  position: relative;
-  background: #ffffff;
-  border: 1px solid #e5e7eb;
-  border-radius: 16px;
-  overflow: hidden;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
-}
+.s5Card { position: relative; background: #fff; border: 1px solid #e5e7eb; border-radius: 16px; overflow: hidden; transition: transform 0.15s ease, box-shadow 0.15s ease; }
 .s5Card:hover { transform: translateY(-4px); box-shadow: 0 16px 36px rgba(15,23,42,0.1); }
 .s5CardPopular { border-color: #0f766e; border-width: 2px; }
-
-.s5PopularTag {
-  position: absolute;
-  top: 12px;
-  left: 12px;
-  z-index: 2;
-  background: #dc2626;
-  color: #fff;
-  font-size: 10.5px;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  padding: 4px 10px;
-  border-radius: 999px;
-}
-
-/* Clickable image */
-.s5ImgBtn {
-  position: relative;
-  display: block;
-  width: 100%;
-  padding: 0;
-  border: none;
-  background: #f9fafb;
-  cursor: pointer;
-  aspect-ratio: 1 / 1;
-}
+.s5PopularTag { position: absolute; top: 12px; left: 12px; z-index: 2; background: #dc2626; color: #fff; font-size: 10.5px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; padding: 4px 10px; border-radius: 999px; }
+.s5ImgBtn { position: relative; display: block; width: 100%; padding: 0; border: none; background: #f9fafb; cursor: pointer; aspect-ratio: 1/1; }
 .s5Img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.2s ease; }
 .s5ImgBtn:hover .s5Img { transform: scale(1.04); }
-.s5ImgZoom {
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
-  background: rgba(15, 23, 42, 0.65);
-  color: #fff;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  transition: background-color 0.15s ease;
-}
+.s5ImgZoom { position: absolute; bottom: 10px; right: 10px; width: 34px; height: 34px; border-radius: 50%; background: rgba(15, 23, 42, 0.65); color: #fff; display: inline-flex; align-items: center; justify-content: center; transition: background-color 0.15s ease; }
 .s5ImgBtn:hover .s5ImgZoom { background: #0f766e; }
-
 .s5CardBody { padding: 16px 16px 18px; display: flex; flex-direction: column; gap: 8px; }
 .s5BadgeRow { display: flex; }
 .s5Badge { display: inline-flex; align-items: center; padding: 4px 10px; border-radius: 999px; font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; }
@@ -153,9 +103,7 @@
 .s5Badge_blue { background: #eff3ff; color: #1e3a8a; border: 1px solid #c7d4f8; }
 .s5Badge_amber { background: #fff8ed; color: #92400e; border: 1px solid #fde9ba; }
 .s5Badge_teal { background: #f0fdfa; color: #0d6b60; border: 1px solid #b2ede6; }
-
 .s5CardTitle { font-size: 15.5px; font-weight: 800; color: #0b1220; margin: 0; line-height: 1.3; }
-
 .s5Facts { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 5px; }
 .s5Fact { display: flex; align-items: center; gap: 7px; font-size: 12.5px; color: #374151; line-height: 1.4; }
 .s5FactDot { width: 5px; height: 5px; border-radius: 50%; flex-shrink: 0; }
@@ -163,7 +111,6 @@
 .s5FactDot_blue { background: #1e3a8a; }
 .s5FactDot_amber { background: #b45309; }
 .s5FactDot_teal { background: #0d9488; }
-
 .s5Cta { display: inline-flex; align-items: center; justify-content: center; border: none; cursor: pointer; font-family: inherit; font-weight: 700; font-size: 13.5px; padding: 10px 16px; border-radius: 8px; margin-top: 6px; transition: opacity 0.15s ease, transform 0.15s ease; }
 .s5Cta:hover { opacity: 0.88; transform: translateY(-1px); }
 .s5Cta_green { background: #0f766e; color: #fff; }
@@ -172,43 +119,56 @@
 .s5Cta_teal { background: #0d9488; color: #fff; }
 
 /* ==========================================================
-   LIGHTBOX — click-to-enlarge popup
+   SECTION 6 — WHAT CAN STUDENTS BUILD WITH IOT KITS?
    ========================================================== */
-.lightboxBackdrop {
-  position: fixed;
-  inset: 0;
-  background: rgba(11, 18, 32, 0.88);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 24px;
-  z-index: 1100;
-}
-.lightboxInner {
-  position: relative;
-  max-width: 900px;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 14px;
-}
-.lightboxClose {
-  position: absolute;
-  top: -44px;
-  right: 0;
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.12);
-  color: #fff;
-  border: 1px solid rgba(255,255,255,0.3);
-  font-size: 22px;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
+.s6 { padding: 44px 20px; background: #f9fafb; }
+.s6Inner { max-width: 1240px; margin: 0 auto; }
+.s6Heading { font-size: 26px; font-weight: 800; color: #0b1220; text-align: center; margin: 0 0 10px; letter-spacing: -0.01em; }
+.s6Intro { font-size: 14.5px; line-height: 1.6; color: #6b7280; text-align: center; max-width: 800px; margin: 0 auto 28px; }
+
+.s6Grid { display: grid; grid-template-columns: 1fr; gap: 12px; }
+.s6Card { background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 18px 16px; transition: transform 0.15s ease, box-shadow 0.15s ease; }
+.s6Card:hover { transform: translateY(-2px); box-shadow: 0 10px 22px rgba(15,23,42,0.06); }
+.s6CardIcon { width: 42px; height: 42px; border-radius: 10px; background: #0f766e; color: #fff; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 12px; }
+.s6CardTitle { font-size: 14.5px; font-weight: 700; color: #0b1220; margin: 0 0 6px; line-height: 1.3; }
+.s6CardBody { font-size: 12.5px; line-height: 1.5; color: #6b7280; margin: 0; }
+
+/* ==========================================================
+   SECTION 7 — IOT KITS BY DEPARTMENT & ACADEMIC LEVEL
+   ========================================================== */
+.s7 { padding: 44px 20px; background: #ffffff; }
+.s7Inner { max-width: 1100px; margin: 0 auto; }
+.s7Heading { font-size: 26px; font-weight: 800; color: #0b1220; text-align: center; margin: 0 0 10px; letter-spacing: -0.01em; }
+.s7Intro { font-size: 14.5px; line-height: 1.6; color: #6b7280; text-align: center; max-width: 760px; margin: 0 auto 28px; }
+
+.s7Panels { display: grid; grid-template-columns: 1fr; gap: 20px; }
+.s7Panel { background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 14px; padding: 20px; }
+.s7PanelTitle { font-size: 15px; font-weight: 800; color: #0b5b54; margin: 0 0 14px; text-transform: uppercase; letter-spacing: 0.03em; }
+.s7PanelList { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; }
+.s7PanelItem { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; font-size: 13.5px; padding-bottom: 10px; border-bottom: 1px dashed #e5e7eb; }
+.s7PanelItem:last-child { border-bottom: none; padding-bottom: 0; }
+.s7PanelLabel { font-weight: 600; color: #1f2937; }
+.s7PanelArrow { color: #0f766e; font-weight: 700; }
+.s7PanelKit { color: #0b5b54; font-weight: 700; }
+
+/* ==========================================================
+   SECTION 8 — WHAT'S INCLUDED IN AN IOT KIT?
+   ========================================================== */
+.s8 { padding: 44px 20px; background: #f9fafb; }
+.s8Inner { max-width: 900px; margin: 0 auto; }
+.s8Heading { font-size: 26px; font-weight: 800; color: #0b1220; text-align: center; margin: 0 0 10px; letter-spacing: -0.01em; }
+.s8Intro { font-size: 14.5px; line-height: 1.6; color: #6b7280; text-align: center; max-width: 700px; margin: 0 auto 26px; }
+
+.s8Grid { display: grid; grid-template-columns: 1fr; gap: 10px; background: #fff; border: 1px solid #e5e7eb; border-radius: 14px; padding: 22px 24px; }
+.s8List { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px; }
+.s8Item { display: flex; align-items: center; gap: 10px; font-size: 14px; color: #1f2937; }
+.s8Check { flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%; background: #0f766e; color: #fff; display: inline-flex; align-items: center; justify-content: center; }
+.s8Note { font-size: 12.5px; color: #9ca3af; text-align: center; margin: 16px 0 0; font-style: italic; }
+
+/* ── LIGHTBOX ── */
+.lightboxBackdrop { position: fixed; inset: 0; background: rgba(11, 18, 32, 0.88); display: flex; align-items: center; justify-content: center; padding: 24px; z-index: 1100; }
+.lightboxInner { position: relative; max-width: 900px; width: 100%; display: flex; flex-direction: column; align-items: center; gap: 14px; }
+.lightboxClose { position: absolute; top: -44px; right: 0; width: 38px; height: 38px; border-radius: 50%; background: rgba(255,255,255,0.12); color: #fff; border: 1px solid rgba(255,255,255,0.3); font-size: 22px; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; }
 .lightboxClose:hover { background: rgba(255,255,255,0.2); }
 .lightboxImg { width: 100%; height: auto; max-height: 78vh; object-fit: contain; border-radius: 12px; background: #fff; }
 .lightboxCaption { font-size: 14px; font-weight: 600; color: #fff; text-align: center; margin: 0; }
@@ -257,6 +217,9 @@
   .heroTrustStrip { grid-template-columns: repeat(2, 1fr); }
   .s3Grid { grid-template-columns: repeat(3, 1fr); }
   .s5Grid { grid-template-columns: repeat(2, 1fr); }
+  .s6Grid { grid-template-columns: repeat(2, 1fr); }
+  .s7Panels { grid-template-columns: 1fr 1fr; }
+  .s8Grid { grid-template-columns: 1fr 1fr; }
   .s4HeaderRow { display: grid; grid-template-columns: 1.1fr 1.6fr 1.3fr; background: #f3f4f6; border-bottom: 1px solid #e5e7eb; }
   .s4DataRow { grid-template-columns: 1.1fr 1.6fr 1.3fr; padding: 0; gap: 0; }
   .s4Cell { padding: 13px 16px; border-right: 1px solid #f1f5f9; }
@@ -273,8 +236,9 @@
   .heroHeadline { font-size: 40px; }
   .heroSubhead { font-size: 16px; }
   .heroTrustStrip { grid-template-columns: repeat(3, 1fr); padding: 26px 0; }
-  .s3Heading, .s4Heading, .s5Heading { font-size: 32px; }
-  .s5Intro { font-size: 15px; }
+  .s3Heading, .s4Heading, .s5Heading, .s6Heading, .s7Heading, .s8Heading { font-size: 32px; }
+  .s5Intro, .s6Intro, .s7Intro, .s8Intro { font-size: 15px; }
+  .s6Grid { grid-template-columns: repeat(3, 1fr); }
 }
 
 @media (min-width: 1024px) {
@@ -284,4 +248,5 @@
   .heroTrustItem { flex-direction: column; align-items: flex-start; gap: 6px; }
   .s3Grid { grid-template-columns: repeat(3, 1fr); }
   .s5Grid { grid-template-columns: repeat(3, 1fr); }
+  .s6Grid { grid-template-columns: repeat(4, 1fr); }
 }

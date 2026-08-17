@@ -9,20 +9,18 @@ import styles from "./styles.module.css";
  * IoT Kits — Child page under Engineering Innovation Labs / IoT Lab Setup family
  * URL: /engineering-innovation-labs/iot-kits/
  *
- * Step 1 (updated) — Foundation build.
+ * Step 1 — Foundation build. Hero now uses the real product photo.
  *   - page.tsx metadata (separate file)
- *   - Section 1: Hero (breadcrumb + IMAGE placeholder, ready for real photo)
+ *   - Section 1: Hero (breadcrumb + real image)
  *   - Section 2: Quick Answer — What Is an IoT Kit?
  *   - Section 3: Why Choose KnowX IoT Kits?
  *   - Section 4: Choose the Right IoT Kit (finder table)
  *   - Modal — fully built
  *   - Sections 5–14 — labeled placeholders
  *
- * HERO IMAGE — drop-in spec:
+ * HERO IMAGE — live:
  *   Path:   public/images/iot-kits/hero-iot-kit.jpg
- *   Source: 1280×960px minimum (4:3 ratio), JPG
  *   Alt:    "KnowX IoT Development Kit with ESP32 board, sensors, breadboard and LCD display"
- *   To activate: uncomment the <Image> block below and delete the placeholder div.
  *
  * Each kit in Section 5 (Step 2) will get a stable id (e.g. id="esp32-professional-iot-kit")
  * so other pages (Setup, Equipment) can deep-link with #anchors once this page is live.
@@ -99,7 +97,7 @@ export default function IotKitsClient() {
     <div className={`iok-scope ${styles.scope}`}>
 
       {/* ============================================================
-          SECTION 1 — HERO (+ breadcrumb + image)
+          SECTION 1 — HERO (+ breadcrumb + real image)
           ============================================================ */}
       <section className={styles.hero} id="hero">
         <div className={styles.heroInner}>
@@ -129,32 +127,18 @@ export default function IotKitsClient() {
               </div>
             </div>
 
-            {/* ── Hero image — placeholder, sized to real-photo spec ──
-                To activate the real photo:
-                1. Add public/images/iot-kits/hero-iot-kit.jpg (min 1280×960px, 4:3)
-                2. Replace the placeholder div below with:
-
-                <Image
-                  src="/images/iot-kits/hero-iot-kit.jpg"
-                  alt="KnowX IoT Development Kit with ESP32 board, sensors, breadboard and LCD display"
-                  width={1280}
-                  height={960}
-                  priority
-                  sizes="(max-width: 767px) 100vw, (max-width: 1023px) 45vw, 520px"
-                  className={styles.heroImage}
-                />
-            */}
-           <div className={styles.heroRight}>
-  <Image
-    src="/images/iot-kits/hero-iot-kit.jpg"
-    alt="KnowX IoT Development Kit with ESP32 board, sensors, breadboard and LCD display"
-    width={1280}
-    height={960}
-    priority
-    sizes="(max-width: 767px) 100vw, (max-width: 1023px) 45vw, 520px"
-    className={styles.heroImage}
-  />
-</div>
+            <div className={styles.heroRight}>
+              <Image
+                src="/images/iot-kits/hero-iot-kit.jpg"
+                alt="KnowX IoT Development Kit with ESP32 board, sensors, breadboard and LCD display"
+                width={1280}
+                height={960}
+                priority
+                sizes="(max-width: 767px) 100vw, (max-width: 1023px) 45vw, 520px"
+                className={styles.heroImage}
+              />
+            </div>
+          </div>
 
           {/* 5-item trust strip — full width below hero grid */}
           <ul className={styles.heroTrustStrip} aria-label="IoT kit highlights">

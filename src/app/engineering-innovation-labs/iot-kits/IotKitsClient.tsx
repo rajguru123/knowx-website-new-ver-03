@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState, useEffect, FormEvent } from "react";
 import styles from "./styles.module.css";
 
@@ -8,24 +9,32 @@ import styles from "./styles.module.css";
  * IoT Kits — Child page under Engineering Innovation Labs / IoT Lab Setup family
  * URL: /engineering-innovation-labs/iot-kits/
  *
- * Step 1 — Foundation build.
+ * Step 1 (updated) — Foundation build.
  *   - page.tsx metadata (separate file)
- *   - Section 1: Hero (with breadcrumb)
+ *   - Section 1: Hero (breadcrumb + IMAGE placeholder, ready for real photo)
  *   - Section 2: Quick Answer — What Is an IoT Kit?
- *   - Section 3: Why Choose KnowX IoT Kits? (institutional-buyer para folded in)
+ *   - Section 3: Why Choose KnowX IoT Kits?
  *   - Section 4: Choose the Right IoT Kit (finder table)
  *   - Modal — fully built
  *   - Sections 5–14 — labeled placeholders
+ *
+ * HERO IMAGE — drop-in spec:
+ *   Path:   public/images/iot-kits/hero-iot-kit.jpg
+ *   Source: 1280×960px minimum (4:3 ratio), JPG
+ *   Alt:    "KnowX IoT Development Kit with ESP32 board, sensors, breadboard and LCD display"
+ *   To activate: uncomment the <Image> block below and delete the placeholder div.
  *
  * Each kit in Section 5 (Step 2) will get a stable id (e.g. id="esp32-professional-iot-kit")
  * so other pages (Setup, Equipment) can deep-link with #anchors once this page is live.
  */
 
+/* 5-item trust strip — matches reference hero image exactly */
 const heroTrust = [
-  "Complete Hardware",
-  "Structured Experiments",
-  "Real-World Projects",
-  "Faculty Support",
+  "Curriculum-Aligned Experiments",
+  "Industry-Oriented Projects",
+  "Complete Learning Resources",
+  "For All Engineering Disciplines",
+  "Trusted by Colleges Across India",
 ];
 
 /* ─── Section 3 — Why Choose KnowX (6 pillars) ─── */
@@ -90,7 +99,7 @@ export default function IotKitsClient() {
     <div className={`iok-scope ${styles.scope}`}>
 
       {/* ============================================================
-          SECTION 1 — HERO (+ breadcrumb)
+          SECTION 1 — HERO (+ breadcrumb + image)
           ============================================================ */}
       <section className={styles.hero} id="hero">
         <div className={styles.heroInner}>
@@ -110,44 +119,59 @@ export default function IotKitsClient() {
                 <span className={styles.heroHeadlineAccent}>Students &amp; Colleges</span>
               </h1>
               <p className={styles.heroSubhead}>
-                Build practical Internet of Things skills with ready-to-use IoT kits
-                designed for engineering experiments, projects and hands-on learning.
-                Knowx IoT kits combine development platforms, sensors, communication
-                modules, software resources, structured experiments and
-                project-based learning support.
+                Build practical IoT skills with ready-to-use kits including
+                development boards, sensors, communication modules, experiments,
+                projects and learning resources.
               </p>
               <div className={styles.heroCtaRow}>
                 <a href="#our-kits" className={styles.heroCtaPrimary}>Explore IoT Kits</a>
                 <button type="button" onClick={openModal} className={styles.heroCtaSecondary}>Request Institutional Quote</button>
               </div>
-              <ul className={styles.heroTrustStrip} aria-label="IoT kit highlights">
-                {heroTrust.map((pill, i) => (
-                  <li key={pill} className={`${styles.heroTrustPill} ${i % 2 === 0 ? styles.pillGreen : styles.pillBlue}`}>{pill}</li>
-                ))}
-              </ul>
             </div>
 
-            {/* Hero SVG — layered kit ecosystem visual */}
-            <div className={styles.heroRight} aria-hidden="true">
-              <svg viewBox="0 0 420 420" xmlns="http://www.w3.org/2000/svg" className={styles.heroSvg} role="img" aria-label="IoT kit ecosystem — hardware, experiments, projects, learning resources">
-                <circle cx="210" cy="210" r="170" fill="#f0fdf9" />
-                <circle cx="210" cy="210" r="128" fill="none" stroke="#0f766e" strokeWidth="1.5" strokeDasharray="4 5" opacity="0.4" />
-                <rect x="150" y="150" width="120" height="120" rx="16" fill="#ffffff" stroke="#e5e7eb" strokeWidth="1.5" />
-                <rect x="172" y="172" width="76" height="76" rx="10" fill="#0f766e" />
-                <path d="M195 210h34M212 193v34" stroke="#fff" strokeWidth="2.5" strokeLinecap="round" />
-                <g transform="translate(60,52)"><circle cx="0" cy="0" r="30" fill="#0d9488" /><path d="M-9 -3a9 9 0 0 1 18 0M-6 1a6 6 0 0 1 12 0M-3 5a3 3 0 0 1 6 0" stroke="#fff" strokeWidth="2" fill="none" strokeLinecap="round"/></g>
-                <g transform="translate(360,52)"><circle cx="0" cy="0" r="30" fill="#1e3a8a" /><path d="M-8 -10h16v20h-16z" stroke="#fff" strokeWidth="2" fill="none"/><path d="M-4 -14v4M4 -14v4M-4 14v4M4 14v4" stroke="#fff" strokeWidth="2"/></g>
-                <g transform="translate(60,368)"><circle cx="0" cy="0" r="30" fill="#b45309" /><path d="M-10 6l10-14 10 14z" stroke="#fff" strokeWidth="2" fill="none" strokeLinejoin="round"/></g>
-                <g transform="translate(360,368)"><circle cx="0" cy="0" r="30" fill="#0f766e" /><path d="M-9 -6h18v12h-18z" stroke="#fff" strokeWidth="2" fill="none"/><path d="M-9 -6l9 6 9-6" stroke="#fff" strokeWidth="2" fill="none"/></g>
-              </svg>
+            {/* ── Hero image — placeholder, sized to real-photo spec ──
+                To activate the real photo:
+                1. Add public/images/iot-kits/hero-iot-kit.jpg (min 1280×960px, 4:3)
+                2. Replace the placeholder div below with:
+
+                <Image
+                  src="/images/iot-kits/hero-iot-kit.jpg"
+                  alt="KnowX IoT Development Kit with ESP32 board, sensors, breadboard and LCD display"
+                  width={1280}
+                  height={960}
+                  priority
+                  sizes="(max-width: 767px) 100vw, (max-width: 1023px) 45vw, 520px"
+                  className={styles.heroImage}
+                />
+            */}
+            <div className={styles.heroRight}>
+              <div className={styles.heroImagePlaceholder} role="img" aria-label="KnowX IoT Development Kit with ESP32 board, sensors, breadboard and LCD display">
+                <svg viewBox="0 0 64 48" width="56" height="42" fill="none" stroke="rgba(255,255,255,0.55)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <rect x="2" y="2" width="60" height="44" rx="4" />
+                  <rect x="8" y="8" width="20" height="14" rx="2" />
+                  <circle cx="44" cy="15" r="7" />
+                  <path d="M2 34l14-10 10 8 8-6 14 10" />
+                </svg>
+                <span className={styles.heroImageLabel}>KnowX IoT Development Kit</span>
+                <span className={styles.heroImageSub}>Real product photo coming soon · 1280 × 960 px</span>
+              </div>
             </div>
           </div>
+
+          {/* 5-item trust strip — full width below hero grid */}
+          <ul className={styles.heroTrustStrip} aria-label="IoT kit highlights">
+            {heroTrust.map((item) => (
+              <li key={item} className={styles.heroTrustItem}>
+                <span className={styles.heroTrustDot} aria-hidden="true" />
+                {item}
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 
       {/* ============================================================
           SECTION 2 — QUICK ANSWER: WHAT IS AN IOT KIT?
-          AI-citation block — short, direct, immediately below hero
           ============================================================ */}
       <section className={styles.s2} id="quick-answer">
         <div className={styles.s2Inner}>
@@ -169,7 +193,6 @@ export default function IotKitsClient() {
 
       {/* ============================================================
           SECTION 3 — WHY CHOOSE KNOWX IOT KITS?
-          6 pillars + institutional-buyer paragraph folded in
           ============================================================ */}
       <section className={styles.s3} id="why-knowx">
         <div className={styles.s3Inner}>

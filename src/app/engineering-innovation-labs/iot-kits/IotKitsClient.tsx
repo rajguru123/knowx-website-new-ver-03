@@ -9,11 +9,13 @@ import styles from "./styles.module.css";
  * IoT Kits — Child page under Engineering Innovation Labs / IoT Lab Setup family
  * URL: /engineering-innovation-labs/iot-kits/
  *
- * Step 3 — Sections 6 + 7 + 8 built. All icon/text-based, no image dependencies.
- *   - Section 6: What Can Students Build With IoT Kits? (7 project categories)
- *   - Section 7: IoT Kits by Department & Academic Level (finder matrix)
- *   - Section 8: What's Included in an IoT Kit? (2-col checklist)
- * Sections 9–14 remain as placeholders.
+ * FINAL BUILD — all 14 sections complete.
+ *   9  Compare IoT Kits (full inline table)
+ *   10 IoT Kits vs Individual IoT Equipment (real cross-link)
+ *   11 Faculty Resources & Training
+ *   12 How to Choose an IoT Kit (10-question checklist)
+ *   13 FAQ (14 questions) + FAQPage + BreadcrumbList + ItemList JSON-LD
+ *   14 Final CTA + cross-links to Setup & Equipment pages
  */
 
 const heroTrust = [
@@ -45,16 +47,7 @@ const finderRows: { profile: string; focus: string; kit: string }[] = [
 ];
 
 type KitTint = "green" | "blue" | "amber" | "teal";
-type Kit = {
-  id: string;
-  title: string;
-  badge: string;
-  imgSrc: string;
-  imgAlt: string;
-  facts: string[];
-  tint: KitTint;
-  popular?: boolean;
-};
+type Kit = { id: string; title: string; badge: string; imgSrc: string; imgAlt: string; facts: string[]; tint: KitTint; popular?: boolean; };
 
 const kits: Kit[] = [
   { id: "iot-starter-kit", title: "IoT Starter Kit", badge: "Beginners", imgSrc: "/images/iot-kits/kit-iot-starter.jpg", imgAlt: "IoT Starter Kit — ESP32 based development kit for engineering students", facts: ["ESP32 based", "30+ Experiments", "10 Mini Projects", "Wi-Fi & Bluetooth", "Beginner Friendly", "Manual & Source Code"], tint: "green" },
@@ -65,7 +58,6 @@ const kits: Kit[] = [
   { id: "smart-factory-learning-platform", title: "Smart Factory Learning Platform", badge: "Industry 4.0", imgSrc: "/images/iot-kits/kit-smart-factory.jpg", imgAlt: "Smart Factory Learning Platform — Industry 4.0 digital factory and predictive maintenance kit", facts: ["Industry 4.0 Platform", "Digital Factory Simulation", "Machine Vision", "Predictive Maintenance", "Smart Manufacturing", "Manual & Source Code"], tint: "amber" },
 ];
 
-/* ─── Section 6 — What Can Students Build (7 categories) ─── */
 const projectCategories: { title: string; body: string; icon: JSX.Element }[] = [
   { title: "Smart Home Automation", body: "Connected lighting, appliance control, and home monitoring systems.", icon: (<svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 12l9-9 9 9"/><path d="M5 10v10h14V10"/></svg>) },
   { title: "Environmental Monitoring", body: "Air quality, temperature, humidity and weather station projects.", icon: (<svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg>) },
@@ -76,7 +68,6 @@ const projectCategories: { title: string; body: string; icon: JSX.Element }[] = 
   { title: "Smart Factory Solutions", body: "Digital twins, machine vision and Industry 4.0 automation projects.", icon: (<svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>) },
 ];
 
-/* ─── Section 7 — Kit Finder by Department & Level ─── */
 const deptFinder: { dept: string; kit: string }[] = [
   { dept: "CSE / ISE Students", kit: "ESP32 Professional IoT Kit" },
   { dept: "ECE Students", kit: "ESP32 Professional / STM32 Embedded Systems Kit" },
@@ -92,20 +83,55 @@ const levelFinder: { level: string; kit: string }[] = [
   { level: "Research & Innovation", kit: "Smart Factory Learning Platform" },
 ];
 
-/* ─── Section 8 — What's Included (2-column checklist) ─── */
-const includedColA = [
-  "Development Board & Modules",
-  "Sensors & Actuators",
-  "Communication Modules",
-  "Software, Code & Libraries",
-  "Experiments & Projects",
+const includedColA = ["Development Board & Modules", "Sensors & Actuators", "Communication Modules", "Software, Code & Libraries", "Experiments & Projects"];
+const includedColB = ["Manuals & Documentation", "Circuit Diagrams", "Faculty Resources", "Assessment Resources", "Technical Support"];
+
+const compareRows: { kit: string; experiments: string; projects: string; platform: string; bestFor: string }[] = [
+  { kit: "IoT Starter Kit", experiments: "30+", projects: "10", platform: "ESP32", bestFor: "Beginners" },
+  { kit: "ESP32 Professional IoT Kit", experiments: "60+", projects: "25", platform: "ESP32", bestFor: "UG Students" },
+  { kit: "Industrial IoT Kit", experiments: "80+", projects: "30", platform: "ESP32 / STM32 / RPi", bestFor: "Industry 4.0" },
+  { kit: "Knowx Edge AI & Computer Vision Kit", experiments: "50+", projects: "25+", platform: "Raspberry Pi", bestFor: "AI / CV" },
+  { kit: "STM32 Embedded Systems Kit", experiments: "40+", projects: "15", platform: "STM32", bestFor: "Embedded Systems" },
+  { kit: "Smart Factory Learning Platform", experiments: "35+", projects: "20", platform: "Multi-Platform", bestFor: "Industry 4.0 / Research" },
 ];
-const includedColB = [
-  "Manuals & Documentation",
-  "Circuit Diagrams",
-  "Faculty Resources",
-  "Assessment Resources",
-  "Technical Support",
+
+const facultyResources: { title: string; body: string; icon: JSX.Element }[] = [
+  { title: "Instructor Guides", body: "Step-by-step teaching guides for every experiment and project.", icon: (<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M2 10v6c0 1 4 3 10 3s10-2 10-3v-6"/></svg>) },
+  { title: "Lab Manuals", body: "Structured manuals mapped to curriculum outcomes.", icon: (<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>) },
+  { title: "Source Code Repository", body: "Complete, tested source code for all experiments and projects.", icon: (<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></svg>) },
+  { title: "Assessment Resources", body: "Question banks, rubrics and evaluation templates.", icon: (<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 10l2 2 4-4"/><path d="M9 16h6"/></svg>) },
+  { title: "Presentation Decks", body: "Ready-to-use classroom slides for each module.", icon: (<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="18" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>) },
+  { title: "Faculty Training & Support", body: "Onboarding sessions and technical support for teaching staff.", icon: (<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.3 2.3-2-2 2.3-2.3z"/></svg>) },
+];
+
+const chooseQuestions = [
+  "What is the student capacity / batch size?",
+  "Which department(s) will use the kit?",
+  "What is the students' academic level?",
+  "How many experiments are required?",
+  "Are mini or final-year projects included?",
+  "Is Industrial IoT or Industry 4.0 required?",
+  "Is Edge AI or Computer Vision required?",
+  "Does the department already have a preferred platform?",
+  "Is faculty training required?",
+  "What level of ongoing technical support is needed?",
+];
+
+const faqs: { q: string; a: string }[] = [
+  { q: "What is an IoT kit?", a: "An IoT kit is a ready-to-use hardware and learning package that enables students to build, test and demonstrate Internet of Things applications. It typically includes development boards, sensors, communication modules, software resources, experiments, projects and learning materials." },
+  { q: "What is included in a Knowx IoT kit?", a: "Most Knowx IoT kits include a development board, sensors and actuators, communication modules, software and source code, structured experiments and projects, and a complete manual. Faculty resources and assessment materials are included depending on the kit." },
+  { q: "Which IoT kit is best for beginners?", a: "The IoT Starter Kit is designed for first-year and diploma/polytechnic students, covering IoT fundamentals, basic sensor interfacing and beginner-friendly mini projects on the ESP32 platform." },
+  { q: "Which IoT kit is best for final-year engineering projects?", a: "The Industrial IoT Kit and the Knowx Edge AI & Computer Vision Kit are best suited for final-year and advanced projects, covering industrial applications, edge AI, computer vision and Industry 4.0 use cases." },
+  { q: "What is the Knowx Edge AI & Computer Vision Kit?", a: "The Knowx Edge AI & Computer Vision Kit is a Raspberry Pi based kit with 50+ hands-on experiments and 25+ AI and edge projects covering computer vision, voice AI, robotics and IoT, with 450+ components and a complete manual with source code." },
+  { q: "Do IoT kits include source code and manuals?", a: "Yes. Every Knowx IoT kit includes a complete manual with source code, so students and faculty can follow structured experiments and projects without needing to write code from scratch." },
+  { q: "Can IoT kits be used for VTU engineering colleges?", a: "Yes. Knowx IoT kits can support the practical and project requirements of VTU-affiliated engineering colleges across ECE, CSE, EEE, ISE and AI & ML programs." },
+  { q: "What is the difference between an IoT kit and IoT lab equipment?", a: "IoT lab equipment refers to individual hardware components used to build a laboratory from scratch. An IoT kit is a ready-to-use package combining hardware with structured experiments, projects and learning resources for direct classroom use." },
+  { q: "Do you provide faculty training for IoT kits?", a: "Yes. Faculty resources including instructor guides, lab manuals, presentation decks and training support are available to help teaching staff run practical sessions confidently." },
+  { q: "Can Knowx recommend the right kit for our department?", a: "Yes. Share your student capacity, department, academic level and objectives, and our team will recommend the appropriate kit or combination of kits for your institution." },
+  { q: "Are IoT kits suitable for research and innovation centres?", a: "Yes. The Smart Factory Learning Platform and Industrial IoT Kit are well suited for innovation centres and research programs focused on Industry 4.0 and advanced applications." },
+  { q: "Can institutions order multiple different IoT kits together?", a: "Yes. Many institutions combine kits — for example, IoT Starter Kits for first-year batches alongside ESP32 Professional or Industrial IoT Kits for senior students and project work." },
+  { q: "Do you provide institutional quotes for bulk orders?", a: "Yes. Knowx India provides institutional quotes based on student batch size, department requirements and the specific kits selected. Use the Request Institutional Quote button on this page to get started." },
+  { q: "Can you supply IoT kits across India?", a: "Yes. Knowx India supplies and supports IoT kits for engineering institutions across India, with a strong regional presence in Bangalore and Karnataka." },
 ];
 
 export default function IotKitsClient() {
@@ -145,6 +171,37 @@ export default function IotKitsClient() {
       else setSubmitState("error");
     } catch { setSubmitState("error"); }
     finally { setSubmitting(false); }
+  };
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://knowxindia.com/" },
+      { "@type": "ListItem", position: 2, name: "Engineering Innovation Labs", item: "https://knowxindia.com/engineering-innovation-labs" },
+      { "@type": "ListItem", position: 3, name: "IoT Kits", item: "https://knowxindia.com/engineering-innovation-labs/iot-kits" },
+    ],
+  };
+
+  const itemListSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    itemListElement: kits.map((k, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: k.title,
+      url: `https://knowxindia.com/engineering-innovation-labs/iot-kits/#${k.id}`,
+    })),
   };
 
   return (
@@ -255,18 +312,11 @@ export default function IotKitsClient() {
         </div>
       </section>
 
-      {/* ============================================================
-          SECTION 6 — WHAT CAN STUDENTS BUILD WITH IOT KITS?
-          ============================================================ */}
+      {/* S6 STUDENT PROJECTS */}
       <section className={styles.s6} id="student-projects">
         <div className={styles.s6Inner}>
           <h2 className={styles.s6Heading}>What Can Students Build With IoT Kits?</h2>
-          <p className={styles.s6Intro}>
-            IoT kits support a wide range of practical projects across
-            application domains — from home automation and environmental
-            monitoring to industrial systems, edge AI and Industry 4.0
-            manufacturing.
-          </p>
+          <p className={styles.s6Intro}>IoT kits support a wide range of practical projects across application domains — from home automation and environmental monitoring to industrial systems, edge AI and Industry 4.0 manufacturing.</p>
           <div className={styles.s6Grid}>
             {projectCategories.map((p) => (
               <div key={p.title} className={styles.s6Card}>
@@ -279,104 +329,177 @@ export default function IotKitsClient() {
         </div>
       </section>
 
-      {/* ============================================================
-          SECTION 7 — IOT KITS BY DEPARTMENT & ACADEMIC LEVEL
-          Combined finder matrix — two panels side by side
-          ============================================================ */}
+      {/* S7 KIT FINDER */}
       <section className={styles.s7} id="kit-finder">
         <div className={styles.s7Inner}>
           <h2 className={styles.s7Heading}>IoT Kits by Department &amp; Academic Level</h2>
-          <p className={styles.s7Intro}>
-            A quick way to find the right starting point based on your
-            department or your students&apos; academic level.
-          </p>
-
+          <p className={styles.s7Intro}>A quick way to find the right starting point based on your department or your students&apos; academic level.</p>
           <div className={styles.s7Panels}>
             <div className={styles.s7Panel}>
               <h3 className={styles.s7PanelTitle}>By Engineering Department</h3>
-              <ul className={styles.s7PanelList}>
-                {deptFinder.map((row) => (
-                  <li key={row.dept} className={styles.s7PanelItem}>
-                    <span className={styles.s7PanelLabel}>{row.dept}</span>
-                    <span className={styles.s7PanelArrow} aria-hidden="true">→</span>
-                    <span className={styles.s7PanelKit}>{row.kit}</span>
-                  </li>
-                ))}
-              </ul>
+              <ul className={styles.s7PanelList}>{deptFinder.map((row) => (<li key={row.dept} className={styles.s7PanelItem}><span className={styles.s7PanelLabel}>{row.dept}</span><span className={styles.s7PanelArrow} aria-hidden="true">→</span><span className={styles.s7PanelKit}>{row.kit}</span></li>))}</ul>
             </div>
-
             <div className={styles.s7Panel}>
               <h3 className={styles.s7PanelTitle}>By Academic Level</h3>
-              <ul className={styles.s7PanelList}>
-                {levelFinder.map((row) => (
-                  <li key={row.level} className={styles.s7PanelItem}>
-                    <span className={styles.s7PanelLabel}>{row.level}</span>
-                    <span className={styles.s7PanelArrow} aria-hidden="true">→</span>
-                    <span className={styles.s7PanelKit}>{row.kit}</span>
-                  </li>
-                ))}
-              </ul>
+              <ul className={styles.s7PanelList}>{levelFinder.map((row) => (<li key={row.level} className={styles.s7PanelItem}><span className={styles.s7PanelLabel}>{row.level}</span><span className={styles.s7PanelArrow} aria-hidden="true">→</span><span className={styles.s7PanelKit}>{row.kit}</span></li>))}</ul>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ============================================================
-          SECTION 8 — WHAT'S INCLUDED IN AN IOT KIT?
-          2-column checklist
-          ============================================================ */}
+      {/* S8 WHAT'S INCLUDED */}
       <section className={styles.s8} id="whats-included">
         <div className={styles.s8Inner}>
           <h2 className={styles.s8Heading}>What&apos;s Included in an IoT Kit?</h2>
-          <p className={styles.s8Intro}>
-            Exact contents vary by kit — the checklist below covers what a
-            Knowx IoT kit typically includes.
-          </p>
-
+          <p className={styles.s8Intro}>Exact contents vary by kit — the checklist below covers what a Knowx IoT kit typically includes.</p>
           <div className={styles.s8Grid}>
-            <ul className={styles.s8List}>
-              {includedColA.map((item) => (
-                <li key={item} className={styles.s8Item}>
-                  <span className={styles.s8Check} aria-hidden="true">
-                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-                  </span>
-                  {item}
-                </li>
-              ))}
-            </ul>
-            <ul className={styles.s8List}>
-              {includedColB.map((item) => (
-                <li key={item} className={styles.s8Item}>
-                  <span className={styles.s8Check} aria-hidden="true">
-                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-                  </span>
-                  {item}
-                </li>
-              ))}
-            </ul>
+            <ul className={styles.s8List}>{includedColA.map((item) => (<li key={item} className={styles.s8Item}><span className={styles.s8Check} aria-hidden="true"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>{item}</li>))}</ul>
+            <ul className={styles.s8List}>{includedColB.map((item) => (<li key={item} className={styles.s8Item}><span className={styles.s8Check} aria-hidden="true"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>{item}</li>))}</ul>
           </div>
           <p className={styles.s8Note}>* Exact inclusions depend on the specific kit — see individual kit cards above for details.</p>
         </div>
       </section>
 
-      {/* Placeholders S9–S14 */}
-      <section className={styles.placeholder} id="compare-kits">
-        <div className={styles.placeholderInner}><div className={styles.placeholderNum}>S9</div><h2 className={styles.placeholderTitle}>Compare IoT Kits</h2><p className={styles.placeholderNote}>Step 4 — Full inline comparison table, not gated</p></div>
+      {/* SECTION 9 — COMPARE IOT KITS */}
+      <section className={styles.s9} id="compare-kits">
+        <div className={styles.s9Inner}>
+          <h2 className={styles.s9Heading}>Compare IoT Kits</h2>
+          <p className={styles.s9Intro}>A side-by-side comparison of experiments, projects, platform and best-fit use case across all six Knowx IoT kits.</p>
+          <div className={styles.s9TableWrap}>
+            <table className={styles.s9Table}>
+              <thead>
+                <tr>
+                  <th className={styles.s9Th}>Kit</th>
+                  <th className={styles.s9Th}>Experiments</th>
+                  <th className={styles.s9Th}>Projects</th>
+                  <th className={styles.s9Th}>Platform</th>
+                  <th className={styles.s9Th}>Best For</th>
+                </tr>
+              </thead>
+              <tbody>
+                {compareRows.map((row, i) => (
+                  <tr key={row.kit} className={i % 2 === 1 ? styles.s9RowAlt : ""}>
+                    <td className={`${styles.s9Td} ${styles.s9TdKit}`}>{row.kit}</td>
+                    <td className={styles.s9Td}>{row.experiments}</td>
+                    <td className={styles.s9Td}>{row.projects}</td>
+                    <td className={styles.s9Td}>{row.platform}</td>
+                    <td className={styles.s9Td}>{row.bestFor}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <div className={styles.s9CtaRow}>
+            <button type="button" onClick={openModal} className={styles.s9CtaPrimary}>Get a Kit Recommendation</button>
+          </div>
+        </div>
       </section>
-      <section className={`${styles.placeholder} ${styles.placeholderAlt}`} id="kits-vs-equipment">
-        <div className={styles.placeholderInner}><div className={styles.placeholderNum}>S10</div><h2 className={styles.placeholderTitle}>IoT Kits vs Individual IoT Equipment</h2><p className={styles.placeholderNote}>Step 4 — Real cross-link to IoT Lab Equipment page</p></div>
+
+      {/* SECTION 10 — KITS VS EQUIPMENT */}
+      <section className={styles.s10} id="kits-vs-equipment">
+        <div className={styles.s10Inner}>
+          <h2 className={styles.s10Heading}>IoT Kits vs. Individual IoT Equipment</h2>
+          <div className={styles.s10Table} role="table" aria-label="IoT kits versus individual IoT equipment">
+            <div className={styles.s10HeaderRow} role="row">
+              <div className={`${styles.s10Cell} ${styles.s10HKits}`} role="columnheader">IoT Kits</div>
+              <div className={`${styles.s10Cell} ${styles.s10HEquip}`} role="columnheader">Individual IoT Equipment</div>
+            </div>
+            <div className={styles.s10DataRow} role="row">
+              <div className={styles.s10Cell} role="cell">Ready-to-use learning package</div>
+              <div className={styles.s10Cell} role="cell">Individual hardware / components</div>
+            </div>
+            <div className={`${styles.s10DataRow} ${styles.s10RowAlt}`} role="row">
+              <div className={styles.s10Cell} role="cell">Used for structured learning / projects</div>
+              <div className={styles.s10Cell} role="cell">Used to build a laboratory</div>
+            </div>
+            <div className={styles.s10DataRow} role="row">
+              <div className={styles.s10Cell} role="cell">Hardware + experiments + projects + resources</div>
+              <div className={styles.s10Cell} role="cell">Boards, sensors, actuators, infrastructure</div>
+            </div>
+            <div className={`${styles.s10DataRow} ${styles.s10RowAlt}`} role="row">
+              <div className={styles.s10Cell} role="cell">Students, faculty, departments and colleges</div>
+              <div className={styles.s10Cell} role="cell">Mainly institutional procurement</div>
+            </div>
+          </div>
+          <p className={styles.s10CrossLink}>
+            Building a laboratory from scratch?{" "}
+            <Link href="/engineering-innovation-labs/iot-lab-equipment" className={styles.s10CrossLinkAnchor}>Explore IoT Lab Equipment →</Link>
+          </p>
+        </div>
       </section>
-      <section className={styles.placeholder} id="faculty-resources">
-        <div className={styles.placeholderInner}><div className={styles.placeholderNum}>S11</div><h2 className={styles.placeholderTitle}>Faculty Resources &amp; Training</h2><p className={styles.placeholderNote}>Step 4 — Manuals, guides, source code, assessment resources</p></div>
+
+      {/* SECTION 11 — FACULTY RESOURCES */}
+      <section className={styles.s11} id="faculty-resources">
+        <div className={styles.s11Inner}>
+          <h2 className={styles.s11Heading}>Faculty Resources &amp; Training</h2>
+          <p className={styles.s11Intro}>Every Knowx IoT kit is backed by resources that help faculty teach confidently and run practical sessions smoothly.</p>
+          <div className={styles.s11Grid}>
+            {facultyResources.map((f) => (
+              <div key={f.title} className={styles.s11Card}>
+                <div className={styles.s11CardIcon} aria-hidden="true">{f.icon}</div>
+                <h3 className={styles.s11CardTitle}>{f.title}</h3>
+                <p className={styles.s11CardBody}>{f.body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
       </section>
-      <section className={`${styles.placeholder} ${styles.placeholderAlt}`} id="how-to-choose">
-        <div className={styles.placeholderInner}><div className={styles.placeholderNum}>S12</div><h2 className={styles.placeholderTitle}>How to Choose an IoT Kit</h2><p className={styles.placeholderNote}>Step 4 — 10-question decision checklist</p></div>
+
+      {/* SECTION 12 — HOW TO CHOOSE */}
+      <section className={styles.s12} id="how-to-choose">
+        <div className={styles.s12Inner}>
+          <h2 className={styles.s12Heading}>How to Choose an IoT Kit</h2>
+          <ol className={styles.s12List}>
+            {chooseQuestions.map((q, i) => (
+              <li key={q} className={styles.s12Item}>
+                <span className={styles.s12Num}>{i + 1}</span>
+                <span className={styles.s12Text}>{q}</span>
+              </li>
+            ))}
+          </ol>
+          <div className={styles.s12CtaRow}>
+            <button type="button" onClick={openModal} className={styles.s12CtaPrimary}>Get a Customized Kit Recommendation</button>
+          </div>
+        </div>
       </section>
-      <section className={styles.placeholder} id="faq">
-        <div className={styles.placeholderInner}><div className={styles.placeholderNum}>S13</div><h2 className={styles.placeholderTitle}>Frequently Asked Questions</h2><p className={styles.placeholderNote}>Step 5 — 14 questions + FAQPage + BreadcrumbList + ItemList JSON-LD</p></div>
+
+      {/* SECTION 13 — FAQ */}
+      <section className={styles.s13} id="faq">
+        <div className={styles.s13Inner}>
+          <h2 className={styles.s13Heading}>IoT Kits — Frequently Asked Questions</h2>
+          <div className={styles.s13List}>
+            {faqs.map((f, i) => (
+              <details key={i} className={styles.s13Item}>
+                <summary className={styles.s13Q}>
+                  <span>{f.q}</span>
+                  <span className={styles.s13QChevron} aria-hidden="true">+</span>
+                </summary>
+                <div className={styles.s13A}>{f.a}</div>
+              </details>
+            ))}
+          </div>
+        </div>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }} />
       </section>
-      <section className={`${styles.placeholder} ${styles.placeholderDark}`} id="cta">
-        <div className={styles.placeholderInner}><div className={styles.placeholderNum}>S14</div><h2 className={styles.placeholderTitle}>Get an IoT Kit Recommendation</h2><p className={styles.placeholderNote}>Step 5 — Final CTA banner + cross-links to Setup &amp; Equipment pages</p></div>
+
+      {/* SECTION 14 — FINAL CTA */}
+      <section className={styles.s14} id="cta">
+        <div className={styles.s14Inner}>
+          <h2 className={styles.s14Heading}>Need Help Choosing the Right IoT Kit?</h2>
+          <p className={styles.s14Body}>Tell us your department, student level, batch size and learning objectives. Our experts will recommend the best-fit IoT kit for your requirements.</p>
+          <div className={styles.s14CtaRow}>
+            <button type="button" onClick={openModal} className={styles.s14CtaPrimary}>Get Kit Recommendation</button>
+            <button type="button" onClick={openModal} className={styles.s14CtaSecondary}>Request Institutional Quote</button>
+          </div>
+          <p className={styles.s14Link}>
+            Also explore the{" "}
+            <Link href="/engineering-innovation-labs/iot-lab-setup" className={styles.s14LinkAnchor}>Complete IoT Lab Setup</Link>
+            {" "}and{" "}
+            <Link href="/engineering-innovation-labs/iot-lab-equipment" className={styles.s14LinkAnchor}>IoT Lab Equipment</Link>
+          </p>
+        </div>
       </section>
 
       {/* LIGHTBOX */}

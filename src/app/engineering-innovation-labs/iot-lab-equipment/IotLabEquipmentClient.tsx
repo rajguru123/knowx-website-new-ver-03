@@ -532,7 +532,7 @@ export default function IotLabEquipmentClient() {
           </div>
           <p className={styles.s15CrossLink}>
             Looking for ready-to-use learning kits?{" "}
-            <button type="button" onClick={openModal} className={styles.s15CrossLinkBtn}>Explore IoT Kits →</button>
+            <Link href="/engineering-innovation-labs/iot-kits" className={styles.s15CrossLinkBtn}>Explore IoT Kits →</Link>
           </p>
         </div>
       </section>

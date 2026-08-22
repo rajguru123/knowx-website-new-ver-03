@@ -102,18 +102,16 @@ export default function AiLabSetupClient() {
             </div>
 
             <div className={styles.heroRight}>
-              <div className={styles.heroImagePlaceholder} role="img" aria-label="KnowX AI Lab setup with NVIDIA Jetson, camera module and live computer vision output">
-                <svg viewBox="0 0 64 48" width="56" height="42" fill="none" stroke="rgba(255,255,255,0.55)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                  <rect x="2" y="2" width="60" height="44" rx="4" />
-                  <circle cx="32" cy="24" r="10" />
-                  <path d="M27 24a5 5 0 0 1 10 0" />
-                  <circle cx="32" cy="24" r="2" />
-                </svg>
-                <span className={styles.heroImageLabel}>KnowX AI Lab Setup</span>
-                <span className={styles.heroImageSub}>Real lab photo coming soon · 1280 × 960 px</span>
-              </div>
-            </div>
-          </div>
+  <Image
+    src="/images/ai-lab/hero-ai-lab.jpg"
+    alt="KnowX AI Lab setup with NVIDIA Jetson, camera module and live computer vision output"
+    width={1280}
+    height={960}
+    priority
+    sizes="(max-width: 767px) 100vw, (max-width: 1023px) 45vw, 520px"
+    className={styles.heroImage}
+  />
+</div>
 
           <ul className={styles.heroTrustStrip} aria-label="AI lab highlights">
             {heroTrust.map((item) => (

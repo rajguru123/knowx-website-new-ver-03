@@ -9,16 +9,15 @@ import styles from "./styles.module.css";
  * AI Lab Setup — Child page under Engineering Innovation Labs pillar
  * URL: /engineering-innovation-labs/ai-lab-setup/
  *
- * Step 1 — Foundation build.
+ * Step 1 — Foundation build. Hero now uses the real lab photo.
  *   - page.tsx metadata (separate file)
- *   - Section 1: Hero (breadcrumb + image placeholder, ready for real photo)
+ *   - Section 1: Hero (breadcrumb + real image)
  *   - Section 2: What Is an AI Lab? (Quick Answer block)
  *   - Modal — fully built
  *   - Sections 3–16 — labeled placeholders
  *
- * HERO IMAGE — drop-in spec:
+ * HERO IMAGE — live:
  *   Path:   public/images/ai-lab/hero-ai-lab.jpg
- *   Source: 1280×960px minimum (4:3 ratio), JPG
  *   Alt:    "KnowX AI Lab setup with NVIDIA Jetson, camera module and live computer vision output"
  *
  * CSS scope: .aik-scope
@@ -102,16 +101,17 @@ export default function AiLabSetupClient() {
             </div>
 
             <div className={styles.heroRight}>
-  <Image
-    src="/images/ai-lab/hero-ai-lab.jpg"
-    alt="KnowX AI Lab setup with NVIDIA Jetson, camera module and live computer vision output"
-    width={1280}
-    height={960}
-    priority
-    sizes="(max-width: 767px) 100vw, (max-width: 1023px) 45vw, 520px"
-    className={styles.heroImage}
-  />
-</div>
+              <Image
+                src="/images/ai-lab/hero-ai-lab.jpg"
+                alt="KnowX AI Lab setup with NVIDIA Jetson, camera module and live computer vision output"
+                width={1280}
+                height={960}
+                priority
+                sizes="(max-width: 767px) 100vw, (max-width: 1023px) 45vw, 520px"
+                className={styles.heroImage}
+              />
+            </div>
+          </div>
 
           <ul className={styles.heroTrustStrip} aria-label="AI lab highlights">
             {heroTrust.map((item) => (

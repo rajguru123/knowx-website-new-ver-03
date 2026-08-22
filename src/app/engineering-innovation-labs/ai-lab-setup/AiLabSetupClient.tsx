@@ -9,18 +9,12 @@ import styles from "./styles.module.css";
  * AI Lab Setup — Child page under Engineering Innovation Labs pillar
  * URL: /engineering-innovation-labs/ai-lab-setup/
  *
- * Step 1 — Foundation build. Hero now uses the real lab photo.
- *   - page.tsx metadata (separate file)
- *   - Section 1: Hero (breadcrumb + real image)
- *   - Section 2: What Is an AI Lab? (Quick Answer block)
- *   - Modal — fully built
- *   - Sections 3–16 — labeled placeholders
+ * Step 2 — Section 3 (Complete AI Lab Solutions) + Section 4 (AI Lab Kits) built.
+ * Sections 5–16 remain as placeholders.
  *
- * HERO IMAGE — live:
- *   Path:   public/images/ai-lab/hero-ai-lab.jpg
- *   Alt:    "KnowX AI Lab setup with NVIDIA Jetson, camera module and live computer vision output"
- *
- * CSS scope: .aik-scope
+ * Both kit CTAs open the proposal modal (no cross-link to IoT Kits page, per instruction).
+ * Jetson kit image is a placeholder — drop-in spec:
+ *   Path: public/images/ai-lab/kit-jetson-orin-nano-super.jpg (1200x1200, 1:1)
  */
 
 const heroTrust = [
@@ -29,6 +23,38 @@ const heroTrust = [
   "Industry-Oriented Projects",
   "Faculty Training",
   "Complete Implementation",
+];
+
+type SolTint = "green" | "blue" | "amber" | "teal";
+const aiSolutions: { title: string; body: string; tint: SolTint; icon: JSX.Element }[] = [
+  { title: "Machine Learning", body: "Python, datasets, model development, classification and prediction.", tint: "green", icon: (<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 3v18h18"/><path d="M7 15l4-4 4 4 5-5"/></svg>) },
+  { title: "Deep Learning", body: "Neural networks, training and inference.", tint: "blue", icon: (<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="6" cy="6" r="2"/><circle cx="6" cy="12" r="2"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="9" r="2"/><circle cx="18" cy="15" r="2"/><path d="M8 6l8 3M8 12l8-3M8 12l8 3M8 18l8-3"/></svg>) },
+  { title: "Computer Vision", body: "OpenCV, object detection, image classification and tracking.", tint: "amber", icon: (<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>) },
+  { title: "Generative AI", body: "LLMs, prompt engineering, AI applications and conversational systems.", tint: "teal", icon: (<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>) },
+  { title: "Edge AI", body: "Raspberry Pi and NVIDIA Jetson-based AI deployment.", tint: "green", icon: (<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"/></svg>) },
+  { title: "Robotics & Physical AI", body: "Vision, sensors, motors and intelligent physical systems.", tint: "blue", icon: (<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="6" y="8" width="12" height="10" rx="2"/><circle cx="9.5" cy="13" r="1"/><circle cx="14.5" cy="13" r="1"/><path d="M9 8V5a3 3 0 0 1 6 0v3M4 13h2M18 13h2"/></svg>) },
+];
+
+type KitTint = "green" | "blue";
+const aiKits: { title: string; badge: string; imgSrc: string; imgAlt: string; facts: string[]; progression: string; tint: KitTint }[] = [
+  {
+    title: "Knowx Edge AI & Computer Vision Kit",
+    badge: "Powered by Raspberry Pi",
+    imgSrc: "/images/iot-kits/kit-edge-ai-computer-vision.jpg",
+    imgAlt: "Knowx Edge AI & Computer Vision Kit — Raspberry Pi based AI kit",
+    facts: ["50+ Hands-On Experiments", "25+ AI & Edge Projects", "Computer Vision + Voice AI", "Robotics + IoT", "450+ Components & Accessories", "Complete Manual with Source Code"],
+    progression: "Python → Vision → Voice → AI → Physical AI",
+    tint: "green",
+  },
+  {
+    title: "NVIDIA Jetson Orin Nano Super Edge AI Kit",
+    badge: "Powered by NVIDIA Jetson",
+    imgSrc: "/images/ai-lab/kit-jetson-orin-nano-super.jpg",
+    imgAlt: "NVIDIA Jetson Orin Nano Super Edge AI Kit for engineering colleges",
+    facts: ["67 TOPS AI Performance", "CUDA + TensorRT Acceleration", "Deep Learning & YOLO Vision", "LLM & Vision-Language Models", "GPU-Accelerated Robotics & Edge AI", "Complete Manual with Source Code"],
+    progression: "Python → CUDA → Computer Vision → Deep Learning → Edge AI",
+    tint: "blue",
+  },
 ];
 
 export default function AiLabSetupClient() {
@@ -70,7 +96,7 @@ export default function AiLabSetupClient() {
   return (
     <div className={`aik-scope ${styles.scope}`}>
 
-      {/* SECTION 1 — HERO */}
+      {/* S1 HERO */}
       <section className={styles.hero} id="hero">
         <div className={styles.heroInner}>
           <nav className={styles.breadcrumb} aria-label="Breadcrumb">
@@ -80,77 +106,81 @@ export default function AiLabSetupClient() {
             <span className={styles.breadcrumbSep} aria-hidden="true">/</span>
             <span className={styles.breadcrumbCurrent}>AI Lab Setup</span>
           </nav>
-
           <div className={styles.heroGrid}>
             <div className={styles.heroLeft}>
               <span className={styles.heroTag}>Complete AI Lab Setup · Engineering Colleges &amp; Universities</span>
-              <h1 className={styles.heroHeadline}>
-                AI Lab Setup for{" "}
-                <span className={styles.heroHeadlineAccent}>Engineering Colleges &amp; Universities</span>
-              </h1>
-              <p className={styles.heroSubhead}>
-                Build a future-ready artificial intelligence laboratory with AI
-                learning kits, computing platforms, computer vision systems,
-                Edge AI hardware, experiments, projects and faculty resources
-                designed for hands-on engineering education.
-              </p>
+              <h1 className={styles.heroHeadline}>AI Lab Setup for{" "}<span className={styles.heroHeadlineAccent}>Engineering Colleges &amp; Universities</span></h1>
+              <p className={styles.heroSubhead}>Build a future-ready artificial intelligence laboratory with AI learning kits, computing platforms, computer vision systems, Edge AI hardware, experiments, projects and faculty resources designed for hands-on engineering education.</p>
               <div className={styles.heroCtaRow}>
                 <button type="button" onClick={openModal} className={styles.heroCtaPrimary}>Request AI Lab Proposal</button>
                 <button type="button" onClick={openModal} className={styles.heroCtaSecondary}>Talk to an AI Lab Expert →</button>
               </div>
             </div>
-
             <div className={styles.heroRight}>
-              <Image
-                src="/images/ai-lab/hero-ai-lab.jpg"
-                alt="KnowX AI Lab setup with NVIDIA Jetson, camera module and live computer vision output"
-                width={1280}
-                height={960}
-                priority
-                sizes="(max-width: 767px) 100vw, (max-width: 1023px) 45vw, 520px"
-                className={styles.heroImage}
-              />
+              <Image src="/images/ai-lab/hero-ai-lab.jpg" alt="KnowX AI Lab setup with NVIDIA Jetson, camera module and live computer vision output" width={1280} height={960} priority sizes="(max-width: 767px) 100vw, (max-width: 1023px) 45vw, 520px" className={styles.heroImage} />
             </div>
           </div>
-
           <ul className={styles.heroTrustStrip} aria-label="AI lab highlights">
-            {heroTrust.map((item) => (
-              <li key={item} className={styles.heroTrustItem}>
-                <span className={styles.heroTrustDot} aria-hidden="true" />
-                {item}
-              </li>
-            ))}
+            {heroTrust.map((item) => (<li key={item} className={styles.heroTrustItem}><span className={styles.heroTrustDot} aria-hidden="true" />{item}</li>))}
           </ul>
         </div>
       </section>
 
-      {/* SECTION 2 — WHAT IS AN AI LAB? */}
+      {/* S2 WHAT IS AN AI LAB */}
       <section className={styles.s2} id="what-is-ai-lab">
         <div className={styles.s2Inner}>
-          <div className={styles.s2Icon} aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 2-3 4"/><path d="M12 17h.01"/></svg>
-          </div>
+          <div className={styles.s2Icon} aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 2-3 4"/><path d="M12 17h.01"/></svg></div>
           <div className={styles.s2Content}>
             <h2 className={styles.s2Heading}>What Is an AI Lab?</h2>
-            <p className={styles.s2Body}>
-              An AI laboratory is a practical learning environment where students
-              develop, train, test and deploy artificial intelligence applications
-              using computing hardware, AI software, datasets, development tools
-              and hands-on projects. A modern engineering AI lab can include
-              machine learning, deep learning, computer vision, generative AI,
-              Edge AI, robotics and AIoT platforms.
-            </p>
+            <p className={styles.s2Body}>An AI laboratory is a practical learning environment where students develop, train, test and deploy artificial intelligence applications using computing hardware, AI software, datasets, development tools and hands-on projects. A modern engineering AI lab can include machine learning, deep learning, computer vision, generative AI, Edge AI, robotics and AIoT platforms.</p>
           </div>
         </div>
       </section>
 
-      {/* Placeholders S3–S16 */}
-      <section className={styles.placeholder} id="ai-lab-solutions">
-        <div className={styles.placeholderInner}><div className={styles.placeholderNum}>S3</div><h2 className={styles.placeholderTitle}>Complete AI Lab Solutions</h2><p className={styles.placeholderNote}>Next — 6 cards: ML, Deep Learning, Computer Vision, Generative AI, Edge AI, Robotics/Physical AI</p></div>
+      {/* SECTION 3 — COMPLETE AI LAB SOLUTIONS */}
+      <section className={styles.s3} id="ai-lab-solutions">
+        <div className={styles.s3Inner}>
+          <h2 className={styles.s3Heading}>Complete AI Lab Solutions</h2>
+          <p className={styles.s3Intro}>A modern AI laboratory spans multiple technology pillars — from foundational machine learning to advanced Edge AI and physical robotics.</p>
+          <div className={styles.s3Grid}>
+            {aiSolutions.map((s) => (
+              <div key={s.title} className={`${styles.s3Card} ${styles[`s3Tint_${s.tint}`]}`}>
+                <div className={styles.s3CardIcon} aria-hidden="true">{s.icon}</div>
+                <h3 className={styles.s3CardTitle}>{s.title}</h3>
+                <p className={styles.s3CardBody}>{s.body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
       </section>
-      <section className={`${styles.placeholder} ${styles.placeholderAlt}`} id="ai-lab-kits">
-        <div className={styles.placeholderInner}><div className={styles.placeholderNum}>S4</div><h2 className={styles.placeholderTitle}>AI Lab Kits</h2><p className={styles.placeholderNote}>Next — Knowx Edge AI &amp; Computer Vision Kit (reused) + NVIDIA Jetson Orin Nano Super Edge AI Kit (new)</p></div>
+
+      {/* SECTION 4 — AI LAB KITS */}
+      <section className={styles.s4} id="ai-lab-kits">
+        <div className={styles.s4Inner}>
+          <h2 className={styles.s4Heading}>AI Lab Kits</h2>
+          <p className={styles.s4Intro}>Two Edge AI kit tiers designed to take students from AI fundamentals to GPU-accelerated deep learning and deployment.</p>
+          <div className={styles.s4Grid}>
+            {aiKits.map((kit) => (
+              <div key={kit.title} className={`${styles.s4Card} ${styles[`s4CardTint_${kit.tint}`]}`}>
+                <div className={styles.s4CardImgWrap}>
+                  <Image src={kit.imgSrc} alt={kit.imgAlt} width={400} height={400} loading="lazy" sizes="(max-width: 768px) 100vw, 400px" className={styles.s4CardImg} />
+                </div>
+                <div className={styles.s4CardBody}>
+                  <span className={`${styles.s4Badge} ${styles[`s4Badge_${kit.tint}`]}`}>{kit.badge}</span>
+                  <h3 className={styles.s4CardTitle}>{kit.title}</h3>
+                  <ul className={styles.s4Facts}>
+                    {kit.facts.map((f) => (<li key={f} className={styles.s4Fact}><span className={`${styles.s4FactDot} ${styles[`s4FactDot_${kit.tint}`]}`} aria-hidden="true" />{f}</li>))}
+                  </ul>
+                  <p className={styles.s4Progression}><span className={styles.s4ProgressionLabel}>Learning progression:</span> {kit.progression}</p>
+                  <button type="button" onClick={openModal} className={`${styles.s4Cta} ${styles[`s4Cta_${kit.tint}`]}`}>Request AI Lab Proposal</button>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
       </section>
+
+      {/* Placeholders S5–S16 */}
       <section className={styles.placeholder} id="ai-learning-path">
         <div className={styles.placeholderInner}><div className={styles.placeholderNum}>S5</div><h2 className={styles.placeholderTitle}>AI Learning Path</h2><p className={styles.placeholderNote}>Next — progression diagram</p></div>
       </section>

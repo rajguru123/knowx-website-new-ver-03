@@ -1,7 +1,7 @@
 /* =========================================================
    AI Lab Setup — Child Page (scoped)
    Wrapper:  .aik-scope
-   Step 2    Adds Section 3 (AI Lab Solutions) + Section 4 (AI Lab Kits)
+   Step 3    Adds Section 5 (AI Learning Path) + Section 6 (AI Lab Experiments)
    Palette: Green #0f766e  Blue #1e3a8a  Amber #b45309  Teal #0d9488  Red #dc2626 (CTA)
    ========================================================= */
 
@@ -49,9 +49,7 @@
 .s2Heading { font-size: 17px; font-weight: 800; color: #0b1220; margin: 0 0 8px; }
 .s2Body { font-size: 14.5px; line-height: 1.65; color: #1f2937; margin: 0; }
 
-/* ==========================================================
-   SECTION 3 — COMPLETE AI LAB SOLUTIONS
-   ========================================================== */
+/* ── SECTION 3 — COMPLETE AI LAB SOLUTIONS ── */
 .s3 { padding: 44px 20px; background: #ffffff; }
 .s3Inner { max-width: 1240px; margin: 0 auto; }
 .s3Heading { font-size: 26px; font-weight: 800; color: #0b1220; text-align: center; margin: 0 0 10px; letter-spacing: -0.01em; }
@@ -67,23 +65,18 @@
 .s3CardTitle { font-size: 15.5px; font-weight: 700; color: #0b1220; margin: 0 0 6px; }
 .s3CardBody { font-size: 13px; line-height: 1.5; color: #6b7280; margin: 0; }
 
-/* ==========================================================
-   SECTION 4 — AI LAB KITS (2 wide cards)
-   ========================================================== */
+/* ── SECTION 4 — AI LAB KITS ── */
 .s4 { padding: 44px 20px; background: #f9fafb; }
 .s4Inner { max-width: 1100px; margin: 0 auto; }
 .s4Heading { font-size: 26px; font-weight: 800; color: #0b1220; text-align: center; margin: 0 0 10px; letter-spacing: -0.01em; }
 .s4Intro { font-size: 14.5px; line-height: 1.6; color: #6b7280; text-align: center; max-width: 800px; margin: 0 auto 28px; }
-
 .s4Grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
 .s4Card { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 16px; overflow: hidden; display: flex; flex-direction: column; transition: transform 0.15s ease, box-shadow 0.15s ease; }
 .s4Card:hover { transform: translateY(-3px); box-shadow: 0 16px 34px rgba(15,23,42,0.09); }
 .s4CardTint_green { border-top: 3px solid #0f766e; }
 .s4CardTint_blue { border-top: 3px solid #1e3a8a; }
-
 .s4CardImgWrap { width: 100%; aspect-ratio: 1/1; background: #f3f4f6; }
 .s4CardImg { width: 100%; height: 100%; object-fit: cover; display: block; }
-
 .s4CardBody { padding: 20px 20px 22px; display: flex; flex-direction: column; gap: 10px; }
 .s4Badge { display: inline-flex; align-self: flex-start; align-items: center; padding: 5px 12px; border-radius: 999px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; }
 .s4Badge_green { background: #f0fdf9; color: #0b5b54; border: 1px solid #cceee5; }
@@ -100,6 +93,37 @@
 .s4Cta:hover { opacity: 0.88; transform: translateY(-1px); }
 .s4Cta_green { background: #0f766e; color: #fff; }
 .s4Cta_blue { background: #1e3a8a; color: #fff; }
+
+/* ── SECTION 5 — AI LEARNING PATH ── */
+.s5 { padding: 44px 20px; background: #ffffff; }
+.s5Inner { max-width: 1200px; margin: 0 auto; }
+.s5Heading { font-size: 26px; font-weight: 800; color: #0b1220; text-align: center; margin: 0 0 10px; letter-spacing: -0.01em; }
+.s5Intro { font-size: 14.5px; line-height: 1.6; color: #6b7280; text-align: center; max-width: 800px; margin: 0 auto 32px; }
+.s5Path { display: flex; flex-direction: column; gap: 10px; }
+.s5Step { display: flex; align-items: center; gap: 12px; }
+.s5StepNum { flex-shrink: 0; width: 34px; height: 34px; border-radius: 50%; background: #0f766e; color: #fff; font-size: 13.5px; font-weight: 800; display: inline-flex; align-items: center; justify-content: center; }
+.s5StepLabel { flex: 1; background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 10px; padding: 12px 16px; font-size: 14px; font-weight: 600; color: #1f2937; }
+.s5StepArrow { display: none; }
+
+/* ── SECTION 6 — AI LAB EXPERIMENTS ── */
+.s6 { padding: 44px 20px; background: #f9fafb; }
+.s6Inner { max-width: 1240px; margin: 0 auto; }
+.s6Heading { font-size: 26px; font-weight: 800; color: #0b1220; text-align: center; margin: 0 0 10px; letter-spacing: -0.01em; }
+.s6Intro { font-size: 14.5px; line-height: 1.6; color: #6b7280; text-align: center; max-width: 800px; margin: 0 auto 28px; }
+.s6Grid { display: grid; grid-template-columns: 1fr; gap: 14px; }
+.s6Card { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 14px; padding: 18px 18px 20px; }
+.s6Tint_green { border-top: 3px solid #0f766e; }
+.s6Tint_blue { border-top: 3px solid #1e3a8a; }
+.s6Tint_amber { border-top: 3px solid #b45309; }
+.s6Tint_teal { border-top: 3px solid #0d9488; }
+.s6CardTitle { font-size: 14.5px; font-weight: 700; color: #0b1220; margin: 0 0 12px; }
+.s6CardItems { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 7px; }
+.s6CardItem { display: flex; align-items: center; gap: 8px; font-size: 13px; color: #374151; }
+.s6Dot { width: 5px; height: 5px; border-radius: 50%; flex-shrink: 0; }
+.s6Dot_green { background: #0f766e; }
+.s6Dot_blue { background: #1e3a8a; }
+.s6Dot_amber { background: #b45309; }
+.s6Dot_teal { background: #0d9488; }
 
 /* ── PLACEHOLDERS ── */
 .placeholder { min-height: 200px; padding: 40px 20px; background: #ffffff; border-bottom: 2px dashed #e5e7eb; display: flex; align-items: center; justify-content: center; }
@@ -144,6 +168,7 @@
 @media (min-width: 640px) {
   .heroTrustStrip { grid-template-columns: repeat(2, 1fr); }
   .s3Grid { grid-template-columns: repeat(2, 1fr); }
+  .s6Grid { grid-template-columns: repeat(2, 1fr); }
   .modalRow { grid-template-columns: 1fr 1fr; }
 }
 
@@ -152,10 +177,14 @@
   .heroHeadline { font-size: 38px; }
   .heroSubhead { font-size: 16px; }
   .heroTrustStrip { grid-template-columns: repeat(3, 1fr); padding: 26px 0; }
-  .s3Heading, .s4Heading { font-size: 32px; }
+  .s3Heading, .s4Heading, .s5Heading, .s6Heading { font-size: 32px; }
   .s4Card { flex-direction: row; }
   .s4CardImgWrap { width: 240px; flex-shrink: 0; aspect-ratio: auto; }
   .s4CardBody { flex: 1; }
+  .s5Path { flex-direction: row; flex-wrap: wrap; align-items: stretch; gap: 0; }
+  .s5Step { flex-direction: column; text-align: center; gap: 8px; flex: 1; min-width: 100px; }
+  .s5StepLabel { padding: 10px 8px; font-size: 12px; display: flex; align-items: center; justify-content: center; min-height: 44px; }
+  .s5StepArrow { display: flex; align-items: center; justify-content: center; color: #0f766e; font-weight: 700; font-size: 14px; padding: 0 4px; align-self: center; margin-top: -30px; }
 }
 
 @media (min-width: 1024px) {
@@ -167,9 +196,11 @@
   .s4Grid { grid-template-columns: repeat(2, 1fr); }
   .s4Card { flex-direction: column; }
   .s4CardImgWrap { width: 100%; aspect-ratio: 1/1; }
+  .s6Grid { grid-template-columns: repeat(3, 1fr); }
 }
 
 @media (min-width: 1280px) {
   .s4Card { flex-direction: row; }
   .s4CardImgWrap { width: 280px; aspect-ratio: auto; }
+  .s6Grid { grid-template-columns: repeat(5, 1fr); }
 }

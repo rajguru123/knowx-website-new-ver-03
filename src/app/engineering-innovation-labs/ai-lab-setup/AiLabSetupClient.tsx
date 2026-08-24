@@ -9,12 +9,8 @@ import styles from "./styles.module.css";
  * AI Lab Setup — Child page under Engineering Innovation Labs pillar
  * URL: /engineering-innovation-labs/ai-lab-setup/
  *
- * Step 2 — Section 3 (Complete AI Lab Solutions) + Section 4 (AI Lab Kits) built.
- * Sections 5–16 remain as placeholders.
- *
- * Both kit CTAs open the proposal modal (no cross-link to IoT Kits page, per instruction).
- * Jetson kit image is a placeholder — drop-in spec:
- *   Path: public/images/ai-lab/kit-jetson-orin-nano-super.jpg (1200x1200, 1:1)
+ * Step 3 — Section 5 (AI Learning Path) + Section 6 (AI Lab Experiments) built.
+ * Sections 7–16 remain as placeholders.
  */
 
 const heroTrust = [
@@ -37,24 +33,31 @@ const aiSolutions: { title: string; body: string; tint: SolTint; icon: JSX.Eleme
 
 type KitTint = "green" | "blue";
 const aiKits: { title: string; badge: string; imgSrc: string; imgAlt: string; facts: string[]; progression: string; tint: KitTint }[] = [
-  {
-    title: "Knowx Edge AI & Computer Vision Kit",
-    badge: "Powered by Raspberry Pi",
-    imgSrc: "/images/iot-kits/kit-edge-ai-computer-vision.jpg",
-    imgAlt: "Knowx Edge AI & Computer Vision Kit — Raspberry Pi based AI kit",
-    facts: ["50+ Hands-On Experiments", "25+ AI & Edge Projects", "Computer Vision + Voice AI", "Robotics + IoT", "450+ Components & Accessories", "Complete Manual with Source Code"],
-    progression: "Python → Vision → Voice → AI → Physical AI",
-    tint: "green",
-  },
-  {
-    title: "NVIDIA Jetson Orin Nano Super Edge AI Kit",
-    badge: "Powered by NVIDIA Jetson",
-    imgSrc: "/images/ai-lab/kit-jetson-orin-nano-super.jpg",
-    imgAlt: "NVIDIA Jetson Orin Nano Super Edge AI Kit for engineering colleges",
-    facts: ["67 TOPS AI Performance", "CUDA + TensorRT Acceleration", "Deep Learning & YOLO Vision", "LLM & Vision-Language Models", "GPU-Accelerated Robotics & Edge AI", "Complete Manual with Source Code"],
-    progression: "Python → CUDA → Computer Vision → Deep Learning → Edge AI",
-    tint: "blue",
-  },
+  { title: "Knowx Edge AI & Computer Vision Kit", badge: "Powered by Raspberry Pi", imgSrc: "/images/iot-kits/kit-edge-ai-computer-vision.jpg", imgAlt: "Knowx Edge AI & Computer Vision Kit — Raspberry Pi based AI kit", facts: ["50+ Hands-On Experiments", "25+ AI & Edge Projects", "Computer Vision + Voice AI", "Robotics + IoT", "450+ Components & Accessories", "Complete Manual with Source Code"], progression: "Python → Vision → Voice → AI → Physical AI", tint: "green" },
+  { title: "NVIDIA Jetson Orin Nano Super Edge AI Kit", badge: "Powered by NVIDIA Jetson", imgSrc: "/images/ai-lab/kit-jetson-orin-nano-super.jpg", imgAlt: "NVIDIA Jetson Orin Nano Super Edge AI Kit for engineering colleges", facts: ["67 TOPS AI Performance", "CUDA + TensorRT Acceleration", "Deep Learning & YOLO Vision", "LLM & Vision-Language Models", "GPU-Accelerated Robotics & Edge AI", "Complete Manual with Source Code"], progression: "Python → CUDA → Computer Vision → Deep Learning → Edge AI", tint: "blue" },
+];
+
+/* ─── Section 5 — AI Learning Path (progression) ─── */
+const learningPath: string[] = [
+  "AI Fundamentals",
+  "Python for AI",
+  "Machine Learning",
+  "Deep Learning",
+  "Computer Vision",
+  "Generative AI",
+  "Edge AI",
+  "Physical AI / Robotics",
+  "Industry Applications",
+];
+
+/* ─── Section 6 — AI Lab Experiments (5 domains) ─── */
+type ExpTint = "green" | "blue" | "amber" | "teal";
+const experimentDomains: { title: string; items: string[]; tint: ExpTint }[] = [
+  { title: "Foundation Experiments", items: ["Python programming basics", "Data handling with NumPy/Pandas", "Data visualization", "Basic statistics for AI"], tint: "green" },
+  { title: "Computer Vision Experiments", items: ["Image classification", "Object detection", "Face & gesture recognition", "Real-time video processing"], tint: "amber" },
+  { title: "Edge AI Experiments", items: ["Model deployment on Raspberry Pi", "GPU-accelerated inference on Jetson", "Real-time edge inference", "Sensor + AI integration"], tint: "teal" },
+  { title: "Generative AI Experiments", items: ["Prompt engineering", "Text generation with LLMs", "Conversational AI applications", "AI-assisted content generation"], tint: "blue" },
+  { title: "Robotics & Physical AI Experiments", items: ["Vision-guided robotic control", "Sensor fusion", "Autonomous navigation basics", "AI-driven motor control"], tint: "green" },
 ];
 
 export default function AiLabSetupClient() {
@@ -137,7 +140,7 @@ export default function AiLabSetupClient() {
         </div>
       </section>
 
-      {/* SECTION 3 — COMPLETE AI LAB SOLUTIONS */}
+      {/* S3 COMPLETE AI LAB SOLUTIONS */}
       <section className={styles.s3} id="ai-lab-solutions">
         <div className={styles.s3Inner}>
           <h2 className={styles.s3Heading}>Complete AI Lab Solutions</h2>
@@ -154,7 +157,7 @@ export default function AiLabSetupClient() {
         </div>
       </section>
 
-      {/* SECTION 4 — AI LAB KITS */}
+      {/* S4 AI LAB KITS */}
       <section className={styles.s4} id="ai-lab-kits">
         <div className={styles.s4Inner}>
           <h2 className={styles.s4Heading}>AI Lab Kits</h2>
@@ -168,9 +171,7 @@ export default function AiLabSetupClient() {
                 <div className={styles.s4CardBody}>
                   <span className={`${styles.s4Badge} ${styles[`s4Badge_${kit.tint}`]}`}>{kit.badge}</span>
                   <h3 className={styles.s4CardTitle}>{kit.title}</h3>
-                  <ul className={styles.s4Facts}>
-                    {kit.facts.map((f) => (<li key={f} className={styles.s4Fact}><span className={`${styles.s4FactDot} ${styles[`s4FactDot_${kit.tint}`]}`} aria-hidden="true" />{f}</li>))}
-                  </ul>
+                  <ul className={styles.s4Facts}>{kit.facts.map((f) => (<li key={f} className={styles.s4Fact}><span className={`${styles.s4FactDot} ${styles[`s4FactDot_${kit.tint}`]}`} aria-hidden="true" />{f}</li>))}</ul>
                   <p className={styles.s4Progression}><span className={styles.s4ProgressionLabel}>Learning progression:</span> {kit.progression}</p>
                   <button type="button" onClick={openModal} className={`${styles.s4Cta} ${styles[`s4Cta_${kit.tint}`]}`}>Request AI Lab Proposal</button>
                 </div>
@@ -180,13 +181,53 @@ export default function AiLabSetupClient() {
         </div>
       </section>
 
-      {/* Placeholders S5–S16 */}
-      <section className={styles.placeholder} id="ai-learning-path">
-        <div className={styles.placeholderInner}><div className={styles.placeholderNum}>S5</div><h2 className={styles.placeholderTitle}>AI Learning Path</h2><p className={styles.placeholderNote}>Next — progression diagram</p></div>
+      {/* ============================================================
+          SECTION 5 — AI LEARNING PATH
+          ============================================================ */}
+      <section className={styles.s5} id="ai-learning-path">
+        <div className={styles.s5Inner}>
+          <h2 className={styles.s5Heading}>AI Learning Path</h2>
+          <p className={styles.s5Intro}>
+            A structured progression from AI fundamentals to industry-ready
+            applications — the same pathway a Knowx AI lab is designed to
+            support.
+          </p>
+          <div className={styles.s5Path} role="list" aria-label="AI learning path">
+            {learningPath.map((step, i) => (
+              <div key={step} className={styles.s5Step} role="listitem">
+                <div className={styles.s5StepNum}>{i + 1}</div>
+                <div className={styles.s5StepLabel}>{step}</div>
+                {i < learningPath.length - 1 && <div className={styles.s5StepArrow} aria-hidden="true">→</div>}
+              </div>
+            ))}
+          </div>
+        </div>
       </section>
-      <section className={`${styles.placeholder} ${styles.placeholderAlt}`} id="ai-lab-experiments">
-        <div className={styles.placeholderInner}><div className={styles.placeholderNum}>S6</div><h2 className={styles.placeholderTitle}>AI Lab Experiments</h2><p className={styles.placeholderNote}>Next — 5 domains</p></div>
+
+      {/* ============================================================
+          SECTION 6 — AI LAB EXPERIMENTS
+          ============================================================ */}
+      <section className={styles.s6} id="ai-lab-experiments">
+        <div className={styles.s6Inner}>
+          <h2 className={styles.s6Heading}>AI Lab Experiments</h2>
+          <p className={styles.s6Intro}>
+            Experiments span five domains — from foundational programming to
+            advanced Edge AI, generative AI and physical robotics.
+          </p>
+          <div className={styles.s6Grid}>
+            {experimentDomains.map((d) => (
+              <div key={d.title} className={`${styles.s6Card} ${styles[`s6Tint_${d.tint}`]}`}>
+                <h3 className={styles.s6CardTitle}>{d.title}</h3>
+                <ul className={styles.s6CardItems}>
+                  {d.items.map((item) => (<li key={item} className={styles.s6CardItem}><span className={`${styles.s6Dot} ${styles[`s6Dot_${d.tint}`]}`} aria-hidden="true" />{item}</li>))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
       </section>
+
+      {/* Placeholders S7–S16 */}
       <section className={styles.placeholder} id="ai-projects">
         <div className={styles.placeholderInner}><div className={styles.placeholderNum}>S7</div><h2 className={styles.placeholderTitle}>AI Projects for Engineering Students</h2><p className={styles.placeholderNote}>Next — by difficulty</p></div>
       </section>

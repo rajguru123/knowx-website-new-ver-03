@@ -9,8 +9,10 @@ import styles from "./styles.module.css";
  * AI Lab Setup — Child page under Engineering Innovation Labs pillar
  * URL: /engineering-innovation-labs/ai-lab-setup/
  *
- * Step 3 — Section 5 (AI Learning Path) + Section 6 (AI Lab Experiments) built.
- * Sections 7–16 remain as placeholders.
+ * Step 4 — Section 5 (AI Learning Path) + Section 6 (AI Lab Experiments) REDONE
+ * with vibrant color treatment. Section 7 (AI Projects) + Section 8 (AI Lab
+ * Equipment) newly built with matching color energy.
+ * Sections 9–16 remain as placeholders.
  */
 
 const heroTrust = [
@@ -37,27 +39,43 @@ const aiKits: { title: string; badge: string; imgSrc: string; imgAlt: string; fa
   { title: "NVIDIA Jetson Orin Nano Super Edge AI Kit", badge: "Powered by NVIDIA Jetson", imgSrc: "/images/ai-lab/kit-jetson-orin-nano-super.jpg", imgAlt: "NVIDIA Jetson Orin Nano Super Edge AI Kit for engineering colleges", facts: ["67 TOPS AI Performance", "CUDA + TensorRT Acceleration", "Deep Learning & YOLO Vision", "LLM & Vision-Language Models", "GPU-Accelerated Robotics & Edge AI", "Complete Manual with Source Code"], progression: "Python → CUDA → Computer Vision → Deep Learning → Edge AI", tint: "blue" },
 ];
 
-/* ─── Section 5 — AI Learning Path (progression) ─── */
-const learningPath: string[] = [
-  "AI Fundamentals",
-  "Python for AI",
-  "Machine Learning",
-  "Deep Learning",
-  "Computer Vision",
-  "Generative AI",
-  "Edge AI",
-  "Physical AI / Robotics",
-  "Industry Applications",
+/* ─── Section 5 — AI Learning Path, grouped into 4 color phases ─── */
+type PhaseTint = "green" | "blue" | "amber" | "teal";
+const learningPhases: { phase: string; tint: PhaseTint; steps: string[] }[] = [
+  { phase: "Foundation", tint: "green", steps: ["AI Fundamentals", "Python for AI"] },
+  { phase: "Core AI", tint: "blue", steps: ["Machine Learning", "Deep Learning"] },
+  { phase: "Advanced AI", tint: "amber", steps: ["Computer Vision", "Generative AI"] },
+  { phase: "Applied AI", tint: "teal", steps: ["Edge AI", "Physical AI / Robotics", "Industry Applications"] },
 ];
 
-/* ─── Section 6 — AI Lab Experiments (5 domains) ─── */
+/* ─── Section 6 — AI Lab Experiments, filled icon badges + tinted cards ─── */
 type ExpTint = "green" | "blue" | "amber" | "teal";
-const experimentDomains: { title: string; items: string[]; tint: ExpTint }[] = [
-  { title: "Foundation Experiments", items: ["Python programming basics", "Data handling with NumPy/Pandas", "Data visualization", "Basic statistics for AI"], tint: "green" },
-  { title: "Computer Vision Experiments", items: ["Image classification", "Object detection", "Face & gesture recognition", "Real-time video processing"], tint: "amber" },
-  { title: "Edge AI Experiments", items: ["Model deployment on Raspberry Pi", "GPU-accelerated inference on Jetson", "Real-time edge inference", "Sensor + AI integration"], tint: "teal" },
-  { title: "Generative AI Experiments", items: ["Prompt engineering", "Text generation with LLMs", "Conversational AI applications", "AI-assisted content generation"], tint: "blue" },
-  { title: "Robotics & Physical AI Experiments", items: ["Vision-guided robotic control", "Sensor fusion", "Autonomous navigation basics", "AI-driven motor control"], tint: "green" },
+const experimentDomains: { title: string; items: string[]; tint: ExpTint; icon: JSX.Element }[] = [
+  { title: "Foundation Experiments", items: ["Python programming basics", "Data handling with NumPy/Pandas", "Data visualization", "Basic statistics for AI"], tint: "green", icon: (<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></svg>) },
+  { title: "Computer Vision Experiments", items: ["Image classification", "Object detection", "Face & gesture recognition", "Real-time video processing"], tint: "amber", icon: (<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>) },
+  { title: "Edge AI Experiments", items: ["Model deployment on Raspberry Pi", "GPU-accelerated inference on Jetson", "Real-time edge inference", "Sensor + AI integration"], tint: "teal", icon: (<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"/></svg>) },
+  { title: "Generative AI Experiments", items: ["Prompt engineering", "Text generation with LLMs", "Conversational AI applications", "AI-assisted content generation"], tint: "blue", icon: (<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>) },
+  { title: "Robotics & Physical AI Experiments", items: ["Vision-guided robotic control", "Sensor fusion", "Autonomous navigation basics", "AI-driven motor control"], tint: "green", icon: (<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="6" y="8" width="12" height="10" rx="2"/><circle cx="9.5" cy="13" r="1"/><circle cx="14.5" cy="13" r="1"/><path d="M9 8V5a3 3 0 0 1 6 0v3M4 13h2M18 13h2"/></svg>) },
+];
+
+/* ─── Section 7 — AI Projects by difficulty tier ─── */
+type TierTint = "green" | "blue" | "amber" | "teal";
+const projectTiers: { tier: string; tint: TierTint; projects: string[] }[] = [
+  { tier: "Beginner", tint: "green", projects: ["Simple image classifiers", "Basic computer vision apps", "Rule-based chatbots", "Sentiment analysis tools"] },
+  { tier: "Intermediate", tint: "blue", projects: ["Real-time object detection", "Voice-controlled assistants", "Recommendation systems", "Face recognition attendance"] },
+  { tier: "Advanced", tint: "amber", projects: ["Custom model training & fine-tuning", "Multi-sensor data fusion", "Autonomous navigation basics", "Edge-deployed vision pipelines"] },
+  { tier: "Industry-Oriented", tint: "teal", projects: ["Predictive maintenance AI", "Smart factory vision systems", "GenAI-powered applications", "AIoT integrated solutions"] },
+];
+
+/* ─── Section 8 — AI Lab Equipment categories ─── */
+type EquipTint = "green" | "blue" | "amber" | "teal";
+const equipmentCategories: { title: string; body: string; tint: EquipTint; icon: JSX.Element }[] = [
+  { title: "AI Computing", body: "GPU and CPU platforms for model training and inference.", tint: "green", icon: (<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="6" y="6" width="12" height="12" rx="1"/><path d="M9 3v3M15 3v3M9 18v3M15 18v3M3 9h3M3 15h3M18 9h3M18 15h3"/></svg>) },
+  { title: "Vision Hardware", body: "Cameras, depth sensors and vision modules.", tint: "blue", icon: (<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>) },
+  { title: "Edge AI Devices", body: "NVIDIA Jetson and Raspberry Pi based Edge AI platforms.", tint: "amber", icon: (<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"/></svg>) },
+  { title: "Embedded & Robotics", body: "Sensors, motors, actuators and robotics platforms.", tint: "teal", icon: (<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="6" y="8" width="12" height="10" rx="2"/><circle cx="9.5" cy="13" r="1"/><circle cx="14.5" cy="13" r="1"/><path d="M9 8V5a3 3 0 0 1 6 0v3M4 13h2M18 13h2"/></svg>) },
+  { title: "Networking", body: "Connectivity infrastructure for connected AI systems.", tint: "green", icon: (<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M2 12a15.3 15.3 0 0 1 20 0"/><path d="M5 15a10 10 0 0 1 14 0"/><path d="M8.5 18a5 5 0 0 1 7 0"/><circle cx="12" cy="21" r="1"/></svg>) },
+  { title: "Lab Infrastructure", body: "Workstations, power, storage and lab setup essentials.", tint: "blue", icon: (<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-6h6v6"/></svg>) },
 ];
 
 export default function AiLabSetupClient() {
@@ -182,22 +200,26 @@ export default function AiLabSetupClient() {
       </section>
 
       {/* ============================================================
-          SECTION 5 — AI LEARNING PATH
+          SECTION 5 — AI LEARNING PATH (redone: 4 color phases)
           ============================================================ */}
       <section className={styles.s5} id="ai-learning-path">
         <div className={styles.s5Inner}>
           <h2 className={styles.s5Heading}>AI Learning Path</h2>
-          <p className={styles.s5Intro}>
-            A structured progression from AI fundamentals to industry-ready
-            applications — the same pathway a Knowx AI lab is designed to
-            support.
-          </p>
-          <div className={styles.s5Path} role="list" aria-label="AI learning path">
-            {learningPath.map((step, i) => (
-              <div key={step} className={styles.s5Step} role="listitem">
-                <div className={styles.s5StepNum}>{i + 1}</div>
-                <div className={styles.s5StepLabel}>{step}</div>
-                {i < learningPath.length - 1 && <div className={styles.s5StepArrow} aria-hidden="true">→</div>}
+          <p className={styles.s5Intro}>A structured progression from AI fundamentals to industry-ready applications — the same pathway a Knowx AI lab is designed to support.</p>
+
+          <div className={styles.s5PhaseGrid}>
+            {learningPhases.map((p, pi) => (
+              <div key={p.phase} className={`${styles.s5Phase} ${styles[`s5Phase_${p.tint}`]}`}>
+                <div className={styles.s5PhaseHeader}>
+                  <span className={`${styles.s5PhaseNum} ${styles[`s5PhaseNum_${p.tint}`]}`}>{pi + 1}</span>
+                  <h3 className={styles.s5PhaseTitle}>{p.phase}</h3>
+                </div>
+                <div className={styles.s5PhaseSteps}>
+                  {p.steps.map((step) => (
+                    <div key={step} className={styles.s5StepChip}>{step}</div>
+                  ))}
+                </div>
+                {pi < learningPhases.length - 1 && <div className={`${styles.s5PhaseArrow} ${styles[`s5PhaseArrow_${p.tint}`]}`} aria-hidden="true">→</div>}
               </div>
             ))}
           </div>
@@ -205,18 +227,16 @@ export default function AiLabSetupClient() {
       </section>
 
       {/* ============================================================
-          SECTION 6 — AI LAB EXPERIMENTS
+          SECTION 6 — AI LAB EXPERIMENTS (redone: filled icon badges + tint)
           ============================================================ */}
       <section className={styles.s6} id="ai-lab-experiments">
         <div className={styles.s6Inner}>
           <h2 className={styles.s6Heading}>AI Lab Experiments</h2>
-          <p className={styles.s6Intro}>
-            Experiments span five domains — from foundational programming to
-            advanced Edge AI, generative AI and physical robotics.
-          </p>
+          <p className={styles.s6Intro}>Experiments span five domains — from foundational programming to advanced Edge AI, generative AI and physical robotics.</p>
           <div className={styles.s6Grid}>
             {experimentDomains.map((d) => (
-              <div key={d.title} className={`${styles.s6Card} ${styles[`s6Tint_${d.tint}`]}`}>
+              <div key={d.title} className={`${styles.s6Card} ${styles[`s6CardTint_${d.tint}`]}`}>
+                <div className={`${styles.s6CardIcon} ${styles[`s6CardIcon_${d.tint}`]}`} aria-hidden="true">{d.icon}</div>
                 <h3 className={styles.s6CardTitle}>{d.title}</h3>
                 <ul className={styles.s6CardItems}>
                   {d.items.map((item) => (<li key={item} className={styles.s6CardItem}><span className={`${styles.s6Dot} ${styles[`s6Dot_${d.tint}`]}`} aria-hidden="true" />{item}</li>))}
@@ -227,13 +247,48 @@ export default function AiLabSetupClient() {
         </div>
       </section>
 
-      {/* Placeholders S7–S16 */}
-      <section className={styles.placeholder} id="ai-projects">
-        <div className={styles.placeholderInner}><div className={styles.placeholderNum}>S7</div><h2 className={styles.placeholderTitle}>AI Projects for Engineering Students</h2><p className={styles.placeholderNote}>Next — by difficulty</p></div>
+      {/* ============================================================
+          SECTION 7 — AI PROJECTS FOR ENGINEERING STUDENTS (new)
+          4 difficulty tiers, color-cascading
+          ============================================================ */}
+      <section className={styles.s7} id="ai-projects">
+        <div className={styles.s7Inner}>
+          <h2 className={styles.s7Heading}>AI Projects for Engineering Students</h2>
+          <p className={styles.s7Intro}>Projects scale from beginner-friendly classifiers to industry-oriented AI systems, matching student progression through the lab.</p>
+          <div className={styles.s7Grid}>
+            {projectTiers.map((t) => (
+              <div key={t.tier} className={`${styles.s7Card} ${styles[`s7CardTint_${t.tint}`]}`}>
+                <div className={`${styles.s7TierHeader} ${styles[`s7TierHeader_${t.tint}`]}`}>{t.tier}</div>
+                <ul className={styles.s7List}>
+                  {t.projects.map((p) => (<li key={p} className={styles.s7Item}><span className={`${styles.s7Dot} ${styles[`s7Dot_${t.tint}`]}`} aria-hidden="true" />{p}</li>))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
       </section>
-      <section className={`${styles.placeholder} ${styles.placeholderAlt}`} id="ai-lab-equipment">
-        <div className={styles.placeholderInner}><div className={styles.placeholderNum}>S8</div><h2 className={styles.placeholderTitle}>AI Lab Equipment</h2><p className={styles.placeholderNote}>Next — equipment categories</p></div>
+
+      {/* ============================================================
+          SECTION 8 — AI LAB EQUIPMENT (new)
+          6 category cards, filled icon squares
+          ============================================================ */}
+      <section className={styles.s8} id="ai-lab-equipment">
+        <div className={styles.s8Inner}>
+          <h2 className={styles.s8Heading}>AI Lab Equipment</h2>
+          <p className={styles.s8Intro}>Core equipment categories that make up a complete AI laboratory, from computing hardware to lab infrastructure.</p>
+          <div className={styles.s8Grid}>
+            {equipmentCategories.map((c) => (
+              <div key={c.title} className={styles.s8Card}>
+                <div className={`${styles.s8CardIcon} ${styles[`s8CardIcon_${c.tint}`]}`} aria-hidden="true">{c.icon}</div>
+                <h3 className={styles.s8CardTitle}>{c.title}</h3>
+                <p className={styles.s8CardBody}>{c.body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
       </section>
+
+      {/* Placeholders S9–S16 */}
       <section className={styles.placeholder} id="ai-software-stack">
         <div className={styles.placeholderInner}><div className={styles.placeholderNum}>S9</div><h2 className={styles.placeholderTitle}>AI Software &amp; Development Stack</h2><p className={styles.placeholderNote}>Next — tools and frameworks</p></div>
       </section>

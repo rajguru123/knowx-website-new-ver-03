@@ -125,14 +125,14 @@ const galleryItems: { file: string; caption: string; alt: string }[] = [
   { file: "ai-iot-workshop-for-polytechnic-students.jpg", caption: "AI & IoT Workshop for Students", alt: "AI and IoT workshop for polytechnic students" },
 ];
 
-/* SECTION 14 — Testimonials (6 placeholders) */
-const testimonials = Array.from({ length: 6 }, (_, i) => ({
-  id: i + 1,
-  quote: "Testimonial placeholder — real quote pending from partner institution. This card demonstrates the layout and typography that will hold the real endorsement once collected.",
-  name: `Placeholder Name ${i + 1}`,
-  role: i === 0 ? "Principal" : i === 1 ? "Head of Department" : i === 2 ? "Faculty Coordinator" : i === 3 ? "Innovation Cell Lead" : i === 4 ? "Student Ambassador" : "Placement Officer",
-  institution: `Engineering Institution ${i + 1}`,
-}));
+/* SECTION 14 — Testimonials (real feedback from partner institutions) */
+const testimonials: { quote: string; institution: string; city: string; mono: string; tint: "green" | "blue" | "amber"; tag: string }[] = [
+  { quote: "The Knowx team did excellent work in setting up our lab and training our students in IoT and IIoT.", institution: "Government Women's Polytechnic", city: "Bangalore", mono: "GW", tint: "green", tag: "Lab Setup · Student Training" },
+  { quote: "The Knowx team set up our IoT lab and trained our faculty.", institution: "University Visvesvaraya College of Engineering (UVCE)", city: "Bangalore", mono: "UV", tint: "blue", tag: "IoT Lab Setup · Faculty Training" },
+  { quote: "Knowx supplied our IoT kits and trained our faculty.", institution: "University BDT College of Engineering (UBDT)", city: "Davangere", mono: "UB", tint: "amber", tag: "IoT Kits · Faculty Training" },
+  { quote: "The Knowx team supplied IoT kits to our college and trained our faculty members.", institution: "Rural Engineering College", city: "Hulkoti", mono: "RE", tint: "green", tag: "IoT Kits · Faculty Training" },
+  { quote: "Knowx successfully conducted an IoT workshop for our ECE students.", institution: "Government Polytechnic", city: "Chintamani", mono: "GP", tint: "blue", tag: "IoT Workshop · ECE Students" },
+];
 
 /* SECTION 16 — FAQ */
 const faqs: { q: string; a: string }[] = [
@@ -573,24 +573,24 @@ export default function EngineeringInnovationLabsClient() {
       <section className={styles.s14} id="reviews">
         <div className={styles.s14Inner}>
           <h2 className={styles.s14Heading}>What Our Partner Institutions Say</h2>
-          <p className={styles.s14Intro}>Voices from principals, HoDs, faculty coordinators, and student innovators at engineering colleges partnering with Knowx to build long-term innovation ecosystems.</p>
+          <p className={styles.s14Intro}>Feedback from engineering colleges and polytechnics where Knowx has set up IoT labs, supplied kits, and trained students and faculty.</p>
 
           <div className={styles.sliderWrap}>
             <button type="button" className={`${styles.sliderArrow} ${styles.sliderArrowLeft}`} aria-label="Scroll reviews left" onClick={() => scrollBy(reviewsRef, -1)}>‹</button>
-            <div ref={reviewsRef} className={styles.sliderTrack} role="list">
+            <div ref={reviewsRef} className={`${styles.sliderTrack} ${x.reviewTrack}`} role="list">
               {testimonials.map((t) => (
-                <div key={t.id} className={`${styles.slide} ${styles.reviewSlide}`} role="listitem">
-                  <div className={styles.reviewBox}>
-                    <div className={styles.reviewMark} aria-hidden="true">“</div>
-                    <p className={styles.reviewQuote}>{t.quote}</p>
-                    <div className={styles.reviewMeta}>
-                      <div className={styles.reviewName}>{t.name}</div>
-                      <div className={styles.reviewRole}>{t.role}</div>
-                      <div className={styles.reviewInstitution}>{t.institution}</div>
-                    </div>
-                    <div className={styles.reviewPlaceholderTag}>Placeholder testimonial</div>
-                  </div>
-                </div>
+                <figure key={t.institution} className={`${x.reviewCard} ${x[`tint_${t.tint}`]}`} role="listitem">
+                  <span className={x.reviewMark} aria-hidden="true">“</span>
+                  <blockquote className={x.reviewQuote}>{t.quote}</blockquote>
+                  <figcaption className={x.reviewFoot}>
+                    <span className={x.reviewMono} aria-hidden="true">{t.mono}</span>
+                    <span className={x.reviewWho}>
+                      <span className={x.reviewInst}>{t.institution}</span>
+                      <span className={x.reviewCity}>{t.city}</span>
+                    </span>
+                  </figcaption>
+                  <span className={x.reviewTag}>{t.tag}</span>
+                </figure>
               ))}
             </div>
             <button type="button" className={`${styles.sliderArrow} ${styles.sliderArrowRight}`} aria-label="Scroll reviews right" onClick={() => scrollBy(reviewsRef, 1)}>›</button>

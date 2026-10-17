@@ -1,8 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import { useRef, useState, useEffect, FormEvent } from "react";
+import Image from "next/image";
+import { useRef, useState, useEffect, useCallback, FormEvent } from "react";
 import styles from "./styles.module.css";
+import x from "./sections.module.css";
 
 /**
  * Engineering Innovation Labs — Flagship pillar page
@@ -87,15 +89,41 @@ const fundingRoutes: { title: string; body: string; tint: FundTint; icon: JSX.El
   { title: "Government Schemes", body: "State and central schemes for innovation, skilling, and startup incubation — aligned with your lab's strategic focus.", tint: "amber", icon: (<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2l9 4-9 4-9-4 9-4z"/><path d="M3 10l9 4 9-4"/><path d="M3 14l9 4 9-4"/></svg>) },
 ];
 
-/* SECTION 12 — Customer logos (10 placeholders) */
-const customerLogos = Array.from({ length: 10 }, (_, i) => ({ id: i + 1, label: `Client Logo ${i + 1}` }));
+/* SECTION 12 — Partner institutions (name cards) */
+type CTint = "green" | "blue" | "amber";
+const colleges: { name: string; city: string; mono: string; tint: CTint; ribbon?: string }[] = [
+  { name: "University Visvesvaraya College of Engineering (UVCE)", city: "Bangalore", mono: "UV", tint: "green", ribbon: "Autonomous · IIT Model" },
+  { name: "Rural Engineering College", city: "Hulkoti", mono: "RE", tint: "blue" },
+  { name: "University BDT College of Engineering (UBDT)", city: "Davangere", mono: "UB", tint: "amber" },
+  { name: "BGS Institute of Technology (BGSIT)", city: "B.G. Nagara", mono: "BG", tint: "green" },
+  { name: "Government Polytechnic", city: "Chintamani", mono: "GP", tint: "blue" },
+  { name: "Government Women's Polytechnic", city: "Bangalore", mono: "GW", tint: "amber" },
+  { name: "Alliance University", city: "Bangalore", mono: "AU", tint: "green" },
+  { name: "RV University", city: "Bangalore", mono: "RV", tint: "blue" },
+  { name: "BMS College of Engineering", city: "Bangalore", mono: "BM", tint: "amber" },
+  { name: "Dayananda Sagar College of Engineering", city: "Bangalore", mono: "DS", tint: "green" },
+  { name: "SJB Institute of Technology (SJBIT)", city: "Bangalore", mono: "SJ", tint: "blue" },
+  { name: "Sir M. Visvesvaraya Institute of Technology (Sir MVIT)", city: "Bangalore", mono: "MV", tint: "amber" },
+  { name: "IIITDM Kurnool", city: "Kurnool", mono: "IK", tint: "green" },
+  { name: "IIT Indore", city: "Indore", mono: "II", tint: "blue" },
+  { name: "Mother Theresa Institute of Engineering and Technology", city: "Palamaner", mono: "MT", tint: "amber" },
+  { name: "IIITDM Kanchipuram", city: "Kanchipuram", mono: "IC", tint: "green" },
+  { name: "Osmania University", city: "Hyderabad", mono: "OU", tint: "blue" },
+];
 
-/* SECTION 13 — Gallery photos (12 placeholders) */
-const galleryItems = Array.from({ length: 12 }, (_, i) => ({
-  id: i + 1,
-  label: `Sample photo — replace with real lab image`,
-  caption: `Lab image ${i + 1}`,
-}));
+/* SECTION 13 — Gallery photos (real images in /public/images/engineering-innovation-labs/gallery/) */
+const GALLERY_DIR = "/images/engineering-innovation-labs/gallery/";
+const galleryItems: { file: string; caption: string; alt: string }[] = [
+  { file: "engineering-aicte-innovation-lab.jpg", caption: "AICTE Innovation Lab", alt: "AICTE innovation lab set up at an engineering college by Knowx" },
+  { file: "iot-aicte-idea-lab-at-engineering-college.jpg", caption: "IoT & AICTE IDEA Lab", alt: "IoT and AICTE IDEA Lab at an engineering college" },
+  { file: "innovation-lab-iot-lab-for-engineering-college.jpg", caption: "Innovation & IoT Lab", alt: "Innovation lab and IoT lab for an engineering college" },
+  { file: "iot-lab-at-engineering-college.jpg", caption: "IoT Lab at an Engineering College", alt: "IoT lab at an engineering college" },
+  { file: "iot-ai-lab-2026.jpg", caption: "IoT & AI Lab", alt: "IoT and AI lab for engineering students" },
+  { file: "iot-and-ai-lab-2026.jpg", caption: "Integrated IoT & AI Lab", alt: "Integrated IoT and AI lab setup" },
+  { file: "knowx-makers-lab-at-polytechnic.jpg", caption: "Knowx Makers Lab at a Polytechnic", alt: "Knowx makers lab at a polytechnic college" },
+  { file: "workshop-on-ai-iot-at-polytechnic.jpg", caption: "AI & IoT Workshop at a Polytechnic", alt: "AI and IoT workshop at a polytechnic college" },
+  { file: "ai-iot-workshop-for-polytechnic-students.jpg", caption: "AI & IoT Workshop for Students", alt: "AI and IoT workshop for polytechnic students" },
+];
 
 /* SECTION 14 — Testimonials (6 placeholders) */
 const testimonials = Array.from({ length: 6 }, (_, i) => ({
@@ -124,6 +152,39 @@ export default function EngineeringInnovationLabsClient() {
   const logosRef = useRef<HTMLDivElement | null>(null);
   const galleryRef = useRef<HTMLDivElement | null>(null);
   const reviewsRef = useRef<HTMLDivElement | null>(null);
+
+  // Section 12 — auto-scroll (pauses on hover/focus/touch, off for reduced motion)
+  const [logosPaused, setLogosPaused] = useState(false);
+  useEffect(() => {
+    if (logosPaused) return;
+    if (typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const id = window.setInterval(() => {
+      const el = logosRef.current;
+      if (!el) return;
+      const atEnd = el.scrollLeft + el.clientWidth >= el.scrollWidth - 4;
+      if (atEnd) el.scrollTo({ left: 0, behavior: "smooth" });
+      else el.scrollBy({ left: 264, behavior: "smooth" });
+    }, 3500);
+    return () => window.clearInterval(id);
+  }, [logosPaused]);
+
+  // Section 13 — lightbox
+  const [lightbox, setLightbox] = useState<number | null>(null);
+  const stepLightbox = useCallback((d: 1 | -1) => {
+    setLightbox((i) => (i === null ? i : (i + d + galleryItems.length) % galleryItems.length));
+  }, []);
+  useEffect(() => {
+    if (lightbox === null) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setLightbox(null);
+      if (e.key === "ArrowRight") stepLightbox(1);
+      if (e.key === "ArrowLeft") stepLightbox(-1);
+    };
+    window.addEventListener("keydown", onKey);
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => { window.removeEventListener("keydown", onKey); document.body.style.overflow = prev; };
+  }, [lightbox, stepLightbox]);
 
   const [modalOpen, setModalOpen] = useState(false);
   const [submitting, setSubmitting] = useState(false);
@@ -421,55 +482,89 @@ export default function EngineeringInnovationLabsClient() {
       </section>
 
       {/* ============================================================ */}
-      {/* Section 12 — CUSTOMER LOGOS (slider)                            */}
+      {/* Section 12 — PARTNER INSTITUTIONS (name-card slider)            */}
       {/* ============================================================ */}
       <section className={styles.s12} id="customer-logos">
         <div className={styles.s12Inner}>
           <h2 className={styles.s12Heading}>Trusted by Leading Engineering Institutions</h2>
-          <p className={styles.s12Intro}>Engineering colleges, universities, and technical institutes across India that partner with Knowx to build innovation labs, AICTE IDEA Labs, Centres of Excellence, and makerspaces.</p>
+          <p className={styles.s12Intro}>17+ engineering colleges, universities, polytechnics, and national institutes across Karnataka, Andhra Pradesh, Tamil Nadu, Telangana, and Madhya Pradesh that partner with Knowx to build innovation labs, AICTE IDEA Labs, Centres of Excellence, and makerspaces.</p>
 
-          <div className={styles.sliderWrap}>
-            <button type="button" className={`${styles.sliderArrow} ${styles.sliderArrowLeft}`} aria-label="Scroll logos left" onClick={() => scrollBy(logosRef, -1)}>‹</button>
-            <div ref={logosRef} className={styles.sliderTrack} role="list">
-              {customerLogos.map((logo) => (
-                <div key={logo.id} className={`${styles.slide} ${styles.logoSlide}`} role="listitem">
-                  <div className={styles.logoBox}>
-                    <span className={styles.logoLabel}>{logo.label}</span>
-                    <span className={styles.logoSubLabel}>Placeholder — replace with real logo</span>
-                  </div>
+          <div
+            className={styles.sliderWrap}
+            onMouseEnter={() => setLogosPaused(true)}
+            onMouseLeave={() => setLogosPaused(false)}
+            onFocus={() => setLogosPaused(true)}
+            onBlur={() => setLogosPaused(false)}
+            onTouchStart={() => setLogosPaused(true)}
+          >
+            <button type="button" className={`${styles.sliderArrow} ${styles.sliderArrowLeft}`} aria-label="Scroll institutions left" onClick={() => scrollBy(logosRef, -1)}>‹</button>
+            <div ref={logosRef} className={`${styles.sliderTrack} ${x.collegeTrack}`} role="list">
+              {colleges.map((c) => (
+                <div key={c.name} className={`${x.collegeCard} ${x[`tint_${c.tint}`]}`} role="listitem">
+                  {c.ribbon && <span className={x.collegeRibbon}>{c.ribbon}</span>}
+                  <div className={x.collegeMono} aria-hidden="true">{c.mono}</div>
+                  <div className={x.collegeName}>{c.name}</div>
+                  <div className={x.collegeCity}>{c.city}</div>
                 </div>
               ))}
             </div>
-            <button type="button" className={`${styles.sliderArrow} ${styles.sliderArrowRight}`} aria-label="Scroll logos right" onClick={() => scrollBy(logosRef, 1)}>›</button>
+            <button type="button" className={`${styles.sliderArrow} ${styles.sliderArrowRight}`} aria-label="Scroll institutions right" onClick={() => scrollBy(logosRef, 1)}>›</button>
           </div>
         </div>
       </section>
 
       {/* ============================================================ */}
-      {/* Section 13 — GALLERY (slider)                                   */}
+      {/* Section 13 — GALLERY (slider + lightbox)                        */}
       {/* ============================================================ */}
       <section className={styles.s13} id="gallery">
         <div className={styles.s13Inner}>
           <h2 className={styles.s13Heading}>Inside Our Labs</h2>
-          <p className={styles.s13Intro}>A look at innovation labs, AICTE IDEA Labs, makerspaces, and Centres of Excellence set up across engineering colleges — where students build real products, faculty run research programs, and industry projects come alive.</p>
+          <p className={styles.s13Intro}>A look at innovation labs, AICTE IDEA Labs, makerspaces, and workshops set up across engineering colleges and polytechnics — where students build real products, faculty run research programs, and industry projects come alive.</p>
 
           <div className={styles.sliderWrap}>
             <button type="button" className={`${styles.sliderArrow} ${styles.sliderArrowLeft}`} aria-label="Scroll gallery left" onClick={() => scrollBy(galleryRef, -1)}>‹</button>
-            <div ref={galleryRef} className={styles.sliderTrack} role="list">
-              {galleryItems.map((g) => (
-                <div key={g.id} className={`${styles.slide} ${styles.gallerySlide}`} role="listitem">
-                  <div className={styles.galleryBox}>
-                    <div className={styles.galleryPlaceholder} aria-hidden="true">
-                      <svg viewBox="0 0 24 24" width="42" height="42" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-                    </div>
-                    <div className={styles.galleryCaption}>{g.label}</div>
-                  </div>
+            <div ref={galleryRef} className={`${styles.sliderTrack} ${x.galleryTrack}`} role="list">
+              {galleryItems.map((g, i) => (
+                <div key={g.file} className={x.gallerySlide} role="listitem">
+                  <button type="button" className={x.galleryBtn} onClick={() => setLightbox(i)} aria-label={`Enlarge photo: ${g.caption}`}>
+                    <Image
+                      src={`${GALLERY_DIR}${g.file}`}
+                      alt={g.alt}
+                      width={1200}
+                      height={800}
+                      sizes="(max-width: 640px) 85vw, (max-width: 1024px) 45vw, 340px"
+                      className={x.galleryImg}
+                      loading={i < 3 ? "eager" : "lazy"}
+                    />
+                    <span className={x.galleryCap}>{g.caption}</span>
+                    <span className={x.galleryZoom} aria-hidden="true">⤢</span>
+                  </button>
                 </div>
               ))}
             </div>
             <button type="button" className={`${styles.sliderArrow} ${styles.sliderArrowRight}`} aria-label="Scroll gallery right" onClick={() => scrollBy(galleryRef, 1)}>›</button>
           </div>
         </div>
+
+        {lightbox !== null && (
+          <div className={x.lbBackdrop} onClick={() => setLightbox(null)} role="dialog" aria-modal="true" aria-label="Photo viewer">
+            <button type="button" className={x.lbClose} onClick={() => setLightbox(null)} aria-label="Close">×</button>
+            <button type="button" className={`${x.lbNav} ${x.lbPrev}`} onClick={(e) => { e.stopPropagation(); stepLightbox(-1); }} aria-label="Previous photo">‹</button>
+            <figure className={x.lbFigure} onClick={(e) => e.stopPropagation()}>
+              <Image
+                src={`${GALLERY_DIR}${galleryItems[lightbox].file}`}
+                alt={galleryItems[lightbox].alt}
+                width={1200}
+                height={800}
+                sizes="(max-width: 1024px) 95vw, 1000px"
+                className={x.lbImg}
+                priority
+              />
+              <figcaption className={x.lbCap}>{galleryItems[lightbox].caption} · {lightbox + 1} / {galleryItems.length}</figcaption>
+            </figure>
+            <button type="button" className={`${x.lbNav} ${x.lbNext}`} onClick={(e) => { e.stopPropagation(); stepLightbox(1); }} aria-label="Next photo">›</button>
+          </div>
+        )}
       </section>
 
       {/* ============================================================ */}

@@ -56,12 +56,17 @@ export function getUtm(): Record<UtmKey, string> {
   };
 }
 
+const META_STANDARD_EVENTS: Record<string, string> = { whatsapp_click: 'Contact', phone_click: 'Contact' };
+
 /** Generic event. GA4 works today. Meta Pixel fires once fbq is loaded (see README). */
 export function trackEvent(eventName: string, parameters: Record<string, unknown> = {}) {
   if (typeof window === 'undefined') return;
   try {
     window.gtag?.('event', eventName, parameters); // GA4
-    window.fbq?.('trackCustom', eventName, parameters); // TODO: Meta Pixel. Load the pixel base code with your Pixel ID first.
+    // Meta Pixel: WhatsApp and phone taps are the standard "Contact" event, everything else is a custom event.
+    const standard = META_STANDARD_EVENTS[eventName];
+    if (standard) window.fbq?.('track', standard, parameters);
+    else window.fbq?.('trackCustom', eventName, parameters);
   } catch {
     /* tracking must never break the page */
   }
@@ -78,7 +83,7 @@ export function trackLeadSubmission(formData: LeadData) {
       utm_campaign: formData.utm_campaign,
       utm_content: formData.utm_content,
     });
-    window.fbq?.('track', 'Lead', { content_name: 'AI Electronics Internship' }); // TODO: Meta Pixel standard Lead event
+    window.fbq?.('track', 'Lead', { content_name: 'AI Electronics Internship' }); // Meta Pixel standard Lead event
   } catch {
     /* ignore */
   }

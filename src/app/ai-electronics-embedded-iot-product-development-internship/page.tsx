@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import { Inter } from 'next/font/google';
 import InternshipClient from './InternshipClient';
+import MetaPixel from './MetaPixel';
 import { FAQS, PAGE_URL, PHONE_TEL, SITE_URL, SOCIALS } from './data';
 
 const inter = Inter({
@@ -81,6 +82,7 @@ export default function Page() {
         // "<" is escaped so the JSON can never close the script tag.
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c') }}
       />
+      <MetaPixel />
       <InternshipClient />
     </div>
   );

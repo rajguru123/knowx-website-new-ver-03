@@ -11,7 +11,10 @@ import ScrollReveal from '@/components/ScrollReveal';
 // and WhatsApp button already built in — so the site-wide chrome below
 // should NOT wrap them. Add more paths here later if you build other
 // campaign/landing pages the same way.
-const STANDALONE_ROUTES = ['/stock-trading-course-basaveshwara-nagar-bangalore'];
+const STANDALONE_ROUTES = [
+  '/stock-trading-course-basaveshwara-nagar-bangalore',
+  '/ai-electronics-embedded-iot-product-development-internship',
+];
 
 export default function ClientShell({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();

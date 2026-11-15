@@ -56,13 +56,13 @@
 .aei-scope .btn-lg { padding: 17px 30px; font-size: 14px; }
 
 /* ---------- Section scaffolding ---------- */
-.aei-scope .sec { padding-block: 96px; }
+.aei-scope .sec { padding-block: 64px; }
 .aei-scope .bg-1 { background: var(--bg); }
 .aei-scope .bg-2 { background: var(--bg-2); }
-.aei-scope .sec-head { max-width: 760px; margin-bottom: 48px; }
+.aei-scope .sec-head { max-width: 760px; margin-bottom: 40px; }
 .aei-scope .sec-head.center { margin-left: auto; margin-right: auto; text-align: center; }
 .aei-scope .over { font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--cyan); margin-bottom: 14px; }
-.aei-scope .title { font-size: clamp(26px, 3.5vw, 40px); font-weight: 800; line-height: 1.15; letter-spacing: -0.02em; text-wrap: balance; }
+.aei-scope .title { font-size: clamp(28px, 4vw, 46px); font-weight: 800; line-height: 1.15; letter-spacing: -0.02em; text-wrap: balance; }
 .aei-scope .desc { margin-top: 16px; max-width: 620px; font-size: 15px; line-height: 1.75; color: var(--grey-400); }
 .aei-scope .center .desc { margin-left: auto; margin-right: auto; }
 .aei-scope .card { background: var(--bg-card); border: 1px solid var(--line-soft); border-radius: 20px; }
@@ -209,7 +209,7 @@
 
 /* ---------- Product showcase ---------- */
 .aei-scope .rail-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; }
-.aei-scope .rail-head .sec-head { margin-bottom: 36px; }
+.aei-scope .rail-head .sec-head { margin-bottom: 32px; }
 .aei-scope .rail-btns { display: none; gap: 10px; margin-bottom: 36px; flex-shrink: 0; }
 .aei-scope .rail-btn { width: 44px; height: 44px; border-radius: 8px; background: rgba(255,255,255,0.05); border: 1px solid var(--line); color: var(--white); display: grid; place-items: center; transition: background .2s, border-color .2s, opacity .2s; }
 .aei-scope .rail-btn:hover:not(:disabled) { border-color: var(--green); background: rgba(0,200,83,0.1); }
@@ -267,7 +267,7 @@
 .aei-scope .wk-c li { position: relative; padding-left: 14px; font-size: 13px; line-height: 1.55; color: #CBD5E1; margin-bottom: 5px; }
 .aei-scope .wk-c li::before { content: ""; position: absolute; left: 0; top: 9px; width: 6px; height: 2px; background: var(--green); border-radius: 2px; }
 .aei-scope .wk-c p { font-size: 13px; line-height: 1.6; color: #E2E8F0; font-weight: 600; }
-.aei-scope .cta-center { margin-top: 44px; text-align: center; }
+.aei-scope .cta-center { margin-top: 36px; text-align: center; }
 
 /* ---------- Tech ---------- */
 .aei-scope .tech-grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
@@ -360,7 +360,7 @@
 
 /* ---------- Final CTA ---------- */
 .aei-scope .final {
-  position: relative; overflow: hidden; padding-block: 90px; text-align: center;
+  position: relative; overflow: hidden; padding-block: 72px; text-align: center;
   background:
     radial-gradient(ellipse 50% 70% at 0% 100%, rgba(0,200,83,0.35), transparent 70%),
     radial-gradient(ellipse 50% 70% at 100% 0%, rgba(0,200,83,0.28), transparent 70%),
@@ -460,8 +460,8 @@
 @media (max-width: 1023px) { .aei-scope .nav-phone { display: none; } }
 @media (max-width: 899px) { .aei-scope .nav-links { gap: 22px; } }
 @media (max-width: 767px) {
-  .aei-scope .sec { padding-block: 64px; }
-  .aei-scope .final { padding-block: 64px; }
+  .aei-scope .sec { padding-block: 48px; }
+  .aei-scope .final { padding-block: 48px; }
   .aei-scope .nav-links, .aei-scope .nav-right .btn { display: none; }
   .aei-scope .burger { display: block; }
   .aei-scope .hero { min-height: 0; padding-top: 104px; padding-bottom: 64px; }
@@ -510,3 +510,7 @@ html:has(.aei-scope) { scroll-behavior: smooth; }
 .aei-scope .pviz { background: #0D1530; }
 .aei-scope .pviz img { object-fit: cover; }
 .aei-scope .pviz .ph { z-index: 2; }
+
+/* Heading colours. The site-wide stylesheet colours h1-h6, so set them here explicitly. */
+.aei-scope h1, .aei-scope h2, .aei-scope h3, .aei-scope h4, .aei-scope h5, .aei-scope h6 { color: var(--white); }
+.aei-scope .sec .title { color: #4DA3FF; }

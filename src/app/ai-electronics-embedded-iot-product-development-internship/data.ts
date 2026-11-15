@@ -33,14 +33,14 @@ export const HIGHLIGHTS: Highlight[] = [
   { icon: '🤖', title: 'Edge AI Fundamentals', text: 'Explore intelligent sensing, TinyML concepts and AI-enabled embedded product use cases.' },
 ];
 
-export type Project = { icon: string; category: string; title: string; text: string; tags: string[] };
+export type Project = { image: string; alt: string; category: string; title: string; text: string; tags: string[] };
 export const PROJECTS: Project[] = [
-  { icon: '🏠', category: 'Consumer Electronics', title: 'Smart Home Energy Monitor', text: 'Measure appliance energy consumption and display useful usage insights.', tags: ['ESP32', 'Sensors', 'IoT'] },
-  { icon: '🔋', category: 'Automotive / EV', title: 'EV Battery Health Dashboard', text: 'Monitor battery parameters, temperature signals and safety alerts.', tags: ['STM32', 'Sensors', 'Firmware'] },
-  { icon: '❤️', category: 'Healthcare Electronics', title: 'Wearable Vital Sign Monitor', text: 'Prototype sensor-based health monitoring and Bluetooth data transfer.', tags: ['ESP32', 'Sensors', 'PCB'] },
-  { icon: '⚙️', category: 'Industrial Automation', title: 'Motor Condition Monitoring Node', text: 'Sense vibration, temperature and operating conditions for predictive maintenance.', tags: ['STM32', 'Sensors', 'Firmware'] },
-  { icon: '🌱', category: 'Smart Agriculture', title: 'IoT Soil & Irrigation Controller', text: 'Monitor soil conditions and automate water control logic.', tags: ['ESP32', 'IoT', 'Sensors'] },
-  { icon: '☀️', category: 'Smart City / Renewable Energy', title: 'Solar Streetlight Controller', text: 'Build intelligent lighting control using ambient sensing and battery logic.', tags: ['PCB', 'Sensors', 'Firmware'] },
+  { image: '/images/project-ev-battery-monitoring.webp', alt: 'EV battery monitoring prototype', category: 'Automotive / EV', title: 'EV Battery Monitoring', text: 'Measure battery voltage, current and temperature, and raise safety alerts on a live dashboard.', tags: ['STM32', 'Sensors', 'Firmware', 'Dashboard'] },
+  { image: '/images/project-cold-storage-iot-data-logger.webp', alt: 'Cold storage IoT data logger prototype', category: 'Cold Chain / Logistics', title: 'Cold Storage IoT Data Logger', text: 'Log temperature and humidity in a cold room and send an alert when readings go out of range.', tags: ['ESP32', 'Sensors', 'MQTT', 'Cloud'] },
+  { image: '/images/project-universal-iot-equipment-gateway.webp', alt: 'Universal IoT equipment gateway prototype', category: 'Industrial IoT', title: 'Universal IoT Equipment Gateway', text: 'Connect different machines and sensors through one gateway that sends their data to the cloud.', tags: ['ESP32', 'RS485', 'MQTT', 'Gateway'] },
+  { image: '/images/project-low-cost-smart-farm-automation.webp', alt: 'Low-cost smart farm automation prototype', category: 'Smart Agriculture', title: 'Low-Cost Smart Farm Automation', text: 'Monitor soil moisture and control irrigation automatically with low-cost sensors.', tags: ['ESP32', 'Sensors', 'IoT', 'Relay Control'] },
+  { image: '/images/project-can-automotive-monitoring.webp', alt: 'CAN automotive monitoring prototype', category: 'Automotive', title: 'CAN Automotive Monitoring', text: "Read and display vehicle data over a CAN bus, the way a car's electronic units share information.", tags: ['STM32', 'CAN Bus', 'Firmware', 'Debugging'] },
+  { image: '/images/project-low-cost-iot-home-security.webp', alt: 'Low-cost IoT home security prototype', category: 'Consumer Security', title: 'Low-Cost IoT Home Security', text: 'Build a door and motion alert system that sends instant notifications to your phone.', tags: ['ESP32', 'PIR Sensor', 'Wi-Fi', 'Alerts'] },
 ];
 
 export type Week = { title: string; topics: string[]; lab: string[]; tools: string[]; deliverable: string };

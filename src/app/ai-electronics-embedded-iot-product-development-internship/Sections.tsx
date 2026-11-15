@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback, useEffect, useRef, useState, type CSSProperties, type KeyboardEvent } from 'react';
+import { useCallback, useEffect, useRef, useState, type KeyboardEvent } from 'react';
 import Image from 'next/image';
 import {
   CERTS, CREDIBILITY_POINTS, DELIVERABLES, FAQS, HIGHLIGHTS, INFO_ITEMS, PHASES, PROJECTS, SOCIALS, TECH, TECH_MARKS,
@@ -93,17 +93,6 @@ export function Highlights() {
 }
 
 /* ---------- PRODUCT SHOWCASE (horizontal rail) ---------- */
-function CircuitArt() {
-  return (
-    <svg className="circ" viewBox="0 0 340 188" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
-      <path d="M0 48H64L84 68H128M0 140H52L72 120H120M340 40H270L252 58H214M340 150H296L276 130H222M170 0V32M170 188V156" />
-      {[[64, 48], [128, 68], [52, 140], [270, 40], [214, 58], [296, 150], [170, 32], [170, 156]].map(([cx, cy]) => (
-        <circle key={`${cx}-${cy}`} cx={cx} cy={cy} r="3" />
-      ))}
-    </svg>
-  );
-}
-
 export function Projects() {
   const railRef = useRef<HTMLDivElement>(null);
   const [atStart, setAtStart] = useState(true);
@@ -152,10 +141,16 @@ export function Projects() {
         <div className="rail" id="aei-rail" ref={railRef} onScroll={update} role="region" aria-label="Product showcase, scrollable" tabIndex={0}>
           {PROJECTS.map((p, i) => (
             <article className="card pcard" key={p.title}>
-              <div className={`pviz${i % 2 ? ' flip' : ''}`} style={{ '--a': i % 2 === 0 ? '0,229,255' : '0,200,83' } as CSSProperties}>
-                <CircuitArt />
-                <span className="ph">Concept / Placeholder</span>
-                <span className="pdev" aria-hidden="true">{p.icon}</span>
+              <div className="pviz">
+                <Image
+                  src={p.image}
+                  alt={p.alt}
+                  fill
+                  sizes="(max-width: 640px) 84vw, 340px"
+                  style={{ objectFit: 'cover' }}
+                  loading={i < 2 ? 'eager' : 'lazy'}
+                />
+                <span className="ph">Representative Project</span>
               </div>
               <div className="pbody">
                 <span className="pcat">{p.category}</span>

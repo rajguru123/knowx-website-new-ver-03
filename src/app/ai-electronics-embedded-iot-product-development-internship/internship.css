@@ -505,3 +505,8 @@ html:has(.aei-scope) { scroll-behavior: smooth; }
 /* Close button sits inside the card, not on the gutter edge */
 .aei-scope .modal .modal-close { top: 12px; right: calc(max(16px, env(safe-area-inset-right, 0px)) + 12px); }
 .aei-scope .lb-box .modal-close { top: 0; right: max(16px, env(safe-area-inset-right, 0px)); }
+
+/* Project card photos */
+.aei-scope .pviz { background: #0D1530; }
+.aei-scope .pviz img { object-fit: cover; }
+.aei-scope .pviz .ph { z-index: 2; }

@@ -194,7 +194,7 @@ export default function InternshipClient() {
                 <li><a target="_blank" rel="noopener noreferrer" href={WA_DEFAULT_URL} onClick={waClick('footer')}>WhatsApp Us</a></li>
                 <li><a href={`tel:${PHONE_TEL}`} onClick={() => trackEvent('phone_click', { location: 'footer' })}>Call {PHONE_DISPLAY}</a></li>
                 <li><a href="/privacy-policy">Privacy Policy</a></li>
-                <li><a href="/terms-and-conditions">Terms &amp; Conditions</a></li>
+                <li><a href="/privacy-policy#terms">Terms &amp; Conditions</a></li>
               </ul>
             </div>
           </div>

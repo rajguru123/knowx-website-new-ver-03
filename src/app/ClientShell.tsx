@@ -14,6 +14,7 @@ import ScrollReveal from '@/components/ScrollReveal';
 const STANDALONE_ROUTES = [
   '/stock-trading-course-basaveshwara-nagar-bangalore',
   '/ai-electronics-embedded-iot-product-development-internship',
+  '/ai-agentic-ai-product-engineering-internship',
 ];
 
 export default function ClientShell({ children }: { children: React.ReactNode }) {

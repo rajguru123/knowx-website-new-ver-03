@@ -7,6 +7,7 @@ import {
   PORTFOLIO_ROWS, PRODUCTS, ROADMAP, SOCIALS, STEPS, TECH, TRUST, WA_DEFAULT_URL,
 } from './data';
 import { SOCIAL_ICONS } from './Icons';
+import ProductMock from './ProductMock';
 import { TECH_ICON_PATHS, techIconKeys } from './techIcons';
 import { trackEvent } from './tracking';
 
@@ -110,8 +111,9 @@ export function Products() {
         <div className="pgrid" id="aia-pgrid" data-reveal>
           {PRODUCTS.map((p) => (
             <article className="card pcard" key={p.n} style={{ ['--ac' as string]: p.accent }}>
+              <ProductMock n={p.n} />
               <div className="pbody">
-                <span className="pno">PRODUCT {p.n}</span>
+                <span className="pno"><b>TRACK {p.n}</b><span>Internship product development</span></span>
                 <h3>{p.name}</h3>
                 <span className="ptag">{p.tag}</span>
                 <p>{p.text}</p>
@@ -335,12 +337,17 @@ export function How() {
           ))}
         </ol>
         <div className="split" data-reveal>
+          <p className="split-title">How your time is spent (approximate)</p>
           <div className="split-bar" role="img" aria-label="Approximate split: 70 percent hands-on development, 20 percent guided practice and review, 10 percent concept learning">
-            <div style={{ flex: 70, background: 'var(--blue)' }}>~70% Hands-on development</div>
-            <div style={{ flex: 20, background: 'var(--cyan)' }}>~20% Practice</div>
-            <div style={{ flex: 10, background: 'var(--vio)' }}>~10%</div>
+            <div style={{ flex: 70, background: 'var(--blue)' }} />
+            <div style={{ flex: 20, background: 'var(--cyan)' }} />
+            <div style={{ flex: 10, background: 'var(--vio)' }} />
           </div>
-          <p>Approximate split: 70% hands-on development · 20% guided practice and review · 10% concept learning</p>
+          <ul className="split-legend">
+            <li style={{ ['--sc' as string]: 'var(--blue)' }}><b>70%</b><span>Hands-on development</span></li>
+            <li style={{ ['--sc' as string]: 'var(--cyan)' }}><b>20%</b><span>Guided practice and review</span></li>
+            <li style={{ ['--sc' as string]: 'var(--vio)' }}><b>10%</b><span>Concept learning</span></li>
+          </ul>
         </div>
         <div className="grid3" data-reveal>
           {LEARN_MODES.map((m) => (

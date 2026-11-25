@@ -7,9 +7,25 @@ import {
   PORTFOLIO_ROWS, PRODUCTS, ROADMAP, SOCIALS, STEPS, TECH, TRUST, WA_DEFAULT_URL,
 } from './data';
 import { SOCIAL_ICONS } from './Icons';
+import { TECH_ICON_PATHS, techIconKeys } from './techIcons';
 import { trackEvent } from './tracking';
 
 type ApplyProps = { onApply: () => void };
+
+/* A tool chip: small brand mark(s) when we have them, plain text otherwise. */
+function ToolChip({ label }: { label: string }) {
+  const keys = techIconKeys(label);
+  return (
+    <span className={keys.length ? 'has-logo' : undefined}>
+      {keys.map((k) => (
+        <svg key={k} className="tlogo" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d={TECH_ICON_PATHS[k]} fill="currentColor" />
+        </svg>
+      ))}
+      {label}
+    </span>
+  );
+}
 
 /* ---------- TRUST BAR ---------- */
 export function TrustBar() {
@@ -70,7 +86,7 @@ export function Tech() {
               <h3 className="stack-h">{c.title}</h3>
               <div className="tags">
                 {c.items.map((t) => (
-                  <span key={t}>{t}</span>
+                  <ToolChip key={t} label={t} />
                 ))}
               </div>
             </article>
@@ -238,7 +254,7 @@ export function Curriculum({ onApply }: ApplyProps) {
                       </div>
                       <div className="wk-c">
                         <h5>Tools</h5>
-                        <ul>{w.tools.map((t) => <li key={t}>{t}</li>)}</ul>
+                        <div className="tags tags-sm">{w.tools.map((t) => <ToolChip key={t} label={t} />)}</div>
                       </div>
                       <div className="wk-c">
                         <h5>Weekly Deliverable</h5>

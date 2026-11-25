@@ -209,6 +209,23 @@ html:has(.aia-scope) { scroll-behavior: smooth; }
 .aia-scope .wk-btn::after { content: '+'; margin-left: auto; color: var(--blue); font-size: 22px; font-weight: 400; }
 .aia-scope .wk.open .wk-btn::after { content: '–'; }
 .aia-scope .wk-n { flex: none; min-width: 70px; height: 32px; padding: 0 10px; display: grid; place-items: center; border-radius: 9px; background: linear-gradient(135deg, var(--blue), var(--vio)); font-size: 12px; font-weight: 800; }
+.aia-scope .wk-tx { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.aia-scope .wk-t { display: block; }
+.aia-scope .wk-o { font-size: 12.5px; font-weight: 500; color: var(--mut); line-height: 1.4; }
+.aia-scope .wk-o b { color: var(--cyan); font-weight: 700; }
+.aia-scope .pbuild { color: #cbd5ee !important; font-size: 14px !important; }
+.aia-scope .pbuild b { color: var(--cyan); }
+.aia-scope .road { max-width: 900px; margin: 0 auto 34px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; counter-reset: none; }
+.aia-scope .road-step { position: relative; display: flex; flex-direction: column; gap: 6px; padding: 18px 16px 16px; background: var(--card); border: 1px solid var(--line); border-radius: 14px; border-top: 3px solid var(--blue); }
+.aia-scope .road-step:nth-child(2) { border-top-color: var(--vio); }
+.aia-scope .road-step:nth-child(3) { border-top-color: var(--green); }
+.aia-scope .road-step:not(:last-child)::after { content: '→'; position: absolute; right: -13px; top: 50%; transform: translateY(-50%); z-index: 2; width: 24px; height: 24px; display: grid; place-items: center; border-radius: 50%; background: var(--bg); border: 1px solid var(--line); color: var(--cyan); font-size: 13px; }
+.aia-scope .road-n { width: 26px; height: 26px; display: grid; place-items: center; border-radius: 8px; background: linear-gradient(135deg, var(--blue), var(--vio)); font-size: 13px; font-weight: 800; color: #fff; }
+.aia-scope .road-w { font-size: 12px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--cyan); }
+.aia-scope .road-step h3 { font-size: 17px; }
+.aia-scope .road-s { font-size: 13px; color: #cbd5ee; font-weight: 600; }
+.aia-scope .road-o { font-size: 13px; color: var(--mut); margin-top: 4px; padding-top: 8px; border-top: 1px solid var(--line); }
+.aia-scope .road-o b { color: #7cf0a6; }
 .aia-scope .wk-p { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; padding: 4px 18px 20px; }
 .aia-scope .wk-c ul { padding-left: 16px; display: grid; gap: 4px; color: var(--mut); font-size: 14px; list-style: disc; }
 .aia-scope .wk-c p { color: #dce4f7; font-size: 14px; }
@@ -357,6 +374,9 @@ html:has(.aia-scope) { scroll-behavior: smooth; }
   .aia-scope .foot-grid { grid-template-columns: 1fr; }
   .aia-scope .row2 { grid-template-columns: 1fr; }
   .aia-scope .wk-p { grid-template-columns: 1fr; }
+  .aia-scope .road { grid-template-columns: 1fr; }
+  .aia-scope .road-step:not(:last-child)::after { content: '↓'; right: auto; left: 50%; top: auto; bottom: -19px; transform: translateX(-50%); }
+  .aia-scope .wk-btn { align-items: flex-start; }
   .aia-scope .phase-head { flex-direction: column; }
   .aia-scope .cta-row .btn, .aia-scope .final-cta .btn { width: 100%; }
   .aia-scope .hero { padding-top: 32px; }

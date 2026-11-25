@@ -4,7 +4,7 @@ import { useState, type KeyboardEvent } from 'react';
 import Image from 'next/image';
 import {
   ELIGIBLE_BRANCHES, FAQS, HIGHLIGHTS, KNOWX_POINTS, LEARN_MODES, LOOK_FOR, OUTCOMES, PATHWAYS, PHASES, PHOTOS,
-  PORTFOLIO_ROWS, PRODUCTS, SOCIALS, STEPS, TECH, TRUST, WA_DEFAULT_URL,
+  PORTFOLIO_ROWS, PRODUCTS, ROADMAP, SOCIALS, STEPS, TECH, TRUST, WA_DEFAULT_URL,
 } from './data';
 import { SOCIAL_ICONS } from './Icons';
 import { trackEvent } from './tracking';
@@ -119,7 +119,7 @@ export function Products() {
         </div>
         <p className="swipehint">Swipe to see all six →</p>
         <p className="disclaimer">
-          Internship product development concepts, not commercially deployed products. Each intern or team chooses one track; everyone follows the same 12-week curriculum.
+          Internship product development concepts, not commercially deployed products. Each intern or team chooses one track and builds an MVP with defined modules and individual contributions. Everyone follows the same 12-week curriculum.
         </p>
       </div>
     </section>
@@ -154,8 +154,21 @@ export function Curriculum({ onApply }: ApplyProps) {
         <div className="sec-head" data-reveal>
           <p className="over">12-week curriculum</p>
           <h2 className="title" id="cur-title">From Python Programmer to AI Product Engineer.</h2>
-          <p className="desc">Every week combines technical concepts, guided lab work, tools and a practical deliverable.</p>
+          <p className="desc">Every week combines technical concepts, guided lab work, tools and a practical deliverable. You finish with an MVP of your chosen product, built in modules with your own contributions.</p>
         </div>
+
+        {/* 3-phase roadmap before the weekly detail */}
+        <ol className="road" aria-label="12-week roadmap" data-reveal>
+          {ROADMAP.map((r, i) => (
+            <li className="road-step" key={r.weeks}>
+              <span className="road-n">{i + 1}</span>
+              <span className="road-w">{r.weeks}</span>
+              <h3>{r.title}</h3>
+              <span className="road-s">{r.stack}</span>
+              <span className="road-o"><b>Outcome:</b> {r.outcome}</span>
+            </li>
+          ))}
+        </ol>
 
         {/* Phase tabs show on tablet and mobile only. Desktop shows all three phases in one list. */}
         <div className="ptabs" role="tablist" aria-label="Curriculum phases" onKeyDown={onTabKey}>
@@ -189,6 +202,7 @@ export function Curriculum({ onApply }: ApplyProps) {
                 <div>
                   <h3>{p.title}</h3>
                   <p>{p.desc}</p>
+                  <p className="pbuild"><b>What you will build:</b> {ROADMAP[pi].build}</p>
                 </div>
                 <span className="pchip">{p.weeks}</span>
               </header>
@@ -207,7 +221,10 @@ export function Curriculum({ onApply }: ApplyProps) {
                         onClick={() => setOpenWeek(open ? null : idx)}
                       >
                         <span className="wk-n">Week {idx + 1}</span>
-                        <span className="wk-t">{w.title}</span>
+                        <span className="wk-tx">
+                          <span className="wk-t">{w.title}</span>
+                          <span className="wk-o"><b>Outcome:</b> {w.deliverable}</span>
+                        </span>
                       </button>
                     </h4>
                     <div className="wk-p" id={`aia-wp-${idx}`} role="region" aria-labelledby={`aia-wb-${idx}`} hidden={!open}>

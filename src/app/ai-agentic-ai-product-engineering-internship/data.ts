@@ -106,6 +106,13 @@ export const PHASES: Phase[] = [
   },
 ];
 
+export type RoadmapStep = { weeks: string; title: string; stack: string; outcome: string; build: string };
+export const ROADMAP: RoadmapStep[] = [
+  { weeks: 'Weeks 1–4', title: 'Build your foundations', stack: 'Python · SQL · ML · LLMs', outcome: 'LLM-powered application', build: 'A command-line utility, an ML evaluation notebook and an LLM-powered mini application.' },
+  { weeks: 'Weeks 5–8', title: 'Build intelligent systems', stack: 'RAG · Embeddings · LangGraph · MCP · Agents', outcome: 'RAG assistant and agent workflow', build: 'A RAG knowledge assistant, an improved retrieval pipeline and a stateful agent workflow with human approval.' },
+  { weeks: 'Weeks 9–12', title: 'Build and deploy products', stack: 'FastAPI · React · PostgreSQL · Docker · Cloud', outcome: 'Deployed product demonstration (MVP)', build: 'A backend API, a full-stack interface and a deployed MVP of your product track, with tests and a final demo.' },
+];
+
 export const OUTCOMES: string[] = [
   'Practical AI application development experience',
   'Working product modules and project demonstrations',
@@ -189,7 +196,7 @@ export const FAQS: Faq[] = [
   { q: 'Do I need prior AI experience?', a: 'No prior AI experience is required. You should be comfortable with basic programming and willing to learn quickly.' },
   { q: 'Will I work on real-world product projects?', a: 'Yes. You choose one of six AI product tracks, inspired by real business, healthcare, education, manufacturing and community needs, and build it as an internship product development project.' },
   { q: 'What technologies will I learn?', a: 'Python, SQL, LLM APIs, RAG with pgvector, LangGraph and MCP, FastAPI, PostgreSQL, React, Next.js, Docker and CI/CD.' },
-  { q: 'Will I build a complete application?', a: 'Yes. You take your chosen product track from backend, AI logic and database to frontend, then deploy and demonstrate it.' },
+  { q: 'Will I build a complete application?', a: 'Yes, as a working MVP. You take your chosen product track from backend, AI logic and database to frontend, with defined modules and your own individual contributions, then deploy and demonstrate it. It is an internship MVP, not a full commercial platform.' },
   { q: 'Will I receive an internship certificate?', a: 'Yes. Students who meet the programme requirements receive a Knowx internship completion certificate.' },
   { q: 'Is this suitable for mandatory university internships?', a: 'Yes. This is an approved internship for VTU and other technical university students. Contact us for the documents your college requires.' },
   { q: 'What are the fees and payment details?', a: 'Fees are not shown on this page. Programme details and applicable options are shared by the Knowx team after you submit an enquiry.' },

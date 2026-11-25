@@ -4,6 +4,7 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import './internship.css';
 import ApplyForm from './ApplyForm';
+import HeroVisual from './HeroVisual';
 import { Apply, Curriculum, FinalCta, FollowStrip, How, Outcomes, Products, Tech, TrustBar, Why, WhyKnowx } from './Sections';
 import { ADDRESS, EMAIL, NAV_LINKS, PHONE_DISPLAY, PHONE_TEL, SOCIALS, WA_DEFAULT_URL } from './data';
 import { PhoneIcon, SOCIAL_ICONS, WhatsAppIcon } from './Icons';
@@ -101,34 +102,33 @@ export default function InternshipClient() {
       </div>
 
       <main>
-        {/* HERO: form on the right for desktop, popup on tablet and mobile */}
+        {/* HERO: copy on the left, product composition on the right (apply form lives in the popup) */}
         <section className="hero gutter" aria-labelledby="hero-title">
           <div className="wrap hero-grid">
             <div className="hero-left">
-              <p className="eyebrow">Knowx Innovations presents</p>
               <p className="programme">AI &amp; Agentic AI Product Engineering Internship</p>
               <h1 id="hero-title">
                 <span>Don&apos;t Just Use AI.</span>
                 <span className="accent">Build AI Products.</span>
               </h1>
-              <p className="lede">Design, build and deploy intelligent applications with Generative AI, RAG and Agentic AI, in 12 weeks.</p>
-              <p className="sup">Go beyond prompts and basic chatbots. Build real-world AI applications, intelligent agents and deployable products with hands-on mentorship from a product engineering company.</p>
+              <p className="lede">Learn to design, develop and deploy intelligent applications using Generative AI, LLMs, RAG and Agentic AI.</p>
+              <p className="sup">Build practical AI products. Work with modern engineering tools. Develop a portfolio that demonstrates what you can actually do.</p>
               <div className="pills">
                 <span className="pill">12 Weeks</span>
-                <span className="pill">Full-Time Internship</span>
-                <span className="pill">Hands-on Product Development</span>
+                <span className="pill">Full-Time</span>
+                <span className="pill">Hands-on Projects</span>
                 <span className="pill">Industry Mentorship</span>
-                <span className="pill ok">Offline (Bangalore) &amp; Online</span>
-                <span className="pill ok">Approved for VTU &amp; other technical university students</span>
               </div>
               <div className="cta-row">
                 <button type="button" className="btn btn-green btn-lg" onClick={openModal}>Apply for Internship →</button>
-                <a className="btn btn-outline btn-lg" href="#curriculum">Explore the Curriculum</a>
+                <a className="btn btn-outline btn-lg" href="#products">Explore the Six AI Products</a>
               </div>
+              <p className="hero-note">
+                <span>Offline (Bangalore) &amp; Online</span>
+                <span>Approved for VTU &amp; other technical university students</span>
+              </p>
             </div>
-            <aside className="hero-aside" aria-label="Apply for internship">
-              <ApplyForm idPrefix="hero" onWhatsAppClick={waClick('hero_form')} />
-            </aside>
+            <HeroVisual />
           </div>
         </section>
 

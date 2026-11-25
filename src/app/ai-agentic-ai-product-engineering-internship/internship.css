@@ -292,7 +292,8 @@ html:has(.aia-scope) { scroll-behavior: smooth; }
 .aia-scope .knowx-grid .title { margin-left: 0; }
 .aia-scope .knowx-grid .desc { margin-bottom: 18px; }
 .aia-scope .photos { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-.aia-scope .photo { position: relative; aspect-ratio: 4 / 3; border-radius: 14px; overflow: hidden; }
+.aia-scope .photo { position: relative; aspect-ratio: 4 / 3; border-radius: 14px; overflow: hidden; border: 1px solid var(--line); }
+.aia-scope .photo:first-child { grid-column: 1 / -1; aspect-ratio: 16 / 9; }
 .aia-scope .photo.ph { border: 1px dashed rgba(255, 255, 255, 0.25); background: repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.05) 0 10px, rgba(255, 255, 255, 0.02) 10px 20px); display: grid; place-items: center; color: var(--mut); font-size: 13px; text-align: center; padding: 10px; }
 
 /* who can apply + faq */

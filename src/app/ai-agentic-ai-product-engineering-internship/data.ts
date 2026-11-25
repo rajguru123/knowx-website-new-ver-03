@@ -168,12 +168,11 @@ export const KNOWX_POINTS: string[] = [
 ];
 
 /** Add a real photo by setting `src` (a file in /public/images). Without `src` a neutral placeholder is shown. */
-export type Photo = { src?: string; alt: string; placeholder: string };
+export type Photo = { src?: string; alt: string; placeholder?: string };
 export const PHOTOS: Photo[] = [
-  { alt: 'Knowx Innovations lab', placeholder: 'Knowx lab photo' },
-  { alt: 'Knowx trainer and mentor', placeholder: 'Trainer / mentor profile' },
-  { alt: 'Student project demonstration', placeholder: 'Project demo photo' },
-  { alt: 'Knowx team at work', placeholder: 'Team at work' },
+  { src: '/images/knowx-ai-lab.jpg', alt: 'Students working at laptops in the Knowx AI Lab' },
+  { src: '/images/knowx-lab-students.jpg', alt: 'Students building projects together in the Knowx lab' },
+  { src: '/images/knowx-lab-learning-space.jpg', alt: 'Knowx lab learning space with the AI and machine learning wall' },
 ];
 
 export const BRANCHES = ['CSE', 'ISE', 'IT', 'AI/ML', 'Data Science', 'ECE', 'Other'];

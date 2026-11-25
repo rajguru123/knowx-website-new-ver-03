@@ -383,7 +383,7 @@ export function WhyKnowx() {
           {PHOTOS.map((p) =>
             p.src ? (
               <div className="photo" key={p.alt}>
-                <Image src={p.src} alt={p.alt} fill sizes="(max-width: 980px) 45vw, 280px" style={{ objectFit: 'cover' }} loading="lazy" />
+                <Image src={p.src} alt={p.alt} fill sizes="(max-width: 980px) 92vw, 560px" style={{ objectFit: 'cover' }} loading="lazy" />
               </div>
             ) : (
               <div className="photo ph" key={p.alt} role="img" aria-label={`Placeholder: ${p.alt}`}>
